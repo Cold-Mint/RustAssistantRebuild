@@ -1,0 +1,362 @@
+[
+  {
+    "description": "",
+    "displayName": "Extractor T2",
+    "name": "extractorT2",
+    "path": "extractor/extractorT2.ini"
+  },
+  {
+    "description": "",
+    "displayName": "Extractor T3",
+    "name": "extractorT3",
+    "path": "extractor/extractorT3.ini"
+  },
+  {
+    "description": "[[Attacks air units with area affect]] [[Short range]]",
+    "displayName": "Anti-air Flak",
+    "name": "antiAirTurretFlak",
+    "path": "turrets/turret_antiair_flakgun.ini"
+  },
+  {
+    "description": "[[Mid armour - Not cost-effective for combat]] [[Can see further through fog]] [[Able to move over water]]  [[Can attack air and ground]]",
+    "displayName": "Scout",
+    "name": "scout",
+    "path": "scout/scout.ini"
+  },
+  {
+    "description": "[[Very Fast]] [[Can attack air only]] [[Heavily armed with shield]] [[Shield weak vs lightning]]",
+    "displayName": "Heavy Interceptor",
+    "name": "heavyInterceptor",
+    "path": "heavy_interceptor/heavyInterceptor.ini"
+  },
+  {
+    "description": "[[Very weak]] [[Light ground attack only]] [[Slow]]",
+    "displayName": "Light Gun Ship",
+    "name": "lightGunship",
+    "path": "light_gunship/light_gunship.ini"
+  },
+  {
+    "description": "[[Very weak]] [[Light torpedo attack only]]",
+    "displayName": "Underwater Probe",
+    "name": "lightSub",
+    "path": "light_sub/light_sub.ini"
+  },
+  {
+    "description": "[[Can see through fog in a large range]] [[Can not attack]]",
+    "displayName": "Watch Tower",
+    "name": "outpostT1",
+    "path": "outpost/outpost.ini"
+  },
+  {
+    "description": "[[Can see through fog in a large range]] [[Can not attack]]",
+    "displayName": "Watch Tower T2",
+    "name": "outpostT2",
+    "path": "outpost/outpostT2.ini"
+  },
+  {
+    "description": "[[Transports units]] [[Builds units]] [[Anti-air]] [[Ground attack while landed]] [[Self repair with built-in Fabricator]]",
+    "displayName": "Flying Fortress",
+    "name": "experimentalDropship",
+    "path": "experimental_dropship/experimental_dropship.ini"
+  },
+  {
+    "description": "[[Long range land attack]] [[Anti-air]] [[Light anti-sub torpedos]]",
+    "displayName": "Heavy Battleship",
+    "name": "heavyBattleship",
+    "path": "heavy_battleship/heavy_battleship.ini"
+  },
+  {
+    "description": "[[Long range anti-air only missiles]] [[Light Shield]]",
+    "displayName": "AA Missile Tank",
+    "name": "missileTank",
+    "path": "missile_tank/missile_tank.ini"
+  },
+  {
+    "description": "[[Builds some units and T2 buildings]] [[Heavily armored with land attack]] [[Sub attack while hovering over water]] [[Self repair with built-in Fabricator]] [[Able to move over water]]",
+    "displayName": "Combat Engineer",
+    "name": "combatEngineer",
+    "path": "combat_engineer/combat_engineer.ini"
+  },
+  {
+    "description": "[[Heavily armored with torpedos]] [[Can not attack units out of water]]",
+    "displayName": "Heavy Sub",
+    "name": "heavySub",
+    "path": "heavy_sub/heavy_sub.ini"
+  },
+  {
+    "description": "[[Very heavily armored but slow]] [[Needs to recharge after dropping bombs]] [[Light anti-sub attack]]",
+    "displayName": "Bomber",
+    "name": "bomber",
+    "path": "bomber/bomber.ini"
+  },
+  {
+    "description": "[[Very heavily armored but slow]] [[Can build units and buildings]] [[Auto repairs nearby units]] [[Laser defence]] [[Can move over water]] [[Built-in Fabricator]] [[Goes nuclear on death (if nukes are enabled)]]",
+    "displayName": "Experimental Spider",
+    "name": "experimentalSpider",
+    "path": "experimental_spider/experimental_spider.ini"
+  },
+  {
+    "description": "[[Heavily armed]] [[Can attack ground]] [[Medium air attack]] [[Needs to reload after firing]] [[Self repair]]",
+    "displayName": "Fire Bee",
+    "name": "fireBee",
+    "path": "fire_bee/fire_bee.ini"
+  },
+  {
+    "description": "[[Land/air missiles with area affect]] [[Needs to reload after firing]] [[Self repair]]",
+    "displayName": "Missile Airship",
+    "name": "missileAirship",
+    "path": "missile_airship/missile_airship.ini"
+  },
+  {
+    "description": "[[Builds T1 mech units]] [[Mechs are often slow but strong]] [[Larger T2 mechs are able to walk over cliffs]] [[Upgradable]]",
+    "displayName": "Mech Factory",
+    "name": "mechFactory",
+    "path": "mech_factory/mechFactory.ini"
+  },
+  {
+    "description": "[[Builds T1 \u0026 T2 mech units]] [[Mechs are often slow but strong]] [[Larger T2 mechs are able to walk over cliffs]]",
+    "displayName": "Mech Factory T2",
+    "name": "mechFactoryT2",
+    "path": "mech_factory/mechFactoryT2.ini"
+  },
+  {
+    "description": "[[Attacks land only]] [[Has more HP but slower than T1 tanks]]",
+    "displayName": "Basic Mech",
+    "name": "mechGun",
+    "path": "mechs_small/mech_gun.ini"
+  },
+  {
+    "description": "[[Attacks air only]] [[Area affect]] [[Can not attack land]]",
+    "displayName": "Anti-Air Mech",
+    "name": "mechMissile",
+    "path": "mechs_small/mech_missile.ini"
+  },
+  {
+    "description": "[[Attacks land \u0026 air]] [[Needs to recharge after firing]] [[Long range]]",
+    "displayName": "Plasma Mech",
+    "name": "mechLaser",
+    "path": "mechs_large/mech_laser.ini"
+  },
+  {
+    "description": "[[Area effect flame]] [[Land only]] [[High HP with self repair]]",
+    "displayName": "Flame Mech",
+    "name": "mechFlame",
+    "path": "mechs_large/mech_flame.ini"
+  },
+  {
+    "description": "[[Ground attack]] [[Deploys for extra range and a shield]]",
+    "displayName": "Mobile Turret",
+    "name": "mechBunker",
+    "path": "mechs_large/mech_bunker.ini"
+  },
+  {
+    "description": "[[Ground attack]] [[Deploys for extra range and a shield]]",
+    "displayName": "Mobile Turret",
+    "name": "mechBunkerDeployed",
+    "path": "mechs_large/mech_bunker_deployed.ini"
+  },
+  {
+    "description": "[[Ground attack]] [[Long range]] [[Can move while firing]]",
+    "displayName": "Artillery Mech",
+    "name": "mechArtillery",
+    "path": "mechs_large/mech_artillery.ini"
+  },
+  {
+    "description": "[[Ground attack]] [[Fast firing]] [[Speeds up as it fires]] [[Has shield (weak vs lightning)]]",
+    "displayName": "Minigun Mech",
+    "name": "mechMinigun",
+    "path": "mechs_large/mech_minigun.ini"
+  },
+  {
+    "description": "[[Land lightning attack]] [[Very strong vs shields]] [[Reduced damage vs grounded buildings]]",
+    "displayName": "Tesla Mech",
+    "name": "mechLightning",
+    "path": "mechs_large/mech_lightning.ini"
+  },
+  {
+    "description": "[[Can attack ground only]]  [[Long range]] [[Limited Laser defence]]",
+    "displayName": "Heavy Artillery",
+    "name": "heavyArtillery",
+    "path": "tanks/heavy_artillery.ini"
+  },
+  {
+    "description": "[[Can attack air \u0026 land]] [[Long range]]",
+    "displayName": "Heavy Missile Ship",
+    "name": "Heavy Missile Ship",
+    "path": "heavy_missile_ship/heavy_missile_ship.ini"
+  },
+  {
+    "description": "",
+    "displayName": "heavyMissileShip",
+    "name": "heavyMissileShip",
+    "path": "heavy_missile_ship/heavy_missile_ship.ini"
+  },
+  {
+    "description": "[[Heavily armed and armored]] [[Builds air units (at x2 speed)]] [[Laser defence \u0026 repairbay]] [[Anti-air]] [[Built-in Fabricator]] [[Can build anti-nuke missiles ]] [[Goes nuclear on death (if nukes are enabled)]]",
+    "displayName": "Carrier",
+    "name": "experiementalCarrier",
+    "path": "experimental_carrier/Experiemental_carrier.ini"
+  },
+  {
+    "description": "[[Heavily armed and armored]] [[Can attack ships]] [[Can surface and walk on land]] [[Can attack land and air when surfaced]] [[Can build anti-nuke missiles]]",
+    "displayName": "Nautilus",
+    "name": "nautilusSubmarine",
+    "path": "nautilus/nautilus.ini"
+  },
+  {
+    "description": " [[Very heavily armed]] [[Can attack ground only]] [[Shield weak to lightning attacks]]",
+    "displayName": "Plasma Tank",
+    "name": "plasmaTank",
+    "path": "plasma_tank/plasma_tank.ini"
+  },
+  {
+    "description": "[[Builds mechs and T2 buildings]] [[Anti-air attack]] [[Heavily armored]] [[Repairs other units]]",
+    "displayName": "Mech Engineer",
+    "name": "mechEngineer",
+    "path": "mech_engineer/mech_engineer.ini"
+  },
+  {
+    "description": "[[Strong and long range air attack]] [[Area affect anti-air]] [[Weak land attack]]",
+    "displayName": "Heavy Anti-Air Mech",
+    "name": "mechHeavyMissile",
+    "path": "mechs_large/mech_heavyMissile.ini"
+  },
+  {
+    "description": "[[Anti-air particle-beam weapon]] [[Beam weak vs shields]] [[Can not attack land]] [[Slow speed unless using afterburner]]",
+    "displayName": "AA Beam Gunship",
+    "name": "aaBeamGunship",
+    "path": "aa_beam_gunship/aa_beam_gunship.ini"
+  },
+  {
+    "description": "[[Can attack air only]] [[Long range and splash damage]] [[Heavily armored with shield]]",
+    "displayName": "Heavy AA Ship",
+    "name": "heavyAAShip",
+    "path": "heavy_aa_ship/heavy_aa_ship.ini"
+  },
+  {
+    "description": "[[Can not attack]] [[Can see further through fog]] [[Decent health and speed]] [[Self repair]]",
+    "displayName": "Spy Drone",
+    "name": "spyDrone",
+    "path": "spy_drone/spy_drone.ini"
+  },
+  {
+    "description": "[[Builds units]] [[Land and air attack]] [[Anti-nuke defence]] [[Can add blink module]] [[Can transport units]] [[Built-in fabricator]] [[Deploy for extra range, shield and nano]]",
+    "displayName": "Support Hovertank",
+    "name": "experimentalGunship",
+    "path": "experimental_gunship/experimental_gunship.ini"
+  },
+  {
+    "description": "[[Can be reclaimed for credits]]",
+    "displayName": "Credits crate",
+    "name": "creditsCrates",
+    "path": "resource_deposits/creditsCrate.ini"
+  },
+  {
+    "description": "[[Can build up to 6 custom turret or modules on top]] [[Very heavily armored but slow]] [[Base speed is reduced if any weapons are attached]] [[Can build units and buildings]] [[Auto repairs nearby units]] [[Can move over water]] [[Built-in Fabricator]] [[Goes nuclear on death (if nukes are enabled)]]",
+    "displayName": "Modular Spider",
+    "name": "modularSpider",
+    "path": "modular_spider/modular_spider.ini"
+  },
+  {
+    "description": "Select a turret to build here",
+    "displayName": "Empty",
+    "name": "modularSpider_emptySlot",
+    "path": "modular_spider/emptySlot.ini"
+  },
+  {
+    "description": "[[Shield generation core]] [[Increases shield regen rate]]",
+    "displayName": "Shield Gen",
+    "name": "modularSpider_shieldGen",
+    "path": "modular_spider/shieldGen.ini"
+  },
+  {
+    "description": "[[Speed core]] [[Increases movement speed]] [[Does not stack]] [[Removes speed penalty from having turrets]]",
+    "displayName": "Speed",
+    "name": "modularSpider_speed",
+    "path": "modular_spider/speed.ini"
+  },
+  {
+    "description": "[[Blink core]] [[Has short range blink]]",
+    "displayName": "Blink",
+    "name": "modularSpider_blink",
+    "path": "modular_spider/blink.ini"
+  },
+  {
+    "description": "[[Intercepts nuclear missiles fired from Nuke Launcher.]] [[Requires missiles to be built]] [[1500 range]] [[Can be turned off]]",
+    "displayName": "Anti-Nuke",
+    "name": "modularSpider_antinuke",
+    "path": "modular_spider/antinuke.ini"
+  },
+  {
+    "description": "[[Can attack air only]]",
+    "displayName": "Sam T1",
+    "name": "modularSpider_antiair",
+    "path": "modular_spider/antiair.ini"
+  },
+  {
+    "description": "[[Can attack air only]]",
+    "displayName": "Sam T2",
+    "name": "modularSpider_antiairT2",
+    "path": "modular_spider/antiairT2.ini"
+  },
+  {
+    "description": "[[Can attack air and land]]",
+    "displayName": "Plasma T1",
+    "name": "modularSpider_smallgunturret",
+    "path": "modular_spider/smallgun.ini"
+  },
+  {
+    "description": "[[Can attack air and land]]",
+    "displayName": "Plasma T2",
+    "name": "modularSpider_smallgunturretT2",
+    "path": "modular_spider/smallgunT2.ini"
+  },
+  {
+    "description": "[[Fabricator core]]",
+    "displayName": "Fabricator T1",
+    "name": "modularSpider_fabricator",
+    "path": "modular_spider/fabricator.ini"
+  },
+  {
+    "description": "[[Fabricator core]]",
+    "displayName": "Fabricator T2",
+    "name": "modularSpider_fabricatorT2",
+    "path": "modular_spider/fabricatorT2.ini"
+  },
+  {
+    "description": "[[Disintegrates incoming projectiles before they hit nearby units]] [[Requires time to recharge if overwhelmed]]",
+    "displayName": "Laser Defense",
+    "name": "modularSpider_laserdefense",
+    "path": "modular_spider/laser_defense.ini"
+  },
+  {
+    "description": "[[Can attack land only]] [[Strong vs shields]]",
+    "displayName": "Lightning T1",
+    "name": "modularSpider_lightning",
+    "path": "modular_spider/lightning.ini"
+  },
+  {
+    "description": "[[Can attack air only]] [[Strong vs groups of units]]",
+    "displayName": "Flak T2",
+    "name": "modularSpider_antiairFlak",
+    "path": "modular_spider/antiairFlak.ini"
+  },
+  {
+    "description": "[[Long range]] [[Slow firing speed]]",
+    "displayName": "Artillery T1",
+    "name": "modularSpider_artillery",
+    "path": "modular_spider/artillery.ini"
+  },
+  {
+    "description": "[[Can attack land only]]",
+    "displayName": "Gun T1",
+    "name": "modularSpider_gunturret",
+    "path": "modular_spider/gunturret.ini"
+  },
+  {
+    "description": "[[Can attack land only]]",
+    "displayName": "Gun T2",
+    "name": "modularSpider_gunturretT2",
+    "path": "modular_spider/gunturretT2.ini"
+  }
+]

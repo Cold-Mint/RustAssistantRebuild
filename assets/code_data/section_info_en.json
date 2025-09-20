@@ -1,0 +1,156 @@
+[
+  {
+    "section": "mod",
+    "translate": "mod",
+    "file_name": "^mod-info\\.txt$",
+    "has_name": false,
+    "rule": "^mod$"
+  },
+  {
+    "section": "music",
+    "translate": "music",
+    "file_name": "^mod-info\\.txt$",
+    "has_name": false,
+    "rule": "^music$"
+  },
+  {
+    "section": "core",
+    "translate": "core",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^core$"
+  },
+  {
+    "section": "canBuild",
+    "translate": "canBuild",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^canBuild_.+$"
+  },
+  {
+    "section": "graphics",
+    "translate": "graphics",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^graphics$"
+  },
+  {
+    "section": "attack",
+    "translate": "attack",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^attack$"
+  },
+  {
+    "section": "turret",
+    "translate": "turret",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^turret_.+$"
+  },
+  {
+    "section": "projectile",
+    "translate": "projectile",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^projectile_.+$"
+  },
+  {
+    "section": "movement",
+    "translate": "movement",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^movement$"
+  },
+  {
+    "section": "ai",
+    "translate": "ai",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^ai$"
+  },
+  {
+    "section": "leg",
+    "translate": "leg",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^leg_.+$"
+  },
+  {
+    "section": "arm",
+    "translate": "arm",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^arm_.+$"
+  },
+  {
+    "section": "attachment",
+    "translate": "attachment",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^attachment_.+$"
+  },
+  {
+    "section": "action",
+    "translate": "action",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^action_.+$"
+  },
+  {
+    "section": "hiddenAction",
+    "translate": "hiddenAction",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^hiddenAction_.+$"
+  },
+  {
+    "section": "effect",
+    "translate": "effect",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^effect_.+$"
+  },
+  {
+    "section": "animation",
+    "translate": "animation",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^animation_.+$"
+  },
+  {
+    "section": "placementRule",
+    "translate": "placementRule",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^placementRule_.+$"
+  },
+  {
+    "section": "global_resource",
+    "translate": "global_resource",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^global_resource_.+$"
+  },
+  {
+    "section": "resource",
+    "translate": "resource",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^resource_.+$"
+  },
+  {
+    "section": "decal",
+    "translate": "decal",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^decal_.+$"
+  },
+  {
+    "section": "template",
+    "translate": "template",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^template_.+$"
+  }
+]

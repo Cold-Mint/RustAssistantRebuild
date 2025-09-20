@@ -1,0 +1,662 @@
+[
+    {
+        "id": "movementType_none",
+        "key": "NONE",
+        "value": "NONE"
+    },
+    {
+        "id": "movementType_land",
+        "key": "LAND",
+        "value": "LAND"
+    },
+    {
+        "id": "movementType_building",
+        "key": "BUILDING",
+        "value": "BUILDING"
+    },
+    {
+        "id": "movementType_air",
+        "key": "AIR",
+        "value": "AIR"
+    },
+    {
+        "id": "movementType_water",
+        "key": "WATER",
+        "value": "WATER"
+    },
+    {
+        "id": "movementType_hover",
+        "key": "HOVER",
+        "value": "HOVER"
+    },
+    {
+        "id": "movementType_over_cliff",
+        "key": "OVER_CLIFF",
+        "value": "OVER_CLIFF"
+    },
+    {
+        "id": "movementType_over_cliff_water",
+        "key": "OVER_CLIFF_WATER",
+        "value": "OVER_CLIFF_WATER"
+    },
+    {
+        "id": "onNewMapSpawn_emptyResourcePools_asNeutral",
+        "key": "emptyResourcePools_asNeutral",
+        "value": "emptyResourcePools_asNeutral"
+    },
+    {
+        "id": "onNewMapSpawn_emptyOrOccupiedResourcePools_asNeutral",
+        "key": "emptyOrOccupiedResourcePools_asNeutral",
+        "value": "emptyOrOccupiedResourcePools_asNeutral"
+    },
+    {
+        "id": "onNewMapSpawn_mapCenter_asNeutral",
+        "key": "mapCenter_asNeutral",
+        "value": "mapCenter_asNeutral"
+    },
+    {
+        "id": "onNewMapSpawn_mapCenter_eachActiveTeam",
+        "key": "mapCenter_eachActiveTeam",
+        "value": "mapCenter_eachActiveTeam"
+    },
+    {
+        "id": "onNewMapSpawn_spawnPoint_eachActiveTeam",
+        "key": "spawnPoint_eachActiveTeam",
+        "value": "spawnPoint_eachActiveTeam"
+    },
+    {
+        "id": "explodeTypeOnDeath_verysmall",
+        "key": "verysmall",
+        "value": "verysmall"
+    },
+    {
+        "id": "explodeTypeOnDeath_small",
+        "key": "small",
+        "value": "small"
+    },
+    {
+        "id": "explodeTypeOnDeath_normal",
+        "key": "normal",
+        "value": "normal"
+    },
+    {
+        "id": "explodeTypeOnDeath_large",
+        "key": "large",
+        "value": "large"
+    },
+    {
+        "id": "explodeTypeOnDeath_largeUnit",
+        "key": "largeUnit",
+        "value": "largeUnit"
+    },
+    {
+        "id": "explodeTypeOnDeath_building",
+        "key": "building",
+        "value": "building"
+    },
+    {
+        "id": "explodeTypeOnDeath_buildingNoShockwaveOrSmoke",
+        "key": "buildingNoShockwaveOrSmoke",
+        "value": "buildingNoShockwaveOrSmoke"
+    },
+    {
+        "id": "explodeTypeOnDeath_verylargeBuilding",
+        "key": "verylargeBuilding",
+        "value": "verylargeBuilding"
+    },
+    {
+        "id": "autoTriggerCheckRate_everyFrame",
+        "key": "everyFrame",
+        "value": "everyFrame"
+    },
+    {
+        "id": "autoTriggerCheckRate_every4Frames",
+        "key": "every4Frames",
+        "value": "every4Frames"
+    },
+    {
+        "id": "autoTriggerCheckRate_every8Frames",
+        "key": "every8Frames",
+        "value": "every8Frames"
+    },
+    {
+        "id": "teamColoringMode_disabled",
+        "key": "disabled",
+        "value": "disabled"
+    },
+    {
+        "id": "teamColoringMode_hueShift",
+        "key": "hueShift",
+        "value": "hueShift"
+    },
+    {
+        "id": "teamColoringMode_hueAdd",
+        "key": "hueAdd",
+        "value": "hueAdd"
+    },
+    {
+        "id": "teamColoringMode_pureGreen",
+        "key": "pureGreen",
+        "value": "pureGreen"
+    },
+    {
+        "id": "drawLayer_ground",
+        "key": "ground",
+        "value": "ground"
+    },
+    {
+        "id": "drawLayer_ground2",
+        "key": "ground2",
+        "value": "ground2"
+    },
+    {
+        "id": "drawLayer_wreaks",
+        "key": "wreaks",
+        "value": "wreaks"
+    },
+    {
+        "id": "drawLayer_underwater",
+        "key": "underwater",
+        "value": "underwater"
+    },
+    {
+        "id": "drawLayer_bottom",
+        "key": "bottom",
+        "value": "bottom"
+    },
+    {
+        "id": "drawLayer_experimentals",
+        "key": "experimentals",
+        "value": "experimentals"
+    },
+    {
+        "id": "drawLayer_air",
+        "key": "air",
+        "value": "air"
+    },
+    {
+        "id": "drawLayer_top",
+        "key": "top",
+        "value": "top"
+    },
+    {
+        "id": "attackMovement_normal",
+        "key": "normal",
+        "value": "normal"
+    },
+    {
+        "id": "attackMovement_bomber",
+        "key": "bomber",
+        "value": "bomber"
+    },
+    {
+        "id": "shoot_flame_small",
+        "key": "small",
+        "value": "small"
+    },
+    {
+        "id": "shoot_flame_medium",
+        "key": "medium",
+        "value": "medium"
+    },
+    {
+        "id": "shoot_flame_large",
+        "key": "large",
+        "value": "large"
+    },
+    {
+        "id": "shoot_flame_noneExplosion",
+        "key": "noneExplosion",
+        "value": "noneExplosion"
+    },
+    {
+        "id": "shoot_flame_smallExplosion",
+        "key": "smallExplosion",
+        "value": "smallExplosion"
+    },
+    {
+        "id": "shoot_flame_largeExplosion",
+        "key": "largeExplosion",
+        "value": "largeExplosion"
+    },
+    {
+        "id": "shoot_flame_smoke",
+        "key": "smoke",
+        "value": "smoke"
+    },
+    {
+        "id": "shoot_flame_resourcePoolSmoke",
+        "key": "resourcePoolSmoke",
+        "value": "resourcePoolSmoke"
+    },
+    {
+        "id": "shoot_flame_shockwave",
+        "key": "shockwave",
+        "value": "shockwave"
+    },
+    {
+        "id": "friendlyFire_false",
+        "key": "false",
+        "value": "false"
+    },
+    {
+        "id": "friendlyFire_true",
+        "key": "true",
+        "value": "true"
+    },
+    {
+        "id": "friendlyFire_only-ignoreEnemy",
+        "key": "only-ignoreEnemy",
+        "value": "only-ignoreEnemy"
+    },
+    {
+        "id": "priority_verylow",
+        "key": "verylow",
+        "value": "verylow"
+    },
+    {
+        "id": "priority_low",
+        "key": "low",
+        "value": "low"
+    },
+    {
+        "id": "priority_high",
+        "key": "high",
+        "value": "high"
+    },
+    {
+        "id": "priority_veryhigh",
+        "key": "veryhigh",
+        "value": "veryhigh"
+    },
+    {
+        "id": "priority_critical",
+        "key": "critical",
+        "value": "critical"
+    },
+    {
+        "id": "onActions_move",
+        "key": "move",
+        "value": "move"
+    },
+    {
+        "id": "onActions_attack",
+        "key": "attack",
+        "value": "attack"
+    },
+    {
+        "id": "onActions_idle",
+        "key": "idle",
+        "value": "idle"
+    },
+    {
+        "id": "onActions_underConstruction",
+        "key": "underConstruction",
+        "value": "underConstruction"
+    },
+    {
+        "id": "onActions_underConstructionWithLinkedBuiltTime",
+        "key": "underConstructionWithLinkedBuiltTime",
+        "value": "underConstructionWithLinkedBuiltTime"
+    },
+    {
+        "id": "onActions_queuedUnits",
+        "key": "queuedUnits",
+        "value": "queuedUnits"
+    },
+    {
+        "id": "onActions_Unknown",
+        "key": "Unknown",
+        "value": "Unknown"
+    },
+    {
+        "id": "onActions_repair",
+        "key": "repair",
+        "value": "repair"
+    },
+    {
+        "id": "onActions_reclaim",
+        "key": "reclaim",
+        "value": "reclaim"
+    },
+    {
+        "id": "onActions_created",
+        "key": "created",
+        "value": "created"
+    },
+    {
+        "id": "displayType_none",
+        "key": "none",
+        "value": "none"
+    },
+    {
+        "id": "displayType_rally",
+        "key": "rally",
+        "value": "rally"
+    },
+    {
+        "id": "displayType_upgrade",
+        "key": "upgrade",
+        "value": "upgrade"
+    },
+    {
+        "id": "displayType_queueUnit",
+        "key": "queueUnit",
+        "value": "queueUnit"
+    },
+    {
+        "id": "displayType_building",
+        "key": "building",
+        "value": "building"
+    },
+    {
+        "id": "displayType_action",
+        "key": "action",
+        "value": "action"
+    },
+    {
+        "id": "displayType_infoOnly",
+        "key": "infoOnly",
+        "value": "infoOnly"
+    },
+    {
+        "id": "displayType_infoOnlyNoBox",
+        "key": "infoOnlyNoBox",
+        "value": "infoOnlyNoBox"
+    },
+    {
+        "id": "displayType_infoOnlyStockpile",
+        "key": "infoOnlyStockpile",
+        "value": "infoOnlyStockpile"
+    },
+    {
+        "id": "autoTriggerOnEvent_created",
+        "key": "created",
+        "value": "created"
+    },
+    {
+        "id": "autoTriggerOnEvent_completeAndActive",
+        "key": "completeAndActive",
+        "value": "completeAndActive"
+    },
+    {
+        "id": "autoTriggerOnEvent_destroyed",
+        "key": "destroyed",
+        "value": "destroyed"
+    },
+    {
+        "id": "autoTriggerOnEvent_killedAnyUnit",
+        "key": "killedAnyUnit",
+        "value": "killedAnyUnit"
+    },
+    {
+        "id": "autoTriggerOnEvent_queuedUnitFinished",
+        "key": "queuedUnitFinished",
+        "value": "queuedUnitFinished"
+    },
+    {
+        "id": "autoTriggerOnEvent_queueItemAdded",
+        "key": "queueItemAdded",
+        "value": "queueItemAdded"
+    },
+    {
+        "id": "autoTriggerOnEvent_queueItemCancelled",
+        "key": "queueItemCancelled",
+        "value": "queueItemCancelled"
+    },
+    {
+        "id": "autoTriggerOnEvent_teleported",
+        "key": "teleported",
+        "value": "teleported"
+    },
+    {
+        "id": "autoTriggerOnEvent_touchTargetSuccess",
+        "key": "touchTargetSuccess",
+        "value": "touchTargetSuccess"
+    },
+    {
+        "id": "autoTriggerOnEvent_newWaypointGivenByPlayer",
+        "key": "newWaypointGivenByPlayer",
+        "value": "newWaypointGivenByPlayer"
+    },
+    {
+        "id": "autoTriggerOnEvent_teamChanged",
+        "key": "teamChanged",
+        "value": "teamChanged"
+    },
+    {
+        "id": "autoTriggerOnEvent_transportingNewUnit",
+        "key": "transportingNewUnit",
+        "value": "transportingNewUnit"
+    },
+    {
+        "id": "autoTriggerOnEvent_transportUnloadedOrRemovedUnit",
+        "key": "transportUnloadedOrRemovedUnit",
+        "value": "transportUnloadedOrRemovedUnit"
+    },
+    {
+        "id": "autoTriggerOnEvent_tookDamage",
+        "key": "tookDamage",
+        "value": "tookDamage"
+    },
+    {
+        "id": "autoTriggerOnEvent_enteredTransport",
+        "key": "enteredTransport",
+        "value": "enteredTransport"
+    },
+    {
+        "id": "autoTriggerOnEvent_leftTransport",
+        "key": "leftTransport",
+        "value": "leftTransport"
+    },
+    {
+        "id": "autoTriggerOnEvent_newMessage",
+        "key": "newMessage",
+        "value": "newMessage"
+    },
+    {
+        "id": "autoTriggerOnEvent_attachmentRemoved",
+        "key": "attachmentRemoved",
+        "value": "attachmentRemoved"
+    },
+    {
+        "id": "autoTriggerOnEvent_NONE",
+        "key": "NONE",
+        "value": "NONE"
+    },
+    {
+        "id": "aiUse_auto",
+        "key": "auto",
+        "value": "auto"
+    },
+    {
+        "id": "aiUse_launch",
+        "key": "launch",
+        "value": "launch"
+    },
+    {
+        "id": "aiUse_launchAmmo",
+        "key": "launchAmmo",
+        "value": "launchAmmo"
+    },
+    {
+        "id": "aiUse_disabled",
+        "key": "disabled",
+        "value": "disabled"
+    },
+    {
+        "id": "aiUse_upGrade",
+        "key": "upGrade",
+        "value": "upGrade"
+    },
+    {
+        "id": "aiUse_movementChange",
+        "key": "movementChange",
+        "value": "movementChange"
+    },
+    {
+        "id": "aiUse_sameAsBuilding",
+        "key": "sameAsBuilding",
+        "value": "sameAsBuilding"
+    },
+    {
+        "id": "addWaypoint_type_move",
+        "key": "move",
+        "value": "move"
+    },
+    {
+        "id": "addWaypoint_type_attackMove",
+        "key": "attackMove",
+        "value": "attackMove"
+    },
+    {
+        "id": "addWaypoint_type_guard",
+        "key": "guard",
+        "value": "guard"
+    },
+    {
+        "id": "addWaypoint_type_loadInto",
+        "key": "loadInto",
+        "value": "loadInto"
+    },
+    {
+        "id": "addWaypoint_type_loadUp",
+        "key": "loadUp",
+        "value": "loadUp"
+    },
+    {
+        "id": "addWaypoint_type_attack",
+        "key": "attack",
+        "value": "attack"
+    },
+    {
+        "id": "addWaypoint_type_reclaim",
+        "key": "reclaim",
+        "value": "reclaim"
+    },
+    {
+        "id": "addWaypoint_type_repair",
+        "key": "repair",
+        "value": "repair"
+    },
+    {
+        "id": "addWaypoint_type_touchTarget",
+        "key": "touchTarget",
+        "value": "touchTarget"
+    },
+    {
+        "id": "addWaypoint_type_build",
+        "key": "build",
+        "value": "build"
+    },
+    {
+        "id": "addWaypoint_type_follow",
+        "key": "follow",
+        "value": "follow"
+    },
+    {
+        "id": "addWaypoint_type_setPassiveTarget",
+        "key": "setPassiveTarget",
+        "value": "setPassiveTarget"
+    },
+    {
+        "id": "addWaypoint_type_unloadAt",
+        "key": "unloadAt",
+        "value": "unloadAt"
+    },
+    {
+        "id": "addWaypoint_type_patrol",
+        "key": "patrol",
+        "value": "patrol"
+    },
+    {
+        "id": "addWaypoint_type_guardAt",
+        "key": "guardAt",
+        "value": "guardAt"
+    },
+    {
+        "id": "addWaypoint_type_triggerAction",
+        "key": "triggerAction",
+        "value": "triggerAction"
+    },
+    {
+        "id": "addWaypoint_type_triggerActionWhenInRange",
+        "key": "triggerActionWhenInRange",
+        "value": "triggerActionWhenInRange"
+    },
+    {
+        "id": "layer_shadow",
+        "key": "shadow",
+        "value": "shadow"
+    },
+    {
+        "id": "layer_beforeBody",
+        "key": "beforeBody",
+        "value": "beforeBody"
+    },
+    {
+        "id": "layer_afterBody",
+        "key": "afterBody",
+        "value": "afterBody"
+    },
+    {
+        "id": "layer_onTop",
+        "key": "onTop",
+        "value": "onTop"
+    },
+    {
+        "id": "layer_beforeUI",
+        "key": "beforeUI",
+        "value": "beforeUI"
+    },
+    {
+        "id": "layer_inactive",
+        "key": "inactive",
+        "value": "inactive"
+    },
+    {
+        "id": "onlyTeam_own",
+        "key": "own",
+        "value": "own"
+    },
+    {
+        "id": "onlyTeam_notOwn",
+        "key": "notOwn",
+        "value": "notOwn"
+    },
+    {
+        "id": "onlyTeam_neutral",
+        "key": "neutral",
+        "value": "neutral"
+    },
+    {
+        "id": "onlyTeam_allyNotOwn",
+        "key": "allyNotOwn",
+        "value": "allyNotOwn"
+    },
+    {
+        "id": "onlyTeam_ally",
+        "key": "ally",
+        "value": "ally"
+    },
+    {
+        "id": "onlyTeam_enemy",
+        "key": "enemy",
+        "value": "enemy"
+    },
+    {
+        "id": "onlyTeam_any",
+        "key": "any",
+        "value": "any"
+    },
+    {
+        "id": "drawType_normal",
+        "key": "normal",
+        "value": "normal"
+    },
+    {
+        "id": "drawType_displacement",
+        "key": "displacement",
+        "value": "displacement"
+    }
+]

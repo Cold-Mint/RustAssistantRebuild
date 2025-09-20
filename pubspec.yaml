@@ -1,0 +1,305 @@
+name: rust_assistant
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  hive: ^2.2.3
+  flutter_html: ^3.0.0
+  dio: ^5.8.0+1
+  file_picker: ^10.2.0
+  path_provider: ^2.1.5
+  path: ^1.9.1
+  url_launcher: ^6.3.1
+  flutter_localization: ^0.3.3
+  intl: ^0.20.2
+  provider: ^6.1.5
+  sprintf: ^7.0.0
+  diff_match_patch: ^0.4.1
+  flutter_colorpicker: ^1.1.0
+  dynamic_color: ^1.7.0
+  pinyin: ^3.3.0
+  saf_stream: ^0.12.0
+  saf_util: ^0.11.0
+  archive: ^4.0.7
+  window_manager: ^0.5.1
+  xml: ^6.6.1
+  desktop_drop: ^0.6.1
+  flutter_launcher_icons: ^0.14.4
+  package_info_plus: ^4.2.0
+  uuid: ^4.5.1
+  flutter_sticky_header: ^0.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+  drift_dev: ^2.26.1
+  build_runner: ^2.4.15
+  change_app_package_name: ^1.5.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  generate: true
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/icon.png
+    - assets/code_data/
+    - assets/fonts/
+    - assets/units_template/
+    #通过命令自动生成的（codeTableGenerator generateResList --path /home/coldmint/projects/rust_assistant_flutter/assets/game_res/ --basicPath /home/coldmint/projects/rust_assistant_flutter/）
+    #codeTableGenerator 是一个命令行工具。
+    - assets/game_res/
+    - assets/game_res/1/
+    - assets/game_res/1/units/
+    - assets/game_res/1/units/amphibious_jet/
+    - assets/game_res/1/units/bomber/
+    - assets/game_res/1/units/bug_base/
+    - assets/game_res/1/units/bug_base/bug_generator/
+    - assets/game_res/1/units/bug_melee/
+    - assets/game_res/1/units/classic_bugs/
+    - assets/game_res/1/units/classic_bugs/bug_bee/
+    - assets/game_res/1/units/classic_bugs/bug_extractor/
+    - assets/game_res/1/units/classic_bugs/bug_fly/
+    - assets/game_res/1/units/classic_bugs/bug_generator/
+    - assets/game_res/1/units/classic_bugs/bug_melee/
+    - assets/game_res/1/units/classic_bugs/bug_nest/
+    - assets/game_res/1/units/classic_bugs/bug_ranged/
+    - assets/game_res/1/units/classic_bugs/bug_spore/
+    - assets/game_res/1/units/classic_bugs/bug_turret/
+    - assets/game_res/1/units/classic_bugs/bugs/
+    - assets/game_res/1/units/classic_bugs/bugs_t2/
+    - assets/game_res/1/units/combat_engineer/
+    - assets/game_res/1/units/experimental_carrier/
+    - assets/game_res/1/units/experimental_dropship/
+    - assets/game_res/1/units/experimental_gunship/
+    - assets/game_res/1/units/experimental_spider/
+    - assets/game_res/1/units/experimental_tank/
+    - assets/game_res/1/units/fabricator/
+    - assets/game_res/1/units/fire_bee/
+    - assets/game_res/1/units/heavy_battleship/
+    - assets/game_res/1/units/heavy_interceptor/
+    - assets/game_res/1/units/heavy_missile_ship/
+    - assets/game_res/1/units/heavy_sub/
+    - assets/game_res/1/units/helicopter/
+    - assets/game_res/1/units/interceptor/
+    - assets/game_res/1/units/laser_tank/
+    - assets/game_res/1/units/light_gunship/
+    - assets/game_res/1/units/light_sub/
+    - assets/game_res/1/units/mammoth_tank/
+    - assets/game_res/1/units/mech_engineer/
+    - assets/game_res/1/units/mech_factory/
+    - assets/game_res/1/units/mechs_large/
+    - assets/game_res/1/units/mechs_small/
+    - assets/game_res/1/units/miscellaneous/
+    - assets/game_res/1/units/missile_airship/
+    - assets/game_res/1/units/missile_tank/
+    - assets/game_res/1/units/missing_unit/
+    - assets/game_res/1/units/nautilus/
+    - assets/game_res/1/units/nautilus/robotCrab/
+    - assets/game_res/1/units/nukes/
+    - assets/game_res/1/units/plasma_tank/
+    - assets/game_res/1/units/resource_deposits/
+    - assets/game_res/1/units/scout/
+    - assets/game_res/1/units/shared/
+    - assets/game_res/1/units/tanks/
+    - assets/game_res/1/units/test_tank/
+    - assets/game_res/1/units/turrets/
+    - assets/game_res/4/
+    - assets/game_res/4/units/
+    - assets/game_res/4/units/aa_beam_gunship/
+    - assets/game_res/4/units/amphibious_jet/
+    - assets/game_res/4/units/bomber/
+    - assets/game_res/4/units/bug_base/
+    - assets/game_res/4/units/bug_base/bug_generator/
+    - assets/game_res/4/units/bug_melee/
+    - assets/game_res/4/units/classic_bugs/
+    - assets/game_res/4/units/classic_bugs/bug_bee/
+    - assets/game_res/4/units/classic_bugs/bug_extractor/
+    - assets/game_res/4/units/classic_bugs/bug_fly/
+    - assets/game_res/4/units/classic_bugs/bug_generator/
+    - assets/game_res/4/units/classic_bugs/bug_melee/
+    - assets/game_res/4/units/classic_bugs/bug_nest/
+    - assets/game_res/4/units/classic_bugs/bug_ranged/
+    - assets/game_res/4/units/classic_bugs/bug_spore/
+    - assets/game_res/4/units/classic_bugs/bug_turret/
+    - assets/game_res/4/units/classic_bugs/bugs/
+    - assets/game_res/4/units/classic_bugs/bugs_t2/
+    - assets/game_res/4/units/combat_engineer/
+    - assets/game_res/4/units/experimental_carrier/
+    - assets/game_res/4/units/experimental_dropship/
+    - assets/game_res/4/units/experimental_gunship/
+    - assets/game_res/4/units/experimental_spider/
+    - assets/game_res/4/units/experimental_tank/
+    - assets/game_res/4/units/extractor/
+    - assets/game_res/4/units/fabricator/
+    - assets/game_res/4/units/fire_bee/
+    - assets/game_res/4/units/heavy_battleship/
+    - assets/game_res/4/units/heavy_interceptor/
+    - assets/game_res/4/units/heavy_missile_ship/
+    - assets/game_res/4/units/heavy_sub/
+    - assets/game_res/4/units/helicopter/
+    - assets/game_res/4/units/interceptor/
+    - assets/game_res/4/units/laboratory/
+    - assets/game_res/4/units/laser_tank/
+    - assets/game_res/4/units/light_gunship/
+    - assets/game_res/4/units/light_sub/
+    - assets/game_res/4/units/mammoth_tank/
+    - assets/game_res/4/units/mech_engineer/
+    - assets/game_res/4/units/mech_factory/
+    - assets/game_res/4/units/mechs_large/
+    - assets/game_res/4/units/mechs_small/
+    - assets/game_res/4/units/miscellaneous/
+    - assets/game_res/4/units/missile_airship/
+    - assets/game_res/4/units/missile_tank/
+    - assets/game_res/4/units/missing_unit/
+    - assets/game_res/4/units/modular_spider/
+    - assets/game_res/4/units/nautilus/
+    - assets/game_res/4/units/nautilus/robotCrab/
+    - assets/game_res/4/units/nukes/
+    - assets/game_res/4/units/outpost/
+    - assets/game_res/4/units/plasma_tank/
+    - assets/game_res/4/units/resource_deposits/
+    - assets/game_res/4/units/scout/
+    - assets/game_res/4/units/shared/
+    - assets/game_res/4/units/tanks/
+    - assets/game_res/4/units/test_tank/
+    - assets/game_res/4/units/turrets/
+    - assets/game_res/8/
+    - assets/game_res/8/units/
+    - assets/game_res/8/units/aa_beam_gunship/
+    - assets/game_res/8/units/amphibious_jet/
+    - assets/game_res/8/units/bomber/
+    - assets/game_res/8/units/bug_base/
+    - assets/game_res/8/units/bug_base/bug_generator/
+    - assets/game_res/8/units/bug_melee/
+    - assets/game_res/8/units/classic_bugs/
+    - assets/game_res/8/units/classic_bugs/bug_bee/
+    - assets/game_res/8/units/classic_bugs/bug_extractor/
+    - assets/game_res/8/units/classic_bugs/bug_fly/
+    - assets/game_res/8/units/classic_bugs/bug_generator/
+    - assets/game_res/8/units/classic_bugs/bug_melee/
+    - assets/game_res/8/units/classic_bugs/bug_nest/
+    - assets/game_res/8/units/classic_bugs/bug_ranged/
+    - assets/game_res/8/units/classic_bugs/bug_spore/
+    - assets/game_res/8/units/classic_bugs/bug_turret/
+    - assets/game_res/8/units/classic_bugs/bugs/
+    - assets/game_res/8/units/classic_bugs/bugs_t2/
+    - assets/game_res/8/units/combat_engineer/
+    - assets/game_res/8/units/experimental_carrier/
+    - assets/game_res/8/units/experimental_dropship/
+    - assets/game_res/8/units/experimental_gunship/
+    - assets/game_res/8/units/experimental_spider/
+    - assets/game_res/8/units/experimental_tank/
+    - assets/game_res/8/units/extractor/
+    - assets/game_res/8/units/fabricator/
+    - assets/game_res/8/units/fire_bee/
+    - assets/game_res/8/units/heavy_aa_ship/
+    - assets/game_res/8/units/heavy_battleship/
+    - assets/game_res/8/units/heavy_interceptor/
+    - assets/game_res/8/units/heavy_missile_ship/
+    - assets/game_res/8/units/heavy_sub/
+    - assets/game_res/8/units/helicopter/
+    - assets/game_res/8/units/interceptor/
+    - assets/game_res/8/units/laboratory/
+    - assets/game_res/8/units/laser_tank/
+    - assets/game_res/8/units/light_gunship/
+    - assets/game_res/8/units/light_sub/
+    - assets/game_res/8/units/mammoth_tank/
+    - assets/game_res/8/units/mech_engineer/
+    - assets/game_res/8/units/mech_factory/
+    - assets/game_res/8/units/mechs_large/
+    - assets/game_res/8/units/mechs_small/
+    - assets/game_res/8/units/miscellaneous/
+    - assets/game_res/8/units/missile_airship/
+    - assets/game_res/8/units/missile_tank/
+    - assets/game_res/8/units/missing_unit/
+    - assets/game_res/8/units/modular_spider/
+    - assets/game_res/8/units/nautilus/
+    - assets/game_res/8/units/nautilus/robotCrab/
+    - assets/game_res/8/units/nukes/
+    - assets/game_res/8/units/outpost/
+    - assets/game_res/8/units/plasma_tank/
+    - assets/game_res/8/units/resource_deposits/
+    - assets/game_res/8/units/scout/
+    - assets/game_res/8/units/shared/
+    - assets/game_res/8/units/spy_drone/
+    - assets/game_res/8/units/tanks/
+    - assets/game_res/8/units/test_tank/
+    - assets/game_res/8/units/turrets/
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Noto
+      fonts:
+        - asset: assets/fonts/NotoSansSC-Regular.ttf
+        - asset: assets/fonts/NotoSansSC-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/NotoSansSC-Bold.ttf
+          weight: 700
+    - family: Mono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-Regular.ttf
+        - asset: assets/fonts/JetBrainsMono-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/JetBrainsMono-Bold.ttf
+          weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package

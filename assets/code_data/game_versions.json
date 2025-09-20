@@ -1,0 +1,47 @@
+[
+  {
+    "version_code": 1,
+    "version_name": "Before 1.13",
+    "visible": false
+  },
+  {
+    "version_code": 2,
+    "version_name": "1.13",
+    "visible": true
+  },
+  {
+    "version_code": 3,
+    "version_name": "1.13.3",
+    "visible": true
+  },
+  {
+    "version_code": 4,
+    "version_name": "1.14",
+    "visible": true
+  },
+  {
+    "version_code": 5,
+    "version_name": "1.15p9",
+    "visible": true
+  },
+  {
+    "version_code": 6,
+    "version_name": "1.15p10",
+    "visible": true
+  },
+  {
+    "version_code": 7,
+    "version_name": "1.15p11",
+    "visible": true
+  },
+  {
+    "version_code": 8,
+    "version_name": "1.15",
+    "visible": true
+  },
+  {
+    "version_code": 9,
+    "version_name": "1.16",
+    "visible": false
+  }
+]

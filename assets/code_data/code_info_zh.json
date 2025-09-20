@@ -1,0 +1,5665 @@
+[
+  {
+    "code": "^name$",
+    "translate": "名字",
+    "section": "core",
+    "description": "单位的原始名字。"
+  },
+  {
+    "code": "^mass$",
+    "translate": "质量",
+    "section": "core",
+    "description": "定义单位与其他单位的碰撞方式，值越大，推动就越困难。"
+  },
+  {
+    "code": "^radius$",
+    "translate": "半径",
+    "section": "core",
+    "description": "单位的实际碰擦体积，也是实际的可选择范围。其光圈在<see code=\"displayRadius\" section=\"core\"/>覆盖时真实体积不变。"
+  },
+  {
+    "code": "^price$",
+    "translate": "价格",
+    "section": "core",
+    "description": "设定单位造价，可以是负数，负数时提直接供资金。"
+  },
+  {
+    "code": "^maxHp$",
+    "translate": "生命值",
+    "section": "core",
+    "description": "单位最大生命值，默认生成时即为此值。"
+  },
+  {
+    "code": "^buildSpeed$",
+    "translate": "建造速度",
+    "section": "core",
+    "description": "建造此单位需要的时间。"
+  },
+  {
+    "code": "^class$",
+    "translate": "类",
+    "section": "core",
+    "description": "无实际用途，默认为CustomUnitMetadata。"
+  },
+  {
+    "code": "^techLevel$",
+    "translate": "科技等级",
+    "section": "core",
+    "description": "单位的科技等级，共有3个级别，1级GUI显示为绿色，2、3级显示为黄色。"
+  },
+  {
+    "code": "^altNames$",
+    "translate": "别名",
+    "section": "core",
+    "description": "以逗号分隔的名称列表。像<see code=\"name\" section=\"core\"/>一样，但优先级较低，对于启用多个自定义mod有用。"
+  },
+  {
+    "code": "^strictLevel$",
+    "translate": "严格级别",
+    "section": "core",
+    "description": "默认值为0，忽略代码重复。设为1时如果当前单位内有重复代码，则报错。建议添加到\"all-units.template\"以应用于所有单位,进行统一查错。"
+  },
+  {
+    "code": "^isBio$",
+    "translate": "是生物",
+    "section": "core",
+    "description": "生物单位死亡：有血渍、死亡音效。非生物：黑色爆炸。开启<see code=\"hideScorchMark\" section=\"core\"/>可隐藏血渍。"
+  },
+  {
+    "code": "^isBug$",
+    "translate": "是虫子",
+    "section": "core",
+    "description": "此单位是否为虫子，用于沙盒中的单独分类。"
+  },
+  {
+    "code": "^isBuilder$",
+    "translate": "是建造者",
+    "section": "core",
+    "description": "若需要此单位建造建筑物，则通常需要此代码。并且默认设为<see code=\"useAsBuilder\" section=\"ai\"/>。"
+  },
+  {
+    "code": "^streamingCost$",
+    "translate": "流式造价",
+    "section": "core",
+    "description": "就像价格，但在建造时逐渐消耗资金，如果在构建过程中资源耗尽，建造或生产队列将暂停。就像是红警中那样。铁锈默认是预先扣除资金。"
+  },
+  {
+    "code": "^switchPriceWithStreamingCost$",
+    "translate": "切换价格为流式造价",
+    "section": "core",
+    "description": "快捷设置为默认资金消耗方式或为流式建造方式。"
+  },
+  {
+    "code": "^selfRegenRate$",
+    "translate": "生命恢复速度",
+    "section": "core",
+    "description": "此数值决定每帧增加血量。默认速度下，一秒为60逻辑帧，而您看到的FPS帧数为渲染帧，所以电脑上几百帧和手机上60帧和省电模式下30帧并不影响计算。可以写负值用于自毁。"
+  },
+  {
+    "code": "^maxShield$",
+    "translate": "护盾值",
+    "section": "core",
+    "description": "单位最大护盾值，默认生成时即为此值。如果开启了<see code=\"startShieldAtZero\" section=\"core\"/>，则初始护盾为0。"
+  },
+  {
+    "code": "^startShieldAtZero$",
+    "translate": "护盾初始为0",
+    "section": "core",
+    "description": "开启，则单位护盾值从0开始增加。"
+  },
+  {
+    "code": "^shieldRegen$",
+    "translate": "护盾恢复速度",
+    "section": "core",
+    "description": "此数值决定每帧增加护盾值，游戏内一秒为60帧。可以写负值。"
+  },
+  {
+    "code": "^energyMax$",
+    "translate": "能量值",
+    "section": "core",
+    "description": "默认值为0。可以用作炮塔，激光防御和行动的弹药的能量。"
+  },
+  {
+    "code": "^energyRegen$",
+    "translate": "能量恢复速度",
+    "section": "core",
+    "description": "能量每帧恢复速度，游戏内一秒为60帧。可以写负值。"
+  },
+  {
+    "code": "^energyStartingPercentage$",
+    "translate": "能量初始百分比",
+    "section": "core",
+    "description": "单位生成时所携带的能量百分比。"
+  },
+  {
+    "code": "^energyNeedsToRechargeToFull$",
+    "translate": "能量需要充满",
+    "section": "core",
+    "description": "若果能量耗尽，则需要完全充能才能进行攻击。"
+  },
+  {
+    "code": "^energyRegenWhenRecharging$",
+    "translate": "充能时能量恢复速度",
+    "section": "core",
+    "description": "能量恢复是持续的，如果您开启了<see code=\"energyNeedsToRechargeToFull\" section=\"core\"/>，那么攻击时按<see code=\"energyRegen\" section=\"core\"/>恢复，耗尽时的灰条按此处设定值恢复。"
+  },
+  {
+    "code": "^armour$",
+    "translate": "装甲",
+    "section": "core",
+    "description": "抵消敌方攻击所造成的伤害。"
+  },
+  {
+    "code": "^armourMinDamageToKeep$",
+    "translate": "装甲最低伤害",
+    "section": "core",
+    "description": "至少造成多少点伤害，默认为1.防止护甲太高完全打不动。"
+  },
+  {
+    "code": "^borrowResourcesWhileAlive$",
+    "translate": "资源活着时借用",
+    "section": "core",
+    "description": "创建时获取这些资源，删除或销毁时将其返回。例如用于电力逻辑，负数供电和正数耗电。"
+  },
+  {
+    "code": "^borrowResourcesWhileBuilt$",
+    "translate": "资源在单位建成后借用",
+    "section": "core",
+    "description": "类似于<see code=\"borrowResourcesWhileAlive\" section=\"core\"/>但在单位建成后才会生效。主要对房屋之类的建筑有用，这些建筑有负的资源，可以加到单位上限等。"
+  },
+  {
+    "code": "^generation_resources$",
+    "translate": "资源获取",
+    "section": "core",
+    "description": "单位定时获得的资源，可自定义资源。"
+  },
+  {
+    "code": "^generation_active$",
+    "translate": "资源取得条件",
+    "section": "core",
+    "description": "获取资源条件。可用于受损时无法产出。"
+  },
+  {
+    "code": "^generation_credits$",
+    "translate": "资金获取",
+    "section": "core",
+    "description": "生成资源，仅用于默认的资金，也就是铁锈默认的金钱。"
+  },
+  {
+    "code": "^generation_delay$",
+    "translate": "资金获取时间",
+    "section": "core",
+    "description": "多久帧添加添加一次资源(<see code=\"generation_credits\" section=\"core\"/>指定数值)。默认值为40，一秒为60帧。"
+  },
+  {
+    "code": "^showInEditor$",
+    "translate": "显示在沙盒中",
+    "section": "core",
+    "description": "开启则显示在沙箱编辑器中。默认开启。"
+  },
+  {
+    "code": "^displayText(_.+)?$",
+    "translate": "界面显示名称",
+    "section": "core",
+    "description": "默认单位显示给玩家的单位名称。"
+  },
+  {
+    "code": "^displayDescription(_.+)?$",
+    "translate": "界面显示描述",
+    "section": "core",
+    "description": "单位显示给玩家的单位描述。"
+  },
+  {
+    "code": "^text(_.+)?$",
+    "translate": "文本",
+    "section": "action",
+    "description": "界面中显示的文字。"
+  },
+  {
+    "code": "^isLockedMessage(_.+)?$",
+    "translate": "锁定原因描述",
+    "section": "canBuild",
+    "description": "告知玩家单位为何被锁定。"
+  },
+  {
+    "code": "^description(_.+)?$",
+    "translate": "描述",
+    "section": "canBuild",
+    "description": "选中时显示的文本，用于解释其用途。"
+  },
+  {
+    "code": "^showMessageToPlayer(_.+)?$",
+    "translate": "发送消息至玩家",
+    "section": "canBuild",
+    "description": "向玩家个人发送信息。私发。"
+  },
+  {
+    "code": "^displayLocaleKey$",
+    "translate": "界面显示内部调用",
+    "section": "core",
+    "description": "调用内部语言文件的单位名称和说明的翻译文件。"
+  },
+  {
+    "code": "^displayRadius$",
+    "translate": "单位选择时显示圆圈",
+    "section": "core",
+    "description": "修改选择单位时显示的绿色圆圈，不更改实际碰撞<see code=\"radius\" section=\"core\"/>和可选择范围。"
+  },
+  {
+    "code": "^uiTargetRadius$",
+    "translate": "为目标时半径",
+    "section": "core",
+    "description": "默认值为<see code=\"displayRadius\" section=\"core\"/>。当攻击/回收/等等这个单位使用半径。"
+  },
+  {
+    "code": "^shieldRenderRadius$",
+    "translate": "单位护盾显示半径",
+    "section": "core",
+    "description": "护盾绘制半径，默认值比半径大一点。可以设置在单位上显示更大或更小的护盾圈。"
+  },
+  {
+    "code": "^shieldDisplayOnlyDeflection$",
+    "translate": "护盾只在受攻击时显示",
+    "section": "core",
+    "description": "隐藏护盾，只在受到攻击时显示。"
+  },
+  {
+    "code": "^shieldDeflectionDisplayRate$",
+    "translate": "护盾消失速度",
+    "section": "core",
+    "description": "默认值为4。数值越大消失越快。"
+  },
+  {
+    "code": "^showOnMinimap$",
+    "translate": "显示在小地图上",
+    "section": "core",
+    "description": "默认为开启。如果关闭，则在小地图上不显示此单位。"
+  },
+  {
+    "code": "^showActionsWithMixedSelectionIfOtherUnitsHaveTag$",
+    "translate": "混合所选单位所显示的行为(标签)",
+    "section": "core",
+    "description": "如果选择的单位都包含此处使用的标签，则合并“行为(action)”。比如您的步单位通过部署转化成另一个单位，在混合时可以当作同一个单位处理，不再是默认的谁都无法执行操作。例子如红警的盟军大单位在混合选中后依旧可执行部署或解除。"
+  },
+  {
+    "code": "^showOnMinimapToEnemies$",
+    "translate": "显示于敌人小地图",
+    "section": "core",
+    "description": "是否在敌人小地图上显示。目前不支持逻辑。"
+  },
+  {
+    "code": "^isBuilding$",
+    "translate": "是建筑",
+    "section": "core",
+    "description": "定义单位是否为建筑物。"
+  },
+  {
+    "code": "^footprint$",
+    "translate": "建筑碰撞范围",
+    "section": "core",
+    "description": "填四个数值(左，上，右，下)，单位是格子，建筑默认占一格，向左和向上需要填负数，填整数在选择时有偏移。\n四个数值可以完全颠倒，这样不会阻碍单位移动。\n决定建筑单位碰撞体积，此区域内单位不能通过，如果在单位运动途中单位则会绕过。单位实际可选择面积使用的是<see code=\"radius\" section=\"core\"/>。"
+  },
+  {
+    "code": "^constructionFootprint$",
+    "translate": "建筑覆盖范围",
+    "section": "core",
+    "description": "填四个数值(左，上，右，下)，单位是格子，建筑默认占一格，向左和向上需要填负数，填整数在选择时有偏移。\n这个区域内不能建造建筑，但是单位可以通过。\n一般需要设定比<see code=\"footprint\" section=\"core\"/>面积大。好处是即使建造的密密麻麻，单位也有路可走"
+  },
+  {
+    "code": "^displayFootprint$",
+    "translate": "建筑选择UI",
+    "section": "core",
+    "description": "填四个数值(左，上，右，下)，单位是格子，建筑默认占一格，向左和向上需要填负数，填整数在选择时有偏移。\n用于选择单位时UI显示。不设定则默认为建筑覆盖区域。"
+  },
+  {
+    "code": "^buildingSelectionOffset$",
+    "translate": "建筑UI调整",
+    "section": "core",
+    "description": "默认值为0。以像素为单位对选框额外设定。"
+  },
+  {
+    "code": "^buildingToFootprintOffsetX$",
+    "translate": "建筑X轴偏移",
+    "section": "core",
+    "description": "设置X轴位置偏移，默认10。若设置非对称的建筑，单位会根据覆盖范围会挤在角上，这时如果要准确显示就需要额外偏移。与直接使用图像偏移的区别:\n由于铁锈判断选中单位是根据单位体积<see code=\"radius\" section=\"core\"/>,因此图像偏移实际上单位的位置不变，会容易造成点击时的误差。而当前代码实际上是移动单位，则不会造成这个问题。"
+  },
+  {
+    "code": "^buildingToFootprintOffsetY$",
+    "translate": "建筑Y轴偏移",
+    "section": "core",
+    "description": "设置Y轴位置偏移，默认10。若设置非对称的建筑，单位会根据覆盖范围会挤在角上，这时如果要准确显示就需要额外偏移。与直接使用图像偏移的区别:\n由于铁锈判断选中单位是根据单位体积<see code=\"radius\" section=\"core\"/>,因此图像偏移实际上单位的位置不变，会容易造成点击时的误差。而当前代码实际上是移动单位，则不会造成这个问题。"
+  },
+  {
+    "code": "^placeOnlyOnResPool$",
+    "translate": "建筑只能建造在资源池上",
+    "section": "core",
+    "description": "通常用于提取器，会强制在资源池中进行建筑物构造。可以用于在自定义战役中限制某单位只能在某地建造。"
+  },
+  {
+    "code": "^selfBuildRate$",
+    "translate": "自动建造速度",
+    "section": "core",
+    "description": "此单位自动构造所需要的时间，目前用于虫族。计算方式为：此处所填时间=1÷(60x您需要的秒)。"
+  },
+  {
+    "code": "^ignoreInUnitCapCalculation$",
+    "translate": "不计入单位数量统计",
+    "section": "core",
+    "description": "铁锈中有单位数量上限设定，开启时不计入统计，多用于辅助单位，建筑物的默认值为开启。"
+  },
+  {
+    "code": "^copyFrom$",
+    "translate": "复制数据自",
+    "section": "core",
+    "description": "加载其它文件的单位数据作为该单位的默认值，支持多个文件。无后缀名限制，可不写<see code=\"dont_load\" section=\"core\"/>，用于模块化。"
+  },
+  {
+    "code": "^dont_load$",
+    "translate": "禁止加载",
+    "section": "core",
+    "description": "不加载此单位，缺失数据时不会出错。与<see code=\"copyFrom\" section=\"core\"/>一起使用时很有用。"
+  },
+  {
+    "code": "^overrideAndReplace$",
+    "translate": "覆盖单位",
+    "section": "core",
+    "description": "用此单位覆盖另一个单位，地图上所有单位也将被替换，可以用来替换写死在Java代码内无法修改的单位。"
+  },
+  {
+    "code": "^onNewMapSpawn$",
+    "translate": "地图位置产生指定单位",
+    "section": "core",
+    "description": "在地图上添加此单位。可以用于覆盖铁锈默认的资源逻辑。参数：\nemptyResourcePools_asNeutral  产生位置于空资源池，并且为中立所属\nemptyOrOccupiedResourcePools_asNeutral 空的或者已经占用的资源池，并且为中立所属\nmapCenter_asNeutral 地图中心，且为中立所属\nmapCenter_eachActiveTeam 地图中心，且给与每个玩家\nspawnPoint_eachActiveTeam 玩家初始位置，给与每个玩家"
+  },
+  {
+    "code": "^globalScale$",
+    "translate": "全局缩放",
+    "section": "core",
+    "description": "已废弃。将一个单位按比例放大，但不放大攻击力。默认值为1。不建议更改。"
+  },
+  {
+    "code": "^isLocked$",
+    "translate": "锁定",
+    "section": "core",
+    "description": "禁止建造该单位。可以与<see code=\"overrideAndReplace\" section=\"core\"/>一起使用，以限制玩家可以建造的单位。"
+  },
+  {
+    "code": "^isLockedIfGameModeNoNuke$",
+    "translate": "禁核模式锁定",
+    "section": "core",
+    "description": "如果在游戏开始前选择了禁用核武器，禁止建造此单位。"
+  },
+  {
+    "code": "^experimental$",
+    "translate": "实验单位标志",
+    "section": "core",
+    "description": "标记单位为实验单位。影响缩小图标和游戏结束统计。"
+  },
+  {
+    "code": "^stayNeutral$",
+    "translate": "保持中立",
+    "section": "core",
+    "description": "关闭时，单位处于中立队伍情况下，禁止靠近时更改为玩家所属。仍然有其它方式获得。"
+  },
+  {
+    "code": "^createNeutral$",
+    "translate": "创建时中立",
+    "section": "core",
+    "description": "开启时，产生该单位总是自动转变为中立队伍。创建时中立，但不妨碍玩家捕获。"
+  },
+  {
+    "code": "^createOnAggressiveTeam$",
+    "translate": "创建为敌对中立",
+    "section": "core",
+    "description": "开启时，此中立单位对所有玩家有敌意。"
+  },
+  {
+    "code": "^tags$",
+    "translate": "标签",
+    "section": "core",
+    "description": "标签，用于对单位进行分类，用于实现各种各样的特殊作。比如单位数量限制，伤害修正，增益损益，触发条件等等"
+  },
+  {
+    "code": "^defineUnitMemory$",
+    "translate": "定义单位内存",
+    "section": "core",
+    "description": "为每个单元创建唯一的自定义存储变量。允许的类型:boolean, float/number, unit, string\n格式:defineUnitMemory:类型 变量名称\n\"defineUnitMemory: boolean nukeActive,boolean laserReady, float experience, unit nextTarget, unit homeBase, string customText\n\""
+  },
+  {
+    "code": "^fogOfWarSightRange$",
+    "translate": "视野",
+    "section": "core",
+    "description": "设置单位视野，在战争迷雾中可以看到的瓷砖数量。默认为15。"
+  },
+  {
+    "code": "^fogOfWarSightRangeWhileNotBuilt$",
+    "translate": "未完成时视野",
+    "section": "core",
+    "description": "填数值，当建筑或单位没有建造完成时，它的视野范围。"
+  },
+  {
+    "code": "^softCollisionOnAll$",
+    "translate": "碰撞体积软化",
+    "section": "core",
+    "description": "与其他单位碰撞时产生柔和的碰撞效果，填负数会导致单位相互吸引。"
+  },
+  {
+    "code": "^disableAllUnitCollisions$",
+    "translate": "禁用碰撞",
+    "section": "core",
+    "description": "开启时，该单位无视与其它单位碰撞。无碰撞体积单位可以用于固定位置制造效果，或是用于一些不影响单位通行的场景。"
+  },
+  {
+    "code": "^isUnrepairableUnit$",
+    "translate": "禁止被修复",
+    "section": "core",
+    "description": "如果开启，则任何单位都无法修复此单位。但负伤害仍然可以维修。"
+  },
+  {
+    "code": "^isUnselectable$",
+    "translate": "禁止选择",
+    "section": "core",
+    "description": "如果开启，则无法选择单位。(包括AI)可用于效果单位，禁止被玩家选择。"
+  },
+  {
+    "code": "^isUnselectableAsTarget$",
+    "translate": "禁止选择和作为目标",
+    "section": "core",
+    "description": "默认为<see code=\"isUnselectable\" section=\"core\"/>。可以用来创造不能被选择但是可以被攻击，回收的单位"
+  },
+  {
+    "code": "^d$",
+    "translate": "作为可选的启始单位",
+    "section": "core",
+    "description": "如果开启，单位将被添加到游戏设置菜单中的起始单位的下拉列表中。"
+  },
+  {
+    "code": "^startFallingWhenStartingUnit$",
+    "translate": "为可选单位开局后从天而降",
+    "section": "core",
+    "description": "如果开启，则游戏开始时，单位会从从天而降。"
+  },
+  {
+    "code": "^soundOnAttackOrder$",
+    "translate": "攻击指令音效",
+    "section": "core",
+    "description": "填音效名称列表。用,隔开。每次下达攻击指令时只播放其中一个。仅支持.ogg和.wav格式，注意如果您mod用于pc端，则不要直接修改后缀名，要转换格式。"
+  },
+  {
+    "code": "^soundOnMoveOrder$",
+    "translate": "移动指令音效",
+    "section": "core",
+    "description": "填声音名称列表。用,隔开。每次下达移动指令时只播放其中一个。仅支持.ogg和.wav格式，注意不要直接修改后缀名，要转换格式。"
+  },
+  {
+    "code": "^soundOnNewSelection$",
+    "translate": "选择指令音效",
+    "section": "core",
+    "description": "填声音名称列表。用,隔开。每次下达选择指令时只播放其中一个。仅支持.ogg和.wav格式，注意不要直接修改后缀名，要转换格式。"
+  },
+  {
+    "code": "^canNotBeDirectlyAttacked$",
+    "translate": "禁止直接攻击",
+    "section": "core",
+    "description": "无敌，如果开启，任何单位都不能直接瞄准此单位，也不会受到范围武器伤害。则还将在胜利/失败检查中跳过检查。\n注：如果初始单位有这个属性且可能会导致游戏开局就秒输时，Mod作者会看到警告消息"
+  },
+  {
+    "code": "^canNotBeDamaged$",
+    "translate": "禁止受到伤害",
+    "section": "core",
+    "description": "无敌，可被敌方攻击，但不造成实质伤害。如果<see code=\"canNotBeDirectlyAttacked\" section=\"core\"/>开启,且禁止受到伤害为关闭,则不可被直接攻击但受到范围伤害。"
+  },
+  {
+    "code": "^canNotBeGivenOrdersByPlayer$",
+    "translate": "禁止接受指令",
+    "section": "core",
+    "description": "如果开启，则单位不会接受玩家或AI的命令。可以选中查看信息。"
+  },
+  {
+    "code": "^canOnlyBeAttackedByUnitsWithTags$",
+    "translate": "仅许带此标签单位攻击",
+    "section": "core",
+    "description": "填标签，只有带有这些标签的单位才能直接定位到该单位。"
+  },
+  {
+    "code": "^disableDeathOnZeroHp$",
+    "translate": "禁用零血死亡",
+    "section": "core",
+    "description": "如果开启，允许单位在0血量的情况下仍然存活，单位不会自然死亡。对自定义“死亡”动作很有用"
+  },
+  {
+    "code": "^allowCaptureWhenNeutralByAI$",
+    "translate": "允许中立时被AI俘虏",
+    "section": "core",
+    "description": "如果开启，它也会让AI在接触时捕捉到它。默认为关闭。"
+  },
+  {
+    "code": "^transportSlotsNeeded$",
+    "translate": "运输占用位置",
+    "section": "core",
+    "description": "默认值为1。此单位在运输载具中占据的格子数。"
+  },
+  {
+    "code": "^maxTransportingUnits$",
+    "translate": "运输槽位数量",
+    "section": "core",
+    "description": "该单位载员格子数量。"
+  },
+  {
+    "code": "^transportUnitsRequireTag$",
+    "translate": "被运输单位需要标签",
+    "section": "core",
+    "description": "仅允许运输具有这些标签之一的单位。可以用于运输类型分类，如人运物资，步单位车运人，气垫船运车辆。或是子机限制，如航母飞机只能降落到航母。"
+  },
+  {
+    "code": "^transportUnitsRequireMovementType$",
+    "translate": "被运输单位类型限制",
+    "section": "core",
+    "description": "仅允许运输具有这些移动类型之一的单位。默认陆地。比如可以设定某单位可以运输空军以实现停机坪，只运输海军等。"
+  },
+  {
+    "code": "^transportUnitsBlockAirAndWaterUnits$",
+    "translate": "禁止运输空军和海军",
+    "section": "core",
+    "description": "禁止运输空军和海军，默认开启。如果开启，则此单位只能运输陆地单位。"
+  },
+  {
+    "code": "^transportUnitsEachUnitAlwaysUsesSingleSlot$",
+    "translate": "载员只占用一个槽位",
+    "section": "core",
+    "description": "所有载员无论体积只占用一个运输槽。但体积大于载员数时仍然不能进入。"
+  },
+  {
+    "code": "^transportUnitsKeepBuiltUnits$",
+    "translate": "单位建造完成时保留在载具内",
+    "section": "core",
+    "description": "使建造的单位留在运输者中，而不是造完直接从载具中出来。"
+  },
+  {
+    "code": "^transportUnitsCanUnloadUnits$",
+    "translate": "载具可以卸载单位",
+    "section": "core",
+    "description": "载具卸载单位需要满足条件，默认为不在液体上且没有移动（if not self.isOverLiquid() and not self.isMoving()）。"
+  },
+  {
+    "code": "^transportUnitsAddUnloadOption$",
+    "translate": "载具显示卸载按钮",
+    "section": "core",
+    "description": "是否显示卸载按钮"
+  },
+  {
+    "code": "^transportUnitsUnloadDelayBetweenEachUnit$",
+    "translate": "载具卸载时间间隔",
+    "section": "core",
+    "description": "卸载单位之间的延迟时间。"
+  },
+  {
+    "code": "^transportUnitsKillOnDeath$",
+    "translate": "载具内单位和载具一同死亡",
+    "section": "core",
+    "description": "默认开启。如果载具死亡，则其中单位也死亡。"
+  },
+  {
+    "code": "^transportUnitsHealBy$",
+    "translate": "载具治疗内部单位速度",
+    "section": "core",
+    "description": "填数值，以帧为单位。自动治疗载具内部单位。"
+  },
+  {
+    "code": "^transportUnitsBlockOtherTransports$",
+    "translate": "载具禁止装载其它载具",
+    "section": "core",
+    "description": "默认开启，如果关闭，则此载具可以装载其它载具。比如步单位装物资，载具装步单位，运输船装载具。"
+  },
+  {
+    "code": "^whileNeutralTransportAnyTeam$",
+    "translate": "中立时可装载任意所属单位",
+    "section": "core",
+    "description": "如果是中立的，则这个部队可以装载任何队伍的部队。可用于占领中立单位，比如坦克需要驾驶员，步单位建筑平民建筑。"
+  },
+  {
+    "code": "^whileNeutralConvertToTransportedTeam$",
+    "translate": "中立时转换为载员队伍",
+    "section": "core",
+    "description": "中立时将其转换为载员队伍。与<see code=\"whileNeutralTransportAnyTeam\" section=\"core\"/>一起使用，用于占领中立单位。"
+  },
+  {
+    "code": "^convertToNeutralIfNotTransporting$",
+    "translate": "卸载所有单位时恢复为中立",
+    "section": "core",
+    "description": "卸载单位时将其恢复为中立队伍。与<see code=\"whileNeutralTransportAnyTeam\" section=\"core\"/>一起使用。"
+  },
+  {
+    "code": "^transportUnitsOnTeamChangeKeepCurrentTeam$",
+    "translate": "转换所属时保留内部单位所属",
+    "section": "core",
+    "description": "如果开启，则单位转换阵营时仍然将运输的单位保留在其原始队伍中。"
+  },
+  {
+    "code": "^resourceRate$",
+    "translate": "回收速率",
+    "section": "core",
+    "description": "回收速度。每帧回收血量。与<see code=\"canReclaimResources\" section=\"core\"/>一起使用。允许其他队伍回收该单位。通常与中立队伍配合使用。使用价格来设置获取哪些资源。"
+  },
+  {
+    "code": "^similarResourcesHaveTag$",
+    "translate": "像用于此标签的单位",
+    "section": "core",
+    "description": "有这些标签时，资源采集单位将视为同一种资源"
+  },
+  {
+    "code": "^resourceMaxConcurrentReclaimingThis$",
+    "translate": "可同时被此数目单位回收",
+    "section": "core",
+    "description": "默认为无限制。限制有多少单位可以同时回收此资源。"
+  },
+  {
+    "code": "^reclaimPrice$",
+    "translate": "回收价格",
+    "section": "core",
+    "description": "自定义资源，类似价格。对于自定义资源很有用。"
+  },
+  {
+    "code": "^canReclaimResources$",
+    "translate": "可以回收资源",
+    "section": "core",
+    "description": "如果开启，则此单位可以收集资源，这对于<see code=\"resourceRate\" section=\"core\"/>很有用。"
+  },
+  {
+    "code": "^canReclaimResourcesNextSearchRange$",
+    "translate": "搜寻资源范围",
+    "section": "core",
+    "description": "当一处资源采集完后，搜寻更多资源的范围。"
+  },
+  {
+    "code": "^canReclaimResourcesOnlyWithTags$",
+    "translate": "仅允许回收特定标签资源",
+    "section": "core",
+    "description": "仅允许回收有此标签的单位。"
+  },
+  {
+    "code": "^canReclaimUnitsOnlyWithTags$",
+    "translate": "仅允许回收特定标签单位",
+    "section": "core",
+    "description": "仅允许此单位回收具有特定标签单位。"
+  },
+  {
+    "code": "^resourceReclaimMultiplier$",
+    "translate": "建造单位回收资源的乘数",
+    "section": "core",
+    "description": "默认为1。"
+  },
+  {
+    "code": "^canRepairUnitsOnlyWithTags$",
+    "translate": "仅允许维修特定标签单位",
+    "section": "core",
+    "description": "仅允许此单位维修具有特定标签单位。"
+  },
+  {
+    "code": "^canRepairBuildings$",
+    "translate": "可以修建筑",
+    "section": "core",
+    "description": "如果开启，该单位可以修复建筑。<see code=\"isBuilder\" section=\"core\"/>必须开启才有效。"
+  },
+  {
+    "code": "^canRepairUnits$",
+    "translate": "可以修单位",
+    "section": "core",
+    "description": "如果开启，此单位可以修复单位。<see code=\"isBuilder\" section=\"core\"/>必须开启才有效。"
+  },
+  {
+    "code": "^autoRepair$",
+    "translate": "可以自动修",
+    "section": "core",
+    "description": "自动维修附近单位，范围为<see code=\"nanoRange\" section=\"core\"/>。<see code=\"isBuilder\" section=\"core\"/>必须开启才有效。"
+  },
+  {
+    "code": "^nanoRange$",
+    "translate": "维修或建造范围",
+    "section": "core",
+    "description": "默认值为85。定义单位的构建/修复/回收范围。"
+  },
+  {
+    "code": "^nanoRepairSpeed$",
+    "translate": "维修速度",
+    "section": "core",
+    "description": "默认值为0.2。定义单位修复速度。"
+  },
+  {
+    "code": "^nanoBuildSpeed$",
+    "translate": "建造速度",
+    "section": "core",
+    "description": "默认值为1。定义单位建造速度。"
+  },
+  {
+    "code": "^nanoUnbuildSpeed$",
+    "translate": "建造单位回收未完成单位速度",
+    "section": "core",
+    "description": "默认为1。"
+  },
+  {
+    "code": "^nanoReclaimSpeed$",
+    "translate": "回收速度",
+    "section": "core",
+    "description": "默认为<see code=\"nanoRepairSpeed\" section=\"core\"/>*5.1)以符合旧版本的行为"
+  },
+  {
+    "code": "^nanoRangeForRepairIsMelee$",
+    "translate": "维修范围按近战逻辑",
+    "section": "core",
+    "description": "定义此单位维修时是否为近战算法，默认计算是从自身中心到目标中心，如果单位过大运动又受到阻碍，则虽然看起来很近，然而实际太远无法建造。\n近战类算法则是算上其半径，由中心计算改为从边缘计算。"
+  },
+  {
+    "code": "^nanoRangeForReclaimIsMelee$",
+    "translate": "回收范围按近战逻辑",
+    "section": "core",
+    "description": "定义此单位回收范围是否为近战算法，默认计算是从自身中心到目标中心，如果单位过大运动又受到阻碍，则虽然看起来很近，然而实际太远无法建造。\n近战类算法则是算上其半径，由中心计算改为从边缘计算。"
+  },
+  {
+    "code": "^nanoRangeForRepair$",
+    "translate": "维修距离",
+    "section": "core",
+    "description": "此单位维修距离。"
+  },
+  {
+    "code": "^nanoRangeForReclaim$",
+    "translate": "回收距离",
+    "section": "core",
+    "description": "此单位回收距离。"
+  },
+  {
+    "code": "^nanoFactorySpeed$",
+    "translate": "工厂速度乘数",
+    "section": "core",
+    "description": "默认值为1。如果此单位是工厂，则乘以创建单位的<see code=\"buildSpeed\" section=\"core\"/>值。用于加速或者减速建造。"
+  },
+  {
+    "code": "^extraBuildRangeWhenBuildingThis$",
+    "translate": "额外建造距离",
+    "section": "core",
+    "description": "此单位额外的建造距离，可以使建造者在更远的地方建造它，多用于水上建筑。"
+  },
+  {
+    "code": "^builtFrom_\\d+_name$",
+    "translate": "建造自_{1}_名称",
+    "section": "core",
+    "description": "从此单位建造，除非您向原版工厂添加单位，否则不建议使用。将该单位添加到目标建筑物中。",
+    "rule": "^builtFrom_(\\d+)_name$"
+  },
+  {
+    "code": "^builtFrom_\\d+_pos$",
+    "translate": "建造自_{1}_排序",
+    "section": "core",
+    "description": "在列表中的排序，越小越靠前。",
+    "rule": "^builtFrom_(\\d+)_pos$"
+  },
+  {
+    "code": "^builtFrom_\\d+_forceNano$",
+    "translate": "建造自_{1}_建造方式",
+    "section": "core",
+    "description": "如果启用，则像构建建筑一样造此单位。",
+    "rule": "^builtFrom_(\\d+)_forceNano$"
+  },
+  {
+    "code": "^builtFrom_\\d+_isLocked$",
+    "translate": "建造自_{1}_锁定",
+    "section": "core",
+    "description": "如果启用，则无法在目标中构建此单位。 ",
+    "rule": "^builtFrom_(\\d+)_isLocked$"
+  },
+  {
+    "code": "^builtFrom_\\d+_isLockedMessage(_.+)?$",
+    "translate": "建造自_{1}_锁定消息",
+    "section": "core",
+    "description": "无法建造时显示的信息。",
+    "rule": "^builtFrom_(\\d+)_isLockedMessage$"
+  },
+  {
+    "code": "^exit_x$",
+    "translate": "离开x轴",
+    "section": "core",
+    "description": "从载具卸载或者工厂生产完成时，单位出现的位置，默认为0"
+  },
+  {
+    "code": "^exit_y$",
+    "translate": "离开y轴",
+    "section": "core",
+    "description": "从载具卸载或者工厂生产完成时，单位出现的位置，默认为5，正数向下。"
+  },
+  {
+    "code": "^exit_dirOffset$",
+    "translate": "离开旋转角度",
+    "section": "core",
+    "description": "单位默认为180(朝下)，建筑物默认为0(朝右)。定义已创建或卸载单位的退出方向。"
+  },
+  {
+    "code": "^exit_heightOffset$",
+    "translate": "离开高度",
+    "section": "core",
+    "description": "默认值为0。定义创建或卸载的单位出现的高度。"
+  },
+  {
+    "code": "^exit_moveAwayAmount$",
+    "translate": "离开距离",
+    "section": "core",
+    "description": "默认值为70。定义创建或卸载的单位与该单位的距离。"
+  },
+  {
+    "code": "^exitHeightIgnoreParent$",
+    "translate": "离开高度忽略父单位",
+    "section": "core",
+    "description": "离开时的高度不考虑父高度;用于与父单位一起建造时分离附件"
+  },
+  {
+    "code": "^dieOnConstruct$",
+    "translate": "构建时死亡",
+    "section": "core",
+    "description": "如果开启，则创建建筑时删除自身。（目标建筑物/单位需要<see code=\"selfBuildRate\" section=\"core\"/>以自动建造完成）"
+  },
+  {
+    "code": "^dieOnZeroEnergy$",
+    "translate": "无能量时死亡",
+    "section": "core",
+    "description": "如果能量值为零，该单位死亡。"
+  },
+  {
+    "code": "^numBitsOnDeath$",
+    "translate": "死亡产生碎片",
+    "section": "core",
+    "description": "定义该单位死亡时散落的碎片的数量。"
+  },
+  {
+    "code": "^nukeOnDeath$",
+    "translate": "死亡核爆",
+    "section": "core",
+    "description": "不推荐使用。建议使用<see code=\"fireTurretXAtSelfOnDeath\" section=\"core\"/>代替，其拥有更丰富的设定选项。如果开启，单位死亡时会生成一个内置的核抛射体爆炸效果。"
+  },
+  {
+    "code": "^nukeOnDeathRange$",
+    "translate": "死亡核爆范围",
+    "section": "core",
+    "description": "不推荐使用。定义使用<see code=\"nukeOnDeath\" section=\"core\"/>时的核抛射体效果范围。"
+  },
+  {
+    "code": "^nukeOnDeathDamage$",
+    "translate": "死亡核爆伤害",
+    "section": "core",
+    "description": "不推荐使用。定义使用<see code=\"nukeOnDeath\" section=\"core\"/>时的核武器效果区域伤害。"
+  },
+  {
+    "code": "^nukeOnDeathDisableWhenNoNuke$",
+    "translate": "死亡核爆条件",
+    "section": "core",
+    "description": "不推荐使用。默认为false。如果为true，则禁用核武器时，该单位死亡时不会产生核爆炸。"
+  },
+  {
+    "code": "^fireTurretXAtSelfOnDeath$",
+    "translate": "死亡武器",
+    "section": "core",
+    "description": "死亡武器。单位死后，使用指定炮塔攻击自身所在位置。"
+  },
+  {
+    "code": "^explodeOnDeath$",
+    "translate": "死亡爆炸",
+    "section": "core",
+    "description": "默认为开启。如果为关闭，则禁用单位死亡时的内置爆炸效果。"
+  },
+  {
+    "code": "^explodeOnDeathGroundCollision$",
+    "translate": "死亡撞击地面爆炸",
+    "section": "core",
+    "description": "默认为开启。如果为关闭，则禁用接触地面时内置爆炸效果。"
+  },
+  {
+    "code": "^explodeTypeOnDeath$",
+    "translate": "死亡时爆炸类型",
+    "section": "core",
+    "description": "死亡时爆炸类型。"
+  },
+  {
+    "code": "^effectOnDeath$",
+    "translate": "死亡效果",
+    "section": "core",
+    "description": "单位死亡时产生内置或自定义效果。"
+  },
+  {
+    "code": "^effectOnDeathGroundCollision$",
+    "translate": "死亡撞击地面效果",
+    "section": "core",
+    "description": "类似于<see code=\"effectOnDeath\" section=\"core\"/>，但当单位接触地面时。对飞行单位有用。"
+  },
+  {
+    "code": "^unitsSpawnedOnDeath$",
+    "translate": "死亡产生单位",
+    "section": "core",
+    "description": "死亡时产生这些单位。逗号分隔的单位标识符。"
+  },
+  {
+    "code": "^unitsSpawnedOnDeath_setToTeamOfLastAttacker$",
+    "translate": "死亡产生单位所属",
+    "section": "core",
+    "description": "如果开启，死亡时产生的单位将更改归属为最后一个攻击者的队伍。"
+  },
+  {
+    "code": "^hideScorchMark$",
+    "translate": "死亡痕迹",
+    "section": "core",
+    "description": "如果开启，则禁止单位死亡时留下焦痕。"
+  },
+  {
+    "code": "^soundOnDeath$",
+    "translate": "死亡音效",
+    "section": "core",
+    "description": "为该单位设置自定义死亡声音。"
+  },
+  {
+    "code": "^effectOnDeathIfUnbuilt$",
+    "translate": "没建造完成时死亡效果",
+    "section": "core",
+    "description": "如果这个单位没建造完成就被毁了，则播放此效果"
+  },
+  {
+    "code": "^autoTriggerCooldownTime$",
+    "translate": "自动触发间隔",
+    "section": "core",
+    "description": "设置自动触发动作间隔。默认为1s。警告：对于许多设备，将此值设置得太低可能会影响性能，具体取决于操作效果。"
+  },
+  {
+    "code": "^autoTriggerCooldownTime_allowDangerousHighCPU$",
+    "translate": "允许超高频触发",
+    "section": "core",
+    "description": "自动触发冷却时间，允许高CPU占用，也就是可以使用非常高频的触发，但不建议这么做。"
+  },
+  {
+    "code": "^autoTriggerCheckRate$",
+    "translate": "自动触发检查率",
+    "section": "core",
+    "description": "选项:everyFrame(默认)，every4Frames, every8Frames。\n注意:所有触发器无论检查率都是在第一次创建和自动触发冷却之后检查的。\n注:使用模板添加[core]autoTriggerCheckRate:every8Frames到所有单位。可以使使用了复杂autoTriggers的mod有巨大的性能提升。"
+  },
+  {
+    "code": "^autoTriggerCheckWhileNotBuilt$",
+    "translate": "在未建造完成时依然自动触发",
+    "section": "core",
+    "description": "默认为关闭， 当开启时，即使单位未完成建造，所有自动触发器仍在运行。"
+  },
+  {
+    "code": "^updateUnitMemory$",
+    "translate": "更新单位内存",
+    "section": "core",
+    "description": "类似[action]setUnitMemory但是性能更好"
+  },
+  {
+    "code": "^updateUnitMemoryRate$",
+    "translate": "更新单位内存频率",
+    "section": "core",
+    "description": "默认1s,填写0则为每帧。"
+  },
+  {
+    "code": "^@memory .+$",
+    "translate": "@内存 {1}",
+    "section": "core",
+    "description": "定义内存",
+    "rule": "^@memory (.+)$"
+  },
+  {
+    "code": "^action_\\d+_convertTo$",
+    "translate": "行为_{1}_转换到",
+    "section": "core",
+    "description": "行为_x_转换到",
+    "rule": "^action_(\\d+)_convertTo$"
+  },
+  {
+    "code": "^action_\\d+_pos$",
+    "translate": "行为_{1}_排序",
+    "section": "core",
+    "description": "行为_x_排序",
+    "rule": "^action_(\\d+)_pos$"
+  },
+  {
+    "code": "^action_\\d+_price$",
+    "translate": "行为_{1}_价格",
+    "section": "core",
+    "description": "行为_x_价格",
+    "rule": "^action_(\\d+)_price$"
+  },
+  {
+    "code": "^action_\\d+_text$",
+    "translate": "行为_{1}_文本",
+    "section": "core",
+    "description": "行为_x_文本",
+    "rule": "^action_(\\d+)_text$"
+  },
+  {
+    "code": "^action_\\d+_description$",
+    "translate": "行为_{1}_描述",
+    "section": "core",
+    "description": "行为_x_描述",
+    "rule": "^action_(\\d+)_description$"
+  },
+  {
+    "code": "^action_\\d+_addEnergy$",
+    "translate": "行为_{1}_添加能量",
+    "section": "core",
+    "description": "行为_x_添加能量",
+    "rule": "^action_(\\d+)_addEnergy$"
+  },
+  {
+    "code": "^action_\\d+_whenBuilding_cannotMove$",
+    "translate": "行为_{1}_当建造时不能移动",
+    "section": "core",
+    "description": "行为_x_当建造时不能移动",
+    "rule": "^action_(\\d+)_whenBuilding_cannotMove$"
+  },
+  {
+    "code": "^canBuild_\\d+_name$",
+    "translate": "可建造_{1}_名称",
+    "section": "core",
+    "description": "可建造_x_名称",
+    "rule": "^canBuild_(\\d+)_name$"
+  },
+  {
+    "code": "^canBuild_\\d+_pos$",
+    "translate": "可建造_{1}_排序",
+    "section": "core",
+    "description": "可建造_x_排序",
+    "rule": "^canBuild_(\\d+)_pos$"
+  },
+  {
+    "code": "^canBuild_\\d+_isLocked$",
+    "translate": "可建造_{1}_锁定",
+    "section": "core",
+    "description": "可建造_x_锁定",
+    "rule": "^canBuild_(\\d+)_isLocked$"
+  },
+  {
+    "code": "^name$",
+    "translate": "名字",
+    "section": "canBuild",
+    "description": "该单位可以创建的单位名列表。可以是建筑物或单位。\n添加\"setRally\"来创建一个集合按钮。\n添加\"reclaim\"来创建一个回收按钮。"
+  },
+  {
+    "code": "^pos$",
+    "translate": "排序",
+    "section": "canBuild",
+    "description": "此单位在用户界面中排序，越小越靠上。"
+  },
+  {
+    "code": "^tech$",
+    "translate": "科技",
+    "section": "canBuild",
+    "description": "科技等级。通常只会影响此单位界面中的颜色。默认为1，只能填1、2、3。"
+  },
+  {
+    "code": "^forceNano$",
+    "translate": "建造方式",
+    "section": "canBuild",
+    "description": "如果为开启，则将目标当作是建筑物建造。（即使是一个单位）"
+  },
+  {
+    "code": "^isVisible$",
+    "translate": "可见条件",
+    "section": "canBuild",
+    "description": "如果满足条件，则从界面中显示此单位。比如用于科技树。"
+  },
+  {
+    "code": "^isLocked$",
+    "translate": "锁定",
+    "section": "canBuild",
+    "description": "禁止建造该单位。可以与<see code=\"overrideAndReplace\" section=\"core\"/>一起使用，以限制玩家可以建造的单位。"
+  },
+  {
+    "code": "^isLockedAlt$",
+    "translate": "更多锁定原因",
+    "section": "canBuild",
+    "description": "另一个被锁定原因。只是允许显示不同的消息。"
+  },
+  {
+    "code": "^isLockedAltMessage$",
+    "translate": "锁定原因描述",
+    "section": "canBuild",
+    "description": "另一个被锁定原因描述。"
+  },
+  {
+    "code": "^isLockedAlt2$",
+    "translate": "更多锁定原因2",
+    "section": "canBuild",
+    "description": "更多的锁定原因。"
+  },
+  {
+    "code": "^isLockedAlt2Message(_.+)?$",
+    "translate": "锁定文本2描述",
+    "section": "canBuild",
+    "description": "更多的锁定描述。"
+  },
+  {
+    "code": "^addResources$",
+    "translate": "增加资源",
+    "section": "canBuild",
+    "description": "在放置建筑物或生产单位时，将这些资源添加到自身中。"
+  },
+  {
+    "code": "^price$",
+    "translate": "价格",
+    "section": "canBuild",
+    "description": "设定单位造价，可以是负数，负数时提直接供资金。"
+  },
+  {
+    "code": "^isGuiBlinking$",
+    "translate": "界面闪烁",
+    "section": "canBuild",
+    "description": "如果开启，则在UI中生成闪烁效果。"
+  },
+  {
+    "code": "^image$",
+    "translate": "主体图像",
+    "section": "graphics",
+    "description": "主体图像。"
+  },
+  {
+    "code": "^teamColoringMode$",
+    "translate": "阵营色模式",
+    "section": "graphics",
+    "description": "设置单位着色逻辑，默认是纯绿。"
+  },
+  {
+    "code": "^image_back$",
+    "translate": "背景图像",
+    "section": "graphics",
+    "description": "可选的在单位后面绘制图像，不随单位转动。可用于工厂底图，单位角标等。"
+  },
+  {
+    "code": "^image_shield$",
+    "translate": "护盾图像",
+    "section": "graphics",
+    "description": "自定义护盾所使用的图像。"
+  },
+  {
+    "code": "^image_wreak$",
+    "translate": "死亡图像",
+    "section": "graphics",
+    "description": "可选的单位死亡时使用的图像。"
+  },
+  {
+    "code": "^image_offsetX$",
+    "translate": "图像X轴偏移",
+    "section": "graphics",
+    "description": "图像在X轴偏移，用于不对称图像，比如您的单位有个吊臂，这样中心不在正中间。"
+  },
+  {
+    "code": "^image_offsetY$",
+    "translate": "图像Y轴偏移",
+    "section": "graphics",
+    "description": "图像在Y轴偏移,用于比较高的单位。"
+  },
+  {
+    "code": "^image_offsetH$",
+    "translate": "图像高度偏移",
+    "section": "graphics",
+    "description": "图像在高度上的偏移"
+  },
+  {
+    "code": "^image_floatingPointSize$",
+    "translate": "对奇数大小的图像进行一个像素的调整",
+    "section": "graphics",
+    "description": "修复宽度和/或高度为奇数值的图像的1像素大小。"
+  },
+  {
+    "code": "^isVisible$",
+    "translate": "可见条件",
+    "section": "graphics",
+    "description": "如果满足条件，则从界面中显示此单位。比如用于科技树。"
+  },
+  {
+    "code": "^isVisibleToEnemies$",
+    "translate": "对敌人可见",
+    "section": "graphics",
+    "description": "与<see code=\"showOnMinimapToEnemies\" section=\"core\"/>，<see code=\"canOnlyBeAttackedByUnitsWithTags\" section=\"core\"/>一起使用时，可以创建隐形系统。"
+  },
+  {
+    "code": "^scaleImagesTo$",
+    "translate": "缩放图像到",
+    "section": "graphics",
+    "description": "单位像素。调整图像大小以使其适合像素值。同时影响腿部和阴影图像。"
+  },
+  {
+    "code": "^imageScale$",
+    "translate": "图像缩放比例",
+    "section": "graphics",
+    "description": "调整图像大小。默认值为1。也可以影响腿部和阴影图像。"
+  },
+  {
+    "code": "^drawLayer$",
+    "translate": "绘制图层",
+    "section": "graphics",
+    "description": "陆上单位通常默认为\"地面\"或\"地面2\"。运输船为\"地面2\"。"
+  },
+  {
+    "code": "^whenBeingBuiltMakeTransparentTill$",
+    "translate": "建造时透明度",
+    "section": "graphics",
+    "description": "设为0则一开始便完全不透明，设为1则直到建造完成时才不透明。"
+  },
+  {
+    "code": "^icon_zoomed_out$",
+    "translate": "缩放图标",
+    "section": "graphics",
+    "description": "缩放时显示的图标。"
+  },
+  {
+    "code": "^icon_zoomed_out_neverShow$",
+    "translate": "缩放图标永不显示",
+    "section": "graphics",
+    "description": "缩放图标永不显示。"
+  },
+  {
+    "code": "^icon_build$",
+    "translate": "建造图标",
+    "section": "graphics",
+    "description": "指定图像作为单位在列表中显示的图像."
+  },
+  {
+    "code": "^image_turret$",
+    "translate": "炮塔图像",
+    "section": "graphics",
+    "description": "所有炮塔的默认图像，也可以为每个炮塔设置专用图像。"
+  },
+  {
+    "code": "^teamColorsOnTurret$",
+    "translate": "炮塔使用队伍色",
+    "section": "graphics",
+    "description": "默认关闭。在转塔上也应用团队颜色。"
+  },
+  {
+    "code": "^scaleTurretImagesTo$",
+    "translate": "炮塔图像缩放",
+    "section": "graphics",
+    "description": "单位像素。缩放炮塔图像至指定像素，只用填宽度。"
+  },
+  {
+    "code": "^lock_body_rotation_with_main_turret$",
+    "translate": "锁定主体旋转随主炮塔",
+    "section": "graphics",
+    "description": "锁定主体图像旋转追随主炮塔。"
+  },
+  {
+    "code": "^lock_leg_rotation_with_main_turret$",
+    "translate": "锁定腿脚旋转随主炮塔",
+    "section": "graphics",
+    "description": "锁定腿脚图像旋转追随主炮塔。"
+  },
+  {
+    "code": "^image_shadow$",
+    "translate": "阴影图像",
+    "section": "graphics",
+    "description": "可选择\"自动\"，\"清空（NONE）\"或图像文件。"
+  },
+  {
+    "code": "^shadowOffsetX$",
+    "translate": "阴影图像偏移X轴",
+    "section": "graphics",
+    "description": "阴影x轴偏移值，正数往右。"
+  },
+  {
+    "code": "^shadowOffsetY$",
+    "translate": "阴影图像偏移Y轴",
+    "section": "graphics",
+    "description": "阴影y轴偏移值，正数往下。"
+  },
+  {
+    "code": "^image_shadow_frames$",
+    "translate": "阴影图像指定",
+    "section": "graphics",
+    "description": "开启时阴影不随单位移动而改变方向。"
+  },
+  {
+    "code": "^lock_shadow_rotation_with_main_turret$",
+    "translate": "阴影锁定为主炮塔方向",
+    "section": "graphics",
+    "description": "将身体图像阴影锁定到主炮塔的方向。"
+  },
+  {
+    "code": "^total_frames$",
+    "translate": "图像帧数",
+    "section": "graphics",
+    "description": "默认值为1。将图像分割为指定分数，用于动画。第一帧编号为0。"
+  },
+  {
+    "code": "^frame_width$",
+    "translate": "图像宽度",
+    "section": "graphics",
+    "description": "设置单帧宽度，自动计算并覆盖总帧数。"
+  },
+  {
+    "code": "^frame_height$",
+    "translate": "图像高度",
+    "section": "graphics",
+    "description": "默认为图像高度。"
+  },
+  {
+    "code": "^default_frame$",
+    "translate": "默认帧",
+    "section": "graphics",
+    "description": "指定默认显示为第几帧，默认为0即第一帧"
+  },
+  {
+    "code": "^splastEffect$",
+    "translate": "水波效果",
+    "section": "graphics",
+    "description": "在水上时创建水波效果。默认关闭。"
+  },
+  {
+    "code": "^dustEffect$",
+    "translate": "灰尘效果",
+    "section": "graphics",
+    "description": "在地面上产生灰尘效果。默认关闭。"
+  },
+  {
+    "code": "^splastEffectReverse$",
+    "translate": "逆向水波效果",
+    "section": "graphics",
+    "description": "开启时，在倒车时也能产生水波效果。"
+  },
+  {
+    "code": "^dustEffectReverse$",
+    "translate": "逆向灰尘效果",
+    "section": "graphics",
+    "description": "开启时，在倒车时也能产生灰尘效果。"
+  },
+  {
+    "code": "^movementEffect$",
+    "translate": "运动效果",
+    "section": "graphics",
+    "description": "自定义运动效果，可以是内置的或者自定义的。"
+  },
+  {
+    "code": "^movementEffectReverse$",
+    "translate": "逆向运动效果",
+    "section": "graphics",
+    "description": "自定义倒车效果。"
+  },
+  {
+    "code": "^movementEffectRate$",
+    "translate": "运动效果频率",
+    "section": "graphics",
+    "description": "自定义效果产生频率，每隔多少帧一次。"
+  },
+  {
+    "code": "^movementEffectReverseFlipEffects$",
+    "translate": "逆向时反转运动效果",
+    "section": "graphics",
+    "description": "倒车时反转效果。"
+  },
+  {
+    "code": "^repairEffect$",
+    "translate": "维修效果",
+    "section": "graphics",
+    "description": "自定义维修效果，可以是任何东西。替换构建时的默认效果。"
+  },
+  {
+    "code": "^repairEffectAtTarget$",
+    "translate": "维修目标效果",
+    "section": "graphics",
+    "description": "维修目标上产生的效果。"
+  },
+  {
+    "code": "^repairEffectRate$",
+    "translate": "维修效果频率",
+    "section": "graphics",
+    "description": "维修效果每隔多少帧产生一次。"
+  },
+  {
+    "code": "^reclaimEffect$",
+    "translate": "回收效果",
+    "section": "graphics",
+    "description": "自定义回收效果，可以是任何东西。替换回收时的默认效果"
+  },
+  {
+    "code": "^reclaimEffectAtTarget$",
+    "translate": "回收目标效果",
+    "section": "graphics",
+    "description": "回收目标上产生的效果。"
+  },
+  {
+    "code": "^reclaimEffectRate$",
+    "translate": "回收效果频率",
+    "section": "graphics",
+    "description": "回收效果每隔多少帧产生一次。"
+  },
+  {
+    "code": "^rotate_with_direction$",
+    "translate": "随角度旋转",
+    "section": "graphics",
+    "description": "默认为开启。设置为关闭时将单位图像锁定为0度。通常与animation_direction_ *一起用作多向视图。"
+  },
+  {
+    "code": "^animation_direction_units$",
+    "translate": "多向动画度数",
+    "section": "graphics",
+    "description": "每隔多少度切换一次素材,比如填45代表8个方向，90个代表4个方向的动画。与<see code=\"rotate_with_direction\" section=\"graphics\"/>一起使用。"
+  },
+  {
+    "code": "^animation_direction_strideX$",
+    "translate": "多向动画x向",
+    "section": "graphics",
+    "description": "动画帧取值在X方向改变时偏移。一般填0。"
+  },
+  {
+    "code": "^animation_direction_strideY$",
+    "translate": "多向动画y向",
+    "section": "graphics",
+    "description": "动画帧在方向改变Y轴偏移偏移。与<see code=\"frame_height\" section=\"graphics\"/>一起使用。一般填1。"
+  },
+  {
+    "code": "^animation_direction_starting$",
+    "translate": "多向动画朝向",
+    "section": "graphics",
+    "description": "第一帧的方向，取决于您的素材。您要考虑转向后避免正负数交替现象，否则会导致素材朝向异常。"
+  },
+  {
+    "code": "^disableLowHpFire$",
+    "translate": "禁用低生命冒火",
+    "section": "graphics",
+    "description": "启用时，禁用低生命值时冒火的视觉效果。"
+  },
+  {
+    "code": "^disableLowHpSmoke$",
+    "translate": "禁用低生命冒烟",
+    "section": "graphics",
+    "description": "启用时，禁用低生命值时冒烟的视觉效果。"
+  },
+  {
+    "code": "^showTransportBar$",
+    "translate": "显示运输条",
+    "section": "graphics",
+    "description": "启用时，显示运输条。默认启用。"
+  },
+  {
+    "code": "^showHealthBar$",
+    "translate": "显示生命条",
+    "section": "graphics",
+    "description": "启用时，显示生命条。默认启用。"
+  },
+  {
+    "code": "^showEnergyBar$",
+    "translate": "显示能量条",
+    "section": "graphics",
+    "description": "启用时，显示能量条。默认启用。"
+  },
+  {
+    "code": "^showShieldBar$",
+    "translate": "显示护盾条",
+    "section": "graphics",
+    "description": "启用时，显示护盾条。默认启用。"
+  },
+  {
+    "code": "^showQueueBar$",
+    "translate": "显示队列条",
+    "section": "graphics",
+    "description": "启用时，显示操作、生成的队列条。默认启用。"
+  },
+  {
+    "code": "^showShotDelayBar$",
+    "translate": "显示开火后的冷却条",
+    "section": "graphics",
+    "description": "用于显示开火速度慢的炮塔的冷却指示条，默认启用。"
+  },
+  {
+    "code": "^showSelectionIndicator$",
+    "translate": "显示选择指示",
+    "section": "graphics",
+    "description": "默认为启用。如果启用，则显示选择圆圈/框。"
+  },
+  {
+    "code": "^teamColorsUseHue$",
+    "translate": "阵营色色相",
+    "section": "graphics",
+    "description": "单位上的绿色像素转换为团队颜色。 若启用，则整个单位都带有团队色彩。 默认禁用。"
+  },
+  {
+    "code": "^animation_.+_start$",
+    "translate": "动画_{1}_开始",
+    "section": "graphics",
+    "description": "已弃用，请改用[animation]部分",
+    "rule": "^animation_(.+)_start$"
+  },
+  {
+    "code": "^animation_.+_end$",
+    "translate": "动画_{1}_结束",
+    "section": "graphics",
+    "description": "结束帧，必须更大然后开始",
+    "rule": "^animation_(.+)_end$"
+  },
+  {
+    "code": "^animation_.+_scale_start$",
+    "translate": "动画_{1}_缩放开始",
+    "section": "graphics",
+    "description": "比例单位图像。默认值为1。适用于生物单位或呼吸效果。",
+    "rule": "^animation_(.+)_scale_start$"
+  },
+  {
+    "code": "^animation_.+_scale_end$",
+    "translate": "动画_{1}_缩放结束",
+    "section": "graphics",
+    "description": "比例单位图像。默认值为1。适用于生物单位或呼吸效果。",
+    "rule": "^animation_(.+)_scale_end$"
+  },
+  {
+    "code": "^animation_.+_speed$",
+    "translate": "动画_{1}_速度",
+    "section": "graphics",
+    "description": "动画每一帧的延迟。较大的值会导致动画变慢",
+    "rule": "^animation_(.+)_speed$"
+  },
+  {
+    "code": "^animation_.+_pingPong$",
+    "translate": "动画_{1}_膨胀",
+    "section": "graphics",
+    "description": "重复播放之前，请反向播放动画。与scale_start / scale_end一起使用",
+    "rule": "^animation_(.+)_pingPong$"
+  },
+  {
+    "code": "^canAttack$",
+    "translate": "可攻击",
+    "section": "attack",
+    "description": "如果禁用，则不能攻击任何单位。"
+  },
+  {
+    "code": "^canAttackFlyingUnits$",
+    "translate": "可攻击空中单位",
+    "section": "attack",
+    "description": "可以攻击空中单位。"
+  },
+  {
+    "code": "^canAttackLandUnits$",
+    "translate": "可攻击表面单位",
+    "section": "attack",
+    "description": "可以攻击表面单位（包括陆地和水面）。"
+  },
+  {
+    "code": "^canAttackUnderwaterUnits$",
+    "translate": "可攻击水下单位",
+    "section": "attack",
+    "description": "可以攻击水下单位。"
+  },
+  {
+    "code": "^maxAttackRange$",
+    "translate": "攻击距离",
+    "section": "attack",
+    "description": "最大攻击距离。"
+  },
+  {
+    "code": "^shootDelay$",
+    "translate": "攻击间隔",
+    "section": "attack",
+    "description": "开火间隔，也可以在每个转塔上使用延迟。"
+  },
+  {
+    "code": "^canAttackNotTouchingWaterUnits$",
+    "translate": "可攻击非接触水单位",
+    "section": "attack",
+    "description": "可以攻击非接触水单位，默认启用。如果禁用，则只能攻击与水接触的单位，不能攻击岸上。用于鱼雷逻辑。也可以根据炮塔需要设置。"
+  },
+  {
+    "code": "^canOnlyAttackUnitsWithTags$",
+    "translate": "只攻击带特定标签单位",
+    "section": "attack",
+    "description": "只能攻击带特定标签的单位。"
+  },
+  {
+    "code": "^canOnlyAttackUnitsWithoutTags$",
+    "translate": "不攻击带特定标签单位",
+    "section": "attack",
+    "description": "不能攻击带特定标签的单位。"
+  },
+  {
+    "code": "^turretMultiTargeting$",
+    "translate": "每个炮塔向不同目标射击",
+    "section": "attack",
+    "description": "允许每个炮塔同时向不同的目标射击。如果使用<see code=\"limitingAngle\" section=\"turret\"/>非常有用。"
+  },
+  {
+    "code": "^isMelee$",
+    "translate": "近战",
+    "section": "attack",
+    "description": "近战单位。与低攻击范围配合使用（例如<see code=\"maxAttackRange\" section=\"attack\"/>：9）可使自身和目标半径添加到范围内，并影响AI。"
+  },
+  {
+    "code": "^meleeEngangementDistance$",
+    "translate": "近战索敌距离",
+    "section": "attack",
+    "description": "使部队游猎，自动移动以攻击附近的敌方部队。近战默认为250，非近战默认为0，即使非近战也可以使用。"
+  },
+  {
+    "code": "^turretRotateWithBody$",
+    "translate": "炮塔随主体旋转",
+    "section": "attack",
+    "description": "炮塔随主体旋转。默认开启。"
+  },
+  {
+    "code": "^attackMovement$",
+    "translate": "攻击移动类型",
+    "section": "attack",
+    "description": "移动攻击类型。如果是轰炸机，能量耗尽时，轰炸机攻击运动将后退。"
+  },
+  {
+    "code": "^dieOnAttack$",
+    "translate": "自杀攻击",
+    "section": "attack",
+    "description": "攻击时自毁。"
+  },
+  {
+    "code": "^isFixedFiring$",
+    "translate": "固定射击",
+    "section": "attack",
+    "description": "必须将身体对准目标射击。通常会使得部队需要停下来才能瞄准和射击。比如火炮。"
+  },
+  {
+    "code": "^aimOffsetSpread$",
+    "translate": "瞄准偏移",
+    "section": "attack",
+    "description": "将每次攻击时的偏移量乘以目标半径。默认为0.6。设为0则不偏移，对范围武器影响较大。"
+  },
+  {
+    "code": "^stopTargetingAfterFiring$",
+    "translate": "自动停火",
+    "section": "attack",
+    "description": "单位射击后停止瞄准。很少使用或需要。如用于您不希望胡乱攻击浪费弹药的单位。"
+  },
+  {
+    "code": "^disablePassiveTargeting$",
+    "translate": "不能主动攻击",
+    "section": "attack",
+    "description": "单位只攻击手动选择的目标。很少使用或需要。如用于自爆卡车守家，如果自动攻击敌人就太蠢了。"
+  },
+  {
+    "code": "^showRangeUIGuide$",
+    "translate": "显示范围UI",
+    "section": "attack",
+    "description": "显示攻击范围的白圈。默认启用。"
+  },
+  {
+    "code": "^shootDelayMultiplier$",
+    "translate": "开火间隔乘数",
+    "section": "attack",
+    "description": "默认为1。可以在<see code=\"setUnitStats\" section=\"action\"/>动态改变"
+  },
+  {
+    "code": "^shootDamageMultiplier$",
+    "translate": "开火伤害乘数",
+    "section": "attack",
+    "description": "默认为1。可以在<see code=\"setUnitStats\" section=\"action\"/>动态改变"
+  },
+  {
+    "code": "^turretSize$",
+    "translate": "炮塔大小",
+    "section": "attack",
+    "description": "设置所有炮塔大小。填数值，按像素计算，不决定素材大小，而是以此为半径的开火位置。"
+  },
+  {
+    "code": "^turretTurnSpeed$",
+    "translate": "炮塔转速",
+    "section": "attack",
+    "description": "炮塔转速，单位是每帧旋转角度。"
+  },
+  {
+    "code": "^x$",
+    "translate": "x",
+    "section": "turret",
+    "description": "坐标X"
+  },
+  {
+    "code": "^y$",
+    "translate": "y",
+    "section": "turret",
+    "description": "坐标Y"
+  },
+  {
+    "code": "^copyFrom$",
+    "translate": "复制数据自",
+    "section": "turret",
+    "description": "加载其它文件的单位数据作为该单位的默认值，支持多个文件。无后缀名限制，可不写<see code=\"dont_load\" section=\"core\"/>，用于模块化。"
+  },
+  {
+    "code": "^projectile$",
+    "translate": "抛射体",
+    "section": "turret",
+    "description": "使用此抛射体。默认为第一个抛射体。"
+  },
+  {
+    "code": "^altProjectile$",
+    "translate": "关联抛射体",
+    "section": "turret",
+    "description": "当启用<see code=\"altProjectileCondition\" section=\"turret\"/>，从此炮塔发射的抛射体。"
+  },
+  {
+    "code": "^altProjectileCondition$",
+    "translate": "关联抛射体条件",
+    "section": "turret",
+    "description": "用于<see code=\"altProjectile\" section=\"turret\"/>。"
+  },
+  {
+    "code": "^barrelX$",
+    "translate": "抛射体x",
+    "section": "turret",
+    "description": "默认值为0。控制抛射体生成的X轴位置。"
+  },
+  {
+    "code": "^barrelY$",
+    "translate": "抛射体y",
+    "section": "turret",
+    "description": "默认为大0。注意：size和barrelY含义相同"
+  },
+  {
+    "code": "^barrelHeight$",
+    "translate": "抛射体高度",
+    "section": "turret",
+    "description": "高度（用于3d）。影响抛射体产生的高度。"
+  },
+  {
+    "code": "^height$",
+    "translate": "炮塔高度",
+    "section": "turret",
+    "description": "用于3d单位,实测链接的炮塔也会跟着改变高度。"
+  },
+  {
+    "code": "^size$",
+    "translate": "炮塔大小",
+    "section": "turret",
+    "description": "控制炮塔中心与抛射体丸产生点之间的距离。"
+  },
+  {
+    "code": "^turnSpeed$",
+    "translate": "炮塔转速",
+    "section": "turret",
+    "description": "炮塔最大转动速度。单位度每帧。"
+  },
+  {
+    "code": "^turnSpeedAcceleration$",
+    "translate": "炮塔旋转加速度",
+    "section": "turret",
+    "description": "炮塔加速度，默认设置为禁用，并使用全转速度。"
+  },
+  {
+    "code": "^turnSpeedDeceleration$",
+    "translate": "炮塔旋转减速度",
+    "section": "turret",
+    "description": "默认为<see code=\"turnSpeedAcceleration\" section=\"turret\"/>。将此值设置为高于转弯加速度可能会允许更快地命中目标"
+  },
+  {
+    "code": "^idleDir$",
+    "translate": "闲时角度",
+    "section": "turret",
+    "description": "闲置时角度。"
+  },
+  {
+    "code": "^idleDirReversing$",
+    "translate": "闲时角度反转",
+    "section": "turret",
+    "description": "允许闲置时角度反转。除非连接到另一个炮塔（否则连接的炮塔在反转时通常会旋转），否则默认为idleDir + 180。如重坦逆行时炮塔转向。"
+  },
+  {
+    "code": "^shouldResetTurret$",
+    "translate": "空闲自动归位",
+    "section": "turret",
+    "description": "默认启用。 禁用时禁止炮塔自动归位。"
+  },
+  {
+    "code": "^idleSpin$",
+    "translate": "闲时转速",
+    "section": "turret",
+    "description": "炮塔闲置时的旋转速度,单位度每帧。"
+  },
+  {
+    "code": "^idleSweepAngle$",
+    "translate": "空闲扫描角度",
+    "section": "turret",
+    "description": "炮塔闲时扫描角度。这一系列用于设置炮塔闲置时候转圈警戒动作。"
+  },
+  {
+    "code": "^idleSweepDelay$",
+    "translate": "空闲扫描间隔",
+    "section": "turret",
+    "description": "炮塔闲时扫描间隔，多久动一次。"
+  },
+  {
+    "code": "^idleSweepSpeed$",
+    "translate": "空闲扫描速度",
+    "section": "turret",
+    "description": "炮塔闲时扫描转向的速度。"
+  },
+  {
+    "code": "^idleSweepCondition$",
+    "translate": "空闲扫描条件",
+    "section": "turret",
+    "description": "炮塔闲时扫描的条件，比如单位移动但没攻击时炮塔确实是闲置的，但这时可能不该旋转。"
+  },
+  {
+    "code": "^idleSweepAddRandomDelay$",
+    "translate": "空闲扫描随机延迟",
+    "section": "turret",
+    "description": "炮塔闲时扫描的随机延迟"
+  },
+  {
+    "code": "^idleSweepAddRandomAngle$",
+    "translate": "空闲扫描随机角度",
+    "section": "turret",
+    "description": "炮塔闲时扫描的随机角度"
+  },
+  {
+    "code": "^attachedTo$",
+    "translate": "链接到",
+    "section": "turret",
+    "description": "要连接的另一个炮塔的ID，将相对于它定位，并随其旋转。"
+  },
+  {
+    "code": "^slave$",
+    "translate": "隶属",
+    "section": "turret",
+    "description": "锁定此转塔的方向，并为附加的转塔发射冷却时间。常用于多炮管单位。"
+  },
+  {
+    "code": "^isMainNanoTurret$",
+    "translate": "是主构建炮塔",
+    "section": "turret",
+    "description": "默认禁用。用于创建建筑物的炮塔。只能在一个炮塔上启用，并且<see code=\"canShoot\" section=\"turret\"/>设置为禁用。"
+  },
+  {
+    "code": "^energyUsage$",
+    "translate": "能量需求",
+    "section": "turret",
+    "description": "发射武器所需的能量。与resourceUsage相同：energy = X"
+  },
+  {
+    "code": "^resourceUsage$",
+    "translate": "资源需求",
+    "section": "turret",
+    "description": "可以使用资金/能源/生命/护盾/弹药等。如果不符合条件则停止攻击。credits/energy/hp/shield/ammo"
+  },
+  {
+    "code": "^delay$",
+    "translate": "开火间隔",
+    "section": "turret",
+    "description": "设置攻击间隔，覆盖全局炮塔间隔数据。"
+  },
+  {
+    "code": "^linkDelayWithTurret$",
+    "translate": "链接间隔",
+    "section": "turret",
+    "description": "当另一炮塔开火时，该炮塔上的冷却延迟将被重置/删除"
+  },
+  {
+    "code": "^warmup$",
+    "translate": "预热",
+    "section": "turret",
+    "description": "射击前延迟。需要准备多长时间才能攻击，可以制作出蓄力效果。"
+  },
+  {
+    "code": "^warmupCallDownRate$",
+    "translate": "预热下降速度",
+    "section": "turret",
+    "description": "停止攻击后预热条下降速度"
+  },
+  {
+    "code": "^warmupNoReset$",
+    "translate": "预热不重置",
+    "section": "turret",
+    "description": "默认为false。射击后未重设真正的预热时。与warmupCallDownRate一起使用"
+  },
+  {
+    "code": "^warmupShootDelayTransfer$",
+    "translate": "开火间隔过渡",
+    "section": "turret",
+    "description": "默认值为0，这是一个乘数，用于通过预热值减少下一次开火延迟。与warmupNoReset一起使用时，可以使攻击速度越来越快。"
+  },
+  {
+    "code": "^onShoot_freezeBodyMovementFor$",
+    "translate": "射击时冻结主体",
+    "section": "turret",
+    "description": "射击时禁止运动。"
+  },
+  {
+    "code": "^barrelOffsetX_onOddShots$",
+    "translate": "奇数射击时抛射体偏移",
+    "section": "turret",
+    "description": "默认0。在奇数射击时横向偏移，用于简化双管单位制作。"
+  },
+  {
+    "code": "^aimOffsetSpread$",
+    "translate": "瞄准偏移",
+    "section": "turret",
+    "description": "将每次攻击时的偏移量乘以目标半径。默认为0.6。设为0则不偏移，对范围武器影响较大。"
+  },
+  {
+    "code": "^canShoot$",
+    "translate": "可以开火",
+    "section": "turret",
+    "description": "可以开火，默认为true"
+  },
+  {
+    "code": "^canAttackFlyingUnits$",
+    "translate": "可攻击空中单位",
+    "section": "turret",
+    "description": "可以攻击空中单位，下面的攻击条件代码可于任意炮塔单独设置。"
+  },
+  {
+    "code": "^canAttackLandUnits$",
+    "translate": "可攻击表面单位",
+    "section": "turret",
+    "description": "可以攻击表面单位（包括陆地和水面）"
+  },
+  {
+    "code": "^canAttackUnderwaterUnits$",
+    "translate": "可攻击水下单位",
+    "section": "turret",
+    "description": "可以攻击水下单位"
+  },
+  {
+    "code": "^canAttackNotTouchingWaterUnits$",
+    "translate": "可以攻击非接触水单位",
+    "section": "turret",
+    "description": "可以攻击非接触水单位，默认为true。如果是false，则只能攻击与水接触的单位，不能攻击岸上。用于鱼雷逻辑。也可以根据炮塔需要设置。"
+  },
+  {
+    "code": "^canOnlyAttackUnitsWithTags$",
+    "translate": "只攻击带特定标签单位",
+    "section": "turret",
+    "description": "只能攻击带特定标签的单位"
+  },
+  {
+    "code": "^canOnlyAttackUnitsWithoutTags$",
+    "translate": "不攻击带特定标签单位",
+    "section": "turret",
+    "description": "不能攻击带特定标签的单位"
+  },
+  {
+    "code": "^canAttackCondition$",
+    "translate": "攻击条件",
+    "section": "turret",
+    "description": "攻击需要满足条件。"
+  },
+  {
+    "code": "^canAttackMaxAngle$",
+    "translate": "可攻击最大角度",
+    "section": "turret",
+    "description": "设置炮塔的最大射击角度。如果单位在可攻击角度外则不会开火。默认值为5，不要设置得更低。可以设置为181，即不需要转向就可发射抛射体。"
+  },
+  {
+    "code": "^clearTurretTargetAfterFiring$",
+    "translate": "射击后重置炮塔目标",
+    "section": "turret",
+    "description": "射击后重置炮塔目标。"
+  },
+  {
+    "code": "^limitingRange$",
+    "translate": "限制范围",
+    "section": "turret",
+    "description": "限制此炮塔的最远攻击范围。不要将此代码应用到所有炮塔，如果需要则设置maxAttackRange。"
+  },
+  {
+    "code": "^limitingAngle$",
+    "translate": "限制角度",
+    "section": "turret",
+    "description": "与idleDir配合。炮塔只能以+/-此角度进行攻击。"
+  },
+  {
+    "code": "^limitingMinRange$",
+    "translate": "最小距离",
+    "section": "turret",
+    "description": "设置炮塔的最小攻击范围，不能攻击此范围内单位，也就是死角。"
+  },
+  {
+    "code": "^interceptProjectiles_withTags$",
+    "translate": "拦截抛射体需有标签",
+    "section": "turret",
+    "description": "拦截具有此标签的抛射体，目前铁锈用于反核武器。"
+  },
+  {
+    "code": "^interceptProjectiles_andTargetingGroundUnderDistance$",
+    "translate": "拦截抛射体检索范围",
+    "section": "turret",
+    "description": "守护的范围，只有当敌方攻击目标地点落在此圈子内时才考虑拦截。"
+  },
+  {
+    "code": "^interceptProjectiles_andUnderDistance$",
+    "translate": "拦截抛射体攻击范围",
+    "section": "turret",
+    "description": "默认值为2000，当抛射体到达这个距离时才开始发射拦截。"
+  },
+  {
+    "code": "^interceptProjectiles_andOverHeight$",
+    "translate": "拦截抛射体高度",
+    "section": "turret",
+    "description": "需要超过此高度才会拦截。默认值为0."
+  },
+  {
+    "code": "^laserDefenceEnergyUse$",
+    "translate": "激光防御能量需求",
+    "section": "turret",
+    "description": "炮塔启用激光防御拦截敌方抛射体。还应在core中设置energyMax。"
+  },
+  {
+    "code": "^invisible$",
+    "translate": "隐藏炮塔图像",
+    "section": "turret",
+    "description": "即不显示炮塔本身图像，但是攻击什么的还是可以。"
+  },
+  {
+    "code": "^image$",
+    "translate": "主体图像",
+    "section": "turret",
+    "description": "填图片名称，格式为png。"
+  },
+  {
+    "code": "^image_applyTeamColors$",
+    "translate": "图像应用队伍颜色",
+    "section": "turret",
+    "description": "炮塔图像使用队伍颜色。默认为false。"
+  },
+  {
+    "code": "^image_drawOffsetX$",
+    "translate": "图像绘制偏移x",
+    "section": "turret",
+    "description": "炮塔图像在X轴偏移。"
+  },
+  {
+    "code": "^image_drawOffsetY$",
+    "translate": "图像绘制偏移y",
+    "section": "turret",
+    "description": "炮塔图像在Y轴偏移。"
+  },
+  {
+    "code": "^chargeEffectImage$",
+    "translate": "充能效果图像",
+    "section": "turret",
+    "description": "预热时的充能效果。默认是由小变大。"
+  },
+  {
+    "code": "^warmupStartEffect$",
+    "translate": "预热效果",
+    "section": "turret",
+    "description": "开火延迟时产生效果。"
+  },
+  {
+    "code": "^shoot_sound$",
+    "translate": "开火音效",
+    "section": "turret",
+    "description": "开火音效，填声音文件。有以下内置条目。attack、move、click、missile_fire、missile_hit、unit_explode、buiding_explode、\ntank_firing、cannon_firing、gun_fire、lighting_burst、plasma_fire、plasma_fire2、firing3、firing4、large_gun_fire1、\nlarge_gun_fire2、bug_die、bug_attack、interface_error、nuke_explode、nuke_launch、laser_deflect、laser_deflect2"
+  },
+  {
+    "code": "^shoot_sound_vol$",
+    "translate": "开火音效大小",
+    "section": "turret",
+    "description": "播放声音大小。"
+  },
+  {
+    "code": "^shoot_flame$",
+    "translate": "开火动画",
+    "section": "turret",
+    "description": "开火动画。"
+  },
+  {
+    "code": "^shoot_light$",
+    "translate": "开火闪光",
+    "section": "turret",
+    "description": "开火时闪光，16进制argb格式。#AARRGGBB,透明度，红，绿，蓝"
+  },
+  {
+    "code": "^onShoot_playAnimation$",
+    "translate": "开火播放动画",
+    "section": "turret",
+    "description": "开火后播放[Animation]中的自定义动画"
+  },
+  {
+    "code": "^onShoot_triggerActions$",
+    "translate": "开火触发行为",
+    "section": "turret",
+    "description": "每次这个炮塔开火时触发这些动作"
+  },
+  {
+    "code": "^unloadUpToXUnitsAndGiveAttackOrder$",
+    "translate": "卸载单位并赋予攻击目标",
+    "section": "turret",
+    "description": "在炮塔炮筒位置卸下X个单位，并让它们攻击炮塔指定的目标。"
+  },
+  {
+    "code": "^recoilOffset$",
+    "translate": "后坐力大小",
+    "section": "turret",
+    "description": "开火后向前或向后推动炮塔，以产生后坐力。填像素。"
+  },
+  {
+    "code": "^recoilOutTime$",
+    "translate": "后坐力速度",
+    "section": "turret",
+    "description": "开火后到达偏移位置的时间"
+  },
+  {
+    "code": "^recoilReturnTime$",
+    "translate": "后坐力恢复",
+    "section": "turret",
+    "description": "开火后回到默认位置所需时间。"
+  },
+  {
+    "code": "^showRangeUIGuide$",
+    "translate": "显示范围UI",
+    "section": "turret",
+    "description": "显示攻击范围的白圈。默认true."
+  },
+  {
+    "code": "^life$",
+    "translate": "存在时间",
+    "section": "projectile",
+    "description": "开火后抛射体在没命中时的存活时间，单位为帧。60为1s。多少合适取决于速度与射程。"
+  },
+  {
+    "code": "^deflectionPower$",
+    "translate": "激光拦截耗能",
+    "section": "projectile",
+    "description": "默认值为1。此抛射体被激光防御摧毁所需的能量。 -1为禁止拦截。（对特殊武器如火焰）"
+  },
+  {
+    "code": "^explodeOnEndOfLife$",
+    "translate": "寿终爆炸",
+    "section": "projectile",
+    "description": "默认为false。True则会在寿命终结时爆炸，并产生其命中时该有的效果。而不是直接消失。"
+  },
+  {
+    "code": "^autoTargetingOnDeadTarget$",
+    "translate": "自动切换目标",
+    "section": "projectile",
+    "description": "如果目标死亡则自动切换单位。填true时如果有代码\"targetGround:true\"抛射体将会追踪距离它最近的单位。如果没有\"targetGround\"时将会在单位死亡后再改变目标。"
+  },
+  {
+    "code": "^autoTargetingOnDeadTargetRange$",
+    "translate": "自动切换目标检索范围",
+    "section": "projectile",
+    "description": "当旧目标死亡时选择新目标的范围"
+  },
+  {
+    "code": "^autoTargetingOnDeadTargetLead$",
+    "translate": "自动切换目标预判",
+    "section": "projectile",
+    "description": "尝试新的目标时的预判"
+  },
+  {
+    "code": "^unloadUpToXUnitsFromSource$",
+    "translate": "卸载单位至命中地",
+    "section": "projectile",
+    "description": "将指定个数单位卸载到抛射体爆炸位置。"
+  },
+  {
+    "code": "^teleportSource$",
+    "translate": "传送",
+    "section": "projectile",
+    "description": "将单位移动到抛射体爆炸的位置，用于传送自身。"
+  },
+  {
+    "code": "^spawnUnit$",
+    "translate": "产生单位",
+    "section": "projectile",
+    "description": "在抛射体丸爆炸位置产生这种单位"
+  },
+  {
+    "code": "^spawnProjectilesOnEndOfLife$",
+    "translate": "在寿命结束时生成抛射体",
+    "section": "projectile",
+    "description": "填抛射体名。在寿命(life)结束时生成抛射体。生成抛射体逻辑具体参数参考后面生成抛射体大项。这简化了过去许多需要多炮塔(如贯穿攻击)或是生成辅助单位才能实现的操作。"
+  },
+  {
+    "code": "^spawnProjectilesOnExplode$",
+    "translate": "在爆炸时生成抛射体",
+    "section": "projectile",
+    "description": "填抛射体名。只在爆炸时生成抛射体，如果耗光life则不会生成。"
+  },
+  {
+    "code": "^spawnProjectilesOnCreate$",
+    "translate": "在创建时生成抛射体",
+    "section": "projectile",
+    "description": "填抛射体名。抛射体创建时生成抛射体。"
+  },
+  {
+    "code": "^convertHitToSourceTeam$",
+    "translate": "命中时更改所属",
+    "section": "projectile",
+    "description": "将更改被命中的单位转换队伍为自身所属。"
+  },
+  {
+    "code": "^tags$",
+    "translate": "标签",
+    "section": "projectile",
+    "description": "标签，用于对单位进行分类，用于实现各种各样的特殊作。比如单位数量限制，伤害修正，增益损益，触发条件等等"
+  },
+  {
+    "code": "^flameWeapon$",
+    "translate": "火焰武器",
+    "section": "projectile",
+    "description": "命中时产生小火焰（仅用于装饰）"
+  },
+  {
+    "code": "^delayedStartTimer$",
+    "translate": "延迟时间",
+    "section": "projectile",
+    "description": "抛射体发射延迟时间。"
+  },
+  {
+    "code": "^directDamage$",
+    "translate": "直接伤害",
+    "section": "projectile",
+    "description": "击中对目标单位造成伤害。不适用于targetGround:true。"
+  },
+  {
+    "code": "^areaDamage$",
+    "translate": "范围伤害",
+    "section": "projectile",
+    "description": "范围伤害值，此区域内敌方单位都将受到损伤，默认向边缘递减。"
+  },
+  {
+    "code": "^areaRadius$",
+    "translate": "范围半径",
+    "section": "projectile",
+    "description": "范围伤害区域大小，此区域内敌方单位都将受到损伤，默认向边缘递减。数值类型为像素，大小算法为半径，铁锈内地块一格长为20像素。"
+  },
+  {
+    "code": "^areaDamageNoFalloff$",
+    "translate": "范围伤害不衰减",
+    "section": "projectile",
+    "description": "默认false.为true时范围伤害不再向边缘递减。"
+  },
+  {
+    "code": "^areaRadiusFromEdge$",
+    "translate": "范围伤害从边缘计算",
+    "section": "projectile",
+    "description": "范围伤害将从单位的边缘计算，而不是默认的中心计算。主要用于攻击大型单位。"
+  },
+  {
+    "code": "^areaExpandTime$",
+    "translate": "范围扩展时间",
+    "section": "projectile",
+    "description": "将区域伤害变为爆炸波向边缘扩散。效果如核抛射体。"
+  },
+  {
+    "code": "^areaHitAirAndLandAtSameTime$",
+    "translate": "范围武器同时攻击空中和地面",
+    "section": "projectile",
+    "description": "范围武器将同时打击空中和地面。"
+  },
+  {
+    "code": "^areaHitUnderwaterAlways$",
+    "translate": "范围武器可攻击深海",
+    "section": "projectile",
+    "description": "范围武器将可以打击深海单位如潜艇。"
+  },
+  {
+    "code": "^areaIgnoreUnitsCloserThan$",
+    "translate": "范围伤害忽略区域",
+    "section": "projectile",
+    "description": "小于此范围的单位不会受到攻击影响。需要比areaRadius小，否则造不成伤害。"
+  },
+  {
+    "code": "^buildingDamageMultiplier$",
+    "translate": "建筑伤害乘数",
+    "section": "projectile",
+    "description": "默认为1。对建筑物伤害乘上此数值，用于伤害修正。比如闪电对建筑物伤害低，火焰对建筑物伤害高。"
+  },
+  {
+    "code": "^shieldDamageMultiplier$",
+    "translate": "护盾伤害乘数",
+    "section": "projectile",
+    "description": "默认为1。对护盾伤害乘数。如0对护盾不造成伤害，2对护盾造成双倍伤害"
+  },
+  {
+    "code": "^shieldDefectionMultiplier$",
+    "translate": "护盾阻挡乘数",
+    "section": "projectile",
+    "description": "护盾阻挡乘数，填0则可无视护盾，同时对单位和盾造成伤害。"
+  },
+  {
+    "code": "^hullDamageMultiplier$",
+    "translate": "护盾损伤乘数",
+    "section": "projectile",
+    "description": "可以用来制造只影响护盾的电磁脉冲武器。0忽略单位，只伤害护盾"
+  },
+  {
+    "code": "^ignoreParentShootDamageMultiplier$",
+    "translate": "忽略父单位射击伤害乘数",
+    "section": "projectile",
+    "description": "忽略父单位射击伤害乘数"
+  },
+  {
+    "code": "^armourIgnoreAmount$",
+    "translate": "无视装甲数量",
+    "section": "projectile",
+    "description": "无视目标装甲数量并造成伤害。"
+  },
+  {
+    "code": "^friendlyFire$",
+    "translate": "友伤",
+    "section": "projectile",
+    "description": "范围武器有友伤，可以伤害自己单位。铁锈限制不能对盟友有伤害。负数友伤可以用于范围维修，如果修盟友则需要用中立单位实现。参数（false，true，only-ignoreEnemy）（假，真，忽略敌人的友伤）"
+  },
+  {
+    "code": "^mutatorX_ifUnitWithTags$",
+    "translate": "修正需要标签",
+    "section": "projectile",
+    "description": "伤害修正所需标签，仅对携带标签单位有效。否则为原始伤害。"
+  },
+  {
+    "code": "^mutatorX_ifUnitWithoutTags$",
+    "translate": "修正除此标签",
+    "section": "projectile",
+    "description": "伤害修正除此标签外有效。"
+  },
+  {
+    "code": "^mutatorX_directDamageMultiplier$",
+    "translate": "修正直接伤害",
+    "section": "projectile",
+    "description": "伤害修正,直接伤害(directDamage)乘数。比如直接伤害100，这里填2，对目标就造成200伤害。"
+  },
+  {
+    "code": "^mutatorX_areaDamageMultiplier$",
+    "translate": "修正范围伤害",
+    "section": "projectile",
+    "description": "伤害修正,范围伤害(areaDamage)乘数。比如直接伤害100，这里填2，对目标就造成200伤害。"
+  },
+  {
+    "code": "^mutatorX_changedExplodeEffect$",
+    "translate": "修正命中效果",
+    "section": "projectile",
+    "description": "如果此修正处于有效状态，则更改爆炸效果。"
+  },
+  {
+    "code": "^mutatorX_addResourcesDirectHit$",
+    "translate": "修正直接添加资源",
+    "section": "projectile",
+    "description": "伤害修正,用于直接伤害(directDamage)，给目标添加指定资源。用途如给目标资源后，目标检测自身资源然后禁止移动。"
+  },
+  {
+    "code": "^mutatorX_addResourcesAreaHit$",
+    "translate": "修正区域添加资源",
+    "section": "projectile",
+    "description": "伤害修正,用于范围伤害(areaDamage)，给目标添加指定资源。"
+  },
+  {
+    "code": "^targetGround$",
+    "translate": "目标为地面",
+    "section": "projectile",
+    "description": "抛射体瞄准并攻击目标所在的地面，而不是追踪目标。直接伤害(directDamage)将会失效，需要使用areaDamage和areaRadius。"
+  },
+  {
+    "code": "^targetGround_includeTargetHeight$",
+    "translate": "目标为地面包括目标高度",
+    "section": "projectile",
+    "description": "区域影响AA武器"
+  },
+  {
+    "code": "^targetGroundHeightOffset$",
+    "translate": "目标为地面高度偏移",
+    "section": "projectile",
+    "description": "在目标上方或下方射击。可能对分裂和落下的抛射体有用。"
+  },
+  {
+    "code": "^speed$",
+    "translate": "速度",
+    "section": "projectile",
+    "description": "抛射体飞行速度，单位是每帧飞行像素。铁锈地块1格20像素，填1则每秒飞行3格。"
+  },
+  {
+    "code": "^targetSpeed$",
+    "translate": "到达速度",
+    "section": "projectile",
+    "description": "加速到这个速度"
+  },
+  {
+    "code": "^targetSpeedAcceleration$",
+    "translate": "加速度",
+    "section": "projectile",
+    "description": "加速度，控制targetSpeed的速度提升"
+  },
+  {
+    "code": "^ballistic$",
+    "translate": "弹道",
+    "section": "projectile",
+    "description": "弹道导抛射体效果，使抛射体先飞向空中并向下飞，而不是走直线。"
+  },
+  {
+    "code": "^ballistic_delaymove_height$",
+    "translate": "弹道垂直飞行高度",
+    "section": "projectile",
+    "description": "弹道导抛射体发射初期效果，决定弹道一开始先升高多少，再斜向爬升到最高过度。"
+  },
+  {
+    "code": "^ballistic_height$",
+    "translate": "弹道高度",
+    "section": "projectile",
+    "description": "弹道最终高度。"
+  },
+  {
+    "code": "^targetGroundSpread$",
+    "translate": "目标为地面散布",
+    "section": "projectile",
+    "description": "填数值，用于目标为地面时随机造成偏差效果"
+  },
+  {
+    "code": "^speedSpread$",
+    "translate": "速度散布",
+    "section": "projectile",
+    "description": "随机改变抛射体初始速度"
+  },
+  {
+    "code": "^instant$",
+    "translate": "瞬间命中",
+    "section": "projectile",
+    "description": "开火时立即击中目标,用于激光、闪电、波束。"
+  },
+  {
+    "code": "^instantReuseLast$",
+    "translate": "瞬间命中回收最后抛射体",
+    "section": "projectile",
+    "description": "用于激光和闪电。激光或闪电命中后还会存在一段时间，当此抛射体命中后，清除上一个抛射体效果。使得只有一个抛射体存在。如使用高频射速变成光束武器，而不是瞎眼叠加。"
+  },
+  {
+    "code": "^instantReuseLast_alsoChangeTurretAim$",
+    "translate": "命中回收抛射体且改变瞄准",
+    "section": "projectile",
+    "description": "使炮塔瞄准受到命中目标扫描效果的影响，对光束武器有用"
+  },
+  {
+    "code": "^instantReuseLast_keepAreaDamageList$",
+    "translate": "命中回收抛射体区域伤害列表",
+    "section": "projectile",
+    "description": "瞬间命中并回收最后的抛射体并且保持区域伤害列表，默认false,保持列表是1.13的正常行为，造成区域伤害不会第二次生效，但不是很有用。只有当您想要旧的行为时才使用这个。"
+  },
+  {
+    "code": "^interceptProjectile_removeTargetLifeOnly$",
+    "translate": "拦截抛射体移除目标存活时间",
+    "section": "projectile",
+    "description": "默认值为false，当为false时射抛射体移除。true时使被击中的抛射体爆炸或分裂。用于设定命中抛射体时是否执行分裂逻辑。"
+  },
+  {
+    "code": "^disableLeadTargeting$",
+    "translate": "禁用预判",
+    "section": "projectile",
+    "description": "瞄准移动目标时，禁用预判计算。默认为false。"
+  },
+  {
+    "code": "^leadTargetingSpeedCalculation$",
+    "translate": "预判计算",
+    "section": "projectile",
+    "description": "用于使用targetGround时预判计算。目标计算的预期速度。默认为“targetSpeed”。如果设置则基于speed."
+  },
+  {
+    "code": "^initialUnguidedSpeedHeight$",
+    "translate": "初始非制导垂直速度",
+    "section": "projectile",
+    "description": "设置抛射体和地面间的垂直速度，利用gravity制造出平滑的抛物线。比较迷，填1左右，重力可以不填。"
+  },
+  {
+    "code": "^gravity$",
+    "translate": "重力",
+    "section": "projectile",
+    "description": "控制地面的抛射体丸的拉力。与initialUnguidedSpeedHeight一起使用。"
+  },
+  {
+    "code": "^turnSpeed$",
+    "translate": "炮塔转速",
+    "section": "projectile",
+    "description": "炮塔最大转动速度。单位度每帧。"
+  },
+  {
+    "code": "^wobbleAmplitude$",
+    "translate": "摆动幅度",
+    "section": "projectile",
+    "description": "抛射体飞行中摆动的剧烈程度。"
+  },
+  {
+    "code": "^wobbleFrequency$",
+    "translate": "摆动频率",
+    "section": "projectile",
+    "description": "抛射体飞行中摆动的频率。"
+  },
+  {
+    "code": "^pushForce$",
+    "translate": "推动力量",
+    "section": "projectile",
+    "description": "抛射体丸所携带的“重量”,质量越大，推力越大。推动（或以负值拉动）被击中的单位。除以目标质量"
+  },
+  {
+    "code": "^pushVelocity$",
+    "translate": "推进速度",
+    "section": "projectile",
+    "description": "抛射体爆炸后可用推动单位,推力相对于方向的速度，推动（或以负值拉动）被击中的单位。忽略目标质量"
+  },
+  {
+    "code": "^moveWithParent$",
+    "translate": "随父物体移动",
+    "section": "projectile",
+    "description": "当父单位移动时也移动抛射体。对光束效果武器很有用。"
+  },
+  {
+    "code": "^sweepOffset$",
+    "translate": "扫描偏移",
+    "section": "projectile",
+    "description": "扫描偏移，用于制作类似于两栖护盾坦克的激光武器。对光束效果很有用。"
+  },
+  {
+    "code": "^sweepOffsetFromTargetRadius$",
+    "translate": "扫描偏移目标半径",
+    "section": "projectile",
+    "description": "以目标半径作为扫描偏移量乘数，用于制作类似于两栖护盾坦克的激光武器。对光束效果很有用。"
+  },
+  {
+    "code": "^sweepSpeed$",
+    "translate": "扫描速度",
+    "section": "projectile",
+    "description": "扫描速度，用于制作类似于两栖护盾坦克的激光武器。对光束效果很有用。"
+  },
+  {
+    "code": "^retargetingInFlight$",
+    "translate": "重新瞄准在飞行时",
+    "section": "projectile",
+    "description": "在飞行过程中重新瞄准一个新的目标，非常适合投掷式武器和相互碰撞的抛射体"
+  },
+  {
+    "code": "^retargetingInFlightSearchDelay$",
+    "translate": "重新瞄准在飞行时搜索延迟",
+    "section": "projectile",
+    "description": "寻找新目标之间的时间。默认5"
+  },
+  {
+    "code": "^retargetingInFlightSearchRange$",
+    "translate": "重新瞄准在飞行时搜索范围",
+    "section": "projectile",
+    "description": "重新选择目标的范围。默认值120"
+  },
+  {
+    "code": "^retargetingInFlightSearchLead$",
+    "translate": "重新瞄准在飞行时预判",
+    "section": "projectile",
+    "description": "引导射抛射体试图击中目标。默认15"
+  },
+  {
+    "code": "^retargetingInFlightSearchOnlyTags$",
+    "translate": "重新瞄准在飞行时针对标签",
+    "section": "projectile",
+    "description": "只针对具有这些标签的单位进行重定向。"
+  },
+  {
+    "code": "^color$",
+    "translate": "颜色",
+    "section": "projectile",
+    "description": "使用十六进制值对该抛射体重新着色，它也决定了激光颜色，颜色格式为#AARRGGBB。"
+  },
+  {
+    "code": "^invisible$",
+    "translate": "隐藏炮塔图像",
+    "section": "projectile",
+    "description": "即不显示炮塔本身图像，但是攻击什么的还是可以。"
+  },
+  {
+    "code": "^image$",
+    "translate": "主体图像",
+    "section": "projectile",
+    "description": "填图片名称，格式为png。"
+  },
+  {
+    "code": "^drawType$",
+    "translate": "绘制类型",
+    "section": "projectile",
+    "description": "使用内置抛射体图像。 0:projectiles.png 1:projectiles_large.png 2:projectiles2.png"
+  },
+  {
+    "code": "^drawSize$",
+    "translate": "绘制大小",
+    "section": "projectile",
+    "description": "缩放抛射体大小。默认为1"
+  },
+  {
+    "code": "^frame$",
+    "translate": "帧",
+    "section": "projectile",
+    "description": "使用的内置图像帧，编号从零开始。和drawType结合使用。"
+  },
+  {
+    "code": "^hitSound$",
+    "translate": "打击音效",
+    "section": "projectile",
+    "description": "启用命中音效，默认true"
+  },
+  {
+    "code": "^explodeEffect$",
+    "translate": "爆炸效果",
+    "section": "projectile",
+    "description": "抛射体爆炸效果"
+  },
+  {
+    "code": "^explodeEffectOnShield$",
+    "translate": "护盾上爆炸效果",
+    "section": "projectile",
+    "description": "如果目标上有护盾，则使用此效果"
+  },
+  {
+    "code": "^teamColorRatio$",
+    "translate": "阵营色色相",
+    "section": "projectile",
+    "description": "将团队颜色混合到抛射体颜色中，填0-1。"
+  },
+  {
+    "code": "^teamColorRatio_sourceRatio$",
+    "translate": "阵营色色相比例",
+    "section": "projectile",
+    "description": "将团队颜色混合到抛射体颜色中与原色比例，默认为(1-teamColorRatio)"
+  },
+  {
+    "code": "^drawUnderUnits$",
+    "translate": "绘制与单位下",
+    "section": "projectile",
+    "description": "绘制于单位下方。"
+  },
+  {
+    "code": "^effectOnCreate$",
+    "translate": "创建时效果",
+    "section": "projectile",
+    "description": "创建时效果，会追随抛射体。"
+  },
+  {
+    "code": "^shouldRevealFog$",
+    "translate": "揭开迷雾",
+    "section": "projectile",
+    "description": "抛射体在爆炸时向玩家揭开迷雾。"
+  },
+  {
+    "code": "^alwaysVisibleInFog$",
+    "translate": "迷雾中显示",
+    "section": "projectile",
+    "description": "抛射体总是在迷雾中显示。"
+  },
+  {
+    "code": "^nukeWeapon$",
+    "translate": "核武器",
+    "section": "projectile",
+    "description": "发射时在迷您地图上显示。还有其他一些效果。"
+  },
+  {
+    "code": "^trailEffect$",
+    "translate": "尾焰",
+    "section": "projectile",
+    "description": "设置为true时为默认的尾焰。但也可以指向任何自定义效果，或使用内置效果。"
+  },
+  {
+    "code": "^trailEffectRate$",
+    "translate": "尾焰频率",
+    "section": "projectile",
+    "description": "尾焰产生频率，默认为3"
+  },
+  {
+    "code": "^lightCastOnGround$",
+    "translate": "闪光映射到地面",
+    "section": "projectile",
+    "description": "将闪光效果映射到地面，如火炮的光和抛射体是分离的。"
+  },
+  {
+    "code": "^lightSize$",
+    "translate": "闪光大小",
+    "section": "projectile",
+    "description": "抛射体光照大小,单位半径是地块格子"
+  },
+  {
+    "code": "^lightColor$",
+    "translate": "闪光颜色",
+    "section": "projectile",
+    "description": "抛射体光照颜色,不决定激光颜色，激光由color决定。"
+  },
+  {
+    "code": "^largeHitEffect$",
+    "translate": "大的打击效果",
+    "section": "projectile",
+    "description": "为true时会产生大的爆炸效果和声音（仅用于装饰），设为false时会禁用范围武器的冲击波效果。"
+  },
+  {
+    "code": "^lightingEffect$",
+    "translate": "闪电效果",
+    "section": "projectile",
+    "description": "将抛射体图像修改为闪电，一般需要instant(瞬间命中)搭配."
+  },
+  {
+    "code": "^laserEffect$",
+    "translate": "激光效果",
+    "section": "projectile",
+    "description": "将抛射体图像修改为激光。"
+  },
+  {
+    "code": "^beamImage$",
+    "translate": "波束图像",
+    "section": "projectile",
+    "description": "用于激光效果的主体图像，图像会被复制为多份显示。例如可用于做红警中的正弦波状辐射武器。因为本质是图像拼接,所以长度限制不能小于20"
+  },
+  {
+    "code": "^beamImageOffsetRate$",
+    "translate": "波束偏移频率",
+    "section": "projectile",
+    "description": "波束图像的移动频率。"
+  },
+  {
+    "code": "^beamImageStart$",
+    "translate": "波束开始图像",
+    "section": "projectile",
+    "description": "光束动画开火端效果图像"
+  },
+  {
+    "code": "^beamImageStartRotated$",
+    "translate": "波束始端旋转",
+    "section": "projectile",
+    "description": "光束动画开火端效果图像是否以炮塔角度旋转旋转,默认false,不旋转."
+  },
+  {
+    "code": "^beamImageEnd$",
+    "translate": "波束命中图像",
+    "section": "projectile",
+    "description": "光束动画命中端效果图像"
+  },
+  {
+    "code": "^beamImageEndRotated$",
+    "translate": "波束末端旋转",
+    "section": "projectile",
+    "description": "光束动画命中端效果图像是否旋转,默认false."
+  },
+  {
+    "code": "^movementType$",
+    "translate": "运动类型",
+    "section": "movement",
+    "description": "单位的移动类型。"
+  },
+  {
+    "code": "^slowDeathFall$",
+    "translate": "死亡缓慢降落",
+    "section": "movement",
+    "description": "为\"true\"时，被击毁时降落速度减慢，并且向前滑行一段距离。注意，必须设置死亡图像，不然坠落后会显示生前图像，而不是直接炸掉。"
+  },
+  {
+    "code": "^moveSpeed$",
+    "translate": "移动速度",
+    "section": "movement",
+    "description": "单位的最大移动速度。"
+  },
+  {
+    "code": "^moveAccelerationSpeed$",
+    "translate": "加速度",
+    "section": "movement",
+    "description": "定义单位加速到最大速度的加速度。"
+  },
+  {
+    "code": "^moveDecelerationSpeed$",
+    "translate": "减速度",
+    "section": "movement",
+    "description": "与加速度相对应得减速度。不要设的太小。"
+  },
+  {
+    "code": "^reverseSpeedPercentage$",
+    "translate": "倒车速度比率",
+    "section": "movement",
+    "description": "0.6默认值。超过0.4会在短距离（以40％的速度）时反转。 如果设置为1前进后退则不转弯。 填0时禁止倒退，必须旋转。"
+  },
+  {
+    "code": "^landOnGround$",
+    "translate": "降落到地面",
+    "section": "movement",
+    "description": "闲置时使飞行器降落。"
+  },
+  {
+    "code": "^targetHeight$",
+    "translate": "到达高度",
+    "section": "movement",
+    "description": "默认为0，但如果运动类型为空军则默认为35。"
+  },
+  {
+    "code": "^targetHeightDrift$",
+    "translate": "高度浮动",
+    "section": "movement",
+    "description": "默认0，空军1.5.单位高度上下浮动高度。"
+  },
+  {
+    "code": "^startingHeightOffset$",
+    "translate": "创建时高度偏移",
+    "section": "movement",
+    "description": "单位在创建时高度。负数上升比较慢。"
+  },
+  {
+    "code": "^heightChangeRate$",
+    "translate": "高度改变速率",
+    "section": "movement",
+    "description": "单位改变高度的频率，无论是转换还是浮动"
+  },
+  {
+    "code": "^fallingAcceleration$",
+    "translate": "降落加速度",
+    "section": "movement",
+    "description": "单位降落时的加速度"
+  },
+  {
+    "code": "^fallingAccelerationDead$",
+    "translate": "坠毁加速度",
+    "section": "movement",
+    "description": "单位被摧毁时降落的加速度"
+  },
+  {
+    "code": "^maxTurnSpeed$",
+    "translate": "转弯速度",
+    "section": "movement",
+    "description": "最大转弯速度。"
+  },
+  {
+    "code": "^turnAcceleration$",
+    "translate": "转弯加速度",
+    "section": "movement",
+    "description": "转弯加速度。"
+  },
+  {
+    "code": "^moveSlidingMode$",
+    "translate": "移动后滑动",
+    "section": "movement",
+    "description": "移动后滑动，相当于惯性。和单位的速度，加速度，转弯速度有关。True时受推力影响"
+  },
+  {
+    "code": "^moveIgnoringBody$",
+    "translate": "移动忽略转向",
+    "section": "movement",
+    "description": "true效果即不必转弯便能运动，false效果即原地转弯完成才能运动"
+  },
+  {
+    "code": "^moveSlidingDir$",
+    "translate": "移动滑动角度",
+    "section": "movement",
+    "description": "移动滑动角度。无明显效果。"
+  },
+  {
+    "code": "^joinsGroupFormations$",
+    "translate": "加入队形",
+    "section": "movement",
+    "description": "将单位组成小队。铁锈调集大量部队时将其组成方阵以降低运算压力，但队形可能影响速度或浪费时间。禁用后则不参与组队。"
+  },
+  {
+    "code": "^useAsBuilder$",
+    "translate": "用作建造者",
+    "section": "ai",
+    "description": "作为建造者。如果单位可以建造或维修建筑物，则设置为true。 默认为[core] isBuilder。"
+  },
+  {
+    "code": "^useAsTransport$",
+    "translate": "用作运输",
+    "section": "ai",
+    "description": "作为载具。如果单位可以运输单位，则默认为true.如果您的单位可以运输又能攻击，则AI可能囤积起来而不攻击，则需要设置false."
+  },
+  {
+    "code": "^useAsHarvester$",
+    "translate": "用作采集",
+    "section": "ai",
+    "description": "作为采集者。如果单位可以回收资源，则默认为true"
+  },
+  {
+    "code": "^disableUse$",
+    "translate": "禁用",
+    "section": "ai",
+    "description": "禁止AI建立这个单位或建筑物"
+  },
+  {
+    "code": "^aiTags$",
+    "translate": "ai标签",
+    "section": "ai",
+    "description": "采集"
+  },
+  {
+    "code": "^ai_upgradePriority$",
+    "translate": "AI升级优先级",
+    "section": "ai",
+    "description": "升级优先级。默认值为0.06。 设置在0-1之间，越高，表示AI更有可能先于其他升级该单位。"
+  },
+  {
+    "code": "^maxGlobal$",
+    "translate": "全图最大数量",
+    "section": "ai",
+    "description": "全图最多拥有的数量。"
+  },
+  {
+    "code": "^maxEachBase$",
+    "translate": "每个基地最大数量",
+    "section": "ai",
+    "description": "每个基地最多拥有的数量。"
+  },
+  {
+    "code": "^buildPriority$",
+    "translate": "建造优先级",
+    "section": "ai",
+    "description": "建造优先级，填0-1。 越大越AI越可能造。Luke的的第一座土地工厂使用0.8，空中工厂使用0.48，第一炮塔使用0.47。"
+  },
+  {
+    "code": "^noneInBaseExtraPriority$",
+    "translate": "基地内没有时优先级",
+    "section": "ai",
+    "description": "如果AI基地中不存在此单位，则增加其优先级。"
+  },
+  {
+    "code": "^noneGlobalExtraPriority$",
+    "translate": "全图没有时优先级",
+    "section": "ai",
+    "description": "如果此单位在地图上的任何位置都不存在，则增加其优先级。"
+  },
+  {
+    "code": "^recommendedInEachBaseNum$",
+    "translate": "推荐在每个基地的数量",
+    "section": "ai",
+    "description": "推荐在每个基地中的数量。"
+  },
+  {
+    "code": "^recommendedInEachBasePriorityIfUnmet$",
+    "translate": "推荐条件不满足时优先级",
+    "section": "ai",
+    "description": "如果未满足，推荐在基地中的优先级。"
+  },
+  {
+    "code": "^upgradedFrom$",
+    "translate": "升级自",
+    "section": "ai",
+    "description": "创建到另一个单位的链接，用于保留同一单位已升级和未升级的计数。"
+  },
+  {
+    "code": "^notPassivelyTargetedByOtherUnits$",
+    "translate": "不被动地被其他单位瞄准",
+    "section": "ai",
+    "description": "允许更好的墙壁建筑物，默认情况下，这些建筑物不会瞄准目标。用于围墙（当canAttack=true时使用这条代码会报错）"
+  },
+  {
+    "code": "^lowPriorityTargetForOtherUnits$",
+    "translate": "低优先级目标",
+    "section": "ai",
+    "description": "其它单位不优先考虑此单位。用于围墙"
+  },
+  {
+    "code": "^whenUsingAsHarvester_recommendedInEachBase$",
+    "translate": "每个基地此采集者数量",
+    "section": "ai",
+    "description": "当此单位用作采集者时，每个基地推荐的采集者数量。"
+  },
+  {
+    "code": "^whenUsingAsHarvester_recommendedGlobal$",
+    "translate": "全地图推荐采集者数量",
+    "section": "ai",
+    "description": "当此单位用作采集者时，全图推荐的采集者数量。"
+  },
+  {
+    "code": "^whenUsingAsHarvester_includeOtherHarvesterCounts$",
+    "translate": "是否算在采集者计数中",
+    "section": "ai",
+    "description": "当此单位用作采集者时，是否算在其它采集者统计中。"
+  },
+  {
+    "code": "^onlyUseAsHarvester_ifBaseHasUnitTagged$",
+    "translate": "有此标签才作为采集者",
+    "section": "ai",
+    "description": "只有当基地有单位标记时才可以作为采集者使用."
+  },
+  {
+    "code": "^x$",
+    "translate": "x",
+    "section": "leg",
+    "description": "坐标X"
+  },
+  {
+    "code": "^y$",
+    "translate": "y",
+    "section": "leg",
+    "description": "坐标Y"
+  },
+  {
+    "code": "^copyFrom$",
+    "translate": "复制数据自",
+    "section": "leg",
+    "description": "加载其它文件的单位数据作为该单位的默认值，支持多个文件。无后缀名限制，可不写<see code=\"dont_load\" section=\"core\"/>，用于模块化。"
+  },
+  {
+    "code": "^attach_x$",
+    "translate": "x轴链接位置",
+    "section": "leg",
+    "description": "在X轴上设置腿部的附着点。"
+  },
+  {
+    "code": "^attach_y$",
+    "translate": "Y轴链接位置",
+    "section": "leg",
+    "description": "在Y轴上设置腿部的附着点。"
+  },
+  {
+    "code": "^rotateSpeed$",
+    "translate": "旋转速度",
+    "section": "leg",
+    "description": "设置脚旋转速度，非对称情况下很明显。"
+  },
+  {
+    "code": "^endDirOffset$",
+    "translate": "末端角度偏移值",
+    "section": "leg",
+    "description": "目标脚/末端相对于身体的旋转角度。"
+  },
+  {
+    "code": "^lockMovement$",
+    "translate": "锁定运动",
+    "section": "leg",
+    "description": "禁止使用腿脚，将其锁定到主体。用于将行走单位转换为飞行单。"
+  },
+  {
+    "code": "^heightSpeed$",
+    "translate": "高度速度",
+    "section": "leg",
+    "description": "移动时脚抬高速度和高度。"
+  },
+  {
+    "code": "^moveSpeed$",
+    "translate": "移动速度",
+    "section": "leg",
+    "description": "单位的最大移动速度。"
+  },
+  {
+    "code": "^moveWarmUp$",
+    "translate": "移动延迟",
+    "section": "leg",
+    "description": "腿脚移动延迟"
+  },
+  {
+    "code": "^holdDisMin$",
+    "translate": "最小移动距离",
+    "section": "leg",
+    "description": "默认值为7。如果相邻的腿还没有重新移动，则至少移动此距离。"
+  },
+  {
+    "code": "^holdDisMax$",
+    "translate": "最大移动距离",
+    "section": "leg",
+    "description": "默认值为16。如果已经移动超过此距离则强制重新放置腿。"
+  },
+  {
+    "code": "^holdDisMin_maxMovingLegs$",
+    "translate": "最大移动腿数目",
+    "section": "leg",
+    "description": "最多移动腿数目"
+  },
+  {
+    "code": "^hold_moveOnlyIfFurthest$",
+    "translate": "只在最远时保持移动",
+    "section": "leg",
+    "description": "保持移动仅在最远时候。"
+  },
+  {
+    "code": "^holdDisMin_checkNeighbours$",
+    "translate": "最小移动距离检查相邻",
+    "section": "leg",
+    "description": "移动最小距离时检查相邻的腿脚。"
+  },
+  {
+    "code": "^hardLimit$",
+    "translate": "硬性限制",
+    "section": "leg",
+    "description": "默认值为50。强制腿部不要走的超过此数值。最好不要用到。"
+  },
+  {
+    "code": "^estimatingPositionMultiplier$",
+    "translate": "预测位置乘数",
+    "section": "leg",
+    "description": "默认值为1。根据单位速度预测单位可用的腿脚放置位置。"
+  },
+  {
+    "code": "^hidden$",
+    "translate": "隐藏",
+    "section": "leg",
+    "description": "隐藏"
+  },
+  {
+    "code": "^image_end$",
+    "translate": "末端图像",
+    "section": "leg",
+    "description": "末端图像，相当于脚。"
+  },
+  {
+    "code": "^image_end_shadow$",
+    "translate": "末端图像阴影",
+    "section": "leg",
+    "description": "末端图像阴影。"
+  },
+  {
+    "code": "^image_end_teamColors$",
+    "translate": "末端图像队伍色",
+    "section": "leg",
+    "description": "末端图像使用阵营色。"
+  },
+  {
+    "code": "^image_foot$",
+    "translate": "脚图像",
+    "section": "leg",
+    "description": "脚图像，与image_end相同"
+  },
+  {
+    "code": "^image_foot_shadow$",
+    "translate": "脚图像阴影",
+    "section": "leg",
+    "description": "脚图像阴影。"
+  },
+  {
+    "code": "^image_middle$",
+    "translate": "中部图像",
+    "section": "leg",
+    "description": "中部图像，相当于腿。"
+  },
+  {
+    "code": "^image_leg$",
+    "translate": "腿图像",
+    "section": "leg",
+    "description": "腿图像，与image_middle相同"
+  },
+  {
+    "code": "^draw_foot_on_top$",
+    "translate": "绘制脚在顶层",
+    "section": "leg",
+    "description": "绘制脚在顶层。"
+  },
+  {
+    "code": "^drawOverBody$",
+    "translate": "绘制主体之上",
+    "section": "leg",
+    "description": "绘制在主体之上。"
+  },
+  {
+    "code": "^drawUnderAllUnits$",
+    "translate": "绘制所有单位之下",
+    "section": "leg",
+    "description": "绘制所有单位之下。"
+  },
+  {
+    "code": "^drawDirOffset$",
+    "translate": "绘制角度偏移",
+    "section": "leg",
+    "description": "绘制角度偏移。"
+  },
+  {
+    "code": "^dust_effect$",
+    "translate": "灰尘效果",
+    "section": "leg",
+    "description": "脚落地时产生灰尘。"
+  },
+  {
+    "code": "^spinRate$",
+    "translate": "自身自动旋转速度",
+    "section": "leg",
+    "description": "使手臂/腿脚一直旋转，像转塔的idleSpin。用处如直升机的螺旋桨。"
+  },
+  {
+    "code": "^favourOppositeSideNeighbours$",
+    "translate": "偏向于临近一侧",
+    "section": "leg",
+    "description": "填true时，使得左右的腿脚拉开时间差，这样更好看。否则看起来顺拐。计算相邻的X比接近的Y查10倍时间。"
+  },
+  {
+    "code": "^drawLegWhenZoomedOut$",
+    "translate": "缩小时绘制腿",
+    "section": "leg",
+    "description": "在缩小显示倍数(看到东西更多)后绘制腿。False时不绘制。为了提高绘制腿性能，默认值根据单位大小而变化。"
+  },
+  {
+    "code": "^drawFootWhenZoomedOut$",
+    "translate": "缩小时绘制脚",
+    "section": "leg",
+    "description": "在缩小显示倍数(看到东西更多)后绘制脚。False时不绘制。为了提高绘制腿性能，默认值根据单位大小而变化。如果单独设置阴影则可能比较怪异。"
+  },
+  {
+    "code": "^liftingHeightOffset$",
+    "translate": "离开高度偏移",
+    "section": "leg",
+    "description": "离开时的脚的高度"
+  },
+  {
+    "code": "^targetHeight$",
+    "translate": "到达高度",
+    "section": "leg",
+    "description": "默认为0，但如果运动类型为空军则默认为35。"
+  },
+  {
+    "code": "^targetHeightRelative$",
+    "translate": "相对目标高度",
+    "section": "leg",
+    "description": "相对自身的最终高度"
+  },
+  {
+    "code": "^resetAngle$",
+    "translate": "复位角度",
+    "section": "leg",
+    "description": "复位角度。"
+  },
+  {
+    "code": "^x$",
+    "translate": "x",
+    "section": "attachment",
+    "description": "坐标X"
+  },
+  {
+    "code": "^y$",
+    "translate": "y",
+    "section": "attachment",
+    "description": "坐标Y"
+  },
+  {
+    "code": "^height$",
+    "translate": "炮塔高度",
+    "section": "attachment",
+    "description": "(用于3d单位,实测链接的炮塔也会跟着改变高度)to help placement on 3d style units"
+  },
+  {
+    "code": "^idleDir$",
+    "translate": "闲时角度",
+    "section": "attachment",
+    "description": "闲置时角度。"
+  },
+  {
+    "code": "^idleDirReversing$",
+    "translate": "闲时角度反转",
+    "section": "attachment",
+    "description": "允许闲置时角度反转。除非连接到另一个炮塔（否则连接的炮塔在反转时通常会旋转），否则默认为idleDir + 180。如重坦逆行时炮塔转向。"
+  },
+  {
+    "code": "^isVisible$",
+    "translate": "可见条件",
+    "section": "attachment",
+    "description": "如果满足条件，则从界面中显示此单位。比如用于科技树。"
+  },
+  {
+    "code": "^onCreateSpawnUnitOf$",
+    "translate": "创建时生成单位",
+    "section": "attachment",
+    "description": "此创造时也产生此子单位。"
+  },
+  {
+    "code": "^isUnselectable$",
+    "translate": "禁止选择",
+    "section": "attachment",
+    "description": "如果为true，则无法选择单位。 （包括AI）可用于效果单位，禁止被玩家选择。"
+  },
+  {
+    "code": "^canAttack$",
+    "translate": "可以攻击",
+    "section": "attachment",
+    "description": "如果设置为false，则不能攻击任何单位。其他canAttack选项将无效。"
+  },
+  {
+    "code": "^canBeAttackedAndDamaged$",
+    "translate": "可被攻击或损坏",
+    "section": "attachment",
+    "description": "可以被攻击或受到伤害。"
+  },
+  {
+    "code": "^deattachIfWantingToMove$",
+    "translate": "移动时脱离",
+    "section": "attachment",
+    "description": "若收到移动命令，子单位将自动分离。这包括来自action的路径点。可以用来制作机场。"
+  },
+  {
+    "code": "^lockLegMovement$",
+    "translate": "锁定腿脚运动",
+    "section": "attachment",
+    "description": "锁定腿脚防止乱动。"
+  },
+  {
+    "code": "^keepAliveWhenParentDies$",
+    "translate": "保持子存活",
+    "section": "attachment",
+    "description": "当此单位死亡时，子单位保持存活。"
+  },
+  {
+    "code": "^setDrawLayerOnTop$",
+    "translate": "绘制于顶层",
+    "section": "attachment",
+    "description": "此子单位绘制于顶层。"
+  },
+  {
+    "code": "^setDrawLayerOnBottom$",
+    "translate": "绘制于底层",
+    "section": "attachment",
+    "description": "此子单位绘制于底层。"
+  },
+  {
+    "code": "^addTransportedUnits$",
+    "translate": "增加被运输单位",
+    "section": "attachment",
+    "description": "添加到运输单位槽中。"
+  },
+  {
+    "code": "^lockRotation$",
+    "translate": "锁定旋转",
+    "section": "attachment",
+    "description": "锁定方向，禁止旋转。"
+  },
+  {
+    "code": "^rotateWithParent$",
+    "translate": "子单位一同旋转",
+    "section": "attachment",
+    "description": "旋转时子单位是否一同旋转。"
+  },
+  {
+    "code": "^resetRotationWhenNotAttacking$",
+    "translate": "不攻击时重置角度",
+    "section": "attachment",
+    "description": "不攻击时恢复到自身默认角度"
+  },
+  {
+    "code": "^prioritizeParentsMainTarget$",
+    "translate": "优先考虑父单位的主要目标",
+    "section": "attachment",
+    "description": "子单位优先考虑父单位当前的目标。"
+  },
+  {
+    "code": "^alwaysAllowedToAttackParentsMainTarget$",
+    "translate": "总是攻击父单位的主要目标",
+    "section": "attachment",
+    "description": "子单位总是跟随攻击父单位的主要目标。"
+  },
+  {
+    "code": "^onParentTeamChangeKeepCurrentTeam$",
+    "translate": "改变队伍时子单位保持原队伍",
+    "section": "attachment",
+    "description": "默认值为false。如果为true则父单位改变队伍时子单位不改变队伍。"
+  },
+  {
+    "code": "^onConvertKeepExistingUnitInSameSlot$",
+    "translate": "转换时附属仍然在同一槽位中",
+    "section": "attachment",
+    "description": "转换单位时如果有相同ID的附属槽位则子单位就会在那个槽位中"
+  },
+  {
+    "code": "^unloadInCurrentPosition$",
+    "translate": "卸载于此位置",
+    "section": "attachment",
+    "description": "卸载单位时在这个位置进行卸载"
+  },
+  {
+    "code": "^keepWaypointsNeedingMovement$",
+    "translate": "保持需要移动路径点",
+    "section": "attachment",
+    "description": "默认值为false。当为false时，队列中任何需要移动才能完成的队列路径点都会被移除。"
+  },
+  {
+    "code": "^smoothlyBlendPositionWhenExistingUnitAdded$",
+    "translate": "补充时平滑移动",
+    "section": "attachment",
+    "description": "补充所装载单位至槽位时平滑移动。"
+  },
+  {
+    "code": "^showAllActionsFrom$",
+    "translate": "显示所有操作来源",
+    "section": "attachment",
+    "description": "当被选中时，在父单元列表中显示所有附加单位的动作"
+  },
+  {
+    "code": "^createIncompleteIfParentIs$",
+    "translate": "创建随父单位",
+    "section": "attachment",
+    "description": "如果父节单位不完整，则创建子单位不完整"
+  },
+  {
+    "code": "^redirectDamageToParent$",
+    "translate": "重定向伤害到父单位",
+    "section": "attachment",
+    "description": "将对附属造成的伤害重定向到父单位，而不是伤害子单位自身。"
+  },
+  {
+    "code": "^redirectDamageToParent_shieldOnly$",
+    "translate": "重定向伤害到父单位护盾",
+    "section": "attachment",
+    "description": "只将对附属造成的伤害重定向到父单位的护盾，而不是伤害子单位自身。如果盾没了那就伤害自身，如模块蜘蛛。"
+  },
+  {
+    "code": "^text$",
+    "translate": "文本",
+    "section": "action",
+    "description": "界面中显示的文字"
+  },
+  {
+    "code": "^textPostFix$",
+    "translate": "文本后缀",
+    "section": "action",
+    "description": "显示为后缀的文本，与textAddUnitName一起用于创建文本UI"
+  },
+  {
+    "code": "^displayType$",
+    "translate": "显示类型",
+    "section": "action",
+    "description": "行动的显示类型正常模式为无(绿色)、集结(白色R)、升级(蓝色U)、单位队列（绿色）、建筑(绿色)、行为(蓝色)、仅信息(灰色)、无框信息、仅信息库存（灰色）\nnone, rally, upgrade, queueUnit, building, action, infoOnly, infoOnlyNoBox,infoOnlyStockpile"
+  },
+  {
+    "code": "^displayRemainingStockpile$",
+    "translate": "显示剩余库存",
+    "section": "action",
+    "description": "显示剩余库存,显示为根据资源计算可以触发操作的次数。"
+  },
+  {
+    "code": "^pos$",
+    "translate": "排序",
+    "section": "action",
+    "description": "此单位在用户界面中排序，越小越靠上。"
+  },
+  {
+    "code": "^iconImage$",
+    "translate": "图标",
+    "section": "action",
+    "description": "使用图像作为此动作图标。"
+  },
+  {
+    "code": "^iconExtraImage$",
+    "translate": "额外图标图像",
+    "section": "action",
+    "description": "使用图像作为此动作图标。和上一个一致,但显示更靠上。绘制在图标图像上方。对升级图标等有用"
+  },
+  {
+    "code": "^iconExtraColor$",
+    "translate": "额外图标颜色",
+    "section": "action",
+    "description": "将图标叠加上额外的颜色。默认为#64FFFFFF"
+  },
+  {
+    "code": "^iconExtraIsVisible$",
+    "translate": "额外图标显示条件",
+    "section": "action",
+    "description": "设置图标什么时候可显示。"
+  },
+  {
+    "code": "^unitShownInUI$",
+    "translate": "UI中显示的单位",
+    "section": "action",
+    "description": "使用此单位作为动作图标。"
+  },
+  {
+    "code": "^guiBuildUnit$",
+    "translate": "界面显示单位",
+    "section": "action",
+    "description": "将action图标和鼠标指针改为指定单位，这就像您用建造者去造建筑，会受地形影响，可为action或路径点提供坐标。"
+  },
+  {
+    "code": "^setBuilt$",
+    "translate": "设置完成度",
+    "section": "action",
+    "description": "默认为1。填0-1之间的数字，将指定单位建造完成度。比如填0.5，执行完操作后单位自身建造完成度就成了50%"
+  },
+  {
+    "code": "^tags$",
+    "translate": "标签",
+    "section": "action",
+    "description": "标签，用于对单位进行分类，用于实现各种各样的特殊作。比如单位数量限制，伤害修正，增益损益，触发条件等等"
+  },
+  {
+    "code": "^id$",
+    "translate": "编号",
+    "section": "action",
+    "description": "允许在单位之间转换时更容易的连接动作（action的id，应该有对应的引用词）"
+  },
+  {
+    "code": "^textAddUnitName$",
+    "translate": "从单元添加名称",
+    "section": "action",
+    "description": "从指定单位添加名称。"
+  },
+  {
+    "code": "^descriptionAddFromUnit$",
+    "translate": "从单元添加描述",
+    "section": "action",
+    "description": "从指定单位添加单位描述。"
+  },
+  {
+    "code": "^descriptionAddUnitStats$",
+    "translate": "从单元添加属性",
+    "section": "action",
+    "description": "从指定单位添加详细信息描述，比如攻击力，攻击范围。"
+  },
+  {
+    "code": "^unitShownInUIWithHpBar$",
+    "translate": "单元在UI显示Hp条",
+    "section": "action",
+    "description": "在ui中显示单位血条。默认true,仅当unitShownInUI是unitRef时使用"
+  },
+  {
+    "code": "^unitShownInUIWithProgressBar$",
+    "translate": "单元在UI显示进度条",
+    "section": "action",
+    "description": "在ui中显示单位进度条。默认true,仅当unitShownInUI是unitRef时使用。如果激活，则替换HP bar"
+  },
+  {
+    "code": "^alwaysSinglePress$",
+    "translate": "总是按一次",
+    "section": "action",
+    "description": "点击就执行，不需要确认。默认false,不需要在手机上确认，使用canPlayerCancel: false和allowMultipleInQueue: false也隐藏队列接口。"
+  },
+  {
+    "code": "^price$",
+    "translate": "价格",
+    "section": "action",
+    "description": "设定单位造价，可以是负数，负数时提直接供资金。"
+  },
+  {
+    "code": "^isActive$",
+    "translate": "可用",
+    "section": "action",
+    "description": "默认为true。如果为false，则会禁用操作，并在用户界面中以红色显示。"
+  },
+  {
+    "code": "^isVisible$",
+    "translate": "可见条件",
+    "section": "action",
+    "description": "如果满足条件，则从界面中显示此单位。比如用于科技树。"
+  },
+  {
+    "code": "^isLocked$",
+    "translate": "锁定",
+    "section": "action",
+    "description": "禁止建造该单位。可以与overrideAndReplace一起使用，以限制玩家可以建造的单位。"
+  },
+  {
+    "code": "^isLockedAlt$",
+    "translate": "更多锁定原因",
+    "section": "action",
+    "description": "另一个被锁定原因。只是允许显示不同的消息。"
+  },
+  {
+    "code": "^isLockedAltMessage(_.+)?$",
+    "translate": "锁定原因描述",
+    "section": "action",
+    "description": "另一个被锁定原因描述。"
+  },
+  {
+    "code": "^isLockedAlt2$",
+    "translate": "更多锁定原因2",
+    "section": "action",
+    "description": "更多的锁定原因…"
+  },
+  {
+    "code": "^isLockedAlt2Message$",
+    "translate": "锁定文本2描述",
+    "section": "action",
+    "description": "更多的锁定描述…"
+  },
+  {
+    "code": "^allowMultipleInQueue$",
+    "translate": "允许多个队列",
+    "section": "action",
+    "description": "允许多次点击此行为形成队列，false时则只能点一次，不能累加。"
+  },
+  {
+    "code": "^onlyOneUnitAtATime$",
+    "translate": "一次只有一个单位",
+    "section": "action",
+    "description": "填true时选中多个同类单位时，只有一个执行此行为。"
+  },
+  {
+    "code": "^isGuiBlinking$",
+    "translate": "界面闪烁",
+    "section": "action",
+    "description": "如果为true，则在UI中生成闪烁效果。"
+  },
+  {
+    "code": "^isAlsoViewableByAllies$",
+    "translate": "显示给盟友",
+    "section": "action",
+    "description": "允许盟友玩家看到这个单位的动作，对显示其他玩家有用(例如导抛射体数量，收集的物品)"
+  },
+  {
+    "code": "^isAlsoViewableByEnemies$",
+    "translate": "显示给敌人",
+    "section": "action",
+    "description": "允许敌方玩家看到这个单位的动作，对显示其他玩家有用(例如导抛射体数量，收集的物品)"
+  },
+  {
+    "code": "^ai_isHighPriority$",
+    "translate": "AI高优先级",
+    "section": "action",
+    "description": "AI将优先执行此动作。"
+  },
+  {
+    "code": "^ai_isDisabled$",
+    "translate": "AI被禁用",
+    "section": "action",
+    "description": "默认为false。使用此操作停止AI使用此动作。"
+  },
+  {
+    "code": "^ai_considerSameAsBuilding$",
+    "translate": "AI作为建筑",
+    "section": "action",
+    "description": "填建筑。考虑动作的优先级将会跟建筑物建优先级一样。"
+  },
+  {
+    "code": "^autoTriggerOnEvent$",
+    "translate": "自动触发事件",
+    "section": "action",
+    "description": "满足此条件则自动触发。参数表：\n创建，完成且激活，销毁，杀死任何单位，队列中单位完成，队列添加项目，队列项目取消，传送，接触目标成功，玩家指定路径，队伍变更，运输新单位，卸载或移除单位，受到伤害[支持可选的(withTag=x)]，进入载具，离开载具，新消息（withTag=x），移除附属，无\ncreated, completeAndActive, destroyed, killedAnyUnit, queuedUnitFinished, queueItemAdded(1,15p9中添加了withActionTag和queueItemCancelled两个参数,用于触发动作时检测标签.), queueItemCancelled, teleported, touchTargetSuccess, newWaypointGivenByPlayer, teamChanged, transportingNewUnit，transportUnloadedOrRemovedUnit，tookDamage[支持可选的(withTag=x)],enteredTransport,leftTransport,newMessage(withTag=x),attachmentRemoved，NONE"
+  },
+  {
+    "code": "^autoTriggerOnEventRecursionLimit$",
+    "translate": "自动触发事件递归限制(默认为1)",
+    "section": "action",
+    "description": "自己触发自己的限制次数，默认为1"
+  },
+  {
+    "code": "^autoTrigger$",
+    "translate": "自动触发",
+    "section": "action",
+    "description": "如果为true，则立即触发此操作的效果（忽略价格，isActive，isVisible，buildSpeed等）"
+  },
+  {
+    "code": "^aiUse$",
+    "translate": "AI对该行动的使用方式",
+    "section": "action",
+    "description": "AI对该行动的使用方式。"
+  },
+  {
+    "code": "^autoTriggerCheckRate$",
+    "translate": "自动触发检查率",
+    "section": "action",
+    "description": "选项:everyFrame(默认)，every4Frames, every8Frames。\n注意:所有触发器无论检查率都是在第一次创建和自动触发冷却之后检查的。\n注:使用模板添加[core]autoTriggerCheckRate:every8Frames到所有单位。可以使使用了复杂autoTriggers的mod有巨大的性能提升。"
+  },
+  {
+    "code": "^buildSpeed$",
+    "translate": "建造速度",
+    "section": "action",
+    "description": "建造此单位需要的时间，填秒。以前的计算方式为：此处所填时间=1÷(60x您需要的秒)如果定义了工厂速率则需要乘以建造乘数。"
+  },
+  {
+    "code": "^highPriorityQueue$",
+    "translate": "高优先级队列",
+    "section": "action",
+    "description": "默认为false。如果为true，则此操作将跳过队列中的所有其他低优先级操作。适用于fireTurret类动作。"
+  },
+  {
+    "code": "^canPlayerCancel$",
+    "translate": "玩家可以取消",
+    "section": "action",
+    "description": "玩家可以取消此动作。"
+  },
+  {
+    "code": "^whenBuilding_cannotMove$",
+    "translate": "建造时无法移动",
+    "section": "action",
+    "description": "执行操作准备时停止单位移动。适用于类似部署类动作。"
+  },
+  {
+    "code": "^whenBuilding_playAnimation$",
+    "translate": "建造时播放动画",
+    "section": "action",
+    "description": "准备此动作时，播放[animation]中自定义的动画。"
+  },
+  {
+    "code": "^whenBuilding_rotateTo$",
+    "translate": "建造时旋转",
+    "section": "action",
+    "description": "准备此动作时，将单位主体旋转到该方向"
+  },
+  {
+    "code": "^whenBuilding_rotateTo_orBackwards$",
+    "translate": "建造时旋转或反转",
+    "section": "action",
+    "description": "如果为true，则当角度较小时，允许从whenBuilding_rotateTo旋转180度。"
+  },
+  {
+    "code": "^whenBuilding_rotateTo_waitTillRotated$",
+    "translate": "建造时需等待旋转完成",
+    "section": "action",
+    "description": "暂停准备的行为，直到旋转完成再继续。"
+  },
+  {
+    "code": "^whenBuilding_temporarilyConvertTo$",
+    "translate": "建造时临时转换为",
+    "section": "action",
+    "description": "准备此操作时临时转换为另一个单位。原始单位的操作将保留。"
+  },
+  {
+    "code": "^whenBuilding_temporarilyConvertTo_keepFields$",
+    "translate": "建造时保留字段",
+    "section": "action",
+    "description": "不要在使用whenbuilding_temporaryconvertto时更改这些字段(无论是从或到)，这对<see code=\"setUnitStats\" section=\"action\"/>很有用"
+  },
+  {
+    "code": "^whenBuilding_triggerAction$",
+    "translate": "建造时触发动作",
+    "section": "action",
+    "description": "准备时触发另一个动作"
+  },
+  {
+    "code": "^whenBuilding_rotateTo_aimAtActionTarget$",
+    "translate": "建造时转向瞄准目标",
+    "section": "action",
+    "description": "准备时转向瞄准目标,luke:测试版注意:在某些情况下是坏的"
+  },
+  {
+    "code": "^whenBuilding_rotateTo_rotateTurretX$",
+    "translate": "建造时转向指定炮塔",
+    "section": "action",
+    "description": "准备此操作时转向指定炮塔。"
+  },
+  {
+    "code": "^spawnEffectsOnQueue$",
+    "translate": "队列产生效果",
+    "section": "action",
+    "description": "动作准备开始时产生的效果。"
+  },
+  {
+    "code": "^playSoundToPlayerOnQueue$",
+    "translate": "队列播放声音",
+    "section": "action",
+    "description": "动作准备时播放给玩家的声音。"
+  },
+  {
+    "code": "^lockCameraToUnitOnQueue$",
+    "translate": "将相机锁定在队列上",
+    "section": "action",
+    "description": "将相机锁定在队列上"
+  },
+  {
+    "code": "^addSelectedUnitOnQueue$",
+    "translate": "添加选定单位队列",
+    "section": "action",
+    "description": "添加选定单位队列"
+  },
+  {
+    "code": "^setSelectedUnitOnQueue$",
+    "translate": "设置已选单元队列",
+    "section": "action",
+    "description": "设置已选单元队列"
+  },
+  {
+    "code": "^requireConditional$",
+    "translate": "需要条件",
+    "section": "action",
+    "description": "如果结果为false，则跳过此操作所有结果。"
+  },
+  {
+    "code": "^convertTo$",
+    "translate": "转换成",
+    "section": "action",
+    "description": "将您的单位转换为另一个单位。许多属性被保留。"
+  },
+  {
+    "code": "^convertTo_keepCurrentTags$",
+    "translate": "转换时保留标签",
+    "section": "action",
+    "description": "将单位转换为另一个单位。并且保留拥有的标签。"
+  },
+  {
+    "code": "^convertTo_keepCurrentFields$",
+    "translate": "转换时保留字段",
+    "section": "action",
+    "description": "转换时不要更改这些字段，这在<see code=\"setUnitStats\" section=\"action\"/>中很有用"
+  },
+  {
+    "code": "^addEnergy$",
+    "translate": "增加能量",
+    "section": "action",
+    "description": "为单位增加能量。需要设置了energyMax，否则不起作用。（与addResources相同：energy = X）"
+  },
+  {
+    "code": "^addResources$",
+    "translate": "增加资源",
+    "section": "action",
+    "description": "在放置建筑物或生产单位时，将这些资源添加到自身中。"
+  },
+  {
+    "code": "^addResourcesScaledByAIHandicaps$",
+    "translate": "根据AI难度添加资源。",
+    "section": "action",
+    "description": "与addResources类似，但根据AI难度级别增加或减少。比例：最简单40%、简单70%、中等100%、困难140%、很困难180%、不可能370%"
+  },
+  {
+    "code": "^addResourcesWithLogic$",
+    "translate": "用逻辑添加资源",
+    "section": "action",
+    "description": "与addResources类似，但允许对资源值使用逻辑"
+  },
+  {
+    "code": "^setResourcesWithLogic$",
+    "translate": "用逻辑设置资源",
+    "section": "action",
+    "description": "将目标资源设置为此值，而不是添加。小心对全局资源使用。"
+  },
+  {
+    "code": "^deleteSelf$",
+    "translate": "删除自身",
+    "section": "action",
+    "description": "删除执行此操作的单位，没有死亡效果，不执行死亡触发。"
+  },
+  {
+    "code": "^resetCustomTimer$",
+    "translate": "重置自定义计时器",
+    "section": "action",
+    "description": "重置自定义计时器，与self.customTimer()"
+  },
+  {
+    "code": "^setBodyRotation$",
+    "translate": "设置躯干旋转",
+    "section": "action",
+    "description": "设置单位旋转度数。单位朝右为0度。因为是结果而不是准备过程，所以很突然。（支持动态数字比如memory）"
+  },
+  {
+    "code": "^setSpeed$",
+    "translate": "设置速度",
+    "section": "action",
+    "description": "设置速度"
+  },
+  {
+    "code": "^addSpeed$",
+    "translate": "添加速度",
+    "section": "action",
+    "description": "添加速度"
+  },
+  {
+    "code": "^setUnitStats$",
+    "translate": "设置单位状态",
+    "section": "action",
+    "description": "字段值。允许在不转换的情况下动态更改选定的字段数量。支持=/+=/-=，动态数学/逻辑。可以改变的领域:maxHp(血量上限)，hp(血量)，selfRegenRate(自身回血速度)，maxShield(护盾上限)，shield(护盾)，shieldRegen(护盾恢复速度)，maxEnergy(能量上限)，energy(能量)，armour(装甲)，mass(质量)，shootDelayMultiplier(开火间隔倍数)，shootDamageMultiplier(开火伤害倍数)，movespeed(最大移动速度)，maxTurnSpeed(最大转弯速度)，maxAttackRange(最大攻击距离)，nanoRange(修复范围)，fogOfWarSightRange(迷雾视野)，nanoFactorySpeed(工厂制造速度倍数)，targetHeight(单位最终高度)，"
+  },
+  {
+    "code": "^resetUnitStats$",
+    "translate": "重置单位状态",
+    "section": "action",
+    "description": "将<see code=\"setUnitStats\" section=\"action\"/>所做的更改重置为基本值。"
+  },
+  {
+    "code": "^setUnitMemory$",
+    "translate": "设置单位内存",
+    "section": "action",
+    "description": "键值对。改变此单元的内存，值可以用逻辑设定。内存必须首先用defineUnitMemory或@memory定义。\n注：\n设置内存时 需要加上数组下标\neg. setUnitMemory: numArray[0]=2\n数组下标从0开始"
+  },
+  {
+    "code": "^setHeight$",
+    "translate": "设置高度",
+    "section": "action",
+    "description": "新增设置高度，可以使用逻辑"
+  },
+  {
+    "code": "^setCustomTarget1$",
+    "translate": "设置自定义目标1",
+    "section": "action",
+    "description": "建议填单位引用"
+  },
+  {
+    "code": "^setCustomTarget2$",
+    "translate": "设置自定义目标2",
+    "section": "action",
+    "description": "建议填单位引用"
+  },
+  {
+    "code": "^sendMessageTo$",
+    "translate": "发送信息至",
+    "section": "action",
+    "description": "填单位/单位引用"
+  },
+  {
+    "code": "^sendMessageWithTags$",
+    "translate": "发送标签",
+    "section": "action",
+    "description": "填指定标签"
+  },
+  {
+    "code": "^sendMessageWithData$",
+    "translate": "发送信息与数据",
+    "section": "action",
+    "description": "填变量=XXX"
+  },
+  {
+    "code": "^refundAllQueuedItems$",
+    "translate": "取消所有队列项目",
+    "section": "action",
+    "description": "并返还资源"
+  },
+  {
+    "code": "^removeAllQueuedItemsWithoutRefund$",
+    "translate": "移除所有未建造完成的队列项目",
+    "section": "action",
+    "description": "不返还资源"
+  },
+  {
+    "code": "^alsoTriggerAction$",
+    "translate": "也执行动作",
+    "section": "action",
+    "description": "触发其他动作的结果。忽略行动的要求。"
+  },
+  {
+    "code": "^alsoQueueAction$",
+    "translate": "也添加进队列",
+    "section": "action",
+    "description": "将另一个动作添加到序列中。忽略行动的要求"
+  },
+  {
+    "code": "^alsoTriggerOrQueueActionConditional$",
+    "translate": "也执行队列或需执行条件",
+    "section": "action",
+    "description": "将此操作添加到序列。如果条件不满足(false)则忽略alsoQueueAction。默认true."
+  },
+  {
+    "code": "^alsoTriggerOrQueueActionWithTarget$",
+    "translate": "也可以使用单位参考触发或队列操作",
+    "section": "action",
+    "description": "更改其他触发动作的目标，默认为当前动作的目标。影响诸如 fireTurretXAtGround、spawnUnits、thisActionTarget()等。"
+  },
+  {
+    "code": "^alsoTriggerActionRepeat$",
+    "translate": "重复\"也触发行动(alsoTriggerAction)\"调用",
+    "section": "action",
+    "description": "logic number (Repeats the alsoTriggerAction call, index changed on each repeat) - Useful to create loops or work with arrays\n（动态数字）（每次重复时改变索引 用于创建循环或处理数组）"
+  },
+  {
+    "code": "^otherwiseTriggerAction$",
+    "translate": "否则触发动作",
+    "section": "action",
+    "description": "否则触发动作"
+  },
+  {
+    "code": "^playSoundAtUnit$",
+    "translate": "播放声音至单位",
+    "section": "action",
+    "description": "动作结束时在当前位置播放声音。"
+  },
+  {
+    "code": "^playSoundGlobally$",
+    "translate": "播放声音至全图",
+    "section": "action",
+    "description": "播放全局声音，所有玩家都能听到。"
+  },
+  {
+    "code": "^playSoundToPlayer$",
+    "translate": "播放声音至玩家",
+    "section": "action",
+    "description": "播放声音，只有自己能听到。"
+  },
+  {
+    "code": "^fireTurretXAtGround$",
+    "translate": "指定攻击地面炮塔",
+    "section": "action",
+    "description": "使用此炮塔攻击玩家所指定的地面。"
+  },
+  {
+    "code": "^fireTurretXAtGround_withOffset$",
+    "translate": "指定攻击地面坐标",
+    "section": "action",
+    "description": "攻击指定坐标所在地面，不需要手动选择，"
+  },
+  {
+    "code": "^fireTurretXAtGround_withProjectile$",
+    "translate": "指定攻击地面抛射体",
+    "section": "action",
+    "description": "设定使用的抛射体，如果不设置则为炮塔默认的抛射体。"
+  },
+  {
+    "code": "^fireTurretXAtGround_withTarget$",
+    "translate": "指定攻击目标",
+    "section": "action",
+    "description": "炮塔瞄准指示的单位或标记的位置发射"
+  },
+  {
+    "code": "^fireTurretXAtGround_count$",
+    "translate": "指定攻击地面数量",
+    "section": "action",
+    "description": "设置发射的抛射体数量，默认为1"
+  },
+  {
+    "code": "^fireTurretXAtGround_onlyOverPassableTileOf$",
+    "translate": "指定攻击地面类型",
+    "section": "action",
+    "description": "设置手动选择的地面需要满足这种运动方式。列表：无，陆地，建筑，空军，水。两栖，跨悬崖，跨悬崖和度水。\nNONE LAND BUILDING AIR WATER HOVER OVER_CLIFF OVER_CLIFF_WATER"
+  },
+  {
+    "code": "^fireTurretXAtGround_showGuideDecals$",
+    "translate": "指定攻击地面时显示贴花",
+    "section": "action",
+    "description": "当选择发射位置时显示贴花(参考核抛射体选择发射地点时长按显示)"
+  },
+  {
+    "code": "^spawnUnits$",
+    "translate": "产生单位",
+    "section": "action",
+    "description": "产生指定单位，可用是多种。"
+  },
+  {
+    "code": "^produceUnits$",
+    "translate": "生产单位",
+    "section": "action",
+    "description": "类似spawnUnits，但是单位像正常生产一样，并获得路径的移动。1.13只对非建筑物生成的单位有效。"
+  },
+  {
+    "code": "^spawnEffects$",
+    "translate": "产生效果",
+    "section": "action",
+    "description": "产生指定效果"
+  },
+  {
+    "code": "^offsetSelfAbsolute$",
+    "translate": "自身位置偏移",
+    "section": "action",
+    "description": "使用时将修改单位当前位置，以单位为中心的绝对坐标。"
+  },
+  {
+    "code": "^teleportTo$",
+    "translate": "传送到",
+    "section": "action",
+    "description": "传送到(填单位参考)"
+  },
+  {
+    "code": "^addUnitsIntoTransport$",
+    "translate": "添加单位到载具",
+    "section": "action",
+    "description": "将单位添加到运输槽中，在添加之前会检查空间是否够。"
+  },
+  {
+    "code": "^transportTargetNow$",
+    "translate": "主动装运目标",
+    "section": "action",
+    "description": "主动装运目标(填单位参考)"
+  },
+  {
+    "code": "^forceTransportTargetNow$",
+    "translate": "强制传送目标",
+    "section": "action",
+    "description": "强制传送目标"
+  },
+  {
+    "code": "^deleteNumUnitsFromTransport$",
+    "translate": "从载具中删除单位数",
+    "section": "action",
+    "description": "从载具中删除指定数量单位。"
+  },
+  {
+    "code": "^deleteNumUnitsFromTransport_onlyWithTags$",
+    "translate": "从载具删除带标签单位",
+    "section": "action",
+    "description": "从载具中删除具有此标签的指定数量单位。"
+  },
+  {
+    "code": "^startUnloadingTransport$",
+    "translate": "开始卸载单位",
+    "section": "action",
+    "description": "开始卸载单位"
+  },
+  {
+    "code": "^forceUnloadTransportNow$",
+    "translate": "强制卸载单位",
+    "section": "action",
+    "description": "立即强制卸载单位"
+  },
+  {
+    "code": "^forceUnloadTransportNow_onlyOnSlot$",
+    "translate": "强制卸载指定槽位单位",
+    "section": "action",
+    "description": "强制卸载指定槽位单位"
+  },
+  {
+    "code": "^clearAllWaypoints$",
+    "translate": "清除所有路径点",
+    "section": "action",
+    "description": "清除当前所有路径。"
+  },
+  {
+    "code": "^clearActiveWaypoint$",
+    "translate": "清除当前路径点",
+    "section": "action",
+    "description": "清除当前路径，也就是停止当前动作，执行下一个路径点。"
+  },
+  {
+    "code": "^addWaypoint_type$",
+    "translate": "添加路径点类型",
+    "section": "action",
+    "description": "添加的路径点类型。值列表：移动，移动攻击，防守，进入载具，主动装载，攻击，回收，维修，靠近目标，建造，跟随，设置被动目标，卸载至，巡逻，防守至，触发行动，在范围内时触发行动\nmove, attackMove, guard, loadInto, loadUp, attack, reclaim, repair, touchTarget, build, follow，setPassiveTarget，unloadAt，patrol，guardAt，triggerAction，triggerActionWhenInRange"
+  },
+  {
+    "code": "^addWaypoint_unitType$",
+    "translate": "添加路径点所建造的单位类型",
+    "section": "action",
+    "description": "用于让当前单位去建造指定单位。仅用于addWaypoint_type:build"
+  },
+  {
+    "code": "^addWaypoint_prepend$",
+    "translate": "添加路径点序列位置",
+    "section": "action",
+    "description": "添加到路径点的开头或结尾"
+  },
+  {
+    "code": "^addWaypoint_triggerActionIfFailed$",
+    "translate": "添加路径点失败触发",
+    "section": "action",
+    "description": "如果target_nearestUnit找不到匹配项，因此无法添加路径点，则触发此操作"
+  },
+  {
+    "code": "^addWaypoint_triggerActionIfMatched$",
+    "translate": "添加路径点匹配触发",
+    "section": "action",
+    "description": "如果操作添加的路径点是有效的，则执行指定操作。"
+  },
+  {
+    "code": "^addWaypoint_maxTime$",
+    "translate": "添加路径点检索时间",
+    "section": "action",
+    "description": "如果此路径点这么久还无法执行完成，则取消。"
+  },
+  {
+    "code": "^addWaypoint_target_nearestUnit_tagged$",
+    "translate": "添加路径点检索标签",
+    "section": "action",
+    "description": "添加的路径点目标为靠近有此标签的单位。"
+  },
+  {
+    "code": "^addWaypoint_target_nearestUnit_team$",
+    "translate": "添加路径点靠近队伍",
+    "section": "action",
+    "description": "添加的路径点目标需要的所属方：己方|除自己外任何|中立|除自己外盟友|盟友|敌人|任何，own|notOwn|neutral|allyNotOwn|ally|enemy|any"
+  },
+  {
+    "code": "^addWaypoint_target_nearestUnit_maxRange$",
+    "translate": "添加路径点检索范围",
+    "section": "action",
+    "description": "添加的路径点靠近某目标时考虑的最大范围。"
+  },
+  {
+    "code": "^addWaypoint_target_mapMustBeReachable$",
+    "translate": "添加路径点路径可达",
+    "section": "action",
+    "description": "添加的路径点靠近某目标时必须是有可到达路径的。"
+  },
+  {
+    "code": "^addWaypoint_target_fromReference$",
+    "translate": "添加路径点来自参考",
+    "section": "action",
+    "description": "添加路径点来自单位信息引用。"
+  },
+  {
+    "code": "^addWaypoint_position_offsetFromSelf$",
+    "translate": "添加路径点坐标偏移",
+    "section": "action",
+    "description": "添加的路径点相对于自身偏移的坐标。"
+  },
+  {
+    "code": "^addWaypoint_position_fromAction$",
+    "translate": "添加路径点动作坐标",
+    "section": "action",
+    "description": "将当前动作指定的坐标添加进路径序列中。"
+  },
+  {
+    "code": "^addWaypoint_position_randomOffsetFromSelf$",
+    "translate": "添加路径点随机偏移",
+    "section": "action",
+    "description": "添加坐标进路径点时的随机值。"
+  },
+  {
+    "code": "^addWaypoint_position_relativeOffsetFromSelf$",
+    "translate": "添加路径点相对偏移",
+    "section": "action",
+    "description": "添加路径点位置相对自身偏移量。"
+  },
+  {
+    "code": "^addWaypoint_target_randomUnit_tagged$",
+    "translate": "添加指定标签的随机单位",
+    "section": "action",
+    "description": "添加路径点单位为指定标签的随机单位"
+  },
+  {
+    "code": "^addWaypoint_target_randomUnit_team$",
+    "translate": "添加指定队伍的随机单位",
+    "section": "action",
+    "description": "添加路径点单位为指定队伍的随机单位"
+  },
+  {
+    "code": "^addWaypoint_target_randomUnit_maxRange$",
+    "translate": "添加指定范围的随机单位",
+    "section": "action",
+    "description": "添加路径点单位为指定范围的随机单位"
+  },
+  {
+    "code": "^addAllActionCooldownsTime$",
+    "translate": "增加所有动作冷却时间",
+    "section": "action",
+    "description": "增加所有action的冷却时间。"
+  },
+  {
+    "code": "^addActionCooldownTime$",
+    "translate": "增加动作冷却时间",
+    "section": "action",
+    "description": "增加动作冷却时间，制作先充能再使用的action更加容易了。"
+  },
+  {
+    "code": "^addActionCooldownApplyToActions$",
+    "translate": "添加指定动作冷却时间",
+    "section": "action",
+    "description": "action id，设置addActionCooldownTime的目标。默认情况下是当前操作本身。"
+  },
+  {
+    "code": "^clearAllActionCooldowns$",
+    "translate": "清除所有动作冷却时间",
+    "section": "action",
+    "description": "清除所有动作冷却时间，使其立即可用。"
+  },
+  {
+    "code": "^playAnimation$",
+    "translate": "播放动画",
+    "section": "action",
+    "description": "播放[animation_xx]类型动画。"
+  },
+  {
+    "code": "^playAnimationIfNotPlaying$",
+    "translate": "如果未播放动画则播放动画",
+    "section": "action",
+    "description": "如果没有播放该动画，就播放该动画"
+  },
+  {
+    "code": "^finishPlayingLastAnimation$",
+    "translate": "完成最后一个动画",
+    "section": "action",
+    "description": "完成最后一个动画，包括融合"
+  },
+  {
+    "code": "^stopLastAnimation$",
+    "translate": "停止最后一个动画",
+    "section": "action",
+    "description": "停止最后一个动画，跳过融合"
+  },
+  {
+    "code": "^switchToNeutralTeam$",
+    "translate": "切换至中立队伍",
+    "section": "action",
+    "description": "将队伍更改为中立。该队伍与其他所有队伍结盟。除非使用[core]stayNeutral:true，否则它将被附近的单位捕获。"
+  },
+  {
+    "code": "^switchToAggressiveTeam$",
+    "translate": "切换至侵略性队伍",
+    "section": "action",
+    "description": "将此单位队伍更改为侵略性的内置队伍。不能被其它单位捕获。"
+  },
+  {
+    "code": "^switchToTeam$",
+    "translate": "切换至特定队伍",
+    "section": "action",
+    "description": "切换到小队id。从0开始。(中立-1，敌对中立-2)"
+  },
+  {
+    "code": "^takeResources$",
+    "translate": "提取资源",
+    "section": "action",
+    "description": "提取资源，至少写一种资源。"
+  },
+  {
+    "code": "^takeResources_includeUnitsInTransport$",
+    "translate": "提取资源包括载具内",
+    "section": "action",
+    "description": "提取资源，包括载具内单位。"
+  },
+  {
+    "code": "^takeResources_includeParent$",
+    "translate": "提取资源包括父单位或载具",
+    "section": "action",
+    "description": "提取资源，包括父单位和运输载具。"
+  },
+  {
+    "code": "^takeResources_includeReference$",
+    "translate": "提取资源包括引用",
+    "section": "action",
+    "description": "提取资源包括指定单位。"
+  },
+  {
+    "code": "^takeResources_includeUnitsWithinRange$",
+    "translate": "提取资源范围",
+    "section": "action",
+    "description": "提取资源，在此范围内。"
+  },
+  {
+    "code": "^takeResources_includeUnitsWithinRange_team$",
+    "translate": "提取资源队伍",
+    "section": "action",
+    "description": "提取在此范围内队伍的资源。与“includeUnitsWithinRange”一起使用，默认为own。可以是：\n己方|除自己外任何|中立|除自己外盟友|盟友|敌人|任何，own|notOwn|neutral|allyNotOwn|ally|enemy|any"
+  },
+  {
+    "code": "^takeResources_excludeUnitsWithoutTags$",
+    "translate": "提取资源标签",
+    "section": "action",
+    "description": "提取资源，但排除没有此标签的单位。"
+  },
+  {
+    "code": "^takeResources_excludeUnitsWithTheseResources$",
+    "translate": "提取资源排除资源",
+    "section": "action",
+    "description": "提取资源，不包括拥有这些资源的单位。"
+  },
+  {
+    "code": "^takeResources_excludeUnitsWithoutAllResources$",
+    "translate": "提取资源排除不足",
+    "section": "action",
+    "description": "提取资源，排除缺乏资源者。默认为true."
+  },
+  {
+    "code": "^takeResources_triggerActionIfAnyCollected$",
+    "translate": "提取资源成功触发",
+    "section": "action",
+    "description": "如果有任何收集，则触发动作。"
+  },
+  {
+    "code": "^takeResources_triggerActionIfNoneCollected$",
+    "translate": "提取资源失败触发",
+    "section": "action",
+    "description": "如果没有收集，则触发操作。"
+  },
+  {
+    "code": "^takeResources_triggerActionForEach$",
+    "translate": "每找到一个提取目标触发行动",
+    "section": "action",
+    "description": "引用动作(找到带有资源的目标单位并提取时)"
+  },
+  {
+    "code": "^takeResources_discardCollected$",
+    "translate": "提取资源删除",
+    "section": "action",
+    "description": "从目标中获取资源，但不向自身添加也就是删除。"
+  },
+  {
+    "code": "^takeResources_keepResourcesOnTarget$",
+    "translate": "提取资源克隆",
+    "section": "action",
+    "description": "不从目标添加或删除资源。但克隆资源。与takeResources_discardCollected和takeResources_triggerActionIfAnyCollected一起使用以创建资源检测器。"
+  },
+  {
+    "code": "^takeResources_maxUnits$",
+    "translate": "提取资源目标量",
+    "section": "action",
+    "description": "最多从多少单位提取资源，默认为1。"
+  },
+  {
+    "code": "^takeResources_searchOnly$",
+    "translate": "获取资源仅供搜索",
+    "section": "action",
+    "description": "#新增快捷方式 eg. (\ntakeResources_maxUnits=200\ntakeResources_discardCollected=true\ntakeResources_keepResourcesOnTarget=true\n)\n注意:填写本代码时必须包含至少一下的其中一个代码\ntakeResources_includeUnitsWithinRange:#"
+  },
+  {
+    "code": "^takeResources_directTransferStoppingAtZero$",
+    "translate": "提取资源直接转换至零",
+    "section": "action",
+    "description": "提取资源直接转换至0,用于完全转换。如果目标上的资源少于转帐金额，则只有剩余的资源将被转帐。不支持使用其他一些takeResources_*代码"
+  },
+  {
+    "code": "^convertResource_from$",
+    "translate": "转换资源来源",
+    "section": "action",
+    "description": "将此资源转换资源为别的资源。"
+  },
+  {
+    "code": "^convertResource_to$",
+    "translate": "转换资源至",
+    "section": "action",
+    "description": "将资源转后为此资源，要提供的自定义资源的名称"
+  },
+  {
+    "code": "^convertResource_minAmount$",
+    "translate": "转换资源至少",
+    "section": "action",
+    "description": "如果来源中资源小于该数量，则跳过。默认为0。在大多数情况下可能不需要。"
+  },
+  {
+    "code": "^convertResource_maxAmount$",
+    "translate": "转换资源至多",
+    "section": "action",
+    "description": "“来源资源”和“转换后资源”之间的最大转化量"
+  },
+  {
+    "code": "^convertResource_multiplyAmountBy$",
+    "translate": "转换资源倍率",
+    "section": "action",
+    "description": "资源转换倍率，不影响提取的数量。默认值为1。"
+  },
+  {
+    "code": "^resourceAmount$",
+    "translate": "资源类型",
+    "section": "action",
+    "description": "自定义资源的名称，使用以下3个键进行设置。所有键都是可选的，可以一起使用。"
+  },
+  {
+    "code": "^resourceAmount_setValue$",
+    "translate": "资源类型设置数值",
+    "section": "action",
+    "description": "设置此资源的绝对值，忽略资源的当前值。默认忽略。"
+  },
+  {
+    "code": "^resourceAmount_addOtherResource$",
+    "translate": "资源类型添加至",
+    "section": "action",
+    "description": "添加到其中的另一个自定义资源的名称。可以不使用resourceAmount_setValue，只是添加资源。或者使用resourceAmount_setValue:0复制一个资源值。"
+  },
+  {
+    "code": "^resourceAmount_multiplyBy$",
+    "translate": "资源类型乘数",
+    "section": "action",
+    "description": "默认值为1。将当前资源值乘上此值。"
+  },
+  {
+    "code": "^attachments_addNewUnits$",
+    "translate": "附属添加单位",
+    "section": "action",
+    "description": "添加单位作为其子单位，需要定义附属位置。"
+  },
+  {
+    "code": "^attachments_deleteNumUnits$",
+    "translate": "附属删除单位数",
+    "section": "action",
+    "description": "删除单位数量"
+  },
+  {
+    "code": "^attachments_onlyOnSlots$",
+    "translate": "附属添加于槽位",
+    "section": "action",
+    "description": "只将附属物添加于特定的槽位"
+  },
+  {
+    "code": "^attachments_unload$",
+    "translate": "卸载附属",
+    "section": "action",
+    "description": "卸载所有附属。可以与attachments_onlyonslot一起使用。与运输单位卸载相同"
+  },
+  {
+    "code": "^attachments_disconnect$",
+    "translate": "附属断开连接",
+    "section": "action",
+    "description": "断开所有现在所在位置的附属。可以与attachments_onlyonslot一起使用。"
+  },
+  {
+    "code": "^disconnectFromParent$",
+    "translate": "脱离父单位",
+    "section": "action",
+    "description": "用于子单位脱离父单位"
+  },
+  {
+    "code": "^temporarilyAddTags$",
+    "translate": "临时标签添加",
+    "section": "action",
+    "description": "将标签添加到单位，直到转换或重置。"
+  },
+  {
+    "code": "^temporarilyRemoveTags$",
+    "translate": "临时标签删除",
+    "section": "action",
+    "description": "从单位上删除标签，直到将其转换或重置。"
+  },
+  {
+    "code": "^resetToDefaultTags$",
+    "translate": "标签重置",
+    "section": "action",
+    "description": "重置为默认标签。"
+  },
+  {
+    "code": "^addGlobalTeamTags$",
+    "translate": "添加全局标签",
+    "section": "action",
+    "description": "为玩家的团队添加此全局标签。与self.globalTeamTags()一起使用可创建解锁和升级。"
+  },
+  {
+    "code": "^removeGlobalTeamTags$",
+    "translate": "移除全局标签",
+    "section": "action",
+    "description": "从玩家队伍中删除此全局标签。"
+  },
+  {
+    "code": "^showMessageToAllPlayers$",
+    "translate": "发送消息至所有",
+    "section": "action",
+    "description": "向所有玩家发送消息。"
+  },
+  {
+    "code": "^showMessageToAllEnemyPlayers$",
+    "translate": "发送消息给所有敌人",
+    "section": "action",
+    "description": "发送消息给所有敌人。"
+  },
+  {
+    "code": "^showQuickWarLogToPlayer$",
+    "translate": "发送战争快报至玩家",
+    "section": "action",
+    "description": "向玩家个人发送战争快报。（在左下角）"
+  },
+  {
+    "code": "^showQuickWarLogToAllPlayers$",
+    "translate": "发送战争快报至所有",
+    "section": "action",
+    "description": "向所有玩家发送战争快报。（在左下角）"
+  },
+  {
+    "code": "^debugMessage$",
+    "translate": "调试信息",
+    "section": "action",
+    "description": "仅在启用调试模式的沙盒模式中显示。"
+  },
+  {
+    "code": "^drawType$",
+    "translate": "绘制类型",
+    "section": "effect",
+    "description": "使用内置抛射体图像。 0:projectiles.png 1:projectiles_large.png 2:projectiles2.png"
+  },
+  {
+    "code": "^life$",
+    "translate": "存在时间",
+    "section": "effect",
+    "description": "开火后抛射体在没命中时的存活时间，单位为帧。60为1s。多少合适取决于速度与射程。"
+  },
+  {
+    "code": "^lifeRandom$",
+    "translate": "效果存在时间随机值",
+    "section": "effect",
+    "description": "效果存在时间的随机范围。"
+  },
+  {
+    "code": "^alsoEmitEffects$",
+    "translate": "也创造效果",
+    "section": "effect",
+    "description": "创建时创建更多效果，对于多效果很有用。 注意：创建的效果上的其他“ alsoEmitEffects”将被忽略，禁止套娃。"
+  },
+  {
+    "code": "^alsoEmitEffectsOnDeath$",
+    "translate": "死亡时创建效果",
+    "section": "effect",
+    "description": "在生命耗尽的时候创造这些效果。"
+  },
+  {
+    "code": "^ifSpawnFailsEmitEffects$",
+    "translate": "如果失败则创建效果",
+    "section": "effect",
+    "description": "如果此效果的“spawnChance”失败，则产生这些效果。"
+  },
+  {
+    "code": "^alsoPlaySound$",
+    "translate": "也播放音效",
+    "section": "effect",
+    "description": "播放音效，填文件名或内置。"
+  },
+  {
+    "code": "^createWhenOffscreen$",
+    "translate": "可创建于画面之外",
+    "section": "effect",
+    "description": "允许在画面之外产生此效果，默认为false。"
+  },
+  {
+    "code": "^createWhenZoomedOut$",
+    "translate": "缩小时可产生效果",
+    "section": "effect",
+    "description": "允许缩小时产生此效果，默认值为true"
+  },
+  {
+    "code": "^createWhenOverLiquid$",
+    "translate": "创建于液体上",
+    "section": "effect",
+    "description": "允许在液体上方产生此效果，默认值为true"
+  },
+  {
+    "code": "^createWhenOverLand$",
+    "translate": "创建于陆地上",
+    "section": "effect",
+    "description": "允许在陆地上方产生此效果，默认值为true"
+  },
+  {
+    "code": "^spawnChance$",
+    "translate": "产生几率",
+    "section": "effect",
+    "description": "默认值1.如果小于1，则效果随机被创建"
+  },
+  {
+    "code": "^showInFog$",
+    "translate": "在雾中显示",
+    "section": "effect",
+    "description": "默认为false"
+  },
+  {
+    "code": "^delayedStartTimer$",
+    "translate": "延迟时间",
+    "section": "effect",
+    "description": "抛射体发射延迟时间。"
+  },
+  {
+    "code": "^liveAfterAttachedDies$",
+    "translate": "目标死后存活",
+    "section": "effect",
+    "description": "目标死后动画继续存活,使用AttachedToUnit时默认为false."
+  },
+  {
+    "code": "^priority$",
+    "translate": "优先级",
+    "section": "effect",
+    "description": "默认为high，填不同的值对应不同的效果数量上限，并且通用。verylow/low/high/veryhigh/critical(很低，低，高，很高，至关重要)（上限分别是311，321，331，341，350）"
+  },
+  {
+    "code": "^attachedToUnit$",
+    "translate": "附着在单位上",
+    "section": "effect",
+    "description": "此效果产生时吸附到目标单位或抛射体。将与之一起移动。"
+  },
+  {
+    "code": "^alwayStartDirAtZero$",
+    "translate": "初始角度总是为零",
+    "section": "effect",
+    "description": "忽略附属单位或者产者的角度。"
+  },
+  {
+    "code": "^atmospheric$",
+    "translate": "空气效果",
+    "section": "effect",
+    "description": "添加阻力使此效果减慢速度，并添加随机移动。用于模拟尾焰。"
+  },
+  {
+    "code": "^physics$",
+    "translate": "物理效果",
+    "section": "effect",
+    "description": "撞击地面时反抛射体。需要高度才能生效。"
+  },
+  {
+    "code": "^physicsGravity$",
+    "translate": "物理重力",
+    "section": "effect",
+    "description": "默认为1。physics:true时的垂直方向加速度。"
+  },
+  {
+    "code": "^xOffsetRelative$",
+    "translate": "X相对偏移量",
+    "section": "effect",
+    "description": "效果起始时相对于炮塔，抛射体，单位的偏移的方向位置。正数向右，负数向左。"
+  },
+  {
+    "code": "^yOffsetRelative$",
+    "translate": "Y相对偏移量",
+    "section": "effect",
+    "description": "效果起始时相对于炮塔，抛射体，单位的偏移的方向位置。正数向前，负数向后。"
+  },
+  {
+    "code": "^xOffsetRelativeRandom$",
+    "translate": "X相对随机偏移量",
+    "section": "effect",
+    "description": "X相对目标随机偏移量。随机增加或减少此值，用于偏移像素。"
+  },
+  {
+    "code": "^yOffsetRelativeRandom$",
+    "translate": "Y相对随机偏移量",
+    "section": "effect",
+    "description": "Y相对目标随机偏移量。随机增加或减少此值，用于偏移像素。"
+  },
+  {
+    "code": "^xOffsetAbsolute$",
+    "translate": "X绝对偏移量",
+    "section": "effect",
+    "description": "Absolute类为绝对偏移，它不像Relative那样考虑单位的方向。比如设置x向速度为1，绝对偏移则始终向右移动，相对偏移可以向任意方向移动。"
+  },
+  {
+    "code": "^yOffsetAbsolute$",
+    "translate": "Y绝对偏移量",
+    "section": "effect",
+    "description": "按位置偏移起动效果，忽略附加炮塔单位等的方向。"
+  },
+  {
+    "code": "^xOffsetAbsoluteRandom$",
+    "translate": "X绝对随机偏移量",
+    "section": "effect",
+    "description": "随机增加或减少此值，用于偏移像素。"
+  },
+  {
+    "code": "^yOffsetAbsoluteRandom$",
+    "translate": "Y绝对随机偏移量",
+    "section": "effect",
+    "description": "随机增加或减少此值，用于偏移像素。"
+  },
+  {
+    "code": "^xSpeedRelative$",
+    "translate": "X相对速度",
+    "section": "effect",
+    "description": "X轴相对于目标的移动速度。，正数向右，负数向左。"
+  },
+  {
+    "code": "^ySpeedRelative$",
+    "translate": "Y相对速度",
+    "section": "effect",
+    "description": "Y轴相对于目标的移动速度。正数向前，负数向后。"
+  },
+  {
+    "code": "^xSpeedRelativeRandom$",
+    "translate": "X随机相对速度",
+    "section": "effect",
+    "description": "随机增加或减少此值，用于偏移像素。"
+  },
+  {
+    "code": "^ySpeedRelativeRandom$",
+    "translate": "Y随机相对速度",
+    "section": "effect",
+    "description": "随机增加或减少此值，用于偏移像素。"
+  },
+  {
+    "code": "^xSpeedAbsolute$",
+    "translate": "X绝对速度",
+    "section": "effect",
+    "description": "X轴相对于起点的绝对移动速度。"
+  },
+  {
+    "code": "^ySpeedAbsolute$",
+    "translate": "Y绝对速度",
+    "section": "effect",
+    "description": "Y轴相对于起点的绝对移动速度。"
+  },
+  {
+    "code": "^xSpeedAbsoluteRandom$",
+    "translate": "X随机绝对速度",
+    "section": "effect",
+    "description": "按此值随机更改初始值。"
+  },
+  {
+    "code": "^ySpeedAbsoluteRandom$",
+    "translate": "Y随机绝对速度",
+    "section": "effect",
+    "description": "按此值随机更改初始值。"
+  },
+  {
+    "code": "^hOffset$",
+    "translate": "高度偏移",
+    "section": "effect",
+    "description": "距目标的高度偏移。正数向上，负数向下。"
+  },
+  {
+    "code": "^hOffsetRandom$",
+    "translate": "随机高度偏移",
+    "section": "effect",
+    "description": "按此值随机更改初始值。"
+  },
+  {
+    "code": "^hSpeed$",
+    "translate": "高度速度",
+    "section": "effect",
+    "description": "高度移动速度。正数向上，负数向下。"
+  },
+  {
+    "code": "^hSpeedRandom$",
+    "translate": "随机高度速度偏移",
+    "section": "effect",
+    "description": "按此值随机更改初始值。"
+  },
+  {
+    "code": "^dirOffset$",
+    "translate": "角度偏移",
+    "section": "effect",
+    "description": "角度偏移，修改初始朝向。注意,0度可能存在朝向问题。"
+  },
+  {
+    "code": "^dirOffsetRandom$",
+    "translate": "随机角度偏移量",
+    "section": "effect",
+    "description": "按此值随机更改偏移角度。"
+  },
+  {
+    "code": "^dirSpeed$",
+    "translate": "转速",
+    "section": "effect",
+    "description": "修改效果的旋转速度。"
+  },
+  {
+    "code": "^dirSpeedRandom$",
+    "translate": "随机转速",
+    "section": "effect",
+    "description": "按此值随机更改旋转速度。"
+  },
+  {
+    "code": "^frameIndex$",
+    "translate": "帧索引",
+    "section": "effect",
+    "description": "使用内置效果时所取用的帧编号，0取第一帧。"
+  },
+  {
+    "code": "^frameIndexRandom$",
+    "translate": "帧随机",
+    "section": "effect",
+    "description": "随机增减索引值，用于随机使用同组内不同的图像。"
+  },
+  {
+    "code": "^stripIndex$",
+    "translate": "图像集",
+    "section": "effect",
+    "description": "要使用的内置图像集。不能与自定义图像一起使用。如effects 效果1对应res内文件effects.png，以此类推。\nexplode_big爆炸效果图、light_50闪光贴花、flame开火图火焰、dust灰尘贴花、smoke_black黑烟、shockwave冲击波、fire火焰图、lava_bubble岩浆泡、effects2效果2、plasma_shot等离子、shockwave_large大冲击波、explode_bits碎片、explode_big2大爆炸、explode_bits_bug虫碎片、projectiles抛射体、projectiles2抛射体2、effects3效果3"
+  },
+  {
+    "code": "^image$",
+    "translate": "主体图像",
+    "section": "effect",
+    "description": "填图片名称，格式为png。"
+  },
+  {
+    "code": "^imageShadow$",
+    "translate": "阴影图像",
+    "section": "effect",
+    "description": "用于自定义阴影的图像"
+  },
+  {
+    "code": "^scaleTo$",
+    "translate": "结束缩放倍数",
+    "section": "effect",
+    "description": "效果结束时缩放倍数。"
+  },
+  {
+    "code": "^scaleFrom$",
+    "translate": "初始缩放倍数",
+    "section": "effect",
+    "description": "效果初始时缩放倍数，用于效果从小到大缩放，或者反向缩放。"
+  },
+  {
+    "code": "^color$",
+    "translate": "颜色",
+    "section": "effect",
+    "description": "使用十六进制值对该抛射体重新着色，它也决定了激光颜色，颜色格式为#AARRGGBB。"
+  },
+  {
+    "code": "^teamColorRatio$",
+    "translate": "阵营色色相",
+    "section": "effect",
+    "description": "将团队颜色混合到抛射体颜色中，填0-1。"
+  },
+  {
+    "code": "^drawUnderUnits$",
+    "translate": "绘制与单位下",
+    "section": "effect",
+    "description": "绘制于单位下方。"
+  },
+  {
+    "code": "^fadeInTime$",
+    "translate": "淡入时间",
+    "section": "effect",
+    "description": "设置淡入效果时间，从透明到不透明。透明度值从0%到100%。"
+  },
+  {
+    "code": "^fadeOut$",
+    "translate": "淡出",
+    "section": "effect",
+    "description": "设置淡入效果时间，透明度从100%淡出到%0。把alpha设置为高于1可以延长淡出。"
+  },
+  {
+    "code": "^alpha$",
+    "translate": "透明度",
+    "section": "effect",
+    "description": "介于0-1之间。可以设置为大于1以延迟淡出效果"
+  },
+  {
+    "code": "^shadow$",
+    "translate": "阴影",
+    "section": "effect",
+    "description": "true时绘制阴影。如果使用imageShadow则强制为true"
+  },
+  {
+    "code": "^pivotOffset$",
+    "translate": "枢轴偏移",
+    "section": "effect",
+    "description": "整个效果的朝向偏移"
+  },
+  {
+    "code": "^pivotOffsetRandom$",
+    "translate": "枢轴偏移随机",
+    "section": "effect",
+    "description": "按此值随机更改朝向。"
+  },
+  {
+    "code": "^total_frames$",
+    "translate": "图像帧数",
+    "section": "effect",
+    "description": "默认值为1。将图像分割为指定分数，用于动画。第一帧编号为0"
+  },
+  {
+    "code": "^animateFrameStart$",
+    "translate": "动画开始帧",
+    "section": "effect",
+    "description": "动画从哪一帧开始,第一帧编号为0"
+  },
+  {
+    "code": "^animateFrameEnd$",
+    "translate": "动画结束帧",
+    "section": "effect",
+    "description": "动画在哪一帧结束。"
+  },
+  {
+    "code": "^animateFramePingPong$",
+    "translate": "动画帧重放",
+    "section": "effect",
+    "description": "动画正序播放完毕后再倒序播放一次。"
+  },
+  {
+    "code": "^animateFrameSpeed$",
+    "translate": "动画帧速度",
+    "section": "effect",
+    "description": "动画播放速度，单位位游戏帧，一般动画帧数也不高，所以设置一般为0.x"
+  },
+  {
+    "code": "^animateFrameSpeedRandom$",
+    "translate": "动画帧随机速度",
+    "section": "effect",
+    "description": "按此值随机更改动画速度。"
+  },
+  {
+    "code": "^animateFrameLooping$",
+    "translate": "动画帧循环",
+    "section": "effect",
+    "description": "默认false。当为false时,效果被移除时，动画结束"
+  },
+  {
+    "code": "^onActions$",
+    "translate": "动画条件",
+    "section": "animation",
+    "description": "动画触发条件：移动、攻击、闲置、在建造中、建造中并将动画拉伸至建造时长、生产中、未知、修复、回收、创建时\nmove, attack, idle, underConstruction, underConstructionWithLinkedBuiltTime, queuedUnits、Unknown, repair, reclaim, created"
+  },
+  {
+    "code": "^onActionsQueuedUnitPlayAt$",
+    "translate": "在队列中有单位播放",
+    "section": "animation",
+    "description": "当使用onAction:queueedUnits时，动画开始之前需要达到值，设置为0-1之间"
+  },
+  {
+    "code": "^blendIn$",
+    "translate": "融入时间",
+    "section": "animation",
+    "description": "与上一个动画融合时间。"
+  },
+  {
+    "code": "^blendOut$",
+    "translate": "融出时间",
+    "section": "animation",
+    "description": "与下一个动画融合时间。"
+  },
+  {
+    "code": "^pingPong$",
+    "translate": "缩放效果",
+    "section": "animation",
+    "description": "结束后反向播放动画，它一般用来做生物的呼吸效果。"
+  },
+  {
+    "code": "^KeyframeTimeScale$",
+    "translate": "帧时长缩放",
+    "section": "animation",
+    "description": "缩放所有关键帧时间，这有助于在不更改所有内容的情况下更快/更慢地制作动画"
+  },
+  {
+    "code": "^arm\\d+_\\d+s$",
+    "translate": "胳膊{1}_{2}s",
+    "section": "animation",
+    "description": "添加一个关键帧。用来创建多个动作的动画。",
+    "rule": "^arm(\\d+)_(\\d+)s$"
+  },
+  {
+    "code": "^leg\\d+_\\d+s$",
+    "translate": "腿{1}_{2}s",
+    "section": "animation",
+    "description": "添加一个关键帧。用来创建多个动作的动画。",
+    "rule": "^leg(\\d+)_(\\d+)s$"
+  },
+  {
+    "code": "^body_\\d+s$",
+    "translate": "主体_{1}s",
+    "section": "animation",
+    "description": "随时为主体添加关键帧。身体仅允许使用frame和scale。",
+    "rule": "^body_(\\d+)s$"
+  },
+  {
+    "code": "^effect_\\d+s$",
+    "translate": "效果_{1}s",
+    "section": "animation",
+    "description": "在播放动画时产生效果。",
+    "rule": "^effect_(\\d+)s$"
+  },
+  {
+    "code": "^direction_units$",
+    "translate": "多向动画度数",
+    "section": "animation",
+    "description": "播放此动画时，覆盖[graphics] animation_direction_units。多向动画度数\t45个代表8个方向，90个代表4个方向的动画。"
+  },
+  {
+    "code": "^direction_strideX$",
+    "translate": "多向动画x向",
+    "section": "animation",
+    "description": "覆盖[graphics] animation_direction_strideX，动画帧取值在方向改变时偏移。一般填0"
+  },
+  {
+    "code": "^direction_strideY$",
+    "translate": "多向动画y向",
+    "section": "animation",
+    "description": "覆盖[graphics] animation_direction_strideY，动画帧在方向改变Y轴偏移偏移。与frame_height一起使用。一般填1"
+  },
+  {
+    "code": "^direction_starting$",
+    "translate": "多向动画朝向",
+    "section": "animation",
+    "description": "覆盖[graphics] animation_direction_starting，第一帧的方向，取决于您的素材。"
+  },
+  {
+    "code": "^anyRuleInGroup$",
+    "translate": "放置规则组",
+    "section": "placementRule",
+    "description": "放置规则组名。（仅需要通过此组规则中的1条，而不是全部通过。在其他放置规则中可使用相同的组名称来创建组。）"
+  },
+  {
+    "code": "^searchTags$",
+    "translate": "检索标签",
+    "section": "placementRule",
+    "description": "搜索至少包含这些标签之一的任何单位"
+  },
+  {
+    "code": "^searchTeam$",
+    "translate": "检索队伍",
+    "section": "placementRule",
+    "description": "要搜索的团队可以是：自身|中立|盟友非自身|盟友|敌人|任何。  own|neutral|allyNotOwn|ally|enemy|any"
+  },
+  {
+    "code": "^searchOffsetX$",
+    "translate": "检索偏移",
+    "section": "placementRule",
+    "description": "检索偏移，默认为0"
+  },
+  {
+    "code": "^searchOffsetY$",
+    "translate": "检索偏移",
+    "section": "placementRule",
+    "description": "检索偏移，默认为0"
+  },
+  {
+    "code": "^searchDistance$",
+    "translate": "搜索距离",
+    "section": "placementRule",
+    "description": "搜索距离"
+  },
+  {
+    "code": "^excludeIncompleteBuildings$",
+    "translate": "排除不完整建筑",
+    "section": "placementRule",
+    "description": "排除不完整的建筑"
+  },
+  {
+    "code": "^excludeNonBuildings$",
+    "translate": "排除非建筑",
+    "section": "placementRule",
+    "description": "排除非建筑"
+  },
+  {
+    "code": "^minCount$",
+    "translate": "最小数量",
+    "section": "placementRule",
+    "description": "设定需要在搜索中找到的单位的最小数量。(如需要靠近某物)。默认值为0"
+  },
+  {
+    "code": "^maxCount$",
+    "translate": "最大数量",
+    "section": "placementRule",
+    "description": "在匹配失败前设置最大单位数量(例如不能接近某个值)。默认为无限的"
+  },
+  {
+    "code": "^blocksPlacement$",
+    "translate": "禁止放置",
+    "section": "placementRule",
+    "description": "禁止放置。默认为true。"
+  },
+  {
+    "code": "^cannotPlaceMessage(_.+)?$",
+    "translate": "失败信息",
+    "section": "placementRule",
+    "description": "如果此放置规则失败，则会向玩家显示消息（将成为mergedRuleGroup中的第一个失败规则）"
+  },
+  {
+    "code": "^checkEachTile$",
+    "translate": "检查每个地块",
+    "section": "placementRule",
+    "description": "[true / false]默认为true（仅对测试单元中心设置为false，true会检查显示在放置网格上的单元下方的每个图块）"
+  },
+  {
+    "code": "^displayName(_.+)?$",
+    "translate": "显示名称",
+    "section": "global_resource",
+    "description": "用户界面中此资源的名称"
+  },
+  {
+    "code": "^displayNameShort(_.+)?$",
+    "translate": "显示短名称",
+    "section": "global_resource",
+    "description": "在较小的UI上显示的文本（如action的悬浮文本）默认为displayName"
+  },
+  {
+    "code": "^hidden$",
+    "translate": "隐藏",
+    "section": "global_resource",
+    "description": "隐藏"
+  },
+  {
+    "code": "^priority$",
+    "translate": "优先级",
+    "section": "global_resource",
+    "description": "默认为high，填不同的值对应不同的效果数量上限，并且通用。verylow/low/high/veryhigh/critical(很低，低，高，很高，至关重要)（上限分别是311，321，331，341，350）"
+  },
+  {
+    "code": "^displayColor$",
+    "translate": "显示颜色",
+    "section": "global_resource",
+    "description": "颜色，可以是十六进制，带有可选的alpha"
+  },
+  {
+    "code": "^displayRoundedDown$",
+    "translate": "显示为整数",
+    "section": "global_resource",
+    "description": "对资源进行舍入显示为整数。"
+  },
+  {
+    "code": "^displayTextPrefix$",
+    "translate": "显示文本前缀",
+    "section": "global_resource",
+    "description": "与displayPrefixInHUD有着相同的作用，而且它俩不能共存"
+  },
+  {
+    "code": "^displayTextPostfix$",
+    "translate": "显示文本后缀",
+    "section": "global_resource",
+    "description": "与displayPostfixInHUD有着相同的作用，而且它俩不能共存"
+  },
+  {
+    "code": "^displayTextAppendResource$",
+    "translate": "显示文本里添加资源",
+    "section": "global_resource",
+    "description": "往文本里添加一个资源"
+  },
+  {
+    "code": "^displayWhenZero$",
+    "translate": "为零时显示",
+    "section": "global_resource",
+    "description": "资源为零时也显示。"
+  },
+  {
+    "code": "^displayPos$",
+    "translate": "显示排序",
+    "section": "global_resource",
+    "description": "显示优先级，越小越居上"
+  },
+  {
+    "code": "^iconImage$",
+    "translate": "图标",
+    "section": "global_resource",
+    "description": "使用图像作为此动作图标。"
+  },
+  {
+    "code": "^iconImageUseInText$",
+    "translate": "在动作(action)的描述中显示资源图标",
+    "section": "global_resource",
+    "description": "默认为true"
+  },
+  {
+    "code": "^displayNameHideWhenIconShownInText$",
+    "translate": "显示名称在文本中显示图标时隐藏",
+    "section": "global_resource",
+    "description": "(默认为false) - 有助于缩短说明文本"
+  },
+  {
+    "code": "^displayNameHideWhenIconShownInHUD$",
+    "translate": "文本显示名称在HUD中显示图标时隐藏",
+    "section": "global_resource",
+    "description": "默认为false"
+  },
+  {
+    "code": "^displayColorUseInText$",
+    "translate": "在动作(action)的描述中显示资源颜色",
+    "section": "global_resource",
+    "description": "默认为true"
+  },
+  {
+    "code": "^displayInHud$",
+    "translate": "在HUD里显示",
+    "section": "global_resource",
+    "description": "- 用于 appendResourceInHUD（在HUD中追加资源） 中的资源，而不会隐藏它们，这有其他副作用"
+  },
+  {
+    "code": "^appendResourceInHUD$",
+    "translate": "在HUD中追加资源",
+    "section": "global_resource",
+    "description": "使用后，在游戏界面中这个资源值将会叠在目标资源值的后面，并且继承目标资源的颜色和图标。这个资源值后面也能继续叠加其它资源值"
+  },
+  {
+    "code": "^appendResourceInHUD_whenThisZero$",
+    "translate": "在此为零时在HUD中追加资源",
+    "section": "global_resource",
+    "description": "默认为true。为false时附加资源（如用于显示最大值的资源）与父资源一起隐藏。"
+  },
+  {
+    "code": "^displayPrefixInHUD$",
+    "translate": "在HUD中显示前缀",
+    "section": "global_resource",
+    "description": "在资源数值前显示的文本，会替换掉资源原本的名称以及冒号，和appendResourceInHUD一同使用时可以用来显示资源限制之类的内容"
+  },
+  {
+    "code": "^displayPostfixInHUD$",
+    "translate": "在HUD中显示后缀",
+    "section": "global_resource",
+    "description": "在资源数值之后显示的文本"
+  },
+  {
+    "code": "^valueInStats$",
+    "translate": "统计值",
+    "section": "global_resource",
+    "description": "(如果全局且未隐藏，则默认为 1(true)，否则默认为 0(false)） - 用于游戏后的统计和回放的排行榜"
+  },
+  {
+    "code": "^displayTextAppendResourceWithGap$",
+    "translate": "显示具有间隙的附加资源文本",
+    "section": "global_resource",
+    "description": "默认为false。将不相关的资源放在同一行时，在资源之间添加空格。"
+  },
+  {
+    "code": "^displayDigitGrouping$",
+    "translate": "资源数字分组",
+    "section": "global_resource",
+    "description": "none/comma/space--(空,逗号,空格)(例如资源数量10000,空格分组就是10 000)"
+  },
+  {
+    "code": "^displayName(_.+)?$",
+    "translate": "显示名称",
+    "section": "resource",
+    "description": "用户界面中此资源的名称"
+  },
+  {
+    "code": "^displayNameShort(_.+)?$",
+    "translate": "显示短名称",
+    "section": "resource",
+    "description": "在较小的UI上显示的文本（如action的悬浮文本）默认为displayName"
+  },
+  {
+    "code": "^hidden$",
+    "translate": "隐藏",
+    "section": "resource",
+    "description": "隐藏"
+  },
+  {
+    "code": "^equivalentGlobalResourceForAI$",
+    "translate": "作为AI的全局资源",
+    "section": "resource",
+    "description": "用于向AI提示具有本地资源的资源节点可用于获取不同的全局资源。例如，当一台收割机卸载资源"
+  },
+  {
+    "code": "^displayRoundedDown$",
+    "translate": "显示为整数",
+    "section": "resource",
+    "description": "对资源进行舍入显示为整数。"
+  },
+  {
+    "code": "^image$",
+    "translate": "主体图像",
+    "section": "decal",
+    "description": "填图片名称，格式为png。"
+  },
+  {
+    "code": "^layer$",
+    "translate": "绘制图层",
+    "section": "decal",
+    "description": "可以填入的值：shadow(阴影), beforeBody(在主体之下), afterBody(在主体之上), onTop(在最顶端), beforeUI(在显示界面之上)，inactive(无效)"
+  },
+  {
+    "code": "^order$",
+    "translate": "排序(默认为0并且按照ini里的顺序)",
+    "section": "decal",
+    "description": "Order with other decals, defaults 0 and uses order it appears in ini（使用其他贴花排序，默认为0，并使用其在ini中显示的顺序）"
+  },
+  {
+    "code": "^teamColors$",
+    "translate": "阵营色",
+    "section": "decal",
+    "description": "bool. Enable team coloring on image and imageStack（布尔值。在图像和图像堆栈上启用队伍色）"
+  },
+  {
+    "code": "^alpha$",
+    "translate": "透明度",
+    "section": "decal",
+    "description": "介于0-1之间。可以设置为大于1以延迟淡出效果"
+  },
+  {
+    "code": "^isVisible$",
+    "translate": "可见条件",
+    "section": "decal",
+    "description": "如果满足条件，则从界面中显示此单位。比如用于科技树。"
+  },
+  {
+    "code": "^onlyWhenSelectedByOwnPlayer$",
+    "translate": "仅在被拥有者选中时绘制",
+    "section": "decal",
+    "description": "Only draw if the viewing player is the same as this unit.（只有当玩家查看本单位时，才可绘制贴花。）"
+  },
+  {
+    "code": "^onlyWhenSelectedByEnemyPlayer$",
+    "translate": "被敌方玩家选中时绘制",
+    "section": "decal",
+    "description": "被敌方玩家选中时绘制"
+  },
+  {
+    "code": "^onlyWhenSelectedByAllyNotOwnPlayer$",
+    "translate": "非自身队伍的盟友选中时绘制",
+    "section": "decal",
+    "description": "非自身队伍的盟友选中时绘制"
+  },
+  {
+    "code": "^onlyWhenSelectedByAnyPlayer$",
+    "translate": "被任意玩家选中时绘制",
+    "section": "decal",
+    "description": "Show when any player selects this unit.（在任何玩家选中本单位值绘制贴花）"
+  },
+  {
+    "code": "^includeParentsSelection$",
+    "translate": "包括被父单位选中",
+    "section": "decal",
+    "description": "onlyWhenSelected*also check parents selection（仅当选定时*还检查父项选择）"
+  },
+  {
+    "code": "^onlyTeam$",
+    "translate": "仅在查看者为特定队伍时显示",
+    "section": "decal",
+    "description": "Only draw when this relation between unit and viewing player，Can be filled in:own|notOwn|neutral|allyNotOwn|ally|enemy|any         (仅当单位和查看玩家之间的关系时绘制，可以填写：己方|非己方|中立方|除自己外盟友|盟友|敌方|任意)"
+  },
+  {
+    "code": "^onlyWhileActive$",
+    "translate": "仅在单位建造完成时绘制",
+    "section": "decal",
+    "description": "Only draw when unit has been completed（仅在单位完成时绘制，比如建造者建造一般的建筑就不算)"
+  },
+  {
+    "code": "^onlyWhileAlive$",
+    "translate": "仅在存活时绘制",
+    "section": "decal",
+    "description": "(If beforeUI layer default true, else default false)(如果图层(layer)为beforeUI默认为true,否则false，为ture死后消失)"
+  },
+  {
+    "code": "^onlyInPreview$",
+    "translate": "仅在侧边栏和建筑放置预览中显示",
+    "section": "decal",
+    "description": "Only show in sidebar, and building placement preview（仅在侧边栏中显示，以及建筑布局预览）"
+  },
+  {
+    "code": "^onlyWithZoomLevelOrMore$",
+    "translate": "仅当缩放到当前大小或更大时绘制",
+    "section": "decal",
+    "description": "onscreen. Recommended to be set on decals for 3d voxel style units, small details or small shadows.Would hide decal when zoomed out a bit. Useful to reduce draw calls for performance when a lot of units might be\n（屏幕上。建议设置在三维立体体积元素样式单位、小细节或小阴影的贴花上。缩小一点时会隐藏贴花。当许多单元可能需要时，有助于减少性能的调用）"
+  },
+  {
+    "code": "^onlyOnNonPreview$",
+    "translate": "仅在非预览中显示(与上一条相反)",
+    "section": "decal",
+    "description": "Only show on real unit, not action sidebar, etc（仅在真实单元上显示，而不是动作侧边栏等）"
+  },
+  {
+    "code": "^onlyPlayersWithUnitControl$",
+    "translate": "仅在查看者能够控制此单位时绘制",
+    "section": "decal",
+    "description": "Only draw if viewing player could control this unit（仅当观看者可以控制此单元时才绘制贴花）"
+  },
+  {
+    "code": "^onlyOnBodyFrameOf$",
+    "translate": "只在主体关键帧时绘制",
+    "section": "decal",
+    "description": "只有在主体到某个关键帧时绘制"
+  },
+  {
+    "code": "^onlyInBlueprint$",
+    "translate": "只在蓝图中绘制",
+    "section": "decal",
+    "description": "只在蓝图中绘制"
+  },
+  {
+    "code": "^onlyOnNonBlueprint$",
+    "translate": "仅在非蓝图上绘制",
+    "section": "decal",
+    "description": "仅在非蓝图上绘制"
+  },
+  {
+    "code": "^xOffsetRelative$",
+    "translate": "X相对偏移量",
+    "section": "decal",
+    "description": "效果起始时相对于炮塔，抛射体，单位的偏移的方向位置。正数向右，负数向左。"
+  },
+  {
+    "code": "^yOffsetRelative$",
+    "translate": "Y相对偏移量",
+    "section": "decal",
+    "description": "效果起始时相对于炮塔，抛射体，单位的偏移的方向位置。正数向前，负数向后。"
+  },
+  {
+    "code": "^xOffsetAbsolute$",
+    "translate": "X绝对偏移量",
+    "section": "decal",
+    "description": "Absolute类为绝对偏移，它不像Relative那样考虑单位的方向。比如设置x向速度为1，绝对偏移则始终向右移动，相对偏移可以向任意方向移动。"
+  },
+  {
+    "code": "^yOffsetAbsolute$",
+    "translate": "Y绝对偏移量",
+    "section": "decal",
+    "description": "按位置偏移起动效果，忽略附加炮塔单位等的方向。"
+  },
+  {
+    "code": "^hOffset$",
+    "translate": "高度偏移",
+    "section": "decal",
+    "description": "距目标的高度偏移。正数向上，负数向下。"
+  },
+  {
+    "code": "^dirOffset$",
+    "translate": "角度偏移",
+    "section": "decal",
+    "description": "角度偏移，修改初始朝向。注意,0度可能存在朝向问题。"
+  },
+  {
+    "code": "^pivotOffset$",
+    "translate": "枢轴偏移",
+    "section": "decal",
+    "description": "整个效果的朝向偏移"
+  },
+  {
+    "code": "^alwaysStartDirAtZero$",
+    "translate": "朝向总是为零",
+    "section": "decal",
+    "description": "生成出的单位朝向总是设置为零度。即朝右。"
+  },
+  {
+    "code": "^imageStack$",
+    "translate": "图像列表",
+    "section": "decal",
+    "description": "list of images recommended for 3d voxel style units as images can be batch drawn when using the same sprite sheet.（推荐用于三维立体体积元素样式单位的图像列表，因为当使用相同的子画面时，可以批量绘制图像。）(目前没有实例所以不清楚,但确定是用于3d单位)"
+  },
+  {
+    "code": "^imageScale$",
+    "translate": "图像缩放比例",
+    "section": "decal",
+    "description": "调整图像大小。默认值为1。也可以影响腿部和阴影图像。"
+  },
+  {
+    "code": "^imageScaleX$",
+    "translate": "图像X缩放",
+    "section": "decal",
+    "description": "图像X缩放"
+  },
+  {
+    "code": "^imageScaleY$",
+    "translate": "图像Y缩放",
+    "section": "decal",
+    "description": "图像Y缩放"
+  },
+  {
+    "code": "^stack_hOffset$",
+    "translate": "列表图像高度偏移",
+    "section": "decal",
+    "description": "for 3d voxel style units.（用于三维立体体积元素样式单位。）"
+  },
+  {
+    "code": "^stack_frameOffset$",
+    "translate": "列表图像帧偏移",
+    "section": "decal",
+    "description": "for 3d voxel style units.（用于三维立体体积元素样式单位。）"
+  },
+  {
+    "code": "^stack_drawInReverseOrder$",
+    "translate": "列表图像绘图顺序",
+    "section": "decal",
+    "description": "列表图像绘图顺序"
+  },
+  {
+    "code": "^stack_indexStart$",
+    "translate": "列表图像起始图像",
+    "section": "decal",
+    "description": "logic int (Starting image of the image stack)（动态整数（图像堆栈的起始图像））"
+  },
+  {
+    "code": "^stack_indexCount$",
+    "translate": "列表图像数量",
+    "section": "decal",
+    "description": "logic int (Number of images to draw. Could be set to 1 to use stack_indexStart as an image picker)（动态整数（要绘制的图像数。可以设置为1以使用堆栈索引开始作为图像选择器））"
+  },
+  {
+    "code": "^total_frames$",
+    "translate": "图像帧数",
+    "section": "decal",
+    "description": "默认值为1。将图像分割为指定分数，用于动画。第一帧编号为0"
+  },
+  {
+    "code": "^frame_width$",
+    "translate": "图像宽度",
+    "section": "decal",
+    "description": "设置单帧宽度，自动计算并覆盖总帧数。"
+  },
+  {
+    "code": "^frame_height$",
+    "translate": "图像高度",
+    "section": "decal",
+    "description": "默认为图像高度"
+  },
+  {
+    "code": "^frame$",
+    "translate": "帧",
+    "section": "decal",
+    "description": "使用的内置图像帧，编号从零开始。和drawType结合使用。"
+  },
+  {
+    "code": "^addBodyFrameMultipliedBy$",
+    "translate": "添加主体帧乘数",
+    "section": "decal",
+    "description": "添加主体帧时的乘数"
+  },
+  {
+    "code": "^image_shadow$",
+    "translate": "阴影图像",
+    "section": "decal",
+    "description": "填NONE或AUTO,或图像文件。"
+  },
+  {
+    "code": "^shadowOffsetX$",
+    "translate": "阴影图像偏移X轴",
+    "section": "decal",
+    "description": "阴影x轴偏移值，正数往右"
+  },
+  {
+    "code": "^shadowOffsetY$",
+    "translate": "阴影图像偏移Y轴",
+    "section": "decal",
+    "description": "阴影y轴偏移值，正数往下"
+  },
+  {
+    "code": "^basePosition$",
+    "translate": "中心位置(填单位参考)",
+    "section": "decal",
+    "description": "unit or marker to draw from as the base（作为基础绘制的单位或标记）"
+  },
+  {
+    "code": "^basePositionFromLegEnd$",
+    "translate": "以腿为中心位置",
+    "section": "decal",
+    "description": "填腿脚/胳膊节"
+  },
+  {
+    "code": "^basePositionFromTurret$",
+    "translate": "以炮塔为中心位置",
+    "section": "decal",
+    "description": "Use a turret position instead of unit body as base（使用炮塔位置而不是单元主体作为底座）"
+  },
+  {
+    "code": "^drawLineTo$",
+    "translate": "绘制线条到(受到颜色和宽度影响)",
+    "section": "decal",
+    "description": "Draws a line to this location affected by color and width（在此位置绘制一条受颜色和宽度影响的线）"
+  },
+  {
+    "code": "^color$",
+    "translate": "颜色",
+    "section": "decal",
+    "description": "使用十六进制值对该抛射体重新着色，它也决定了激光颜色，颜色格式为#AARRGGBB。"
+  },
+  {
+    "code": "^lineWidth$",
+    "translate": "线宽度",
+    "section": "decal",
+    "description": "表明这条线的宽度"
+  },
+  {
+    "code": "^@copyFromSection$",
+    "translate": "复制节",
+    "section": ".+",
+    "description": "在任何节中使用，以引用节或模板的代码。如@copyFromSection template_name/action_name/projectile_name"
+  },
+  {
+    "code": "^@copyFrom_skipThisSection$",
+    "translate": "复制但跳过节",
+    "section": ".+",
+    "description": "在任何节中使用，例如，在引用时候不复制某个action."
+  },
+  {
+    "code": "^@define .+$",
+    "translate": "@局部变量 {1}",
+    "section": ".+",
+    "description": "在一个节中定义一个局部变量(最好在模板外部)",
+    "rule": "^@define (.+)$"
+  },
+  {
+    "code": "^@global .+$",
+    "translate": "@全局变量 {1}",
+    "section": ".+",
+    "description": "定义在所有节中使用的全局变量。注意：局部变量具有更高的优先级",
+    "rule": "^@global (.+)$"
+  },
+  {
+    "code": "^@memory .+$",
+    "translate": "@内存 {1}",
+    "section": ".+",
+    "description": "定义内存",
+    "rule": "^@memory (.+)$"
+  },
+  {
+    "code": "^title$",
+    "translate": "标题",
+    "section": "mod",
+    "description": "模组标题，会显示到加载页面里面，代表模组的名称"
+  },
+  {
+    "code": "^tags$",
+    "translate": "标签",
+    "section": "mod",
+    "description": "标签，用于对单位进行分类，用于实现各种各样的特殊作。比如单位数量限制，伤害修正，增益损益，触发条件等等"
+  },
+  {
+    "code": "^minVersion$",
+    "translate": "最低版本",
+    "section": "mod",
+    "description": "告诉你该模组支持的最低版本，decal为1.15p9，数组为1.15p11，但凡这两个没有在minVersion后面写上相应版本，一定会爆错"
+  },
+  {
+    "code": "^thumbnail$",
+    "translate": "略图",
+    "section": "mod",
+    "description": "模组略图，在游戏里不会显示，因为这个是给steam用的"
+  },
+  {
+    "code": "^description$",
+    "translate": "描述",
+    "section": "mod",
+    "description": "模组描述。"
+  },
+  {
+    "code": "^sourceFolder$",
+    "translate": "源文件夹",
+    "section": "music",
+    "description": "填文件夹路径，游戏将会播放此文件夹内的音乐（仅支持.ogg或.wav）"
+  },
+  {
+    "code": "^whenUsingUnitsFromThisMod_playExclusively$",
+    "translate": "当使用本模组时强制播放",
+    "section": "music",
+    "description": "使用该代码，游戏将仅播放这个文件夹内的音乐"
+  }
+]

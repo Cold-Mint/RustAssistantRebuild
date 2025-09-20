@@ -1,0 +1,156 @@
+[
+  {
+    "section": "mod",
+    "translate": "模组",
+    "file_name": "^mod-info\\.txt$",
+    "has_name": false,
+    "rule": "^mod$"
+  },
+  {
+    "section": "music",
+    "translate": "音乐",
+    "file_name": "^mod-info\\.txt$",
+    "has_name": false,
+    "rule": "^music$"
+  },
+  {
+    "section": "core",
+    "translate": "核心",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^core$"
+  },
+  {
+    "section": "canBuild",
+    "translate": "可建造",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^canBuild_.+$"
+  },
+  {
+    "section": "graphics",
+    "translate": "图像",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^graphics$"
+  },
+  {
+    "section": "attack",
+    "translate": "攻击",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^attack$"
+  },
+  {
+    "section": "turret",
+    "translate": "炮塔",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^turret_.+$"
+  },
+  {
+    "section": "projectile",
+    "translate": "抛射体",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^projectile_.+$"
+  },
+  {
+    "section": "movement",
+    "translate": "运动",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^movement$"
+  },
+  {
+    "section": "ai",
+    "translate": "AI",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": false,
+    "rule": "^ai$"
+  },
+  {
+    "section": "leg",
+    "translate": "腿",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^leg_.+$"
+  },
+  {
+    "section": "arm",
+    "translate": "手臂",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^arm_.+$"
+  },
+  {
+    "section": "attachment",
+    "translate": "附属",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^attachment_.+$"
+  },
+  {
+    "section": "action",
+    "translate": "行为",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^action_.+$"
+  },
+  {
+    "section": "hiddenAction",
+    "translate": "隐藏行为",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^hiddenAction_.+$"
+  },
+  {
+    "section": "effect",
+    "translate": "效果",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^effect_.+$"
+  },
+  {
+    "section": "animation",
+    "translate": "动画",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^animation_.+$"
+  },
+  {
+    "section": "placementRule",
+    "translate": "放置规则",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^placementRule_.+$"
+  },
+  {
+    "section": "global_resource",
+    "translate": "全局资源",
+    "file_name": "^all-units.template$",
+    "has_name": true,
+    "rule": "^global_resource_.+$"
+  },
+  {
+    "section": "resource",
+    "translate": "资源",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^resource_.+$"
+  },
+  {
+    "section": "decal",
+    "translate": "贴花",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^decal_.+$"
+  },
+  {
+    "section": "template",
+    "translate": "模板",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "has_name": true,
+    "rule": "^template_.+$"
+  }
+]

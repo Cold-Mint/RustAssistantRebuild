@@ -1,0 +1,488 @@
+[
+  {
+    "description": "",
+    "displayName": "资源抽取器 T2",
+    "name": "extractorT2",
+    "path": "extractor/extractorT2.ini"
+  },
+  {
+    "description": "",
+    "displayName": "资源抽取器 T3",
+    "name": "extractorT3",
+    "path": "extractor/extractorT3.ini"
+  },
+  {
+    "description": "[[攻击空中单位，溅射伤害]] [[距离较短]]",
+    "displayName": "T2 - 高射炮",
+    "name": "antiAirTurretFlak",
+    "path": "turrets/turret_antiair_flakgun.ini"
+  },
+  {
+    "description": "[[中型装甲-低性价比单位]] [[能够透过迷雾看得更远]] [[能够在水面上移动]] [[能攻击空中和地面单位]]",
+    "displayName": "侦察者",
+    "name": "scout",
+    "path": "scout/scout.ini"
+  },
+  {
+    "description": "[[移动速度快]] [[只能攻击空中单位]] [[全副武装并带有护盾]] [[电击可绕过防护盾]]",
+    "displayName": "重型拦截机",
+    "name": "heavyInterceptor",
+    "path": "heavy_interceptor/heavyInterceptor.ini"
+  },
+  {
+    "description": "[[非常弱]] [[只能攻击地面单位]] [[飞行速度慢]]",
+    "displayName": "轻型武装直升机",
+    "name": "lightGunship",
+    "path": "light_gunship/light_gunship.ini"
+  },
+  {
+    "description": "[[非常弱]] [[只能使用轻型鱼雷攻击]]",
+    "displayName": "水下探测器",
+    "name": "lightSub",
+    "path": "light_sub/light_sub.ini"
+  },
+  {
+    "description": "[[可以看透较广范围内的迷雾]] [[不能攻击]]",
+    "displayName": "瞭望塔",
+    "name": "outpostT1",
+    "path": "outpost/outpost.ini"
+  },
+  {
+    "description": "[[可以看透较广范围内的迷雾]] [[不能攻击]]",
+    "displayName": "瞭望塔 T2",
+    "name": "outpostT2",
+    "path": "outpost/outpostT2.ini"
+  },
+  {
+    "description": " [[有运输能力]] [[能制造单位]] [[可以对空]] [[降落后可以对地攻击]] [[能自我修复并内置资源制造仪]]",
+    "displayName": "飞行堡垒",
+    "name": "experimentalDropship",
+    "path": "experimental_dropship/experimental_dropship.ini"
+  },
+  {
+    "description": " [[远距离对地攻击]] [[有防空能力]] [[可发射反潜艇鱼雷]]",
+    "displayName": "重型战舰",
+    "name": "heavyBattleship",
+    "path": "heavy_battleship/heavy_battleship.ini"
+  },
+  {
+    "description": "[[远程对空导弹]] [[轻型护盾]]",
+    "displayName": "防空导弹坦克",
+    "name": "missileTank",
+    "path": "missile_tank/missile_tank.ini"
+  },
+  {
+    "description": "[[可建造单位和T2建筑物]] [[带有重型装甲并且可以对地攻击]] [[在水上时可以攻击潜艇]] [[能自我修复并内置资源制造仪]] [[能在水上移动]]",
+    "displayName": "战斗工程师",
+    "name": "combatEngineer",
+    "path": "combat_engineer/combat_engineer.ini"
+  },
+  {
+    "description": "[[重型装甲,可发射鱼雷]] [[不能攻击水面以外的单位]]",
+    "displayName": "重型潜艇",
+    "name": "heavySub",
+    "path": "heavy_sub/heavy_sub.ini"
+  },
+  {
+    "description": "[[有重装甲但速度慢]] [[需要在投掷炸弹后装填]] [[攻击潜艇时伤害较低]]",
+    "displayName": "轰炸机",
+    "name": "bomber",
+    "path": "bomber/bomber.ini"
+  },
+  {
+    "description": "[[拥有超强防御,但移动缓慢]] [[能建造单位与建筑物]] [[自动修复附近的单位]] [[自带激光防御]] [[能在水上移动]] [[自我修复并内置资源制造仪]] [[死亡后核爆 (如果未禁止核弹)]]",
+    "displayName": "实验型战斗蜘蛛",
+    "name": "experimentalSpider",
+    "path": "experimental_spider/experimental_spider.ini"
+  },
+  {
+    "description": "[[全副武装]] [[可以对空攻击]] [[中级对空能力]] [[开火后需要重新装填]] [[自我修复]]",
+    "displayName": "火蜂战机",
+    "name": "fireBee",
+    "path": "fire_bee/fire_bee.ini"
+  },
+  {
+    "description": "[[有范围伤害的对地对空导弹]] [[开火后需要装填]] [[自我修复]]",
+    "displayName": "导弹飞艇",
+    "name": "missileAirship",
+    "path": "missile_airship/missile_airship.ini"
+  },
+  {
+    "description": "[[制造T1等级的机甲单位]] [[机甲通常移动缓慢但作战能力强大]] [[更大的T2机甲能够越过峭壁]] [[可以升级]]",
+    "displayName": "机械工厂",
+    "name": "mechFactory",
+    "path": "mech_factory/mechFactory.ini"
+  },
+  {
+    "description": "[[制造T2等级的机甲单位]] [[机甲通常移动缓慢但作战能力强大]] [[更大的T2机甲能够越过峭壁]]",
+    "displayName": "T2 - 机械工厂",
+    "name": "mechFactoryT2",
+    "path": "mech_factory/mechFactoryT2.ini"
+  },
+  {
+    "description": "[[只能攻击陆上单位]] [[相比普通坦克生命值更高,但移动也更缓慢]]",
+    "displayName": "基础机甲",
+    "name": "mechGun",
+    "path": "mechs_small/mech_gun.ini"
+  },
+  {
+    "description": "[[只能攻击空中单位]] [[范围伤害]] [[不能对地攻击]]",
+    "displayName": "防空机甲",
+    "name": "mechMissile",
+    "path": "mechs_small/mech_missile.ini"
+  },
+  {
+    "description": "[[可以对空与对低]] [[开火后需要装填]] [[射程较远]]",
+    "displayName": "等离子机甲",
+    "name": "mechLaser",
+    "path": "mechs_large/mech_laser.ini"
+  },
+  {
+    "description": "[[范围火焰伤害]] [[只能对地攻击]] [[生命值高，能够自我修复]]",
+    "displayName": "喷火机甲",
+    "name": "mechFlame",
+    "path": "mechs_large/mech_flame.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[可原地部署并获得额外射程与防御]]",
+    "displayName": "移动炮塔",
+    "name": "mechBunker",
+    "path": "mechs_large/mech_bunker.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[部署以获得护盾与额外射程]]",
+    "displayName": "移动炮塔",
+    "name": "mechBunkerDeployed",
+    "path": "mechs_large/mech_bunker_deployed.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[射程远]] [[能够在边开火边移动]]",
+    "displayName": "火炮机甲",
+    "name": "mechArtillery",
+    "path": "mechs_large/mech_artillery.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[高射速]] [[开火速度逐渐加快]] [[有防护盾(能被电击绕过)]]",
+    "displayName": "机枪机甲",
+    "name": "mechMinigun",
+    "path": "mechs_large/mech_minigun.ini"
+  },
+  {
+    "description": "[[对地闪电攻击]] [[可以绕过防护盾]] [[对接地的建筑物伤害较低]]",
+    "displayName": "特斯拉机甲",
+    "name": "mechLightning",
+    "path": "mechs_large/mech_lightning.ini"
+  },
+  {
+    "description": "[[只能对地攻击]] [[较远射程]] [[自带较有限的激光防御]]",
+    "displayName": "重型火炮",
+    "name": "heavyArtillery",
+    "path": "tanks/heavy_artillery.ini"
+  },
+  {
+    "description": "[[能攻击地面和空中单位]] [[超远射程]]",
+    "displayName": "重型导弹舰",
+    "name": "heavyMissileShip",
+    "path": "heavy_missile_ship/heavy_missile_ship.ini"
+  },
+  {
+    "description": "[[重型武器和装甲]] [[可建造空军单位(2倍建造速度)]] [[内置激光防御 \u0026 修复湾]] [[自带高射炮防空]] [[内置资源制造仪]] [[可以制造反核导弹]] [[死亡后核爆 (如果未禁止核弹)]]",
+    "displayName": "航空母舰",
+    "name": "experiementalCarrier",
+    "path": "experimental_carrier/Experiemental_carrier.ini"
+  },
+  {
+    "description": "[[重型武器和装甲]] [[可以攻击舰艇]] [[可以副处水面并在陆地上行动]] [[浮出水面后可以攻击陆上和空中单位]]",
+    "displayName": "鹦鹉螺号",
+    "name": "nautilusSubmarine",
+    "path": "nautilus/nautilus.ini"
+  },
+  {
+    "description": "[[拥有强大防御]] [[只能攻击陆上单位]] [[有防护盾(能被电击绕过)]]",
+    "displayName": "等离子坦克",
+    "name": "plasmaTank",
+    "path": "plasma_tank/plasma_tank.ini"
+  },
+  {
+    "description": "[[建造机甲和T2建筑物]][[配有防空导弹]][[全副武装]]",
+    "displayName": "机械师",
+    "name": "mechEngineer",
+    "path": "mech_engineer/mech_engineer.ini"
+  },
+  {
+    "description": "[[非常强的远程对空能力]] [[区域范围防空]] [[弱陆攻击]]",
+    "displayName": "重型防空机械装甲",
+    "name": "mechHeavyMissile",
+    "path": "mechs_large/mech_heavyMissile.ini"
+  },
+  {
+    "description": "[[拥有对空的激光粒子束武器]] [[激光粒子束可直接破盾破甲]] [[但是不能攻击陆地]] [[速度慢，但可以使用加速装置获得一段时间的加速]]",
+    "displayName": "AA激光射束战机",
+    "name": "aaBeamGunship",
+    "path": "aa_beam_gunship/aa_beam_gunship.ini"
+  },
+  {
+    "description": "[[可建造单位]] [[对地与对陆攻击]] [[反核防御]] [[可添加瞬移模块]] [[可运输单位]] [[部署可获得额外的射程、火力和护盾]]",
+    "displayName": "实验悬浮型气垫船",
+    "name": "experimentalGunship",
+    "path": "experimental_gunship/experimental_gunship.ini"
+  },
+  {
+    "description": "[[可建造单位]] [[对地与对陆攻击]] [[反核防御]] [[可添加瞬移模块]] [[可运输单位]] [[部署可获得额外的射程、火力和护盾]]",
+    "displayName": "实验悬浮型气垫船",
+    "name": "experimentalGunshipLanded",
+    "path": "experimental_gunship/experimental_gunship_landed.ini"
+  },
+  {
+    "description": "[[仅能攻击空中单位]] [[拥有大的攻击范围并有溅射伤害]] [[重型装甲与护盾]]",
+    "displayName": "重型防空舰",
+    "name": "heavyAAShip",
+    "path": "heavy_aa_ship/heavy_aa_ship.ini"
+  },
+  {
+    "description": "[[无法攻击]] [[可以透过迷雾看的更广]] [[厚重的生命值和渐加速的速度]] [[可以自我修复]]",
+    "displayName": "间谍无人机",
+    "name": "spyDrone",
+    "path": "spy_drone/spy_drone.ini"
+  },
+  {
+    "description": "[[回收可获得资金]]",
+    "displayName": "资金箱子",
+    "name": "creditsCrates",
+    "path": "resource_deposits/creditsCrate.ini"
+  },
+  {
+    "description": "[[最多可在顶部建造6个自定义炮塔或模块]] [[-装甲非常重但速度较慢]] [[-如果附加了任何武器则会降低基本速度]] [[-可以建造单位和建筑物]] [[-可以在附近的单位进行自动维修]] [[-可以在水上移动]] [[-内置制造者]] [[n-死亡会核爆（如果启用了核武器，未启用则不会死亡核爆）]]",
+    "displayName": "模块化蜘蛛",
+    "name": "modularSpider",
+    "path": "modular_spider/modular_spider.ini"
+  },
+  {
+    "description": "选择一个炮塔在这里建造",
+    "displayName": "闲置中...",
+    "name": "modularSpider_emptySlot",
+    "path": "modular_spider/emptySlot.ini"
+  },
+  {
+    "description": "[[护盾恢复核心]] [[-增加护盾恢复效率]]",
+    "displayName": "护盾核心",
+    "name": "modularSpider_shieldGen",
+    "path": "modular_spider/shieldGen.ini"
+  },
+  {
+    "description": "[[速度核心]] [[增加移动速度]] [[无法叠加]] [[可消除拥有炮塔的速度惩罚]]",
+    "displayName": "速度模块",
+    "name": "modularSpider_speed",
+    "path": "modular_spider/speed.ini"
+  },
+  {
+    "description": "[[瞬移核心]] [[可短距离使用瞬移]]",
+    "displayName": "瞬移模块",
+    "name": "modularSpider_blink",
+    "path": "modular_spider/blink.ini"
+  },
+  {
+    "description": "[[可以拦截从核弹发射井发射的核导弹。]] [[-若要拦截，需要建造反核导弹]] [[-反核范围1500]] [[可以关闭此模块，关闭后此模块将不会拦截核弹]]",
+    "displayName": "反核装置",
+    "name": "modularSpider_antinuke",
+    "path": "modular_spider/antinuke.ini"
+  },
+  {
+    "description": "[[只能对空！]]",
+    "displayName": "萨姆防空炮T1",
+    "name": "modularSpider_antiair",
+    "path": "modular_spider/antiair.ini"
+  },
+  {
+    "description": "[[只能对空！]]",
+    "displayName": "萨姆防空炮T2",
+    "name": "modularSpider_antiairT2",
+    "path": "modular_spider/antiairT2.ini"
+  },
+  {
+    "description": "[[可以攻击空中和地面]]",
+    "displayName": "等离子装置T1",
+    "name": "modularSpider_smallgunturret",
+    "path": "modular_spider/smallgun.ini"
+  },
+  {
+    "description": "[[可以攻击空中和地面]]",
+    "displayName": "等离子装置T2",
+    "name": "modularSpider_smallgunturretT2",
+    "path": "modular_spider/smallgunT2.ini"
+  },
+  {
+    "description": "[[资金生成核心]]",
+    "displayName": "资源制造装置T1",
+    "name": "modularSpider_fabricator",
+    "path": "modular_spider/fabricator.ini"
+  },
+  {
+    "description": "[[资金生成核心]]",
+    "displayName": "资源制造装置T2",
+    "name": "modularSpider_fabricatorT2",
+    "path": "modular_spider/fabricatorT2.ini"
+  },
+  {
+    "description": "[[拦截一切靠近的导弹，使之分解]] [[拦截需要消耗能量！]] [[如果能量耗尽需要重新等待充能完毕才可继续使用]]",
+    "displayName": "激光防御装置",
+    "name": "modularSpider_laserdefense",
+    "path": "modular_spider/laser_defense.ini"
+  },
+  {
+    "description": "[[只能攻击陆地]] [[可以直接破盾破甲]]",
+    "displayName": "闪电炮塔T1",
+    "name": "modularSpider_lightning",
+    "path": "modular_spider/lightning.ini"
+  },
+  {
+    "description": "[[只能攻击空中]] [[大范围集群伤害]]",
+    "displayName": "高射炮T2",
+    "name": "modularSpider_antiairFlak",
+    "path": "modular_spider/antiairFlak.ini"
+  },
+  {
+    "description": "[[远距离对地攻击]] [[射击速度慢]]",
+    "displayName": "火炮装置T1",
+    "name": "modularSpider_artillery",
+    "path": "modular_spider/artillery.ini"
+  },
+  {
+    "description": "[[只能攻击陆地]]",
+    "displayName": "机枪T1",
+    "name": "modularSpider_gunturret",
+    "path": "modular_spider/gunturret.ini"
+  },
+  {
+    "description": "[[只能攻击陆地]]",
+    "displayName": "机枪T2",
+    "name": "modularSpider_gunturretT2",
+    "path": "modular_spider/gunturretT2.ini"
+  },
+  {
+    "description": "[[拥有极强的火力，官方暂未启用此单位]]",
+    "displayName": "飞行机甲[着陆]",
+    "name": "mechFlyingLanded",
+    "path": "mechs_large/mech_flying_landed.ini"
+  },
+  {
+    "description": "[[拥有极强的火力，官方暂未启用此单位]]",
+    "displayName": "飞行机甲[飞行]",
+    "name": "mechFlyingTakeoff",
+    "path": "mechs_large/mech_flying_takeoff.ini"
+  },
+  {
+    "description": "[[死亡后核爆，禁核也会核爆，官方暂未启用此单位]]",
+    "displayName": "实验室",
+    "name": "laboratory",
+    "path": "laboratory/laboratory.ini"
+  },
+  {
+    "description": "[[制造虫族单位]]",
+    "displayName": "虫族工厂",
+    "name": "虫族工厂",
+    "path": "classic_bugs/bug_nest/bug_nest.ini"
+  },
+  {
+    "description": "[[每秒+2资金，可升级]]",
+    "displayName": "虫族资源制造仪",
+    "name": "bugGenerator",
+    "path": "classic_bugs/bug_generator/bug_generator.ini"
+  },
+  {
+    "description": "[[对地对空]]",
+    "displayName": "虫族炮塔",
+    "name": "bugTurret",
+    "path": "classic_bugs/bug_turret/bug_turret.ini"
+  },
+  {
+    "description": "[[每秒+10资金，可升级]]",
+    "displayName": "虫族资源抽取器",
+    "name": "bugExtractor",
+    "path": "classic_bugs/bug_extractor/bug_extractor.ini"
+  },
+  {
+    "description": "",
+    "displayName": "bugNest",
+    "name": "bugNest",
+    "path": "classic_bugs/bug_nest/bug_nest.ini"
+  },
+  {
+    "description": "[[建造多种虫族建筑]]",
+    "displayName": "建造虫",
+    "name": "bugSpore",
+    "path": "classic_bugs/bug_spore/bug_spore.ini"
+  },
+  {
+    "description": "[[建造多种虫族建筑]]",
+    "displayName": "建造飞虫",
+    "name": "bugFly",
+    "path": "classic_bugs/bug_fly/bug_fly.ini"
+  },
+  {
+    "description": "",
+    "displayName": "微噬虫",
+    "name": "bugMeleeSmall",
+    "path": "classic_bugs/bug_melee/bug_melee_small.ini"
+  },
+  {
+    "description": "[[仅对地，近身撕咬]]",
+    "displayName": "噬咬虫",
+    "name": "bugMelee",
+    "path": "classic_bugs/bug_melee/bug_melee.ini"
+  },
+  {
+    "description": "",
+    "displayName": "巨噬虫",
+    "name": "bugMeleeLarge",
+    "path": "classic_bugs/bug_melee/bug_melee_large.ini"
+  },
+  {
+    "description": "[[对地对空]]",
+    "displayName": "战斗虫",
+    "name": "bugRanged",
+    "path": "classic_bugs/bug_ranged/bug_ranged.ini"
+  },
+  {
+    "description": "[[运输单位]]",
+    "displayName": "运输飞虫",
+    "name": "bugPickup",
+    "path": "classic_bugs/bugs/bug_pickup.ini"
+  },
+  {
+    "description": "[[对地对空]]",
+    "displayName": "战斗飞虫",
+    "name": "bugWasp",
+    "path": "classic_bugs/bugs/bug_wasp.ini"
+  },
+  {
+    "description": "[[对地对空]]",
+    "displayName": "自爆飞虫",
+    "name": "bugBee",
+    "path": "classic_bugs/bug_bee/bug_bee.ini"
+  },
+  {
+    "description": "[[对地对空，射程远]]",
+    "displayName": "超级虫T2",
+    "name": "bugRangedT2",
+    "path": "classic_bugs/bugs_t2/bug_ranged_t2.ini"
+  },
+  {
+    "description": "[[每秒+6资金]] [[可升级]]",
+    "displayName": "资源制造虫",
+    "name": "bugGeneratorN",
+    "path": "bug_base/bug_generator/bug_generator.ini"
+  },
+  {
+    "description": "[[每秒+18资金]]",
+    "displayName": "资源制造虫T2",
+    "name": "bugGeneratorNT2",
+    "path": "bug_base/bug_generator/bug_generatorT2.ini"
+  },
+  {
+    "description": "[[只能攻击地面]]  [[非常全副武装]] [[快]]",
+    "displayName": "近战虫王T31",
+    "name": "bugMeleeT31",
+    "path": "bug_melee/bug_melee_t31.ini"
+  }
+]

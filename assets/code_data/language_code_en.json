@@ -1,0 +1,138 @@
+[
+  {
+    "code": "zh",
+    "translate": "Chinese (Generic)"
+  },
+  {
+    "code": "zh-cn",
+    "translate": "Chinese (Simplified)"
+  },
+  {
+    "code": "zh-tw",
+    "translate": "Chinese (Traditional - Taiwan)"
+  },
+  {
+    "code": "zh-hk",
+    "translate": "Chinese (Traditional - Hong Kong)"
+  },
+  {
+    "code": "en",
+    "translate": "English (Generic)"
+  },
+  {
+    "code": "en-us",
+    "translate": "English (United States)"
+  },
+  {
+    "code": "en-gb",
+    "translate": "English (United Kingdom)"
+  },
+  {
+    "code": "ja",
+    "translate": "Japanese"
+  },
+  {
+    "code": "ko",
+    "translate": "Korean"
+  },
+  {
+    "code": "fr",
+    "translate": "French"
+  },
+  {
+    "code": "fr-ca",
+    "translate": "French (Canada)"
+  },
+  {
+    "code": "de",
+    "translate": "German"
+  },
+  {
+    "code": "es",
+    "translate": "Spanish"
+  },
+  {
+    "code": "es-mx",
+    "translate": "Spanish (Mexico)"
+  },
+  {
+    "code": "it",
+    "translate": "Italian"
+  },
+  {
+    "code": "ru",
+    "translate": "Russian"
+  },
+  {
+    "code": "pt",
+    "translate": "Portuguese"
+  },
+  {
+    "code": "pt-br",
+    "translate": "Portuguese (Brazil)"
+  },
+  {
+    "code": "vi",
+    "translate": "Vietnamese"
+  },
+  {
+    "code": "th",
+    "translate": "Thai"
+  },
+  {
+    "code": "id",
+    "translate": "Indonesian"
+  },
+  {
+    "code": "ar",
+    "translate": "Arabic"
+  },
+  {
+    "code": "hi",
+    "translate": "Hindi"
+  },
+  {
+    "code": "tr",
+    "translate": "Turkish"
+  },
+  {
+    "code": "pl",
+    "translate": "Polish"
+  },
+  {
+    "code": "nl",
+    "translate": "Dutch"
+  },
+  {
+    "code": "sv",
+    "translate": "Swedish"
+  },
+  {
+    "code": "fi",
+    "translate": "Finnish"
+  },
+  {
+    "code": "he",
+    "translate": "Hebrew"
+  },
+  {
+    "code": "uk",
+    "translate": "Ukrainian"
+  },
+  {
+    "code": "cs",
+    "translate": "Czech"
+  },
+  {
+    "code": "ro",
+    "translate": "Romanian"
+  },
+  {
+    "code": "hu",
+    "translate": "Hungarian"
+  },
+  {
+    "code": "el",
+    "translate": "Greek"
+  }
+]

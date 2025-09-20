@@ -1,0 +1,2806 @@
+[
+  {
+    "name": "true",
+    "rule": "^true$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "false",
+    "rule": "^false$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "if",
+    "rule": "^if$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "and",
+    "rule": "^and$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "or",
+    "rule": "^or$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "not",
+    "rule": "^not$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "<",
+    "rule": "^<$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": ">",
+    "rule": "^>$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "<=",
+    "rule": "^<=$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": ">=",
+    "rule": "^>=$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "==",
+    "rule": "^==$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "!=",
+    "rule": "^!=$",
+    "returnValue": "bool",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "+",
+    "rule": "^\\+$",
+    "returnValue": "same_type",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "-",
+    "rule": "^-$",
+    "returnValue": "same_type",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "/",
+    "rule": "^/$",
+    "returnValue": "same_type",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "*",
+    "rule": "^\\*$",
+    "returnValue": "same_type",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "%",
+    "rule": "^%$",
+    "returnValue": "same_type",
+    "interpreter": "value",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false,
+    "argument": []
+  },
+  {
+    "name": "self.isUnderwater",
+    "rule": "^self\\.isUnderwater(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isAtGroundHeight",
+    "rule": "^self\\.isAtGroundHeight(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isFlying",
+    "rule": "^self\\.isFlying(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isMoving",
+    "rule": "^self\\.isMoving(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isReversing",
+    "rule": "^self\\.isReversing(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isAtTopSpeed",
+    "rule": "^self\\.isAtTopSpeed(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isInWater",
+    "rule": "^self\\.isInWater(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isOverwater",
+    "rule": "^self\\.isOverwater(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isOverLiquid",
+    "rule": "^self\\.isOverLiquid(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isOverClift",
+    "rule": "^self\\.isOverClift(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.isOverPassableTile",
+    "rule": "^self\\.isOverPassableTile(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "tileType",
+        "name": "type",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isOverOpenLand",
+    "rule": "^self\\.isOverOpenLand(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.hasResources",
+    "rule": "^self\\.hasResources(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 3,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "resourcesList",
+        "name": null,
+        "number": -1
+      }
+    ]
+  },
+  {
+    "name": "self.resource",
+    "rule": "^self\\.resource(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "resources",
+        "name": "type",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "greaterThan",
+        "name": "int",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "lessThan",
+        "name": "int",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.resource.RESOURCE_TYPE",
+    "rule": "^self\\.resource\\..+$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "resources",
+        "name": "type",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isResourceLargerThan",
+    "rule": "^self\\.isResourceLargerThan(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 4,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "resources",
+        "name": "source",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "resources",
+        "name": "compareTarget",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "int",
+        "name": "byMoreThan",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "int",
+        "name": "multiplyTargetBy",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.hp",
+    "rule": "^self\\.hp(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.maxHp",
+    "rule": "^self\\.maxHp(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.height",
+    "rule": "^self\\.height(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.ammo",
+    "rule": "^self\\.ammo(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isAmmoEmpty",
+    "rule": "^self\\.isAmmoEmpty(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.ammoIncludingQueued",
+    "rule": "^self\\.ammoIncludingQueued(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.energy",
+    "rule": "^self\\.energy(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.energyIncludingQueued",
+    "rule": "^self\\.energyIncludingQueued(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isEnergyFull",
+    "rule": "^self\\.isEnergyFull(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.isEnergyEmpty",
+    "rule": "^self\\.isEnergyEmpty(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.maxEnergy",
+    "rule": "^self\\.maxEnergy(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 7,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.isEnergyRecharging",
+    "rule": "^self\\.isEnergyRecharging(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 7,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.shield",
+    "rule": "^self\\.shield(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.maxShield",
+    "rule": "^self\\.maxShield(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 7,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.kills",
+    "rule": "^self\\.kills(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 1,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.queueSize",
+    "rule": "^self\\.queueSize(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 3,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "full",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "equalTo",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "withActionTag",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.teamId",
+    "rule": "^self\\.teamId(\\(.*\\))?$",
+    "returnValue": "int",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.teamName",
+    "rule": "^self\\.teamName(\\(.*\\))?$",
+    "returnValue": "string",
+    "interpreter": "func",
+    "noParametersReturn": "string",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.playerName",
+    "rule": "^self\\.playerName(\\(.*\\))?$",
+    "returnValue": "string",
+    "interpreter": "func",
+    "noParametersReturn": "string",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.x",
+    "rule": "^self\\.x(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.y",
+    "rule": "^self\\.y(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.z",
+    "rule": "^self\\.z(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.dir",
+    "rule": "^self\\.dir(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.priceCredits",
+    "rule": "^self\\.priceCredits(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.builtAmount",
+    "rule": "^self\\.builtAmount(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.completed",
+    "rule": "^self\\.completed(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.speed",
+    "rule": "^self\\.speed(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.maxMoveSpeed",
+    "rule": "^self\\.maxMoveSpeed(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.maxMoveSpeed",
+    "rule": "^self\\.maxMoveSpeed(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+    ]
+  },
+  {
+    "name": "self.hasFlag",
+    "rule": "^self\\.hasFlag(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "int0To31",
+        "name": "id",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.tags(\\(.*\\))?$",
+    "name": "self.tags",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "includes",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.globalTeamTags",
+    "rule": "^self\\.globalTeamTags(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 3,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "includes",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.transportingCount",
+    "rule": "^self\\.transportingCount(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.transportingCount",
+    "rule": "^self\\.transportingCount(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.numberOfAttachedUnits",
+    "rule": "^self\\.numberOfAttachedUnits(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "empty",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isAttacking",
+    "rule": "^self\\.isAttacking(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.hasActiveWaypoint",
+    "rule": "^self\\.hasActiveWaypoint(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "WAYPOINT_TYPE",
+        "name": "type",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.numberOfQueuedWaypoints",
+    "rule": "^self\\.numberOfQueuedWaypoints(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "WAYPOINT_TYPE",
+        "name": "type",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "amount",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.transportingUnitWithTags",
+    "rule": "^self\\.transportingUnitWithTags(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "includes",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.hasParent",
+    "rule": "^self\\.hasParent(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.hasTakenDamage",
+    "rule": "^self\\.hasTakenDamage(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinSeconds",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "laterThanSeconds",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.timeAlive",
+    "rule": "^self\\.timeAlive(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinSeconds",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "laterThanSeconds",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.lastConverted",
+    "rule": "^self\\.lastConverted(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinSeconds",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "laterThanSeconds",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.customTimer",
+    "rule": "^self\\.customTimer(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "float",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinSeconds",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "laterThanSeconds",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isOnNeutralTeam",
+    "rule": "^self\\.isOnNeutralTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.numberOfUnitsInTeam",
+    "rule": "^self\\.numberOfUnitsInTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.numberOfUnitsInAllyTeam",
+    "rule": "^self\\.numberOfUnitsInAllyTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.numberOfUnitsInAllyNotOwnTeam",
+    "rule": "^self\\.numberOfUnitsInAllyNotOwnTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 4,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.numberOfUnitsInEnemyTeam",
+    "rule": "^self\\.numberOfUnitsInEnemyTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 3,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "numberOfUnitsInNeutralTeam",
+    "rule": "^numberOfUnitsInNeutralTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 4,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "numberOfUnitsInAggressiveTeam",
+    "rule": "^numberOfUnitsInAggressiveTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 4,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "numberOfUnitsInAllTeams",
+    "rule": "^numberOfUnitsInAllTeams(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "int",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "greaterThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "lessThan",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.hasUnitInTeam",
+    "rule": "^self\\.hasUnitInTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 3,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.noUnitInTeam",
+    "rule": "^self\\.noUnitInTeam(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 3,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "incompleteBuildings",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "bool",
+        "name": "factoryQueue",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isControlledByAI",
+    "rule": "^self\\.isControlledByAI(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.readUnitMemory",
+    "rule": "^self\\.readUnitMemory(\\(.*\\))?$",
+    "returnValue": "any",
+    "interpreter": "func",
+    "noParametersReturn": "bool",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "name",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "type",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "default",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "thisActionTarget",
+    "rule": "^thisActionTarget(\\(.*\\))?$",
+    "returnValue": "unit | marker",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "thisActionIndex",
+    "rule": "^thisActionIndex(\\(.*\\))?$",
+    "returnValue": "int",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "eventSource",
+    "rule": "^eventSource(\\(.*\\))?$",
+    "returnValue": "unit | marker",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "attachment",
+    "rule": "^attachment(\\(.*\\))?$",
+    "returnValue": "unit",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "slot",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "transporting",
+    "rule": "^transporting(\\(.*\\))?$",
+    "returnValue": "unit",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "slot",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "attacking",
+    "rule": "^attacking(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "unit",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "lastDamagedBy",
+    "rule": "^lastDamagedBy(\\(.*\\))?$",
+    "returnValue": "unit",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "parent",
+    "rule": "^parent(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "unit",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "activeWaypointTarget",
+    "rule": "^activeWaypointTarget(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "unit",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "customTarget1",
+    "rule": "^customTarget1(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "unit",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "customTarget2",
+    "rule": "^customTarget2(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "unit",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "nearestUnit",
+    "rule": "^nearestUnit(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "unit",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "withinRange",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "relation",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "globalSearchForFirstUnit",
+    "rule": "^globalSearchForFirstUnit(\\(.*\\))?$",
+    "returnValue": "unit",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "withTag",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "string",
+        "name": "relation",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "nullUnit",
+    "rule": "^nullUnit(\\(.*\\))?$",
+    "returnValue": "unit",
+    "interpreter": "func",
+    "minVersion": 2,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "getAsMarker",
+    "rule": "^getAsMarker(\\(.*\\))?$",
+    "returnValue": "marker",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "getOffsetAbsolute",
+    "rule": "^getOffsetAbsolute(\\(.*\\))?$",
+    "returnValue": "marker",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "x",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "y",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "height",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "getOffsetRelative",
+    "rule": "^getOffsetRelative(\\(.*\\))?$",
+    "returnValue": "marker",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "x",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "y",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "height",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "dirOffset",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "eventSource",
+    "rule": "^eventSource(\\(.*\\))?$",
+    "returnValue": "event",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "readUnitMemory",
+    "rule": "^readUnitMemory(\\(.*\\))?$",
+    "returnValue": "any",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "name",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "memory.NAME",
+    "rule": "^memory\\.[^.]+$",
+    "returnValue": "any",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "memory.NAME.size",
+    "rule": "^memory\\..+\\.size$",
+    "returnValue": "int",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": false
+  },
+  {
+    "name": "memory.NAME.contains",
+    "rule": "^memory\\..+\\.contains(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "any",
+        "name": "query",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "distance",
+    "rule": "^distance(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x2",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "distanceSquared",
+    "rule": "^distanceSquared(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x2",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "distanceBetween",
+    "rule": "^distanceBetween(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "unit | marker",
+        "name": "unit1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "unit | marker",
+        "name": "unit2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "distanceBetweenSquared",
+    "rule": "^distanceBetweenSquared(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "unit | marker",
+        "name": "unit1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "unit | marker",
+        "name": "unit2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "game.nukesEnabled",
+    "rule": "^game\\.nukesEnabled(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "int",
+    "rule": "^int(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "int",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "select",
+    "rule": "^select(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "any",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "bool",
+        "name": "condition",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "any",
+        "name": "textA",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "any",
+        "name": "textB",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "debug",
+    "rule": "^debug(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "string",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "bool",
+        "name": "logicBoolean",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "str",
+    "rule": "^str(\\(.*\\))?$",
+    "returnValue": "string",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "any",
+        "name": "x",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "substring",
+    "rule": "^substring(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "string",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "text",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "int",
+        "name": "start",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "int",
+        "name": "end",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "length",
+    "rule": "^length(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "int",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "string",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "squareRoot",
+    "rule": "^squareRoot(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "num",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "min",
+    "rule": "^min(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "num1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "num2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "rule": "^max(\\(.*\\))?$",
+    "name": "max",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "num1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "num2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "createMarker",
+    "rule": "^createMarker(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "marker",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "height",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "int",
+        "name": "teamId",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "dir",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "eventData",
+    "rule": "^eventData(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "any",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "name",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "type",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "any",
+        "name": "default",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "sin",
+    "rule": "^sin(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "angle",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "cos",
+    "rule": "^cos(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "angle",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "abs",
+    "rule": "^abs(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 9,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "number",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "coalesce",
+    "rule": "^coalesce(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 9,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "A",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "B",
+        "number": 1
+      },
+      {
+        "isRequired": false,
+        "type": "float",
+        "name": "C",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "vec2",
+    "rule": "^vec2(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 9,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "vec3",
+    "rule": "^vec3(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 9,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "z",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "rnd",
+    "rule": "^rnd(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "float",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "min",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "max",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "lowercase",
+    "rule": "^lowercase(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "string",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "string",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "uppercase",
+    "rule": "^uppercase(\\(.*\\))?$",
+    "interpreter": "func",
+    "returnValue": "string",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "string",
+        "name": "string",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "direction",
+    "rule": "^direction(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "x2",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "float",
+        "name": "y2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "directionBetween",
+    "rule": "^directionBetween(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": [
+      {
+        "isRequired": true,
+        "type": "unit | marker",
+        "name": "unit1",
+        "number": 1
+      },
+      {
+        "isRequired": true,
+        "type": "unit | marker",
+        "name": "unit2",
+        "number": 1
+      }
+    ]
+  },
+  {
+    "name": "self.isInMap",
+    "rule": "^self\\.isInMap(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "game.mapWidth",
+    "rule": "^game\\.mapWidth(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "game.mapHeight",
+    "rule": "^game\\.mapHeight(\\(.*\\))?$",
+    "returnValue": "float",
+    "interpreter": "func",
+    "minVersion": 5,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.teamDefeatedTech",
+    "rule": "^self\\.teamDefeatedTech(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.teamWipedOut",
+    "rule": "^self\\.teamWipedOut(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  },
+  {
+    "name": "self.teamVictory",
+    "rule": "^self\\.teamVictory(\\(.*\\))?$",
+    "returnValue": "bool",
+    "interpreter": "func",
+    "minVersion": 6,
+    "maxVersion": -1,
+    "isFunction": true,
+    "argument": []
+  }
+]

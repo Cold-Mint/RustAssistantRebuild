@@ -1,0 +1,662 @@
+[
+    {
+        "id": "movementType_none",
+        "key": "无",
+        "value": "NONE"
+    },
+    {
+        "id": "movementType_land",
+        "key": "陆地",
+        "value": "LAND"
+    },
+    {
+        "id": "movementType_building",
+        "key": "建筑",
+        "value": "BUILDING"
+    },
+    {
+        "id": "movementType_air",
+        "key": "空中",
+        "value": "AIR"
+    },
+    {
+        "id": "movementType_water",
+        "key": "水面",
+        "value": "WATER"
+    },
+    {
+        "id": "movementType_hover",
+        "key": "两栖",
+        "value": "HOVER"
+    },
+    {
+        "id": "movementType_over_cliff",
+        "key": "跨悬崖",
+        "value": "OVER_CLIFF"
+    },
+    {
+        "id": "movementType_over_cliff_water",
+        "key": "跨水和悬崖",
+        "value": "OVER_CLIFF_WATER"
+    },
+    {
+        "id": "onNewMapSpawn_emptyResourcePools_asNeutral",
+        "key": "空资源池_中立",
+        "value": "emptyResourcePools_asNeutral"
+    },
+    {
+        "id": "onNewMapSpawn_emptyOrOccupiedResourcePools_asNeutral",
+        "key": "空的或已被占用的资源池_中立",
+        "value": "emptyOrOccupiedResourcePools_asNeutral"
+    },
+    {
+        "id": "onNewMapSpawn_mapCenter_asNeutral",
+        "key": "地图中央_中立",
+        "value": "mapCenter_asNeutral"
+    },
+    {
+        "id": "onNewMapSpawn_mapCenter_eachActiveTeam",
+        "key": "地图中央_给予每个玩家",
+        "value": "mapCenter_eachActiveTeam"
+    },
+    {
+        "id": "onNewMapSpawn_spawnPoint_eachActiveTeam",
+        "key": "初始位置_给予每个玩家",
+        "value": "spawnPoint_eachActiveTeam"
+    },
+    {
+        "id": "explodeTypeOnDeath_verysmall",
+        "key": "很小",
+        "value": "verysmall"
+    },
+    {
+        "id": "explodeTypeOnDeath_small",
+        "key": "小",
+        "value": "small"
+    },
+    {
+        "id": "explodeTypeOnDeath_normal",
+        "key": "正常",
+        "value": "normal"
+    },
+    {
+        "id": "explodeTypeOnDeath_large",
+        "key": "大",
+        "value": "large"
+    },
+    {
+        "id": "explodeTypeOnDeath_largeUnit",
+        "key": "大型单位",
+        "value": "largeUnit"
+    },
+    {
+        "id": "explodeTypeOnDeath_building",
+        "key": "建筑",
+        "value": "building"
+    },
+    {
+        "id": "explodeTypeOnDeath_buildingNoShockwaveOrSmoke",
+        "key": "没有冲击波或烟雾的建筑",
+        "value": "buildingNoShockwaveOrSmoke"
+    },
+    {
+        "id": "explodeTypeOnDeath_verylargeBuilding",
+        "key": "非常大建筑",
+        "value": "verylargeBuilding"
+    },
+    {
+        "id": "autoTriggerCheckRate_everyFrame",
+        "key": "每帧",
+        "value": "everyFrame"
+    },
+    {
+        "id": "autoTriggerCheckRate_every4Frames",
+        "key": "每4帧",
+        "value": "every4Frames"
+    },
+    {
+        "id": "autoTriggerCheckRate_every8Frames",
+        "key": "每8帧",
+        "value": "every8Frames"
+    },
+    {
+        "id": "teamColoringMode_disabled",
+        "key": "禁用",
+        "value": "disabled"
+    },
+    {
+        "id": "teamColoringMode_hueShift",
+        "key": "色相偏移",
+        "value": "hueShift"
+    },
+    {
+        "id": "teamColoringMode_hueAdd",
+        "key": "色相添加",
+        "value": "hueAdd"
+    },
+    {
+        "id": "teamColoringMode_pureGreen",
+        "key": "纯绿",
+        "value": "pureGreen"
+    },
+    {
+        "id": "drawLayer_ground",
+        "key": "地面",
+        "value": "ground"
+    },
+    {
+        "id": "drawLayer_ground2",
+        "key": "地面2",
+        "value": "ground2"
+    },
+    {
+        "id": "drawLayer_wreaks",
+        "key": "残骸",
+        "value": "wreaks"
+    },
+    {
+        "id": "drawLayer_underwater",
+        "key": "水下",
+        "value": "underwater"
+    },
+    {
+        "id": "drawLayer_bottom",
+        "key": "最底层",
+        "value": "bottom"
+    },
+    {
+        "id": "drawLayer_experimentals",
+        "key": "实验层",
+        "value": "experimentals"
+    },
+    {
+        "id": "drawLayer_air",
+        "key": "天空",
+        "value": "air"
+    },
+    {
+        "id": "drawLayer_top",
+        "key": "最顶层",
+        "value": "top"
+    },
+    {
+        "id": "attackMovement_normal",
+        "key": "正常",
+        "value": "normal"
+    },
+    {
+        "id": "attackMovement_bomber",
+        "key": "轰炸机",
+        "value": "bomber"
+    },
+    {
+        "id": "shoot_flame_small",
+        "key": "小",
+        "value": "small"
+    },
+    {
+        "id": "shoot_flame_medium",
+        "key": "中等",
+        "value": "medium"
+    },
+    {
+        "id": "shoot_flame_large",
+        "key": "大",
+        "value": "large"
+    },
+    {
+        "id": "shoot_flame_noneExplosion",
+        "key": "无爆炸",
+        "value": "noneExplosion"
+    },
+    {
+        "id": "shoot_flame_smallExplosion",
+        "key": "小爆炸",
+        "value": "smallExplosion"
+    },
+    {
+        "id": "shoot_flame_largeExplosion",
+        "key": "大爆炸",
+        "value": "largeExplosion"
+    },
+    {
+        "id": "shoot_flame_smoke",
+        "key": "烟雾",
+        "value": "smoke"
+    },
+    {
+        "id": "shoot_flame_resourcePoolSmoke",
+        "key": "资源池的绿色烟雾",
+        "value": "resourcePoolSmoke"
+    },
+    {
+        "id": "shoot_flame_shockwave",
+        "key": "冲击波",
+        "value": "shockwave"
+    },
+    {
+        "id": "friendlyFire_false",
+        "key": "假",
+        "value": "false"
+    },
+    {
+        "id": "friendlyFire_true",
+        "key": "真",
+        "value": "true"
+    },
+    {
+        "id": "friendlyFire_only-ignoreEnemy",
+        "key": "忽略敌人的友伤",
+        "value": "only-ignoreEnemy"
+    },
+    {
+        "id": "priority_verylow",
+        "key": "很低",
+        "value": "verylow"
+    },
+    {
+        "id": "priority_low",
+        "key": "低",
+        "value": "low"
+    },
+    {
+        "id": "priority_high",
+        "key": "高",
+        "value": "high"
+    },
+    {
+        "id": "priority_veryhigh",
+        "key": "很高",
+        "value": "veryhigh"
+    },
+    {
+        "id": "priority_critical",
+        "key": "至关重要",
+        "value": "critical"
+    },
+    {
+        "id": "onActions_move",
+        "key": "移动",
+        "value": "move"
+    },
+    {
+        "id": "onActions_attack",
+        "key": "攻击",
+        "value": "attack"
+    },
+    {
+        "id": "onActions_idle",
+        "key": "闲置",
+        "value": "idle"
+    },
+    {
+        "id": "onActions_underConstruction",
+        "key": "在建造中",
+        "value": "underConstruction"
+    },
+    {
+        "id": "onActions_underConstructionWithLinkedBuiltTime",
+        "key": "建造中并将动画拉伸至建造时长",
+        "value": "underConstructionWithLinkedBuiltTime"
+    },
+    {
+        "id": "onActions_queuedUnits",
+        "key": "生产中",
+        "value": "queuedUnits"
+    },
+    {
+        "id": "onActions_Unknown",
+        "key": "未知",
+        "value": "Unknown"
+    },
+    {
+        "id": "onActions_repair",
+        "key": "修复",
+        "value": "repair"
+    },
+    {
+        "id": "onActions_reclaim",
+        "key": "回收",
+        "value": "reclaim"
+    },
+    {
+        "id": "onActions_created",
+        "key": "创建时",
+        "value": "created"
+    },
+    {
+        "id": "displayType_none",
+        "key": "无",
+        "value": "none"
+    },
+    {
+        "id": "displayType_rally",
+        "key": "集结",
+        "value": "rally"
+    },
+    {
+        "id": "displayType_upgrade",
+        "key": "升级",
+        "value": "upgrade"
+    },
+    {
+        "id": "displayType_queueUnit",
+        "key": "单位队列",
+        "value": "queueUnit"
+    },
+    {
+        "id": "displayType_building",
+        "key": "建筑",
+        "value": "building"
+    },
+    {
+        "id": "displayType_action",
+        "key": "行为",
+        "value": "action"
+    },
+    {
+        "id": "displayType_infoOnly",
+        "key": "仅信息",
+        "value": "infoOnly"
+    },
+    {
+        "id": "displayType_infoOnlyNoBox",
+        "key": "无框信息",
+        "value": "infoOnlyNoBox"
+    },
+    {
+        "id": "displayType_infoOnlyStockpile",
+        "key": "仅信息库存",
+        "value": "infoOnlyStockpile"
+    },
+    {
+        "id": "autoTriggerOnEvent_created",
+        "key": "创建",
+        "value": "created"
+    },
+    {
+        "id": "autoTriggerOnEvent_completeAndActive",
+        "key": "完成且激活",
+        "value": "completeAndActive"
+    },
+    {
+        "id": "autoTriggerOnEvent_destroyed",
+        "key": "销毁",
+        "value": "destroyed"
+    },
+    {
+        "id": "autoTriggerOnEvent_killedAnyUnit",
+        "key": "杀死任何单位",
+        "value": "killedAnyUnit"
+    },
+    {
+        "id": "autoTriggerOnEvent_queuedUnitFinished",
+        "key": "队列中单位完成",
+        "value": "queuedUnitFinished"
+    },
+    {
+        "id": "autoTriggerOnEvent_queueItemAdded",
+        "key": "队列添加项目",
+        "value": "queueItemAdded"
+    },
+    {
+        "id": "autoTriggerOnEvent_queueItemCancelled",
+        "key": "队列项目取消",
+        "value": "queueItemCancelled"
+    },
+    {
+        "id": "autoTriggerOnEvent_teleported",
+        "key": "传送",
+        "value": "teleported"
+    },
+    {
+        "id": "autoTriggerOnEvent_touchTargetSuccess",
+        "key": "接触目标成功",
+        "value": "touchTargetSuccess"
+    },
+    {
+        "id": "autoTriggerOnEvent_newWaypointGivenByPlayer",
+        "key": "玩家指定路径",
+        "value": "newWaypointGivenByPlayer"
+    },
+    {
+        "id": "autoTriggerOnEvent_teamChanged",
+        "key": "队伍变更",
+        "value": "teamChanged"
+    },
+    {
+        "id": "autoTriggerOnEvent_transportingNewUnit",
+        "key": "运输新单位",
+        "value": "transportingNewUnit"
+    },
+    {
+        "id": "autoTriggerOnEvent_transportUnloadedOrRemovedUnit",
+        "key": "卸载或移除单位",
+        "value": "transportUnloadedOrRemovedUnit"
+    },
+    {
+        "id": "autoTriggerOnEvent_tookDamage",
+        "key": "受到伤害",
+        "value": "tookDamage"
+    },
+    {
+        "id": "autoTriggerOnEvent_enteredTransport",
+        "key": "进入载具",
+        "value": "enteredTransport"
+    },
+    {
+        "id": "autoTriggerOnEvent_leftTransport",
+        "key": "离开载具",
+        "value": "leftTransport"
+    },
+    {
+        "id": "autoTriggerOnEvent_newMessage",
+        "key": "新消息",
+        "value": "newMessage"
+    },
+    {
+        "id": "autoTriggerOnEvent_attachmentRemoved",
+        "key": "移除附属",
+        "value": "attachmentRemoved"
+    },
+    {
+        "id": "autoTriggerOnEvent_NONE",
+        "key": "无",
+        "value": "NONE"
+    },
+    {
+        "id": "aiUse_auto",
+        "key": "自动",
+        "value": "auto"
+    },
+    {
+        "id": "aiUse_launch",
+        "key": "发射",
+        "value": "launch"
+    },
+    {
+        "id": "aiUse_launchAmmo",
+        "key": "发射弹药",
+        "value": "launchAmmo"
+    },
+    {
+        "id": "aiUse_disabled",
+        "key": "残缺",
+        "value": "disabled"
+    },
+    {
+        "id": "aiUse_upGrade",
+        "key": "升级",
+        "value": "upGrade"
+    },
+    {
+        "id": "aiUse_movementChange",
+        "key": "运动改变",
+        "value": "movementChange"
+    },
+    {
+        "id": "aiUse_sameAsBuilding",
+        "key": "与建筑物相同",
+        "value": "sameAsBuilding"
+    },
+    {
+        "id": "addWaypoint_type_move",
+        "key": "移动",
+        "value": "move"
+    },
+    {
+        "id": "addWaypoint_type_attackMove",
+        "key": "移动攻击",
+        "value": "attackMove"
+    },
+    {
+        "id": "addWaypoint_type_guard",
+        "key": "防守",
+        "value": "guard"
+    },
+    {
+        "id": "addWaypoint_type_loadInto",
+        "key": "进入载具",
+        "value": "loadInto"
+    },
+    {
+        "id": "addWaypoint_type_loadUp",
+        "key": "主动装载",
+        "value": "loadUp"
+    },
+    {
+        "id": "addWaypoint_type_attack",
+        "key": "攻击",
+        "value": "attack"
+    },
+    {
+        "id": "addWaypoint_type_reclaim",
+        "key": "回收",
+        "value": "reclaim"
+    },
+    {
+        "id": "addWaypoint_type_repair",
+        "key": "维修",
+        "value": "repair"
+    },
+    {
+        "id": "addWaypoint_type_touchTarget",
+        "key": "靠近目标",
+        "value": "touchTarget"
+    },
+    {
+        "id": "addWaypoint_type_build",
+        "key": "建造",
+        "value": "build"
+    },
+    {
+        "id": "addWaypoint_type_follow",
+        "key": "跟随",
+        "value": "follow"
+    },
+    {
+        "id": "addWaypoint_type_setPassiveTarget",
+        "key": "设置被动目标",
+        "value": "setPassiveTarget"
+    },
+    {
+        "id": "addWaypoint_type_unloadAt",
+        "key": "卸载至",
+        "value": "unloadAt"
+    },
+    {
+        "id": "addWaypoint_type_patrol",
+        "key": "巡逻",
+        "value": "patrol"
+    },
+    {
+        "id": "addWaypoint_type_guardAt",
+        "key": "防守至",
+        "value": "guardAt"
+    },
+    {
+        "id": "addWaypoint_type_triggerAction",
+        "key": "触发行动",
+        "value": "triggerAction"
+    },
+    {
+        "id": "addWaypoint_type_triggerActionWhenInRange",
+        "key": "在范围内时触发行动",
+        "value": "triggerActionWhenInRange"
+    },
+    {
+        "id": "layer_shadow",
+        "key": "阴影",
+        "value": "shadow"
+    },
+    {
+        "id": "layer_beforeBody",
+        "key": "在主体之下",
+        "value": "beforeBody"
+    },
+    {
+        "id": "layer_afterBody",
+        "key": "在主体之上",
+        "value": "afterBody"
+    },
+    {
+        "id": "layer_onTop",
+        "key": "在最顶端",
+        "value": "onTop"
+    },
+    {
+        "id": "layer_beforeUI",
+        "key": "在显示界面之上",
+        "value": "beforeUI"
+    },
+    {
+        "id": "layer_inactive",
+        "key": "无效",
+        "value": "inactive"
+    },
+    {
+        "id": "onlyTeam_own",
+        "key": "己方",
+        "value": "own"
+    },
+    {
+        "id": "onlyTeam_notOwn",
+        "key": "非己方",
+        "value": "notOwn"
+    },
+    {
+        "id": "onlyTeam_neutral",
+        "key": "中立",
+        "value": "neutral"
+    },
+    {
+        "id": "onlyTeam_allyNotOwn",
+        "key": "除自己外盟友",
+        "value": "allyNotOwn"
+    },
+    {
+        "id": "onlyTeam_ally",
+        "key": "盟友",
+        "value": "ally"
+    },
+    {
+        "id": "onlyTeam_enemy",
+        "key": "敌方",
+        "value": "enemy"
+    },
+    {
+        "id": "onlyTeam_any",
+        "key": "任意",
+        "value": "any"
+    },
+    {
+        "id": "drawType_normal",
+        "key": "正常",
+        "value": "normal"
+    },
+    {
+        "id": "drawType_displacement",
+        "key": "错位",
+        "value": "displacement"
+    }
+]

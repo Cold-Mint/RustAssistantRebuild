@@ -1,0 +1,138 @@
+[
+  {
+    "code": "zh",
+    "translate": "中文通用"
+  },
+  {
+    "code": "zh-cn",
+    "translate": "简体中文"
+  },
+  {
+    "code": "zh-tw",
+    "translate": "繁体中文（台湾）"
+  },
+  {
+    "code": "zh-hk",
+    "translate": "繁体中文（香港）"
+  },
+  {
+    "code": "en",
+    "translate": "英语通用"
+  },
+  {
+    "code": "en-us",
+    "translate": "英语（美国）"
+  },
+  {
+    "code": "en-gb",
+    "translate": "英语（英国）"
+  },
+  {
+    "code": "ja",
+    "translate": "日语"
+  },
+  {
+    "code": "ko",
+    "translate": "韩语"
+  },
+  {
+    "code": "fr",
+    "translate": "法语"
+  },
+  {
+    "code": "fr-ca",
+    "translate": "法语（加拿大）"
+  },
+  {
+    "code": "de",
+    "translate": "德语"
+  },
+  {
+    "code": "es",
+    "translate": "西班牙语"
+  },
+  {
+    "code": "es-mx",
+    "translate": "西班牙语（墨西哥）"
+  },
+  {
+    "code": "it",
+    "translate": "意大利语"
+  },
+  {
+    "code": "ru",
+    "translate": "俄语"
+  },
+  {
+    "code": "pt",
+    "translate": "葡萄牙语"
+  },
+  {
+    "code": "pt-br",
+    "translate": "葡萄牙语（巴西）"
+  },
+  {
+    "code": "vi",
+    "translate": "越南语"
+  },
+  {
+    "code": "th",
+    "translate": "泰语"
+  },
+  {
+    "code": "id",
+    "translate": "印尼语"
+  },
+  {
+    "code": "ar",
+    "translate": "阿拉伯语"
+  },
+  {
+    "code": "hi",
+    "translate": "印地语"
+  },
+  {
+    "code": "tr",
+    "translate": "土耳其语"
+  },
+  {
+    "code": "pl",
+    "translate": "波兰语"
+  },
+  {
+    "code": "nl",
+    "translate": "荷兰语"
+  },
+  {
+    "code": "sv",
+    "translate": "瑞典语"
+  },
+  {
+    "code": "fi",
+    "translate": "芬兰语"
+  },
+  {
+    "code": "he",
+    "translate": "希伯来语"
+  },
+  {
+    "code": "uk",
+    "translate": "乌克兰语"
+  },
+  {
+    "code": "cs",
+    "translate": "捷克语"
+  },
+  {
+    "code": "ro",
+    "translate": "罗马尼亚语"
+  },
+  {
+    "code": "hu",
+    "translate": "匈牙利语"
+  },
+  {
+    "code": "el",
+    "translate": "希腊语"
+  }
+]

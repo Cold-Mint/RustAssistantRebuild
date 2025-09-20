@@ -1,0 +1,36 @@
+[
+  {
+    "language": "zh",
+    "templates": [
+      {
+        "path": "assets/units_template/basic.ini",
+        "name": "基础模板"
+      },
+      {
+        "path": "assets/units_template/builder.ini",
+        "name": "建造者模板"
+      },
+      {
+        "path": "assets/units_template/building.ini",
+        "name": "建筑模板"
+      }
+    ]
+  },
+  {
+    "language": "en",
+    "templates": [
+      {
+        "path": "assets/units_template/basic.ini",
+        "name": "Basic template"
+      },
+      {
+        "path": "assets/units_template/builder.ini",
+        "name": "Builder template"
+      },
+      {
+        "path": "assets/units_template/building.ini",
+        "name": "Building template"
+      }
+    ]
+  }
+]

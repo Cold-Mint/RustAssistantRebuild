@@ -1,0 +1,194 @@
+[
+  {
+    "description": "[[攻击空中单位，溅射伤害]] [[距离较短]]",
+    "displayName": "T2 - 高射炮",
+    "name": "antiAirTurretFlak",
+    "path": "turrets/turret_antiair_flakgun.ini"
+  },
+  {
+    "description": "[[中型装甲-低性价比单位]] [[能够透过迷雾看得更远]] [[能够在水面上移动]] [[攻击空中和地面]]",
+    "displayName": "侦察者",
+    "name": "scout",
+    "path": "scout/scout.ini"
+  },
+  {
+    "description": "[[移动速度快]] [[只能攻击空中单位]] [[全副武装并带有护盾]] [[电击可绕过防护盾]]",
+    "displayName": "重型拦截机",
+    "name": "heavyInterceptor",
+    "path": "heavy_interceptor/heavyInterceptor.ini"
+  },
+  {
+    "description": "[[非常弱]] [[只能攻击地面单位]] [[飞行速度慢]]",
+    "displayName": "轻型武装直升机",
+    "name": "lightGunship",
+    "path": "light_gunship/light_gunship.ini"
+  },
+  {
+    "description": "[[非常弱]] [[只能使用轻型鱼雷攻击]]",
+    "displayName": "水下探测器",
+    "name": "lightSub",
+    "path": "light_sub/light_sub.ini"
+  },
+  {
+    "description": " [[有运输能力]] [[能制造单位]] [[可以对空]] [[降落后可以对地攻击]] [[自我修复并内置资源制造仪]]",
+    "displayName": "飞行堡垒",
+    "name": "experimentalDropship",
+    "path": "experimental_dropship/experimental_dropship.ini"
+  },
+  {
+    "description": " [[远距离对地攻击]] [[有防空能力]] [[可发射反潜艇鱼雷]]",
+    "displayName": "重型战舰",
+    "name": "heavyBattleship",
+    "path": "heavy_battleship/heavy_battleship.ini"
+  },
+  {
+    "description": "[[远程对空导弹]] [[轻型护盾]]",
+    "displayName": "防空导弹坦克",
+    "name": "missileTank",
+    "path": "missile_tank/missile_tank.ini"
+  },
+  {
+    "description": "[[可建造单位和T2建筑物]] [[重型装甲并且可以对地攻击]] [[在水上时可以攻击潜艇]] [[自我修复并内置资源制造仪]] [[能在水上移动]]",
+    "displayName": "战斗工程师",
+    "name": "combatEngineer",
+    "path": "combat_engineer/combat_engineer.ini"
+  },
+  {
+    "description": "[[重型装甲,可发射鱼雷]] [[不能攻击水面以外的单位]]",
+    "displayName": "重型潜艇",
+    "name": "heavySub",
+    "path": "heavy_sub/heavy_sub.ini"
+  },
+  {
+    "description": "[[有重装甲但速度慢]] [需要在投掷炸弹后装填]]",
+    "displayName": "轰炸机",
+    "name": "bomber",
+    "path": "bomber/bomber.ini"
+  },
+  {
+    "description": "[[拥有超强防御,但移动缓慢]] [[能建造单位与建筑物]] [[自动修复附近的单位]] [[自带激光防御]] [[能在水上移动]] [[自我修复并内置资源制造仪]] [[死亡后核爆炸 (如果未禁止核弹)]]",
+    "displayName": "实验型战斗蜘蛛",
+    "name": "experimentalSpider",
+    "path": "experimental_spider/experimental_spider.ini"
+  },
+  {
+    "description": "[[全副武装]] [[可以对空攻击]] [[中级对空能力]] [[开火后需要重新装填]] [[自我修复]]",
+    "displayName": "火蜂战机",
+    "name": "fireBee",
+    "path": "fire_bee/fire_bee.ini"
+  },
+  {
+    "description": "[[有范围伤害的对地对空导弹]] [[开火后需要装填]] [[自我修复]]",
+    "displayName": "导弹飞艇",
+    "name": "missileAirship",
+    "path": "missile_airship/missile_airship.ini"
+  },
+  {
+    "description": "[[制造机甲与陆上单位]] [[机甲通常移动缓慢但很强]] [[更大的T2机甲能够越过峭壁]] [[可以升级]]",
+    "displayName": "机械工厂",
+    "name": "mechFactory",
+    "path": "mech_factory/mechFactory.ini"
+  },
+  {
+    "description": "[[制造机甲与陆上单位]]",
+    "displayName": "T2 - 机械工厂",
+    "name": "mechFactoryT2",
+    "path": "mech_factory/mechFactoryT2.ini"
+  },
+  {
+    "description": "[[只能攻击陆地单位]] [[相比普通坦克生命值更高,但移动也更缓慢]]",
+    "displayName": "基础机甲",
+    "name": "mechGun",
+    "path": "mechs_small/mech_gun.ini"
+  },
+  {
+    "description": "[[只能攻击空中单位]] [[范围伤害]] [[不能对地攻击]]",
+    "displayName": "防空机甲",
+    "name": "mechMissile",
+    "path": "mechs_small/mech_missile.ini"
+  },
+  {
+    "description": "[[可以对空与对低]] [[开火后需要装填]] [[射程较远]]",
+    "displayName": "等离子机甲",
+    "name": "mechLaser",
+    "path": "mechs_large/mech_laser.ini"
+  },
+  {
+    "description": "[[范围火焰伤害]] [[只能对地攻击]] [[生命值高，能够自我修复]]",
+    "displayName": "喷火机甲",
+    "name": "mechFlame",
+    "path": "mechs_large/mech_flame.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[可原地部署并获得额外射程与防御力]]",
+    "displayName": "移动炮塔",
+    "name": "mechBunker",
+    "path": "mechs_large/mech_bunker.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[可原地部署并获得额外射程与防御力]]",
+    "displayName": "移动炮塔",
+    "name": "mechBunkerDeployed",
+    "path": "mechs_large/mech_bunker_deployed.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[射程远]] [[能够在边开火边移动]]",
+    "displayName": "火炮机甲",
+    "name": "mechArtillery",
+    "path": "mechs_large/mech_artillery.ini"
+  },
+  {
+    "description": "[[能攻击地面]] [[高射速]] [[开火速度逐渐加快]] [[有防护盾(能被电击绕过)]]",
+    "displayName": "机枪机甲",
+    "name": "mechMinigun",
+    "path": "mechs_large/mech_minigun.ini"
+  },
+  {
+    "description": "[[对地\u0026对空闪电攻击]] [[可以绕过防护盾]] [[对接地的建筑物伤害较低]]",
+    "displayName": "特斯拉机甲",
+    "name": "mechLightning",
+    "path": "mechs_large/mech_lightning.ini"
+  },
+  {
+    "description": "[[只能对地攻击]] [[较远射程]] [[自带较有限的激光防御]]",
+    "displayName": "重型火炮",
+    "name": "heavyArtillery",
+    "path": "tanks/heavy_artillery.ini"
+  },
+  {
+    "description": "[[能攻击地面和空中单位]] [[超远射程]]",
+    "displayName": "重型导弹舰",
+    "name": "重型导弹舰",
+    "path": "heavy_missile_ship/heavy_missile_ship.ini"
+  },
+  {
+    "description": "",
+    "displayName": "heavyMissileShip",
+    "name": "heavyMissileShip",
+    "path": "heavy_missile_ship/heavy_missile_ship.ini"
+  },
+  {
+    "description": "[[重型武器和装甲]] [[可建造空军单位(5倍建造速度)]] [[内置激光防御 \u0026 修复湾]] [[自带高射炮防空]] [[内置资源制造仪]] [[可以制造反核导弹]] [[死亡后核爆炸 (如果未禁止核弹)]]",
+    "displayName": "航空母舰",
+    "name": "experiementalCarrier",
+    "path": "experimental_carrier/Experiemental_carrier.ini"
+  },
+  {
+    "description": "[[重型武器和装甲]] [[可以攻击舰艇]] [[可以副处水面并在陆地上行动]] [[浮出水面后可以攻击陆上和空中单位]]",
+    "displayName": "鹦鹉螺号",
+    "name": "nautilusSubmarine",
+    "path": "nautilus/nautilus.ini"
+  },
+  {
+    "description": "[[非常全副武装]] [[只能攻击陆地单位]] [[有防护盾(能被电击绕过)]]",
+    "displayName": "等离子坦克",
+    "name": "plasmaTank",
+    "path": "plasma_tank/plasma_tank.ini"
+  },
+  {
+    "description": "[[建造机甲和T2建筑物]] [[全副武装]] [[高速修复]] [[不能攻击]]",
+    "displayName": "机械师",
+    "name": "mechEngineer",
+    "path": "mech_engineer/mech_engineer.ini"
+  }
+]

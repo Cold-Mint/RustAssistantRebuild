@@ -1,0 +1,1651 @@
+[
+  {
+    "rule": "^true$",
+    "translate": "真",
+    "description": "该值将满足条件。"
+  },
+  {
+    "rule": "^false$",
+    "translate": "假",
+    "description": "该值不满足条件。"
+  },
+  {
+    "rule": "^if$",
+    "translate": "如果",
+    "description": "使用 如果 开始所有逻辑布尔值，除非只是使用布尔值（真/假）"
+  },
+  {
+    "rule": "^and$",
+    "translate": "且",
+    "description": "连接符。向列表中添加另一个条件。通过此连接符链接的所有条件都必须满足才能返回真。"
+  },
+  {
+    "rule": "^or$",
+    "translate": "或",
+    "description": "连接器。向列表中添加另一个条件。只要满足其中一个条件就可以返回真。"
+  },
+  {
+    "rule": "^not$",
+    "translate": "非",
+    "description": "条件。反转下一个逻辑布尔值的含义。用于设置负面条件。"
+  },
+  {
+    "rule": "^<$",
+    "translate": "小于",
+    "description": "如果左边的数字较小，则返回真。表示小于下一个值。"
+  },
+  {
+    "rule": "^>$",
+    "translate": "大于",
+    "description": "如果左边的数字较大，则返回真。表示大于下一个值。"
+  },
+  {
+    "rule": "^<=$",
+    "translate": "小于等于",
+    "description": "如果左边的数字较小或相等，则返回真。表示小于或等于下一个值。"
+  },
+  {
+    "rule": "^>=$",
+    "translate": "大于等于",
+    "description": "如果左边的数字较大或相等，则返回真。表示大于或等于下一个值。"
+  },
+  {
+    "rule": "^==$",
+    "translate": "等于",
+    "description": "如果两边的数字， 单位, 字符串， 布尔值相同则返回真。均值等于下一个值。"
+  },
+  {
+    "rule": "^!=$",
+    "translate": "不等于",
+    "description": "如果两边的数字， 单位, 字符串， 布尔值不同则返回真。均值不等于下一个值。"
+  },
+  {
+    "rule": "^\\+$",
+    "translate": "加",
+    "description": "将两个数字相加或连接两个字符串。表示对该值的加法。"
+  },
+  {
+    "rule": "^-$",
+    "translate": "减",
+    "description": "减去两个数。表示这个值的减法。"
+  },
+  {
+    "rule": "^/$",
+    "translate": "除",
+    "description": "除以两个数。表示两个值的除法。"
+  },
+  {
+    "rule": "^\\*$",
+    "translate": "乘",
+    "description": "将两个数相乘。表示对该值的乘法。"
+  },
+  {
+    "rule": "^%$",
+    "translate": "取余",
+    "description": "除两个数并返回余数。表示值的百分比。"
+  },
+  {
+    "rule": "^self\\.isUnderwater(\\(.*\\))?$",
+    "translate": "自身.在水下",
+    "description": "检查单位是否在水下。"
+  },
+  {
+    "rule": "^self\\.isAtGroundHeight(\\(.*\\))?$",
+    "translate": "自身.在地面高度",
+    "description": "检查单位是否在表面水平。"
+  },
+  {
+    "rule": "^self\\.isFlying(\\(.*\\))?$",
+    "translate": "自身.正在飞行",
+    "description": "检查单位是否在飞行。"
+  },
+  {
+    "rule": "^self\\.isMoving(\\(.*\\))?$",
+    "translate": "自身.正在移动",
+    "description": "检查单位是否以任何方式自行移动。"
+  },
+  {
+    "rule": "^self\\.isReversing(\\(.*\\))?$",
+    "translate": "自身.正在倒退",
+    "description": "检查单位是否向后移动。"
+  },
+  {
+    "rule": "^self\\.isAtTopSpeed(\\(.*\\))?$",
+    "translate": "自身.处于最高速度",
+    "description": "检查单位当前速度是否与moveSpeed属性匹配。"
+  },
+  {
+    "rule": "^self\\.isInWater(\\(.*\\))?$",
+    "translate": "自身.在水中",
+    "description": "检查单位是否在水中。"
+  },
+  {
+    "rule": "^self\\.isOverwater(\\(.*\\))?$",
+    "translate": "自身.在水面上",
+    "description": "检查单位是否在水面上。"
+  },
+  {
+    "rule": "^self\\.isOverLiquid(\\(.*\\))?$",
+    "translate": "自身.在液体上",
+    "description": "检查单位是否接触或在液体瓦片（水，熔岩）上。"
+  },
+  {
+    "rule": "^self\\.isOverClift(\\(.*\\))?$",
+    "translate": "自身.在悬崖上",
+    "description": "检查单位是否碰到悬崖砖。"
+  },
+  {
+    "rule": "^self\\.isOverPassableTile(\\(.*\\))?$",
+    "translate": "自身.在可通行地块上",
+    "description": "检查单位是否接触或在特定的贴图上（类型值：无、陆地、建筑、空中、水面、两栖、跨悬崖、跨水和悬崖）",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "类型"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isOverOpenLand(\\(.*\\))?$",
+    "translate": "自身.在空旷地面上",
+    "description": "自身.在可通行地块上（类型='陆地'）的快捷方式"
+  },
+  {
+    "rule": "^self\\.hasResources(\\(.*\\))?$",
+    "translate": "自身.拥有资源",
+    "description": "检查单位是否有这些资源。可以同时检查多个资源（所有价格参数）。"
+  },
+  {
+    "rule": "^self\\.resource(\\(.*\\))?$",
+    "translate": "自身.资源值",
+    "description": "检查单个资源（参数：type， greaterThan, lessThan）（1.15返回没有参数的float）",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "类型"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.resource\\..+$",
+    "translate": "自身.资源值.资源类型",
+    "description": "快捷方式：自身.资源值（类型='RESOURCE_TYPE'）",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "类型"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isResourceLargerThan(\\(.*\\))?$",
+    "translate": "自身.资源大于比较值",
+    "description": "相互比较两个资源，注意目标倍数不做任何更改。（参数：资源来源=x, 对比目标=x, 超过数量=x, 目标倍数=x）。",
+    "argument": [
+      {
+        "name": "source",
+        "translate": "资源来源"
+      },
+      {
+        "name": "compareTarget",
+        "translate": "对比目标"
+      },
+      {
+        "name": "byMoreThan",
+        "translate": "超过数量"
+      },
+      {
+        "name": "multiplyTargetBy",
+        "translate": "目标倍数"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hp(\\(.*\\))?$",
+    "translate": "自身.当前生命值",
+    "description": "（参数：大于， 小于, 为空, 已满）。（1.15返回不带参数的float）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.maxHp(\\(.*\\))?$",
+    "translate": "自身.最大生命值",
+    "description": "（参数：大于， 小于, 为空, 已满）。（1.15返回不带参数的float）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.height(\\(.*\\))?$",
+    "translate": "自身.高度",
+    "description": "（参数：大于， 小于, 为空, 已满）。（1.15返回不带参数的float）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.ammo(\\(.*\\))?$",
+    "translate": "自身.弹药量",
+    "description": "如果没有参数返回int，则返回有任何参数的布尔值（参数：大于， 小于, 为空, 已满）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isAmmoEmpty(\\(.*\\))?$",
+    "translate": "自身.弹药为空",
+    "description": "自身.弹药量的快捷方式（为空=真）。"
+  },
+  {
+    "rule": "^self\\.ammoIncludingQueued(\\(.*\\))?$",
+    "translate": "自身.弹药量含排队",
+    "description": "还包括仍然在队列中的动作的弹药（参数：大于， 小于, 为空, 已满）",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.energy(\\(.*\\))?$",
+    "translate": "自身.能量值",
+    "description": "（参数：大于， 小于, 为空, 已满）。（1.15返回不带参数的float）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.energyIncludingQueued(\\(.*\\))?$",
+    "translate": "自身.能量值含排队",
+    "description": "还包括仍然在队列中的动作的能量（参数：大于， 小于, 为空, 已满）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isEnergyFull(\\(.*\\))?$",
+    "translate": "自身.能量已满",
+    "description": "自身.能量值（已满=真）的快捷方式"
+  },
+  {
+    "rule": "^self\\.isEnergyEmpty(\\(.*\\))?$",
+    "translate": "自身.能量为空",
+    "description": "自身.能量值（为空=真）的快捷方式"
+  },
+  {
+    "rule": "^self\\.maxEnergy(\\(.*\\))?$",
+    "translate": "自身.最大能量",
+    "description": "返回最大能量（在核心节中默认为最大能量值，动态调整为由setUnitStats更改的值）。"
+  },
+  {
+    "rule": "^self\\.isEnergyRecharging(\\(.*\\))?$",
+    "description": "检查单位能量正在充能。",
+    "translate": "自身.能量正在充能"
+  },
+  {
+    "rule": "^self\\.shield(\\(.*\\))?$",
+    "translate": "自身.护盾值",
+    "description": "（参数：大于， 小于, 为空, 已满）。（1.15返回不带参数的float）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.maxShield(\\(.*\\))?$",
+    "translate": "自身.最大护盾值",
+    "description": "返回最大护盾值（在core中默认为maxShield值，但会根据setUnitStats的变化动态调整）"
+  },
+  {
+    "rule": "^self\\.kills(\\(.*\\))?$",
+    "description": "自身杀敌数量（参数：大于， 小于, 为空, 已满）。（1.15返回不带参数的float）。",
+    "translate": "自身.击杀数",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.queueSize(\\(.*\\))?$",
+    "translate": "自身.队列大小",
+    "description": "检查被调用单元中排队的构建动作和其他动作的数量（参数：大于, 小于, 已满, 为空, 等于）（1.15返回没有参数的float） 1.15p9添加了一个新参数：含有动作标签。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      },
+      {
+        "name": "full",
+        "translate": "已满"
+      },
+      {
+        "name": "equalTo",
+        "translate": "等于"
+      },
+      {
+        "name": "withActionTag",
+        "translate": "含有动作标签"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.teamId(\\(.*\\))?$",
+    "translate": "自身.队伍ID",
+    "description": "返回单位或标记的团队id。从0开始。（但是对于中立团队来说是-1）。"
+  },
+  {
+    "rule": "^self\\.teamName(\\(.*\\))?$",
+    "translate": "自身.队伍名称",
+    "description": "返回团队名称。"
+  },
+  {
+    "rule": "^self\\.playerName(\\(.*\\))?$",
+    "translate": "自身.玩家名称",
+    "description": "返回玩家名称。"
+  },
+  {
+    "rule": "^self\\.x(\\(.*\\))?$",
+    "translate": "自身.X坐标",
+    "description": "返回单位的水平位置。"
+  },
+  {
+    "rule": "^self\\.y(\\(.*\\))?$",
+    "translate": "自身.Y坐标",
+    "description": "返回单位的垂直位置。"
+  },
+  {
+    "rule": "^self\\.z(\\(.*\\))?$",
+    "translate": "自身.Z坐标",
+    "description": "返回单位的高度位置（与self.height相同）。"
+  },
+  {
+    "rule": "^self\\.dir(\\(.*\\))?$",
+    "translate": "自身.方向",
+    "description": "返回单位的方向。"
+  },
+  {
+    "rule": "^self\\.priceCredits(\\(.*\\))?$",
+    "translate": "自身.价格",
+    "description": "返回单元的价格。只返回信用价格。不支持自定义资源。"
+  },
+  {
+    "rule": "^self\\.builtAmount(\\(.*\\))?$",
+    "translate": "自身.建造进度",
+    "description": "返回单位的建造进度的当前值。"
+  },
+  {
+    "rule": "^self\\.completed(\\(.*\\))?$",
+    "translate": "自身.是否完成",
+    "description": "自身.建造进度 == 1的快捷方式。"
+  },
+  {
+    "rule": "^self\\.speed(\\(.*\\))?$",
+    "translate": "自身.速度",
+    "description": "返回单位的当前速度。"
+  },
+  {
+    "rule": "^self\\.maxMoveSpeed(\\(.*\\))?$",
+    "translate": "自身.最大移动速度",
+    "description": "返回单位的最大可能速度设置（moveSpeed属性的值设置，可以通过setUnitStats操作）。"
+  },
+  {
+    "rule": "^self\\.hasFlag(\\(.*\\))?$",
+    "translate": "自身.拥有标志",
+    "description": "布尔标志保存为模组使用的单位。(参数:id = 0-31)。",
+    "argument": [
+      {
+        "name": "id",
+        "translate": "标志ID"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.tags(\\(.*\\))?$",
+    "translate": "自身.标签包含",
+    "description": "检查或返回单位的标记（参数：包含）。",
+    "argument": [
+      {
+        "name": "includes",
+        "translate": "包含"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.globalTeamTags(\\(.*\\))?$",
+    "translate": "自身.全局队伍标签包含",
+    "description": "检查或返回全局队伍的标记（参数：包含）。",
+    "argument": [
+      {
+        "name": "includes",
+        "translate": "包含"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.transportingCount(\\(.*\\))?$",
+    "translate": "自身.运输单位数量",
+    "description": "检查或返回运输单位的数量（参数：大于, 小于, 为空）。",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "empty",
+        "translate": "为空"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfAttachedUnits(\\(.*\\))?$",
+    "translate": "自身.附着单位数量",
+    "description": "(withTag,  大于, 小于) (1.15 returns int with no parameters)",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isAttacking(\\(.*\\))?$",
+    "translate": "自身.正在攻击",
+    "description": "检查单位是否正在攻击什么东西。",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.hasActiveWaypoint(\\(.*\\))?$",
+    "translate": "自身.拥有活动的路径点",
+    "description": "（参数：type=WAYPOINT_TYPE）。",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "类型"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfQueuedWaypoints(\\(.*\\))?$",
+    "translate": "自身.排队路径点数量",
+    "description": "（参数：type=WAYPOINT_TYPE, amount=#）。",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "类型"
+      },
+      {
+        "name": "amount",
+        "translate": "数量"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.transportingUnitWithTags(\\(.*\\))?$",
+    "translate": "自身.运输的单位包含指定标签",
+    "description": "(参数:包括)。",
+    "argument": [
+      {
+        "name": "includes",
+        "translate": "包含"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hasParent(\\(.*\\))?$",
+    "translate": "自身.有父对象",
+    "description": "用于子单位和载员逻辑。有父单位时执行。可选参数:包含标签。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hasTakenDamage(\\(.*\\))?$",
+    "translate": "自身.受到伤害",
+    "description": "检查单位最后一次受到伤害的时间（参数：在秒数内=X, 晚于秒数=X） （v1.15在没有参数的情况下以秒为单位返回float）。",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "在秒数内"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "晚于秒数"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.timeAlive(\\(.*\\))?$",
+    "translate": "自身.存活时间",
+    "description": "检查单为的存活时间（参数：在秒数内=X, 晚于秒数=X） （v1.15在没有参数的情况下以秒为单位返回浮点数）。",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "在秒数内"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "晚于秒数"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.lastConverted(\\(.*\\))?$",
+    "translate": "自身.最近转换时间",
+    "description": "检查单位最后转换的时间（参数：在秒数内=X, 晚于秒数=X） （v1.15在没有参数的情况下以秒为单位返回浮点数）。",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "在秒数内"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "晚于秒数"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.customTimer(\\(.*\\))?$",
+    "translate": "自身.自定义计时器",
+    "description": "返回单位自定义计时器的当前值（参数：withinSeconds=X, laterThanSeconds=X） （v1.15在没有参数的情况下以秒为单位返回浮点数）。",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "在秒数内"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "晚于秒数"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isOnNeutralTeam(\\(.*\\))?$",
+    "translate": "自身.属于中立队伍",
+    "description": "检查该单位是否属于中立队（team ID -1）。",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInTeam(\\(.*\\))?$",
+    "translate": "自身.队伍中的单位数量",
+    "description": "检查玩家单位满足参数的数量（参数：包含标签， 大于, 小于, 范围内, 未完成建筑, 工厂队列） （v1.15返回int，没有参数）。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInAllyTeam(\\(.*\\))?$",
+    "translate": "自身.盟军队伍中的单位数量",
+    "description": "检查符合参数的盟军和玩家单位的数量（参数：包含标签， 大于, 小于, 范围内, 未完成建筑, 工厂队列）的盟军和玩家单位的数量（v1.15返回没有参数的int）。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInAllyNotOwnTeam(\\(.*\\))?$",
+    "translate": "自身.盟军非自身队伍中的单位数量",
+    "description": "检查符合参数（参数：withTag， greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue）的联合单位的数量（v1.15返回没有参数的int）。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInEnemyTeam(\\(.*\\))?$",
+    "translate": "自身.敌军队伍中的单位数量",
+    "description": "检查符合参数的敌方单位数量（参数：包含标签， 大于, 小于, 范围内, 未完成建筑, 工厂队列） （v1.15返回int，没有参数）。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^numberOfUnitsInNeutralTeam(\\(.*\\))?$",
+    "translate": "中立队伍中的单位数量",
+    "description": "检查符合参数的中立队伍的单位数量（参数：withTag， greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue）的中性单元的数量（v1.15返回没有参数的int）",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^numberOfUnitsInAggressiveTeam(\\(.*\\))?$",
+    "translate": "攻击性队伍中的单位数量",
+    "description": "检查符合参数的攻击性队伍中的单位数量（参数：包含标签， 大于, 小于, 范围内, 未完成建筑, 工厂队列） （v1.15返回没有参数的int）",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^numberOfUnitsInAllTeams(\\(.*\\))?$",
+    "description": "检查符合参数的单位数量（参数：包含标签， 大于, 小于, 范围内, 未完成建筑, 工厂队列） （v1.15返回没有参数的int）",
+    "translate": "所有队伍中的单位数量",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "大于"
+      },
+      {
+        "name": "lessThan",
+        "translate": "小于"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hasUnitInTeam(\\(.*\\))?$",
+    "translate": "自身.队伍中存在单位",
+    "description": "（参数：包含标签， 范围内, 未完成建筑, 工厂队列）队伍中的单位数量的别名。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.noUnitInTeam(\\(.*\\))?$",
+    "translate": "自身.队伍中不存在单位",
+    "description": "（参数：包含标签， 范围内, 未完成建筑, 工厂队列） numberOfUnitsInTeam的别名。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "未完成建筑"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "工厂队列"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isControlledByAI(\\(.*\\))?$",
+    "translate": "自身.由AI控制",
+    "description": "检查一个单位是否被AI控制。",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.readUnitMemory(\\(.*\\))?$",
+    "translate": "自身.读取单位内存",
+    "description": "（名称：字符串，类型：字符串{布尔值，单位，浮点数，字符串}，[默认]）",
+    "argument": [
+      {
+        "name": "name",
+        "translate": "名称"
+      },
+      {
+        "name": "type",
+        "translate": "类型"
+      },
+      {
+        "name": "default",
+        "translate": "默认值"
+      }
+    ]
+  },
+  {
+    "rule": "^thisActionTarget(\\(.*\\))?$",
+    "description": "当前目标或目标位置。",
+    "translate": "当前动作目标"
+  },
+  {
+    "rule": "^thisActionIndex(\\(.*\\))?$",
+    "translate": "当前动作索引",
+    "description": "与alsoTriggerActionRepeat和takeResources_triggerActionForEach一起使用。"
+  },
+  {
+    "rule": "^eventSource(\\(.*\\))?$",
+    "translate": "事件来源",
+    "description": "来自autoTriggerOnEvent的当前触发器，否则为空。"
+  },
+  {
+    "rule": "^attachment(\\(.*\\))?$",
+    "translate": "附着单位",
+    "description": "返回单元附件作为引用（参数：[槽位]， [包含标签]）。",
+    "argument": [
+      {
+        "name": "slot",
+        "translate": "槽位"
+      },
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      }
+    ]
+  },
+  {
+    "rule": "^transporting(\\(.*\\))?$",
+    "translate": "运输单位",
+    "description": "返回被携带的单位作为引用（参数：[slot]）。",
+    "argument": [
+      {
+        "name": "slot",
+        "translate": "槽位"
+      }
+    ]
+  },
+  {
+    "rule": "^attacking(\\(.*\\))?$",
+    "translate": "攻击单位",
+    "description": "当前正在攻击的目标，可能不是当前航路点目标。"
+  },
+  {
+    "rule": "^lastDamagedBy(\\(.*\\))?$",
+    "translate": "最后伤害源",
+    "description": "最后一个攻击这个的单位。"
+  },
+  {
+    "rule": "^parent(\\(.*\\))?$",
+    "translate": "父单位",
+    "description": "传送者或附件父节点。（注：无连接槽运输时机组为悬浮状态）"
+  },
+  {
+    "rule": "^activeWaypointTarget(\\(.*\\))?$",
+    "translate": "活动路径点目标",
+    "description": "当前活动航路点目标。包括攻击、运输、修理等。"
+  },
+  {
+    "rule": "^customTarget1(\\(.*\\))?$",
+    "translate": "自定义目标1",
+    "description": "自定义内存，默认为创建该单位的单位。"
+  },
+  {
+    "rule": "^customTarget2(\\(.*\\))?$",
+    "translate": "自定义目标2",
+    "description": "自定义内存，默认为空。"
+  },
+  {
+    "rule": "^nearestUnit(\\(.*\\))?$",
+    "translate": "最近单位",
+    "description": "（范围内=500, 包含标签='x', 关系='any'）搜索一个单位（不建议在autoTrigger检查性能时使用）",
+    "argument": [
+      {
+        "name": "withinRange",
+        "translate": "范围内"
+      },
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "relation",
+        "translate": "关系"
+      }
+    ]
+  },
+  {
+    "rule": "^globalSearchForFirstUnit(\\(.*\\))?$",
+    "translate": "全局搜索首个单位",
+    "description": "（withTag=x, relation） -返回匹配过滤器的第一个（也是最老的）单位。缓慢，避免使用自动触发检查。",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "包含标签"
+      },
+      {
+        "name": "relation",
+        "translate": "关系"
+      }
+    ]
+  },
+  {
+    "rule": "^nullUnit(\\(.*\\))?$",
+    "translate": "空单位",
+    "description": "返回一个空单位引用，用于比较。"
+  },
+  {
+    "rule": "^getAsMarker(\\(.*\\))?$",
+    "translate": "作为标记获取",
+    "description": "在单位当前位置创建一个临时标记。标记创建速度非常快，并且在不再需要时自动删除。不与任何单位相连，当单位死亡时仍然存在，当源移动时保持不变。"
+  },
+  {
+    "rule": "^getOffsetAbsolute(\\(.*\\))?$",
+    "translate": "绝对偏移获取",
+    "description": "（[X坐标],[Y坐标],[高度]）返回具有绝对偏移量的标记（-y为北，+x为东）。",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "X坐标"
+      },
+      {
+        "name": "y",
+        "translate": "Y坐标"
+      },
+      {
+        "name": "height",
+        "translate": "高度"
+      }
+    ]
+  },
+  {
+    "rule": "^getOffsetRelative(\\(.*\\))?$",
+    "translate": "相对偏移获取",
+    "description": "（[X坐标],[Y坐标],[高度],[方向偏移]）返回具有相对偏移量的标记。（y+表示远期）",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "X坐标"
+      },
+      {
+        "name": "y",
+        "translate": "Y坐标"
+      },
+      {
+        "name": "height",
+        "translate": "高度"
+      },
+      {
+        "name": "dirOffset",
+        "translate": "方向偏移"
+      }
+    ]
+  },
+  {
+    "rule": "^eventSource(\\(.*\\))?$",
+    "translate": "事件源",
+    "description": "从autotriggerevent返回事件，如果在有效的autotriggerevent之外使用，则返回null。"
+  },
+  {
+    "rule": "^readUnitMemory(\\(.*\\))?$",
+    "translate": "读取单位内存",
+    "description": "(name:string, type:string{boolean,unit,float,string}, [default])\n注：从1.15p11更新了数组后，更新三个数组的引用方式，以及数组条件判断\n数组引用方式一：self.readUnitMemory('numArray', type='number', index=<value:number>)\n数组引用方式二：self.readUnitMemory('numArray', type='float[]')[<value:number>]\n数组引用方式三：self.readUnitMemory('numArray', type='float[]').get(self.hp)\n关于数组其他函数：\nself.readUnitMemory('numArray', type='float[]').size()\nself.readUnitMemory('numArray', type='float[]').length()\nself.readUnitMemory('numArray', type='float[]').contains(self.hp)",
+    "argument": [
+      {
+        "name": "name",
+        "translate": "名称"
+      }
+    ]
+  },
+  {
+    "rule": "^memory\\.[^.]+$",
+    "translate": "内存.NAME",
+    "description": "使用当前defineUnitMemory以及@memory类型读取自身的快捷方式。 不能在其他单元上使用，为此使用 readUnitMemory。 不要调用自身。"
+  },
+  {
+    "rule": "^memory\\..+\\.size$",
+    "translate": "内存.NAME.大小",
+    "description": "使用当前defineUnitMemory以及@memory类型读取自身的快捷方式。 不能在其他单元上使用，为此使用 readUnitMemory。 不要调用自身。"
+  },
+  {
+    "rule": "^memory\\..+\\.contains(\\(.*\\))?$",
+    "translate": "内存.NAME.包含",
+    "description": "如果查询在数组中找到，则返回真。基本上是搜索存在的东西。",
+    "argument": [
+      {
+        "name": "query",
+        "translate": "查询"
+      }
+    ]
+  },
+  {
+    "rule": "^distance(\\(.*\\))?$",
+    "translate": "距离",
+    "description": "返回两点之间的差值。",
+    "argument": [
+      {
+        "name": "x1",
+        "translate": "X1坐标"
+      },
+      {
+        "name": "y1",
+        "translate": "Y1坐标"
+      },
+      {
+        "name": "x2",
+        "translate": "X2坐标"
+      },
+      {
+        "name": "y2",
+        "translate": "Y2坐标"
+      }
+    ]
+  },
+  {
+    "rule": "^distanceSquared(\\(.*\\))?$",
+    "translate": "距离平方",
+    "description": "返回两点之差的平方。比距离快一点。",
+    "argument": [
+      {
+        "name": "x1",
+        "translate": "X1坐标"
+      },
+      {
+        "name": "y1",
+        "translate": "Y1坐标"
+      },
+      {
+        "name": "x2",
+        "translate": "X2坐标"
+      },
+      {
+        "name": "y2",
+        "translate": "Y2坐标"
+      }
+    ]
+  },
+  {
+    "rule": "^distanceBetween(\\(.*\\))?$",
+    "translate": "两单位间距离",
+    "description": "返回两个单位或标记之间的距离。",
+    "argument": [
+      {
+        "name": "unit1",
+        "translate": "单位1"
+      },
+      {
+        "name": "unit2",
+        "translate": "单位2"
+      }
+    ]
+  },
+  {
+    "rule": "^distanceBetweenSquared(\\(.*\\))?$",
+    "translate": "两单位间距离平方",
+    "description": "返回两个单位之间距离的平方。比distanceBetween快一点。",
+    "argument": [
+      {
+        "name": "unit1",
+        "translate": "单位1"
+      },
+      {
+        "name": "unit2",
+        "translate": "单位2"
+      }
+    ]
+  },
+  {
+    "rule": "^game\\.nukesEnabled(\\(.*\\))?$",
+    "translate": "游戏.核武器已启用",
+    "description": "如果在游戏设置中启用核弹，则返回真。"
+  },
+  {
+    "rule": "^int(\\(.*\\))?$",
+    "translate": "转换到整数",
+    "description": "从数字中删除小数点。",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "值"
+      }
+    ]
+  },
+  {
+    "rule": "^select(\\(.*\\))?$",
+    "translate": "条件选择",
+    "description": "如果条件为真，则返回textA，否则返回textB",
+    "argument": [
+      {
+        "name": "condition",
+        "translate": "条件"
+      },
+      {
+        "name": "textA",
+        "translate": "文本A"
+      },
+      {
+        "name": "textB",
+        "translate": "文本B"
+      }
+    ]
+  },
+  {
+    "rule": "^debug(\\(.*\\))?$",
+    "translate": "调试",
+    "description": "返回一个文本字符串，帮助解释当前结果的原因。可以查看嵌套逻辑、比较和操作符。",
+    "argument": [
+      {
+        "name": "logicBoolean",
+        "translate": "逻辑布尔值"
+      }
+    ]
+  },
+  {
+    "rule": "^str(\\(.*\\))?$",
+    "translate": "转换到字符串",
+    "description": "将数字、单位或布尔值转换为字符串。",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "值"
+      }
+    ]
+  },
+  {
+    "rule": "^substring(\\(.*\\))?$",
+    "translate": "截取字符串",
+    "description": "从指定的开始部分和结束部分取字符串的一部分。",
+    "argument": [
+      {
+        "name": "text",
+        "translate": "文本"
+      },
+      {
+        "name": "start",
+        "translate": "起始索引"
+      },
+      {
+        "name": "end",
+        "translate": "结束索引"
+      }
+    ]
+  },
+  {
+    "rule": "^length(\\(.*\\))?$",
+    "translate": "长度",
+    "description": "返回字符串长度作为数字。",
+    "argument": [
+      {
+        "name": "string",
+        "translate": "字符串"
+      }
+    ]
+  },
+  {
+    "rule": "^squareRoot(\\(.*\\))?$",
+    "translate": "平方根",
+    "description": "返回一个数的平方根。",
+    "argument": [
+      {
+        "name": "num",
+        "translate": "数字"
+      }
+    ]
+  },
+  {
+    "rule": "^min(\\(.*\\))?$",
+    "translate": "最小值",
+    "description": "返回最小的数字。",
+    "argument": [
+      {
+        "name": "num1",
+        "translate": "数字A"
+      },
+      {
+        "name": "num2",
+        "translate": "数字B"
+      }
+    ]
+  },
+  {
+    "rule": "^max(\\(.*\\))?$",
+    "translate": "最大值",
+    "description": "返回最大的数字。",
+    "argument": [
+      {
+        "name": "num1",
+        "translate": "数字A"
+      },
+      {
+        "name": "num2",
+        "translate": "数字B"
+      }
+    ]
+  },
+  {
+    "rule": "^createMarker(\\(.*\\))?$",
+    "translate": "创建标记",
+    "description": "创建可用于放置各种操作坐标的标记。",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      },
+      {
+        "name": "y",
+        "translate": "y"
+      },
+      {
+        "name": "height",
+        "translate": "高度"
+      },
+      {
+        "name": "teamId",
+        "translate": "队伍ID"
+      },
+      {
+        "name": "dir",
+        "translate": "方向"
+      }
+    ]
+  },
+  {
+    "rule": "^eventData(\\(.*\\))?$",
+    "translate": "事件数据",
+    "description": "显示来自某个单位的指定消息的数据。仅在autoTriggerOnEvent:newMessage事件中使用。",
+    "argument": [
+      {
+        "name": "name",
+        "translate": "名称"
+      },
+      {
+        "name": "type",
+        "translate": "类型"
+      },
+      {
+        "name": "default",
+        "translate": "默认值"
+      }
+    ]
+  },
+  {
+    "rule": "^sin(\\(.*\\))?$",
+    "translate": "正弦",
+    "description": "获取指定数字的正弦值。",
+    "argument": [
+      {
+        "name": "angle",
+        "translate": "角度"
+      }
+    ]
+  },
+  {
+    "rule": "^cos(\\(.*\\))?$",
+    "translate": "余弦",
+    "description": "获取指定数字的余弦值。",
+    "argument": [
+      {
+        "name": "angle",
+        "translate": "角度"
+      }
+    ]
+  },
+  {
+    "rule": "^abs(\\(.*\\))?$",
+    "translate": "绝对值",
+    "description": "无论正负，返回绝对值。",
+    "argument": [
+      {
+        "name": "number",
+        "translate": "数字"
+      }
+    ]
+  },
+  {
+    "rule": "^coalesce(\\(.*\\))?$",
+    "translate": "取第一个非空值",
+    "description": "返回数组系列中第一个非空元素。",
+    "argument": [
+      {
+        "name": "A",
+        "translate": "数字A"
+      },
+      {
+        "name": "B",
+        "translate": "数字B"
+      },
+      {
+        "name": "C",
+        "translate": "数字C"
+      }
+    ]
+  },
+  {
+    "rule": "^vec2(\\(.*\\))?$",
+    "translate": "二维向量",
+    "description": "返回一个vec2坐标。",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      },
+      {
+        "name": "y",
+        "translate": "y"
+      }
+    ]
+  },
+  {
+    "rule": "^vec3(\\(.*\\))?$",
+    "translate": "三维向量",
+    "description": "返回一个vec3坐标。",
+    "argument": [
+      {
+        "translate": "x",
+        "name": "x"
+      },
+      {
+        "translate": "y",
+        "name": "y"
+      },
+      {
+        "translate": "z",
+        "name": "z"
+      }
+    ]
+  },
+  {
+    "rule": "^rnd(\\(.*\\))?$",
+    "translate": "随机值",
+    "description": "在最小和最大输入之间产生一个随机数。",
+    "argument": [
+      {
+        "name": "min",
+        "translate": "最小值"
+      },
+      {
+        "name": "max",
+        "translate": "最大值"
+      }
+    ]
+  },
+  {
+    "rule": "^lowercase(\\(.*\\))?$",
+    "translate": "转小写",
+    "description": "将字符串中的所有字母设置为小写。",
+    "argument": [
+      {
+        "name": "string",
+        "translate": "字符串"
+      }
+    ]
+  },
+  {
+    "rule": "^uppercase(\\(.*\\))?$",
+    "translate": "转大写",
+    "description": "将字符串中的所有字母设置为大写。",
+    "argument": [
+      {
+        "name": "string",
+        "translate": "字符串"
+      }
+    ]
+  },
+  {
+    "rule": "^direction(\\(.*\\))?$",
+    "translate": "方向",
+    "description": "返回x1/y1和x2/y2的相对角度。",
+    "argument": [
+      {
+        "name": "x1",
+        "translate": "x1"
+      },
+      {
+        "name": "y1",
+        "translate": "y1"
+      },
+      {
+        "name": "x2",
+        "translate": "x2"
+      },
+      {
+        "name": "y2",
+        "translate": "y2"
+      }
+    ]
+  },
+  {
+    "rule": "^directionBetween(\\(.*\\))?$",
+    "translate": "相对角度",
+    "description": "返回单位/标记A和单位/标记B的相对角度。",
+    "argument": [
+      {
+        "name": "unit1",
+        "translate": "单位1"
+      },
+      {
+        "name": "unit2",
+        "translate": "单位2"
+      }
+    ]
+  },
+  {
+    "translate": "自身.在地图内",
+    "rule": "^self\\.isInMap(\\(.*\\))?$",
+    "description": "如果单位（或标记）在游戏区域内，返回真；如果超出边界则返回false。",
+    "argument": []
+  },
+  {
+    "rule": "^game\\.mapWidth(\\(.*\\))?$",
+    "translate": "游戏.地图宽度",
+    "description": "返回地图的宽度。",
+    "argument": []
+  },
+  {
+    "rule": "^game\\.mapHeight(\\(.*\\))?$",
+    "translate": "游戏.地图高度",
+    "description": "返回地图的高度。",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.teamDefeatedTech(\\(.*\\))?$",
+    "translate": "自身.队伍被击败",
+    "description": "返回真，如果队伍被击败。",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.teamWipedOut(\\(.*\\))?$",
+    "translate": "自身.全军覆没",
+    "description": "返回真，全军覆没。",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.teamVictory(\\(.*\\))?$",
+    "translate": "自身.队伍获胜",
+    "description": "返回真，如果队伍获胜。",
+    "argument": []
+  }
+]

@@ -1,0 +1,1651 @@
+[
+  {
+    "rule": "^true$",
+    "translate": "true",
+    "description": "This value will meet the condition."
+  },
+  {
+    "rule": "^false$",
+    "translate": "false",
+    "description": "This value will not meet the condition."
+  },
+  {
+    "rule": "^if$",
+    "translate": "if",
+    "description": "Start all logic booleans with if, unless just using booleans (true/false)"
+  },
+  {
+    "rule": "^and$",
+    "translate": "and",
+    "description": "Connector. Adds another condition to the list. All conditions linked by this must be reached to return true."
+  },
+  {
+    "rule": "^or$",
+    "translate": "or",
+    "description": "Connector. Adds another condition to the list. Just one of the conditions linked must be reached to return true"
+  },
+  {
+    "rule": "^not$",
+    "translate": "not",
+    "description": "Conditional. Reverts meaning of the next logic boolean. Useful to set negative conditions."
+  },
+  {
+    "rule": "^<$",
+    "translate": "<",
+    "description": "Return true if number on left is smaller. Means less than next value."
+  },
+  {
+    "rule": "^>$",
+    "translate": ">",
+    "description": "Return true if number on right is smaller. Means greater than next value."
+  },
+  {
+    "rule": "^<=$",
+    "translate": "<=",
+    "description": "Return true if number on left is smaller or equal. Means less or equal than next value."
+  },
+  {
+    "rule": "^>=$",
+    "translate": ">=",
+    "description": "Return true if number on right is smaller or equal. Means greater or equal than next value."
+  },
+  {
+    "rule": "^==$",
+    "translate": "==",
+    "description": "Return true if number, unit, string, bool on both sides is the same. Means equal to next value."
+  },
+  {
+    "rule": "^!=$",
+    "translate": "!=",
+    "description": "Return true if number, unit, string, bool on both sides different. Means different to next value."
+  },
+  {
+    "rule": "^\\+$",
+    "translate": "+",
+    "description": "Add two numbers or join two strings. Means addition to this value."
+  },
+  {
+    "rule": "^-$",
+    "translate": "-",
+    "description": "Subtract two numbers. Means substraction to this value."
+  },
+  {
+    "rule": "^/$",
+    "translate": "/",
+    "description": "Divide two numbers. Means division of two values."
+  },
+  {
+    "rule": "^\\*$",
+    "translate": "*",
+    "description": "Multiply two numbers. Means multiplication of two values."
+  },
+  {
+    "rule": "^%$",
+    "translate": "%",
+    "description": "Divides two numbers and returns the remainder. Means a percentage of a value."
+  },
+  {
+    "rule": "^self\\.isUnderwater(\\(.*\\))?$",
+    "translate": "self.isUnderwater",
+    "description": "Checks if unit is underwater."
+  },
+  {
+    "rule": "^self\\.isAtGroundHeight(\\(.*\\))?$",
+    "translate": "self.isAtGroundHeight",
+    "description": "Checks if unit is in surface level."
+  },
+  {
+    "rule": "^self\\.isFlying(\\(.*\\))?$",
+    "translate": "self.isFlying",
+    "description": "Checks if unit is flying."
+  },
+  {
+    "rule": "^self\\.isMoving(\\(.*\\))?$",
+    "translate": "self.isMoving",
+    "description": "Checks if unit is moving on its own by any means."
+  },
+  {
+    "rule": "^self\\.isReversing(\\(.*\\))?$",
+    "translate": "self.isReversing",
+    "description": "Checks if unit is moving backwards."
+  },
+  {
+    "rule": "^self\\.isAtTopSpeed(\\(.*\\))?$",
+    "translate": "self.isAtTopSpeed",
+    "description": "Checks if the unit current speed matches the moveSpeed property."
+  },
+  {
+    "rule": "^self\\.isInWater(\\(.*\\))?$",
+    "translate": "self.isInWater",
+    "description": "Checks if unit touches a water tile."
+  },
+  {
+    "rule": "^self\\.isOverwater(\\(.*\\))?$",
+    "translate": "self.isOverwater",
+    "description": "Checks if unit is touching or over a water tile."
+  },
+  {
+    "rule": "^self\\.isOverLiquid(\\(.*\\))?$",
+    "translate": "self.isOverLiquid",
+    "description": "Checks if unit is touching or over a liquid tile (water, lava)."
+  },
+  {
+    "rule": "^self\\.isOverClift(\\(.*\\))?$",
+    "translate": "self.isOverClift",
+    "description": "Checks if unit is touching a cliff tile."
+  },
+  {
+    "rule": "self\\.isOverPassableTile",
+    "translate": "self.isOverPassableTile",
+    "description": "Checks if unit is touching or over a specific tile (parameters: type, Type Values: NONE, LAND, BUILDING, HOVER, OVER_CLIFF, OVER_CLIFF_WATER, AIR, WATER)",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "type"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isOverOpenLand(\\(.*\\))?$",
+    "translate": "self.isOverOpenLand",
+    "description": "shortcut for self.isOverPassableTile(type='LAND')"
+  },
+  {
+    "rule": "^self\\.hasResources(\\(.*\\))?$",
+    "translate": "self.hasResources",
+    "description": "Checks if unit has these resources. Can check multiple resources at the same time (all price parameters)."
+  },
+  {
+    "rule": "^self\\.resource(\\(.*\\))?$",
+    "translate": "self.resource",
+    "description": "Checks a single resource (parameters: type, greaterThan, lessThan) (1.15 returns float with no parameters)",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "type"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.resource\\..+$",
+    "translate": "self.resource.RESOURCE_TYPE",
+    "description": "Shortcut for: self.resource(type='RESOURCE_TYPE')",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "type"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isResourceLargerThan(\\(.*\\))?$",
+    "translate": "self.isResourceLargerThan",
+    "description": "Compare two resource between each other, note multiplyTargetBy doesn't make any changes. (parameters: source=x, compareTarget=x, byMoreThan=x, multiplyTargetBy=x).",
+    "argument": [
+      {
+        "name": "source",
+        "translate": "source"
+      },
+      {
+        "name": "compareTarget",
+        "translate": "compareTarget"
+      },
+      {
+        "name": "byMoreThan",
+        "translate": "byMoreThan"
+      },
+      {
+        "name": "multiplyTargetBy",
+        "translate": "multiplyTargetBy"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hp(\\(.*\\))?$",
+    "description": "(parameters: greaterThan, lessThan, empty, full). (1.15 returns float with no parameters).",
+    "translate": "self.hp",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.maxHp(\\(.*\\))?$",
+    "translate": "self.maxHp",
+    "description": "(parameters: greaterThan, lessThan, empty, full). (1.15 returns float with no parameters).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.height(\\(.*\\))?$",
+    "translate": "self.height",
+    "description": "(parameters: greaterThan, lessThan, empty, full)  (1.15 returns float with no parameters).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.ammo(\\(.*\\))?$",
+    "translate": "self.ammo",
+    "description": "Returns int if no parameters, boolean with any parameters (parameters: greaterThan, lessThan, empty, full).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isAmmoEmpty(\\(.*\\))?$",
+    "translate": "self.isAmmoEmpty",
+    "description": "shortcut for self.ammo(empty=true)."
+  },
+  {
+    "rule": "^self\\.ammoIncludingQueued(\\(.*\\))?$",
+    "translate": "self.ammoIncludingQueued",
+    "description": "Also includes ammo from actions still in queue (parameters: greaterThan, lessThan, empty, full)",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.energy(\\(.*\\))?$",
+    "translate": "self.energy",
+    "description": "(parameters: greaterThan, lessThan, empty, full)   (1.15 returns float with no parameters).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.energyIncludingQueued(\\(.*\\))?$",
+    "translate": "self.energyIncludingQueued",
+    "description": "Also includes energy from actions still in queue (parameters: greaterThan, lessThan, empty, full).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isEnergyFull(\\(.*\\))?$",
+    "description": "shortcut for self.energy(full=true).",
+    "translate": "self.isEnergyFull"
+  },
+  {
+    "rule": "^self\\.isEnergyEmpty(\\(.*\\))?$",
+    "description": "shortcut for self.energy(empty=true).",
+    "translate": "self.isEnergyEmpty"
+  },
+  {
+    "rule": "^self\\.maxEnergy(\\(.*\\))?$",
+    "description": "Returns maximum energy (defaults to energyMax value in core, dynamically adjusts to changed value made by setUnitStats).",
+    "translate": "self.maxEnergy"
+  },
+  {
+    "rule": "^self\\.isEnergyRecharging(\\(.*\\))?$",
+    "description": "Checks if unit energy is passively recharging.",
+    "translate": "self.isEnergyRecharging"
+  },
+  {
+    "rule": "^self\\.shield(\\(.*\\))?$",
+    "translate": "self.shield",
+    "description": "(parameters: greaterThan, lessThan, empty, full)   (1.15 returns float with no parameters).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.maxShield(\\(.*\\))?$",
+    "translate": "self.maxShield",
+    "description": "Returns the maximum shield value (defaults to maxShield value in core, but dynamically adjusts to changes made with setUnitStats)"
+  },
+  {
+    "rule": "^self\\.kills(\\(.*\\))?$",
+    "translate": "self.kills",
+    "description": "Returns the number of kills the unit has done (parameters: greaterThan, lessThan)   (1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.queueSize(\\(.*\\))?$",
+    "translate": "self.queueSize",
+    "description": "Checks the amount of queued build actions and other actions in the invoked unit(parameters: greaterThan, lessThan, full, empty, equalTo)  (1.15 returns float with no parameters) 1.15p9 adds a new parameter: withActionTag=\"#\".",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      },
+      {
+        "name": "full",
+        "translate": "full"
+      },
+      {
+        "name": "equalTo",
+        "translate": "equalTo"
+      },
+      {
+        "name": "withActionTag",
+        "translate": "withActionTag"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.teamId(\\(.*\\))?$",
+    "translate": "self.teamId",
+    "description": "Return team id of unit or marker. Starts at 0. (but -1 for a neutral team)."
+  },
+  {
+    "rule": "^self\\.teamName(\\(.*\\))?$",
+    "description": "Returns allied group team name.",
+    "translate": "self.teamName"
+  },
+  {
+    "rule": "^self\\.playerName(\\(.*\\))?$",
+    "description": "Returns player's name.",
+    "translate": "self.playerName"
+  },
+  {
+    "rule": "^self\\.x(\\(.*\\))?$",
+    "description": "Returns the horizontal position of the unit.",
+    "translate": "self.x"
+  },
+  {
+    "rule": "^self\\.y(\\(.*\\))?$",
+    "description": "Returns the vertical position of the unit.",
+    "translate": "self.y"
+  },
+  {
+    "rule": "^self\\.z(\\(.*\\))?$",
+    "translate": "self.z",
+    "description": "Returns the elevation position of the unit (identical to self.height)."
+  },
+  {
+    "rule": "^self\\.dir(\\(.*\\))?$",
+    "translate": "self.dir",
+    "description": "Returns the unit's direction."
+  },
+  {
+    "rule": "^self\\.priceCredits(\\(.*\\))?$",
+    "translate": "self.priceCredits",
+    "description": "Returns the price of the unit. Only returns the credit price. Does not support custom resources."
+  },
+  {
+    "rule": "^self\\.builtAmount(\\(.*\\))?$",
+    "translate": "self.builtAmount",
+    "description": "Returns the current value of build progression of the unit."
+  },
+  {
+    "rule": "^self\\.completed(\\(.*\\))?$",
+    "translate": "self.completed",
+    "description": "Shortcut for self.builtAmount() == 1."
+  },
+  {
+    "rule": "^self\\.speed(\\(.*\\))?$",
+    "translate": "self.speed",
+    "description": "Returns current speed of the unit."
+  },
+  {
+    "rule": "^self\\.maxMoveSpeed(\\(.*\\))?$",
+    "translate": "self.maxMoveSpeed",
+    "description": "Returns the maximum possible speed set for the unit (value set for moveSpeed property, may be manipulated with setUnitStats)."
+  },
+  {
+    "rule": "^self\\.hasFlag(\\(.*\\))?$",
+    "description": "Boolean flag saved into units for mods to use. (parameters: id=0-31).",
+    "translate": "self.hasFlag",
+    "argument": [
+      {
+        "name": "id",
+        "translate": "id"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.tags\\(.*\\)?$",
+    "translate": "self.tags",
+    "description": "Checks or return tags of a unit (parameters: includes).",
+    "argument": [
+      {
+        "name": "includes",
+        "translate": "includes"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.globalTeamTags(\\(.*\\))?$",
+    "translate": "self.globalTeamTags",
+    "description": "Checks or returns global tags on a unit (parameters: includes)",
+    "argument": [
+      {
+        "name": "includes",
+        "translate": "includes"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.transportingCount(\\(.*\\))?$",
+    "translate": "self.transportingCount",
+    "description": "(parameters: greaterThan, lessThan, empty) (1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "empty",
+        "translate": "empty"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfAttachedUnits(\\(.*\\))?$",
+    "translate": "self.numberOfAttachedUnits",
+    "description": "(withTag,  greaterThan, lessThan) (1.15 returns int with no parameters)",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isAttacking(\\(.*\\))?$",
+    "translate": "self.isAttacking",
+    "description": "Checks if the unit is attacking something.",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.hasActiveWaypoint(\\(.*\\))?$",
+    "translate": "self.hasActiveWaypoint",
+    "description": "(parameters: type=WAYPOINT_TYPE).",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "type"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfQueuedWaypoints(\\(.*\\))?$",
+    "translate": "self.numberOfQueuedWaypoints",
+    "description": "(parameters: type=WAYPOINT_TYPE, amount=#).",
+    "argument": [
+      {
+        "name": "type",
+        "translate": "type"
+      },
+      {
+        "name": "amount",
+        "translate": "amount"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.transportingUnitWithTags(\\(.*\\))?$",
+    "translate": "self.transportingUnitWithTags",
+    "description": "(parameters: includes).",
+    "argument": [
+      {
+        "name": "includes",
+        "translate": "includes"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hasParent(\\(.*\\))?$",
+    "translate": "self.hasParent",
+    "description": "Checks if a unit is attached or a passenger of a unit. For both attachments and transports (parameters: [withTag=x] ).",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hasTakenDamage(\\(.*\\))?$",
+    "translate": "self.hasTakenDamage",
+    "description": "Checks when the unit last took damage (parameters: withinSeconds=X, laterThanSeconds=X)  (v1.15 returns float in seconds with no parameters).",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "withinSeconds"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "laterThanSeconds"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.timeAlive(\\(.*\\))?$",
+    "translate": "self.timeAlive",
+    "description": "Checks how long the unit is alive (parameters: withinSeconds=X, laterThanSeconds=X)  (v1.15 returns float in seconds with no parameters).",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "withinSeconds"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "laterThanSeconds"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.lastConverted(\\(.*\\))?$",
+    "translate": "self.lastConverted",
+    "description": "Check the time the unit last converted from (parameters: withinSeconds=X, laterThanSeconds=X)  (v1.15 returns float in seconds with no parameters).",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "withinSeconds"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "laterThanSeconds"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.customTimer(\\(.*\\))?$",
+    "translate": "self.customTimer",
+    "description": "Returns the current value in the unit's custom timer (parameters: withinSeconds=X, laterThanSeconds=X)  (v1.15 returns float in seconds with no parameters).",
+    "argument": [
+      {
+        "name": "withinSeconds",
+        "translate": "withinSeconds"
+      },
+      {
+        "name": "laterThanSeconds",
+        "translate": "laterThanSeconds"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isOnNeutralTeam(\\(.*\\))?$",
+    "translate": "self.isOnNeutralTeam",
+    "description": "Checks if the unit belongs to the neutral team (Team ID -1).",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInTeam(\\(.*\\))?$",
+    "translate": "self.numberOfUnitsInTeam",
+    "description": "Checks amount of player units that meet the parameters (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue) (v1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInAllyTeam(\\(.*\\))?$",
+    "translate": "self.numberOfUnitsInAllyTeam",
+    "description": "Checks amount of allied and player units that meet the parameters (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue) (v1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInAllyNotOwnTeam(\\(.*\\))?$",
+    "translate": "self.numberOfUnitsInAllyNotOwnTeam",
+    "description": "Checks amount of allied only units that meet the parameters (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue) (v1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.numberOfUnitsInEnemyTeam(\\(.*\\))?$",
+    "translate": "self.numberOfUnitsInEnemyTeam",
+    "description": "Checks amount of enemy units that meet the parameters (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue) (v1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^numberOfUnitsInNeutralTeam(\\(.*\\))?$",
+    "translate": "numberOfUnitsInNeutralTeam",
+    "description": "Checks amount of neutral units that meet the parameters (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue) (v1.15 returns int with no parameters)",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^numberOfUnitsInAggressiveTeam(\\(.*\\))?$",
+    "translate": "numberOfUnitsInAggressiveTeam",
+    "description": "Checks amount of aggressive neutral units that meet the parameters (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue) (v1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^numberOfUnitsInAllTeams(\\(.*\\))?$",
+    "translate": "numberOfUnitsInAllTeams",
+    "description": "Checks amount of any units that meet the parameters (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue) (v1.15 returns int with no parameters).",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "greaterThan",
+        "translate": "greaterThan"
+      },
+      {
+        "name": "lessThan",
+        "translate": "lessThan"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.hasUnitInTeam(\\(.*\\))?$",
+    "translate": "self.hasUnitInTeam",
+    "description": "(parameters: withTag, withinRange, incompleteBuildings, factoryQueue) alias for numberOfUnitsInTeam.",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.noUnitInTeam(\\(.*\\))?$",
+    "translate": "self.noUnitInTeam",
+    "description": "(parameters: withTag, withinRange, incompleteBuildings, factoryQueue) alias for numberOfUnitsInTeam.",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "incompleteBuildings",
+        "translate": "incompleteBuildings"
+      },
+      {
+        "name": "factoryQueue",
+        "translate": "factoryQueue"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.isControlledByAI(\\(.*\\))?$",
+    "translate": "self.isControlledByAI",
+    "description": "Checks if a unit is controlled by AI.",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.readUnitMemory(\\(.*\\))?$",
+    "translate": "self.readUnitMemory",
+    "description": "(name:string, type:string{boolean,unit,float,string}, [default])",
+    "argument": [
+      {
+        "name": "name",
+        "translate": "name"
+      },
+      {
+        "name": "type",
+        "translate": "type"
+      },
+      {
+        "name": "default",
+        "translate": "default"
+      }
+    ]
+  },
+  {
+    "rule": "^thisActionTarget(\\(.*\\))?$",
+    "translate": "thisActionTarget",
+    "description": "Current target or location targeted."
+  },
+  {
+    "rule": "^thisActionIndex(\\(.*\\))?$",
+    "translate": "thisActionIndex",
+    "description": "Used with alsoTriggerActionRepeat and takeResources_triggerActionForEach."
+  },
+  {
+    "rule": "^eventSource(\\(.*\\))?$",
+    "translate": "eventSource",
+    "description": "Current trigger from an autoTriggerOnEvent, otherwise null."
+  },
+  {
+    "rule": "^attachment(\\(.*\\))?$",
+    "translate": "attachment",
+    "description": "Returns unit attachment as reference (parameters: [slot], [withTag]).",
+    "argument": [
+      {
+        "name": "slot",
+        "translate": "slot"
+      },
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      }
+    ]
+  },
+  {
+    "rule": "^self\\.transporting(\\(.*\\))?$",
+    "description": "Returns unit passenger as reference (parameters: [slot]).",
+    "translate": "transporting",
+    "argument": [
+      {
+        "name": "slot",
+        "translate": "slot"
+      }
+    ]
+  },
+  {
+    "rule": "^attacking(\\(.*\\))?$",
+    "translate": "attacking",
+    "description": "Current target this is attacking, might not be the current waypoint target."
+  },
+  {
+    "rule": "^lastDamagedBy(\\(.*\\))?$",
+    "translate": "lastDamagedBy",
+    "description": "Last unit that attacked this."
+  },
+  {
+    "rule": "^parent(\\(.*\\))?$",
+    "translate": "parent",
+    "description": "The transporter or attachment parent. (Note: units are suspended state when transported without attachment slot)."
+  },
+  {
+    "rule": "^activeWaypointTarget(\\(.*\\))?$",
+    "translate": "activeWaypointTarget",
+    "description": "Current active waypoint target. Includes attacking, transporting, repairing, etc."
+  },
+  {
+    "rule": "^customTarget1(\\(.*\\))?$",
+    "translate": "customTarget1",
+    "description": "Custom memory, defaults to the unit that created this unit."
+  },
+  {
+    "rule": "^customTarget2(\\(.*\\))?$",
+    "translate": "customTarget2",
+    "description": "Custom memory, defaults to null."
+  },
+  {
+    "rule": "^nearestUnit(\\(.*\\))?$",
+    "translate": "nearestUnit",
+    "description": "(withinRange=500, withTag='x', relation='any') Search for a unit (not recommended in autoTrigger check for perfomance)",
+    "argument": [
+      {
+        "name": "withinRange",
+        "translate": "withinRange"
+      },
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "relation",
+        "translate": "relation"
+      }
+    ]
+  },
+  {
+    "rule": "^globalSearchForFirstUnit(\\(.*\\))?$",
+    "translate": "globalSearchForFirstUnit",
+    "description": "(withTag=x, relation) - Returns first (and oldest) unit found matching the filter. Slow, avoid using in autoTrigger checks.",
+    "argument": [
+      {
+        "name": "withTag",
+        "translate": "withTag"
+      },
+      {
+        "name": "relation",
+        "translate": "relation"
+      }
+    ]
+  },
+  {
+    "rule": "^nullUnit(\\(.*\\))?$",
+    "translate": "nullUnit",
+    "description": "returns a null unit reference, useful for comparisons."
+  },
+  {
+    "rule": "^getAsMarker(\\(.*\\))?$",
+    "translate": "getAsMarker",
+    "description": "creates a temporary marker at the position a unit is right now. Markers are very fast to create and automatically removed when no longer needed. Is not linked to any unit and still exists when the unit dies, and stays the same when source moves."
+  },
+  {
+    "rule": "^getOffsetAbsolute(\\(.*\\))?$",
+    "translate": "getOffsetAbsolute",
+    "description": "([x],[y],[height]) Returns marker with absolute offset (-y is north, +x is east).",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      },
+      {
+        "name": "x",
+        "translate": "x"
+      },
+      {
+        "name": "height",
+        "translate": "height"
+      }
+    ]
+  },
+  {
+    "rule": "^getOffsetRelative(\\(.*\\))?$",
+    "translate": "getOffsetRelative",
+    "description": "([x],[y],[height],[dirOffset]) Returns marker with relative offset. (y+ is forwards)",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      },
+      {
+        "name": "y",
+        "translate": "y"
+      },
+      {
+        "name": "height",
+        "translate": "height"
+      },
+      {
+        "name": "dirOffset",
+        "translate": "dirOffset"
+      }
+    ]
+  },
+  {
+    "rule": "^eventSource(\\(.*\\))?$",
+    "translate": "eventSource",
+    "description": "Returns the event from autoTriggerOnEvent, null if used outside of a valid autoTriggerOnEvent."
+  },
+  {
+    "rule": "^readUnitMemory(\\(.*\\))?$",
+    "translate": "readUnitMemory",
+    "description": "Reads memory from the unit reference  (e.g. self.readUnitMemory, parent.readUnitMemory, attacking.readUnitMemory)",
+    "argument": [
+      {
+        "name": "name",
+        "translate": "name"
+      }
+    ]
+  },
+  {
+    "rule": "^memory\\.[^.]+$",
+    "translate": "memory.NAME",
+    "description": "Shortcut to read the self with current defineUnitMemory types. Cannot be used on other units, use readUnitMemory for that. Don't call with self."
+  },
+  {
+    "rule": "^memory\\..+\\.size$",
+    "translate": "memory.NAME.size",
+    "description": "Returns the size of the array (including empty indexes between indexes)."
+  },
+  {
+    "rule": "^memory\\..+\\.contains(\\(.*\\))?$",
+    "translate": "memory.NAME.contains",
+    "description": "Returns true if the query is found within the array. Basically searches something if it exists.",
+    "argument": [
+      {
+        "name": "query",
+        "translate": "query"
+      }
+    ]
+  },
+  {
+    "rule": "^distance(\\(.*\\))?$",
+    "translate": "distance",
+    "description": "Returns the difference between two points.",
+    "argument": [
+      {
+        "name": "x1",
+        "translate": "x1"
+      },
+      {
+        "name": "y1",
+        "translate": "y1"
+      },
+      {
+        "name": "x2",
+        "translate": "x2"
+      },
+      {
+        "name": "y2",
+        "translate": "y2"
+      }
+    ]
+  },
+  {
+    "rule": "^distanceSquared(\\(.*\\))?$",
+    "translate": "distanceSquared",
+    "description": "Returns the squared difference between two points. Bit faster than distance.",
+    "argument": [
+      {
+        "name": "x1",
+        "translate": "x1"
+      },
+      {
+        "name": "y1",
+        "translate": "y1"
+      },
+      {
+        "name": "x2",
+        "translate": "x2"
+      },
+      {
+        "name": "y2",
+        "translate": "y2"
+      }
+    ]
+  },
+  {
+    "rule": "^distanceBetween(\\(.*\\))?$",
+    "translate": "distanceBetween",
+    "description": "Returns the distance between two units or markers.",
+    "argument": [
+      {
+        "name": "unit1",
+        "translate": "unit1"
+      },
+      {
+        "name": "unit2",
+        "translate": "unit2"
+      }
+    ]
+  },
+  {
+    "rule": "^distanceBetweenSquared(\\(.*\\))?$",
+    "translate": "distanceBetweenSquared",
+    "description": "Returns the squared distance between two units. Bit faster than distanceBetween.",
+    "argument": [
+      {
+        "name": "unit1",
+        "translate": "unit1"
+      },
+      {
+        "name": "unit2",
+        "translate": "unit2"
+      }
+    ]
+  },
+  {
+    "rule": "^game\\.nukesEnabled(\\(.*\\))?$",
+    "translate": "game.nukesEnabled",
+    "description": "Returns true if nukes are enabled in this game's settings."
+  },
+  {
+    "rule": "^int(\\(.*\\))?$",
+    "translate": "int",
+    "description": "Removes decimal places from a number.",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      }
+    ]
+  },
+  {
+    "rule": "^select(\\(.*\\))?$",
+    "translate": "select",
+    "description": "returns textA if condition is true otherwise returns textB",
+    "argument": [
+      {
+        "name": "condition",
+        "translate": "condition"
+      },
+      {
+        "name": "textA",
+        "translate": "textA"
+      },
+      {
+        "name": "textB",
+        "translate": "textB"
+      }
+    ]
+  },
+  {
+    "rule": "^debug(\\(.*\\))?$",
+    "translate": "debug",
+    "description": "Returns a text string helping to explain the reason for the current result. Can see into nested logic, comparisons, and operators.",
+    "argument": [
+      {
+        "name": "logicBoolean",
+        "translate": "logicBoolean"
+      }
+    ]
+  },
+  {
+    "rule": "^str(\\(.*\\))?$",
+    "description": "Convert a number, unit or boolean into a string.",
+    "translate": "str",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      }
+    ]
+  },
+  {
+    "rule": "^substring(\\(.*\\))?$",
+    "translate": "substring",
+    "description": "Takes a part of the string from the indicated start and end parts.",
+    "argument": [
+      {
+        "name": "text",
+        "translate": "text"
+      },
+      {
+        "name": "start",
+        "translate": "start"
+      },
+      {
+        "name": "end",
+        "translate": "end"
+      }
+    ]
+  },
+  {
+    "rule": "^length(\\(.*\\))?$",
+    "translate": "length",
+    "description": "Returns string length as number.",
+    "argument": [
+      {
+        "name": "string",
+        "translate": "string"
+      }
+    ]
+  },
+  {
+    "rule": "^squareRoot(\\(.*\\))?$",
+    "translate": "squareRoot",
+    "description": "Returns square root of a number.",
+    "argument": [
+      {
+        "name": "num",
+        "translate": "num"
+      }
+    ]
+  },
+  {
+    "rule": "^min(\\(.*\\))?$",
+    "translate": "min",
+    "description": "Returns the smallest number.",
+    "argument": [
+      {
+        "name": "num1",
+        "translate": "num1"
+      },
+      {
+        "name": "num2",
+        "translate": "num2"
+      }
+    ]
+  },
+  {
+    "rule": "^max(\\(.*\\))?$",
+    "translate": "max",
+    "description": "Returns the biggest number.",
+    "argument": [
+      {
+        "name": "num1",
+        "translate": "num1"
+      },
+      {
+        "name": "num2",
+        "translate": "num2"
+      }
+    ]
+  },
+  {
+    "rule": "^createMarker(\\(.*\\))?$",
+    "translate": "createMarker",
+    "description": "Creates a marker that can be used to place coordinates for various actions.",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      },
+      {
+        "name": "y",
+        "translate": "y"
+      },
+      {
+        "name": "height",
+        "translate": "height"
+      },
+      {
+        "name": "teamId",
+        "translate": "teamId"
+      },
+      {
+        "name": "dir",
+        "translate": "dir"
+      }
+    ]
+  },
+  {
+    "rule": "^eventData(\\(.*\\))?$",
+    "translate": "eventData",
+    "description": "Displays the data from a specified message from some unit. Only use in autoTriggerOnEvent:newMessage events.",
+    "argument": [
+      {
+        "name": "name",
+        "translate": "name"
+      },
+      {
+        "name": "type",
+        "translate": "type"
+      },
+      {
+        "name": "default",
+        "translate": "default"
+      }
+    ]
+  },
+  {
+    "rule": "^sin(\\(.*\\))?$",
+    "translate": "sin",
+    "description": "Takes the sine value of a specified number.",
+    "argument": [
+      {
+        "name": "angle",
+        "translate": "angle"
+      }
+    ]
+  },
+  {
+    "rule": "^cos(\\(.*\\))?$",
+    "translate": "cos",
+    "description": "Takes the cosine value of a specified number.",
+    "argument": [
+      {
+        "name": "angle",
+        "translate": "angle"
+      }
+    ]
+  },
+  {
+    "rule": "^abs(\\(.*\\))?$",
+    "translate": "abs",
+    "description": "Returns absolute value regardless of negative or positive.",
+    "argument": [
+      {
+        "name": "number",
+        "translate": "number"
+      }
+    ]
+  },
+  {
+    "rule": "^coalesce(\\(.*\\))?$",
+    "translate": "coalesce",
+    "description": "Returns first non-null element in the array series.",
+    "argument": [
+      {
+        "name": "A",
+        "translate": "A"
+      },
+      {
+        "name": "B",
+        "translate": "B"
+      },
+      {
+        "name": "C",
+        "translate": "C"
+      }
+    ]
+  },
+  {
+    "rule": "^vec2(\\(.*\\))?$",
+    "translate": "vec2",
+    "description": "Returns a vec2 coordinates.",
+    "argument": [
+      {
+        "name": "x",
+        "translate": "x"
+      },
+      {
+        "name": "y",
+        "translate": "y"
+      }
+    ]
+  },
+  {
+    "rule": "^vec3(\\(.*\\))?$",
+    "translate": "vec3",
+    "description": "Returns a vec3 coordinates.",
+    "argument": [
+      {
+        "translate": "x",
+        "name": "x"
+      },
+      {
+        "translate": "y",
+        "name": "y"
+      },
+      {
+        "translate": "z",
+        "name": "z"
+      }
+    ]
+  },
+  {
+    "rule": "^rnd(\\(.*\\))?$",
+    "translate": "rnd",
+    "description": "Produces a random number between minimum and maximum input.",
+    "argument": [
+      {
+        "name": "min",
+        "translate": "min"
+      },
+      {
+        "name": "max",
+        "translate": "max"
+      }
+    ]
+  },
+  {
+    "rule": "^lowercase(\\(.*\\))?$",
+    "translate": "lowercase",
+    "description": "Sets all letters from a string into lowercase.",
+    "argument": [
+      {
+        "name": "string",
+        "translate": "string"
+      }
+    ]
+  },
+  {
+    "rule": "^uppercase(\\(.*\\))?$",
+    "translate": "uppercase",
+    "description": "Sets all letters from a string into uppercase.",
+    "argument": [
+      {
+        "name": "string",
+        "translate": "string"
+      }
+    ]
+  },
+  {
+    "rule": "^direction(\\(.*\\))?$",
+    "translate": "direction",
+    "description": "Returns the relative angle of x1/y1 and x2/y2.",
+    "argument": [
+      {
+        "name": "x1",
+        "translate": "x1"
+      },
+      {
+        "name": "y1",
+        "translate": "y1"
+      },
+      {
+        "name": "x2",
+        "translate": "x2"
+      },
+      {
+        "name": "y2",
+        "translate": "y2"
+      }
+    ]
+  },
+  {
+    "rule": "^directionBetween(\\(.*\\))?$",
+    "translate": "directionBetween",
+    "description": "Returns the relative angle of unit/marker A and unit/marker B.",
+    "argument": [
+      {
+        "name": "unit1",
+        "translate": "unit1"
+      },
+      {
+        "name": "unit2",
+        "translate": "unit2"
+      }
+    ]
+  },
+  {
+    "translate": "self.isInMap",
+    "rule": "^self\\.isInMap(\\(.*\\))?$",
+    "description": "Returns true if unit (or marker) is with the game area; Returns false if outside bounds.",
+    "argument": []
+  },
+  {
+    "rule": "^game\\.mapWidth(\\(.*\\))?$",
+    "translate": "game.mapWidth",
+    "description": "Returns the width of the map.",
+    "argument": []
+  },
+  {
+    "rule": "^game\\.mapHeight(\\(.*\\))?$",
+    "translate": "game.mapHeight",
+    "description": "Returns the height of the map.",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.teamDefeatedTech(\\(.*\\))?$",
+    "translate": "self.teamDefeatedTech",
+    "description": "Returns true if team is defeated.",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.teamWipedOut(\\(.*\\))?$",
+    "translate": "self.teamWipedOut",
+    "description": "Returns true if team is defeated and wiped out.",
+    "argument": []
+  },
+  {
+    "rule": "^self\\.teamVictory(\\(.*\\))?$",
+    "translate": "self.teamVictory",
+    "description": "Returns true if team is victorious.",
+    "argument": []
+  }
+]
