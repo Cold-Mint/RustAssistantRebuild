@@ -1516,20 +1516,6 @@
     "description": "False: Green pixels on unit gets converted to team color. True: Whole unit is tinted the team colour. Defaults to false"
   },
   {
-    "code": "^animation_.+_start$",
-    "translate": "animation_{1}_start",
-    "section": "graphics",
-    "description": "TYPE can be set to: attack, moving, idle. Use [animation] section instead for more control",
-    "rule": "^animation_(.+)_start$"
-  },
-  {
-    "code": "^animation_.+_end$",
-    "translate": "animation_{1}_end",
-    "section": "graphics",
-    "description": "End frame, must be larger then start",
-    "rule": "^animation_(.+)_end$"
-  },
-  {
     "code": "^animation_.+_scale_start$",
     "translate": "animation_{1}_scale_start",
     "section": "graphics",
@@ -1542,6 +1528,20 @@
     "section": "graphics",
     "description": "Scale unit image. Defaults to 1. Useful for bio units or breathing effects.",
     "rule": "^animation_(.+)_scale_end$"
+  },
+  {
+    "code": "^animation_.+_start$",
+    "translate": "animation_{1}_start",
+    "section": "graphics",
+    "description": "TYPE can be set to: attack, moving, idle. Use [animation] section instead for more control",
+    "rule": "^animation_(.+)_start$"
+  },
+  {
+    "code": "^animation_.+_end$",
+    "translate": "animation_{1}_end",
+    "section": "graphics",
+    "description": "End frame, must be larger then start",
+    "rule": "^animation_(.+)_end$"
   },
   {
     "code": "^animation_.+_speed$",

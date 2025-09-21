@@ -2751,28 +2751,6 @@
   },
   {
     "allow_repetition": false,
-    "code": "^animation_.+_start$",
-    "default_key": "animation_moving_start",
-    "default_value": "0",
-    "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "int",
-    "maxVersion": -1,
-    "minVersion": 1,
-    "section": "graphics"
-  },
-  {
-    "allow_repetition": false,
-    "code": "^animation_.+_end$",
-    "default_key": "animation_moving_end",
-    "default_value": "0",
-    "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "int",
-    "maxVersion": -1,
-    "minVersion": 1,
-    "section": "graphics"
-  },
-  {
-    "allow_repetition": false,
     "code": "^animation_.+_scale_start$",
     "default_key": "animation_moving_scale_start",
     "default_value": "0",
@@ -2789,6 +2767,28 @@
     "default_value": "0",
     "file_name": "^(?!mod-info\\.txt$).*",
     "interpreter": "float",
+    "maxVersion": -1,
+    "minVersion": 1,
+    "section": "graphics"
+  },
+  {
+    "allow_repetition": false,
+    "code": "^animation_.+_start$",
+    "default_key": "animation_moving_start",
+    "default_value": "0",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "interpreter": "int",
+    "maxVersion": -1,
+    "minVersion": 1,
+    "section": "graphics"
+  },
+  {
+    "allow_repetition": false,
+    "code": "^animation_.+_end$",
+    "default_key": "animation_moving_end",
+    "default_value": "0",
+    "file_name": "^(?!mod-info\\.txt$).*",
+    "interpreter": "int",
     "maxVersion": -1,
     "minVersion": 1,
     "section": "graphics"

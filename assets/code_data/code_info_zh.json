@@ -1516,20 +1516,6 @@
     "description": "单位上的绿色像素转换为团队颜色。 若启用，则整个单位都带有团队色彩。 默认禁用。"
   },
   {
-    "code": "^animation_.+_start$",
-    "translate": "动画_{1}_开始",
-    "section": "graphics",
-    "description": "已弃用，请改用[animation]部分",
-    "rule": "^animation_(.+)_start$"
-  },
-  {
-    "code": "^animation_.+_end$",
-    "translate": "动画_{1}_结束",
-    "section": "graphics",
-    "description": "结束帧，必须更大然后开始",
-    "rule": "^animation_(.+)_end$"
-  },
-  {
     "code": "^animation_.+_scale_start$",
     "translate": "动画_{1}_缩放开始",
     "section": "graphics",
@@ -1544,6 +1530,20 @@
     "rule": "^animation_(.+)_scale_end$"
   },
   {
+    "code": "^animation_.+_start$",
+    "translate": "动画_{1}_开始",
+    "section": "graphics",
+    "description": "已弃用，请改用[animation]部分",
+    "rule": "^animation_(.+)_start$"
+  },
+  {
+    "code": "^animation_.+_end$",
+    "translate": "动画_{1}_结束",
+    "section": "graphics",
+    "description": "结束帧，必须更大然后开始",
+    "rule": "^animation_(.+)_end$"
+  },
+  {
     "code": "^animation_.+_speed$",
     "translate": "动画_{1}_速度",
     "section": "graphics",
@@ -1554,7 +1554,7 @@
     "code": "^animation_.+_pingPong$",
     "translate": "动画_{1}_膨胀",
     "section": "graphics",
-    "description": "重复播放之前，请反向播放动画。与scale_start / scale_end一起使用",
+    "description": "重复播放之前，请反向播放动画。与<see code=\"animation_1_scale_start\" section=\"graphics\"/>与<see code=\"animation_1_scale_end\" section=\"graphics\"/>一起使用",
     "rule": "^animation_(.+)_pingPong$"
   },
   {
@@ -1903,13 +1903,13 @@
     "code": "^warmupNoReset$",
     "translate": "预热不重置",
     "section": "turret",
-    "description": "默认为false。射击后未重设真正的预热时。与warmupCallDownRate一起使用"
+    "description": "默认为false。射击后未重设真正的预热时。与<see code=\"warmupCallDownRate\" section=\"turret\"/>一起使用"
   },
   {
     "code": "^warmupShootDelayTransfer$",
     "translate": "开火间隔过渡",
     "section": "turret",
-    "description": "默认值为0，这是一个乘数，用于通过预热值减少下一次开火延迟。与warmupNoReset一起使用时，可以使攻击速度越来越快。"
+    "description": "默认值为0，这是一个乘数，用于通过预热值减少下一次开火延迟。与<see code=\"warmupNoReset\" section=\"turret\"/>一起使用时，可以使攻击速度越来越快。"
   },
   {
     "code": "^onShoot_freezeBodyMovementFor$",
@@ -1933,7 +1933,7 @@
     "code": "^canShoot$",
     "translate": "可以开火",
     "section": "turret",
-    "description": "可以开火，默认为true"
+    "description": "可以开火，默认为开启"
   },
   {
     "code": "^canAttackFlyingUnits$",
@@ -1993,13 +1993,13 @@
     "code": "^limitingRange$",
     "translate": "限制范围",
     "section": "turret",
-    "description": "限制此炮塔的最远攻击范围。不要将此代码应用到所有炮塔，如果需要则设置maxAttackRange。"
+    "description": "限制此炮塔的最远攻击范围。不要将此代码应用到所有炮塔，如果需要则设置<see code=\"maxAttackRange\" section=\"attack\"/>。"
   },
   {
     "code": "^limitingAngle$",
     "translate": "限制角度",
     "section": "turret",
-    "description": "与idleDir配合。炮塔只能以+/-此角度进行攻击。"
+    "description": "与<see code=\"idleDir\" section=\"attack\"/>配合。炮塔只能以+/-此角度进行攻击。"
   },
   {
     "code": "^limitingMinRange$",
@@ -2035,7 +2035,7 @@
     "code": "^laserDefenceEnergyUse$",
     "translate": "激光防御能量需求",
     "section": "turret",
-    "description": "炮塔启用激光防御拦截敌方抛射体。还应在core中设置energyMax。"
+    "description": "炮塔启用激光防御拦截敌方抛射体。还应在core中设置<see code=\"energyMax\" section=\"core\"/>。"
   },
   {
     "code": "^invisible$",
@@ -2053,7 +2053,7 @@
     "code": "^image_applyTeamColors$",
     "translate": "图像应用队伍颜色",
     "section": "turret",
-    "description": "炮塔图像使用队伍颜色。默认为false。"
+    "description": "炮塔图像使用队伍颜色。默认为关闭。"
   },
   {
     "code": "^image_drawOffsetX$",
@@ -2101,7 +2101,7 @@
     "code": "^shoot_light$",
     "translate": "开火闪光",
     "section": "turret",
-    "description": "开火时闪光，16进制argb格式。#AARRGGBB,透明度，红，绿，蓝"
+    "description": "开火时闪光。"
   },
   {
     "code": "^onShoot_playAnimation$",
@@ -2143,7 +2143,7 @@
     "code": "^showRangeUIGuide$",
     "translate": "显示范围UI",
     "section": "turret",
-    "description": "显示攻击范围的白圈。默认true."
+    "description": "显示攻击范围的白圈。默认开启。"
   },
   {
     "code": "^life$",
