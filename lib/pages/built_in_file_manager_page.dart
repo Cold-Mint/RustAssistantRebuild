@@ -8,6 +8,7 @@ import 'package:rust_assistant/file_operator/file_operator.dart';
 import 'package:rust_assistant/file_type_checker.dart';
 import 'package:rust_assistant/highlight_text.dart';
 import 'package:rust_assistant/pages/rename_dialog.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constant.dart';
 import '../global_depend.dart';
@@ -326,6 +327,30 @@ class _BuiltInFileManagerPageStaus extends State<BuiltInFileManagerPage>
               }
             },
           ),
+          if (Platform.isLinux || Platform.isWindows)
+            MenuItemButton(
+              requestFocusOnHover: false,
+              child: Text(AppLocalizations.of(context)!.openItInTheFileManager),
+              onPressed: () async {
+                var folder = fileSystemEntity.path;
+                if (!fileSystemEntity.isDirectory) {
+                  //如果不是文件夹，那么获取文件所在目录
+                  folder = p.dirname(fileSystemEntity.path);
+                }
+                final uri = Uri.parse("file:$folder");
+                if (await canLaunchUrl(uri)) {
+                  await launchUrl(uri);
+                } else {
+                  if (mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(AppLocalizations.of(context)!.fail),
+                      ),
+                    );
+                  }
+                }
+              },
+            ),
           MenuItemButton(
             requestFocusOnHover: false,
             child: Text(AppLocalizations.of(context)!.delete),
