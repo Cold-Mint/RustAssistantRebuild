@@ -802,4 +802,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get githubSub => 'View the source code of the software on Github';
+
+  @override
+  String get bilibili => 'BiliBili';
+
+  @override
+  String get bilibiliSub => 'Follow us on bilibili!';
 }

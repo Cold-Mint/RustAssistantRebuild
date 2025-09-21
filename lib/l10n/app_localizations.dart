@@ -1684,6 +1684,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'View the source code of the software on Github'**
   String get githubSub;
+
+  /// No description provided for @bilibili.
+  ///
+  /// In en, this message translates to:
+  /// **'BiliBili'**
+  String get bilibili;
+
+  /// No description provided for @bilibiliSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow us on bilibili!'**
+  String get bilibiliSub;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

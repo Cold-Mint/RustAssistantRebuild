@@ -802,4 +802,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get githubSub => '在Github上查看软件的源代码';
+
+  @override
+  String get bilibili => 'BiliBili';
+
+  @override
+  String get bilibiliSub => '在BiliBili上关注我们！';
 }

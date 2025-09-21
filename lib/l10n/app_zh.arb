@@ -262,6 +262,8 @@
   "viewAllResources": "查看全部资源",
   "thereAreNoAvailableCustomResources": "没有可用的自定义资源",
   "customResourcesCannotBeFound": "搜索不到自定义资源",
-  "github":"Github",
-  "githubSub":"在Github上查看软件的源代码"
+  "github": "Github",
+  "githubSub": "在Github上查看软件的源代码",
+  "bilibili": "BiliBili",
+  "bilibiliSub": "在BiliBili上关注我们！"
 }

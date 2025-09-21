@@ -263,5 +263,7 @@
   "thereAreNoAvailableCustomResources": "If there are no available custom resources.",
   "customResourcesCannotBeFound": "Custom resources cannot be found",
   "github": "Github",
-  "githubSub": "View the source code of the software on Github"
+  "githubSub": "View the source code of the software on Github",
+  "bilibili": "BiliBili",
+  "bilibiliSub": "Follow us on bilibili!"
 }

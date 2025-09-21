@@ -354,6 +354,29 @@ class _SettingsStatus extends State<SettingsPage> {
               child: Text(AppLocalizations.of(context)!.view),
             ),
           ),
+          ListTile(
+            title: Text(AppLocalizations.of(context)!.bilibili),
+            subtitle: Text(AppLocalizations.of(context)!.bilibiliSub),
+            trailing: TextButton(
+              onPressed: () async {
+                final uri = Uri.parse(
+                  "https://space.bilibili.com/1383759192",
+                );
+                if (await canLaunchUrl(uri)) {
+                  await launchUrl(uri);
+                } else {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(AppLocalizations.of(context)!.fail),
+                      ),
+                    );
+                  }
+                }
+              },
+              child: Text(AppLocalizations.of(context)!.view),
+            ),
+          ),
         ],
       ),
     );
