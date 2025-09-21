@@ -28,7 +28,7 @@ class FileListInterpreter extends DataInterpreter {
     super.codeInfo,
     required super.lineNumber,
     required super.displayLineNumber,
-    required super.displayOperationOptions
+    required super.displayOperationOptions,
   });
 
   @override
@@ -39,6 +39,7 @@ class FileListInterpreter extends DataInterpreter {
 
 class _FileListDataInterpreterStatus extends State<FileListInterpreter> {
   final List<FileReference> _fileReferenceList = List.empty(growable: true);
+  final RegExp regExp = RegExp("^.+:[0-9]+(.[0-9]+)?\$");
 
   @override
   void initState() {
@@ -54,10 +55,18 @@ class _FileListDataInterpreterStatus extends State<FileListInterpreter> {
     var splitList = value.split(',');
     for (var split in splitList) {
       var splitTrim = split.trim();
+      String? extra;
+      if (regExp.hasMatch(splitTrim)) {
+        //匹配到后面的音量，例如: ROOT:aut/1.ogg:0.6 ，匹配0.6
+        var lastIndex = splitTrim.lastIndexOf(":");
+        extra = splitTrim.substring(lastIndex);
+        splitTrim = splitTrim.substring(0, lastIndex);
+      }
       FileReference? fileReference = await FileReference.fromData(
         widget.sourceFilePath,
         widget.modPath,
         splitTrim,
+        extra,
       );
       if (fileReference == null) {
         continue;
@@ -76,6 +85,9 @@ class _FileListDataInterpreterStatus extends State<FileListInterpreter> {
           stringBuffer.write(',');
         }
         stringBuffer.write(fileRef.data);
+        if (fileRef.extra != null) {
+          stringBuffer.write(fileRef.extra);
+        }
       }
     }
     widget.keyValue.value = stringBuffer.toString();
@@ -150,6 +162,7 @@ class _FileListDataInterpreterStatus extends State<FileListInterpreter> {
                                   widget.sourceFilePath,
                                   select,
                                 ),
+                                null,
                               );
                           if (fileReference == null) {
                             continue;
@@ -172,7 +185,9 @@ class _FileListDataInterpreterStatus extends State<FileListInterpreter> {
                       children: [
                         Expanded(
                           child: Text(
-                            item.data,
+                            item.extra == null
+                                ? item.data
+                                : item.data + item.extra!,
                             style: item.exist
                                 ? null
                                 : Theme.of(

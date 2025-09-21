@@ -45,6 +45,7 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
     with WidgetsBindingObserver {
   FileReference? _fileReference;
   bool _load = true;
+  final RegExp regExp = RegExp("^.+:[0-9]+(.[0-9]+)?\$");
 
   @override
   void initState() {
@@ -70,10 +71,19 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
     setState(() {
       _load = true;
     });
+    String splitTrim = widget.keyValue.value.toString().trim();
+    String? extra;
+    if (regExp.hasMatch(splitTrim)) {
+      //匹配到后面的音量，例如: ROOT:aut/1.ogg:0.6 ，匹配0.6
+      var lastIndex = splitTrim.lastIndexOf(":");
+      extra = splitTrim.substring(lastIndex);
+      splitTrim = splitTrim.substring(0, lastIndex);
+    }
     FileReference? fileReference = await FileReference.fromData(
       widget.sourceFilePath,
       widget.modPath,
-      widget.keyValue.value,
+      splitTrim,
+      extra,
     );
     setState(() {
       _fileReference = fileReference;
@@ -325,6 +335,7 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
                                 widget.sourceFilePath,
                                 select,
                               ),
+                              null,
                             );
                         if (fileReference == null) {
                           return;

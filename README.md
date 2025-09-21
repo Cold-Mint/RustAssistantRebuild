@@ -18,3 +18,20 @@
 重新生成翻译文件：
 
 flutter gen-l10n
+
+### 安卓构建
+
+从 app 中引用密钥库
+
+创建一个名为 [project]/android/key.properties 的文件，它包含了密钥库位置的定义。在替换内容时请去除 < > 括号：
+
+storePassword=<password-from-previous-step>
+keyPassword=<password-from-previous-step>
+keyAlias=upload
+storeFile=<keystore-file-location>
+
+storeFile 密钥路径在 macOS 上类似于 /Users/<user name>/upload-keystore.jks，在 Windows 上类似于 C:\\Users\\<user name>\\upload-keystore.jks。
+提示
+
+keystore.jks 的 Windows 路径必须使用双反斜杠：\\。
+

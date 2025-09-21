@@ -8,10 +8,14 @@ class FileReference {
   late String path;
   late bool exist;
   late int fileType;
+  late String? extra;
 
-  static Future<FileReference?> fromData(String sourceFilePath,
-      String modPath,
-      String? data,) async {
+  static Future<FileReference?> fromData(
+    String sourceFilePath,
+    String modPath,
+    String? data,
+    String? extra,
+  ) async {
     if (data == null) {
       return null;
     }
@@ -37,7 +41,9 @@ class FileReference {
       return fileReference;
     }
 
-    final bool exist = await GlobalDepend.getFileSystemOperator().exist(absolutePath);
+    final bool exist = await GlobalDepend.getFileSystemOperator().exist(
+      absolutePath,
+    );
     final FileReference fileReference = FileReference();
     fileReference.path = absolutePath;
     fileReference.exist = exist;
@@ -51,6 +57,7 @@ class FileReference {
     }
 
     fileReference.data = data;
+    fileReference.extra = extra;
     return fileReference;
   }
 }
