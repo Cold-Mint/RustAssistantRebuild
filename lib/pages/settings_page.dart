@@ -24,6 +24,8 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsStatus extends State<SettingsPage> {
   bool _automaticIndexConstruction = !Platform.isAndroid;
+  bool _displayOperationOptions = true;
+  bool _toggleLineNumber = false;
   bool _autoSave = true;
   bool _deleteOriginalFile = true;
   List<GameVersion>? _gameVersionList;
@@ -77,6 +79,14 @@ class _SettingsStatus extends State<SettingsPage> {
       );
     } else {
       _archivedFileLoadingLimit = Constant.defaultArchivedFileLoadingLimit;
+    }
+    if (HiveHelper.containsKey(HiveHelper.displayOperationOptions)) {
+      _displayOperationOptions = HiveHelper.get(
+        HiveHelper.displayOperationOptions,
+      );
+    }
+    if (HiveHelper.containsKey(HiveHelper.toggleLineNumber)) {
+      _toggleLineNumber = HiveHelper.get(HiveHelper.toggleLineNumber);
     }
     _loadVersionInfo();
   }
@@ -147,6 +157,28 @@ class _SettingsStatus extends State<SettingsPage> {
                 ),
               ),
             ],
+          ),
+          SizedBox(height: 8),
+          SwitchListTile(
+            title: Text(AppLocalizations.of(context)!.displayOperationOptions),
+            value: _displayOperationOptions,
+            onChanged: (value) {
+              setState(() {
+                _displayOperationOptions = value;
+              });
+              HiveHelper.put(HiveHelper.displayOperationOptions, value);
+            },
+          ),
+          SizedBox(height: 8),
+          SwitchListTile(
+            title: Text(AppLocalizations.of(context)!.toggleLineNumber),
+            value: _toggleLineNumber,
+            onChanged: (value) {
+              setState(() {
+                _toggleLineNumber = value;
+              });
+              HiveHelper.put(HiveHelper.toggleLineNumber, value);
+            },
           ),
           SizedBox(height: 8),
           SwitchListTile(
@@ -359,9 +391,7 @@ class _SettingsStatus extends State<SettingsPage> {
             subtitle: Text(AppLocalizations.of(context)!.bilibiliSub),
             trailing: TextButton(
               onPressed: () async {
-                final uri = Uri.parse(
-                  "https://space.bilibili.com/1383759192",
-                );
+                final uri = Uri.parse("https://space.bilibili.com/1383759192");
                 if (await canLaunchUrl(uri)) {
                   await launchUrl(uri);
                 } else {

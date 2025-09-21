@@ -562,6 +562,8 @@ class HiveHelper {
   static String darkMode = "darkMode";
   static String language = "language";
   static String automaticIndexConstruction = "automaticIndexConstruction";
+  static String toggleLineNumber = "toggleLineNumber";
+  static String displayOperationOptions = "displayOperationOptions";
   static String autoSave = "autoSave";
   static String config = "config";
   static const String includePreRelease = "include_pre_release";

@@ -48,7 +48,7 @@ class _EditUnitsPageState extends State<EditUnitsPage>
   final ValueNotifier<bool> isAnalyzingNotifier = ValueNotifier(false);
   final ValueNotifier<String> analyzingProgressNotifier = ValueNotifier("");
   bool _displayLineNumber = false;
-  bool _displayOperationOptions = false;
+  bool _displayOperationOptions = true;
   final Map<String, int> _pathToMaxLineNumber = {};
   final Map<String, String> _pathToFileName = {};
   final Map<String, int> _pathTofileType = {};
@@ -75,6 +75,14 @@ class _EditUnitsPageState extends State<EditUnitsPage>
     }
     if (HiveHelper.containsKey(HiveHelper.autoSave)) {
       _autoSave = HiveHelper.get(HiveHelper.autoSave, defaultValue: true);
+    }
+    if (HiveHelper.containsKey(HiveHelper.displayOperationOptions)) {
+      _displayOperationOptions = HiveHelper.get(
+        HiveHelper.displayOperationOptions,
+      );
+    }
+    if (HiveHelper.containsKey(HiveHelper.toggleLineNumber)) {
+      _displayLineNumber = HiveHelper.get(HiveHelper.toggleLineNumber);
     }
     windowManager.addListener(this);
     WidgetsBinding.instance.addObserver(this);
@@ -614,6 +622,20 @@ class _EditUnitsPageState extends State<EditUnitsPage>
     super.dispose();
   }
 
+  void _setDisplayOperationOptions(bool value) {
+    setState(() {
+      _displayOperationOptions = value;
+    });
+    HiveHelper.put(HiveHelper.displayOperationOptions, value);
+  }
+
+  void _setDisplayLineNumber(bool value) {
+    setState(() {
+      _displayLineNumber = value;
+    });
+    HiveHelper.put(HiveHelper.toggleLineNumber, value);
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -695,15 +717,11 @@ class _EditUnitsPageState extends State<EditUnitsPage>
             tooltip: AppLocalizations.of(context)!.moreActions,
             onSelected: (value) {
               if (value == 'toggle_line_number') {
-                setState(() {
-                  _displayLineNumber = !_displayLineNumber;
-                });
+                _setDisplayLineNumber(!_displayLineNumber);
               } else if (value == 'show_source_diff') {
                 _showSourceDiff.call();
               } else if (value == 'display_operation_options') {
-                setState(() {
-                  _displayOperationOptions = !_displayOperationOptions;
-                });
+                _setDisplayOperationOptions(!_displayOperationOptions);
               }
             },
             itemBuilder: (context) => [
@@ -716,10 +734,8 @@ class _EditUnitsPageState extends State<EditUnitsPage>
                     Switch(
                       value: _displayLineNumber,
                       onChanged: (b) {
-                        Navigator.pop(context); // 关闭菜单
-                        setState(() {
-                          _displayLineNumber = b;
-                        });
+                        Navigator.pop(context);
+                        _setDisplayLineNumber(b);
                       },
                     ),
                   ],
@@ -734,10 +750,8 @@ class _EditUnitsPageState extends State<EditUnitsPage>
                     Switch(
                       value: _displayOperationOptions,
                       onChanged: (b) {
-                        Navigator.pop(context); // 关闭菜单
-                        setState(() {
-                          _displayOperationOptions = b;
-                        });
+                        Navigator.pop(context);
+                        _setDisplayOperationOptions(b);
                       },
                     ),
                   ],
@@ -748,11 +762,6 @@ class _EditUnitsPageState extends State<EditUnitsPage>
                 enabled: _openedFilePath.isNotEmpty,
                 child: Text(AppLocalizations.of(context)!.showSourceDiff),
               ),
-              // PopupMenuItem<String>(
-              //   value: 'jump_to',
-              //   enabled: _openedFilePath.isNotEmpty,
-              //   child: Text(AppLocalizations.of(context)!.jumpTo),
-              // ),
             ],
             icon: const Icon(Icons.more_vert),
           ),
