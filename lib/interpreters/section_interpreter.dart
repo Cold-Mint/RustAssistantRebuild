@@ -8,12 +8,14 @@ class SectionInterpreter extends DataInterpreter {
   final SectionInfo? sectionInfo;
   final bool Function(String) checkForRepetition;
   final Function(String) editSequenceCallBack;
+  final Function(String) deletSectionCallBack;
   final Function(int, String) addCallBack;
 
   const SectionInterpreter({
     super.key,
     required this.addCallBack,
     required this.editSequenceCallBack,
+    required this.deletSectionCallBack,
     required this.sectionInfo,
     required this.checkForRepetition,
     required super.keyValue,
@@ -108,6 +110,14 @@ class _SectionInterpreterStatus extends State<SectionInterpreter> {
                   widget.editSequenceCallBack.call(widget.keyValue.key);
                 },
                 icon: Icon(Icons.format_list_bulleted_outlined),
+              ),
+            if (widget.displayOperationOptions)
+              IconButton(
+                tooltip: AppLocalizations.of(context)?.delete,
+                onPressed: () {
+                  widget.deletSectionCallBack.call(widget.keyValue.key);
+                },
+                icon: Icon(Icons.delete_outline),
               ),
             IconButton(
               tooltip: AppLocalizations.of(context)?.addCodeTitle,

@@ -1,4 +1,3 @@
-
 class IniWriter {
   /// 替换 INI 中指定节的内容，或在不存在时追加。
   /// [original] 是原始 ini 文本
@@ -49,5 +48,36 @@ class IniWriter {
     }
 
     return buffer.toString();
+  }
+
+  static String removeSection(String content, String fullSectionName) {
+    final lines = content.split(RegExp(r'\r?\n'));
+    final buffer = StringBuffer();
+    final sectionHeader = '[$fullSectionName]';
+    bool inTargetSection = false;
+
+    for (var line in lines) {
+      final trimmed = line.trim();
+      if (trimmed.startsWith('[') && trimmed.endsWith(']')) {
+        // 碰到新 section
+        if (trimmed.toLowerCase() == sectionHeader.toLowerCase()) {
+          inTargetSection = true;
+          continue; // 跳过不写入
+        } else {
+          inTargetSection = false;
+        }
+      }
+
+      if (!inTargetSection) {
+        buffer.writeln(line);
+      }
+    }
+
+    // 去掉最后多余的换行
+    var result = buffer.toString();
+    if (result.endsWith('\n')) {
+      result = result.substring(0, result.length - 1);
+    }
+    return result;
   }
 }

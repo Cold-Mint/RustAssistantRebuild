@@ -3404,7 +3404,7 @@
     "default_key": "delay",
     "default_value": "0",
     "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "float",
+    "interpreter": "floatORTime",
     "maxVersion": -1,
     "minVersion": 1,
     "section": "turret"

@@ -1696,6 +1696,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Follow us on bilibili!'**
   String get bilibiliSub;
+
+  /// No description provided for @removeAllCodeWithInSection.
+  ///
+  /// In en, this message translates to:
+  /// **'This will remove all the code within the section. Do you still want to delete it?'**
+  String get removeAllCodeWithInSection;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

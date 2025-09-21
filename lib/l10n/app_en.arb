@@ -265,5 +265,6 @@
   "github": "Github",
   "githubSub": "View the source code of the software on Github",
   "bilibili": "BiliBili",
-  "bilibiliSub": "Follow us on bilibili!"
+  "bilibiliSub": "Follow us on bilibili!",
+  "removeAllCodeWithInSection": "This will remove all the code within the section. Do you still want to delete it?"
 }

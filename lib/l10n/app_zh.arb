@@ -265,5 +265,6 @@
   "github": "Github",
   "githubSub": "在Github上查看软件的源代码",
   "bilibili": "BiliBili",
-  "bilibiliSub": "在BiliBili上关注我们！"
+  "bilibiliSub": "在BiliBili上关注我们！",
+  "removeAllCodeWithInSection":"这将移除节内所有的代码。仍要删除吗？"
 }

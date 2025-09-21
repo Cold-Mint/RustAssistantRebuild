@@ -808,4 +808,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get bilibiliSub => '在BiliBili上关注我们！';
+
+  @override
+  String get removeAllCodeWithInSection => '这将移除节内所有的代码。仍要删除吗？';
 }

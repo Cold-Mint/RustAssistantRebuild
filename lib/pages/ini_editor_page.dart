@@ -15,7 +15,7 @@ import 'package:rust_assistant/interpreters/color_interpreter.dart';
 import 'package:rust_assistant/interpreters/enum_interprete.dart';
 import 'package:rust_assistant/interpreters/file_data_interpreter.dart';
 import 'package:rust_assistant/interpreters/tag_interprete.dart';
-import 'package:rust_assistant/mod/Ini_writer.dart';
+import 'package:rust_assistant/mod/ini_writer.dart';
 import 'package:rust_assistant/mod/ini_reader.dart';
 import 'package:rust_assistant/search_multiple_selection_dialog.dart';
 
@@ -440,6 +440,41 @@ class _IniEditorPageStatus extends State<IniEditorPage>
     );
   }
 
+  void deletSectionCallBack(String fullSectionName) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(AppLocalizations.of(context)!.delete),
+          content: Text(
+            AppLocalizations.of(context)!.removeAllCodeWithInSection,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(AppLocalizations.of(context)!.cancel),
+            ),
+            TextButton(
+              onPressed: () {
+                var newIniData = IniWriter.removeSection(
+                  _iniReader!.content,
+                  fullSectionName,
+                );
+                _textEditingController.text = newIniData;
+                widget.onDataChange?.call(newIniData);
+                _iniReader = IniReader(newIniData, containsNotes: true);
+                Navigator.of(context).pop();
+              },
+              child: Text(AppLocalizations.of(context)!.delete),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void addCodeOrNote(int index, String key) {
     final CodeDataSource codeDataSource = CodeDataSource(
       AppLocalizations.of(context)!.addCodeTitle,
@@ -594,6 +629,7 @@ class _IniEditorPageStatus extends State<IniEditorPage>
           return false;
         },
         displayOperationOptions: widget.displayOperationOptions,
+        deletSectionCallBack: deletSectionCallBack,
       );
       addDataInterpreter(sectionInterpreter, fullSection);
       sections.add(sectionInterpreter);

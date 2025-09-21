@@ -808,4 +808,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bilibiliSub => 'Follow us on bilibili!';
+
+  @override
+  String get removeAllCodeWithInSection => 'This will remove all the code within the section. Do you still want to delete it?';
 }
