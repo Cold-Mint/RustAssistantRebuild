@@ -32,6 +32,13 @@ We welcome contributions! 🌟
 - Automatically converts non-English file names into safe formats.
 - Ensures compatibility across multiple platforms and avoids encoding issues.
 ---
+### Screenshots
+
+![screenshots1](screenshots/1.png)
+
+---
+
+
 
 
 ### 🌐 Localization
