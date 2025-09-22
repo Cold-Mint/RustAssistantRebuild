@@ -1,37 +1,77 @@
-# 铁锈助手Rebuild
+# Rust Assistant Rebuild
 
-### 跨平台运行与Steam创意工坊
+🎮 A Powerful Visual Mod Editor for Rusted Warfare  
+Easily create, edit, and manage mods with an intuitive interface.  
 
-1. 支持多端运行（Windows，Android，Linux）。
-2. 支持读取和编辑来自Steam创意工坊的模组。
+![License](https://img.shields.io/github/license/Cold-Mint/RustAssistantRebuild)
+![Stars](https://img.shields.io/github/stars/Cold-Mint/RustAssistantRebuild)
+![Forks](https://img.shields.io/github/forks/Cold-Mint/RustAssistantRebuild)
+![Issues](https://img.shields.io/github/issues/Cold-Mint/RustAssistantRebuild)
 
-### 支持多行文本
+We welcome contributions! 🌟  
+- Translate UI or internal tables  
+- Report issues or request features  
+- Submit pull requests
 
-1. 对以三个英文引号开头的文本格式做了兼容处理。现在可以妥善的处理多行文本与多行注解。
+---
 
-### 安全的文件名
+### Features
 
-1. 对非英文的文件名进行安全的转换，以便您的模组能够在多平台运行，避免出现编码兼容性问题。
+### 🌍 Cross-platform operation and Steam Workshop
 
-### 本地化
+- Runs on Windows / Android / Linux.
 
-重新生成翻译文件：
+- Supports reading and editing mods from the Steam Workshop.
 
+### 📝 Support multi-line text
+- Compatibility fixes for text formats starting with triple quotes (""").
+- Proper handling of multi-line text and multi-line comments.
+
+### 🗂 Safe File Names
+
+- Automatically converts non-English file names into safe formats.
+- Ensures compatibility across multiple platforms and avoids encoding issues.
+---
+
+
+### 🌐 Localization
+
+- To localize user-facing UI text, edit or create the corresponding **.arb** files and then run:
+
+```
 flutter gen-l10n
+```
 
-### 安卓构建
+- To localize **internal code tables**, update the JSON files located in:
 
-从 app 中引用密钥库
+```
+assets/code_data/
+```
 
-创建一个名为 [project]/android/key.properties 的文件，它包含了密钥库位置的定义。在替换内容时请去除 < > 括号：
+- **Current language support**:
 
+  Simplified Chinese: ✅ 100%  
+  English: ⚠️ 100% (machine translated, needs polishing by native speakers)  
+
+- Contributions are welcome! Feel free to translate this project into other languages and submit your changes.
+
+---
+
+
+
+### Android build
+
+Reference the key store from the app
+
+Create a file named [project]/android/key.properties, which contains the definition of the key store location. Please remove the < > parentheses when replacing the content:
+
+```
 storePassword=<password-from-previous-step>
 keyPassword=<password-from-previous-step>
 keyAlias=upload
 storeFile=<keystore-file-location>
+```
 
-storeFile 密钥路径在 macOS 上类似于 /Users/<user name>/upload-keystore.jks，在 Windows 上类似于 C:\\Users\\<user name>\\upload-keystore.jks。
-提示
+The storeFile key path on macOS is similar to /Users/<user name>/upload-keystore.jks On Windows, it is similar to C:\\Users\\<user name>\\upload-keystore.jks.
 
-keystore.jks 的 Windows 路径必须使用双反斜杠：\\。
-
+> The Windows path of keystore.jks must use double backslashes: \\.
