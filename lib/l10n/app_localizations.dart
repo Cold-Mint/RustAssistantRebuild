@@ -1702,6 +1702,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This will remove all the code within the section. Do you still want to delete it?'**
   String get removeAllCodeWithInSection;
+
+  /// No description provided for @citationUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'Citation unit'**
+  String get citationUnit;
+
+  /// No description provided for @unitSelector.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit selector'**
+  String get unitSelector;
+
+  /// No description provided for @unit.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit'**
+  String get unit;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

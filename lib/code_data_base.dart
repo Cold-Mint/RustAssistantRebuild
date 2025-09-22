@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:rust_assistant/constant.dart';
-import 'package:rust_assistant/databeans/built_in_unit.dart';
+import 'package:rust_assistant/databeans/unit_ref.dart';
 import 'package:rust_assistant/databeans/code.dart';
 import 'package:rust_assistant/databeans/enum_data.dart';
 import 'package:rust_assistant/databeans/logical_boolean.dart';
@@ -35,7 +35,7 @@ class CodeDataBase {
   static final List<int> _gameDataArray = [1, 4, 8];
   static List<String> coreRes = List.empty(growable: true);
   static List<String> sharedRes = List.empty(growable: true);
-  static List<BuiltInUnit> builtInUnit = List.empty(growable: true);
+  static List<UnitRef> builtInUnit = List.empty(growable: true);
 
   static List<LogicalBoolean> getLogicalBooleanList() {
     return _logicalBoolean;
@@ -387,7 +387,7 @@ class CodeDataBase {
     );
     builtInUnit.clear();
     for (var item in units) {
-      builtInUnit.add(BuiltInUnit.fromJson(item));
+      builtInUnit.add(UnitRef.fromJson(item));
     }
   }
 

@@ -1,6 +1,8 @@
 //项目分析器
 
+import 'package:rust_assistant/databeans/unit_ref.dart';
 import 'package:rust_assistant/file_type_checker.dart';
+import 'package:rust_assistant/global_depend.dart';
 
 import 'databeans/visual_analytics_result.dart';
 
@@ -13,6 +15,7 @@ class ProjectAnalyzer {
   FileSystemOperator fileSystemOperator;
   bool _isRunning = false;
   VisualAnalyticsResult? _lastResult;
+  final List<UnitRef> unitRefList = List.empty(growable: true);
 
   ProjectAnalyzer(this.rootPath, this.fileSystemOperator);
 
@@ -37,14 +40,17 @@ class ProjectAnalyzer {
     onStart?.call();
     //开始分析rootPath是一个文件夹目录，遍历下面的每一个文件
     //文件可视化分析器项目
+    List<UnitRef> temporary = List.empty(growable: true);
     var fileVisualAnalytics = VisualAnalyticsResultItem();
     var assetsVisualAnalytics = VisualAnalyticsResultItem();
     var memoryVisualAnalytics = VisualAnalyticsResultItem();
     var tagVisualAnalytics = VisualAnalyticsResultItem();
+    var unitVisualAnalytics = VisualAnalyticsResultItem();
     fileVisualAnalytics.title = appLocalizations.file;
     assetsVisualAnalytics.title = appLocalizations.assets;
     memoryVisualAnalytics.title = appLocalizations.memory;
     tagVisualAnalytics.title = appLocalizations.tags;
+    unitVisualAnalytics.title = appLocalizations.unit;
     int index = 0;
     Set<String> tagSet = {};
     await fileSystemOperator.list(rootPath, (path) async {
@@ -75,19 +81,24 @@ class ProjectAnalyzer {
         assetsVisualAnalytics.result.add(fileListData);
         return false;
       }
-      if(fileType == FileTypeChecker.FileTypeArchive){
+      if (fileType == FileTypeChecker.FileTypeArchive) {
         return false;
       }
+      UnitRef unitRef = UnitRef();
+      unitRef.path = path;
       var text = await fileSystemOperator.readAsString(path) ?? "";
-      var lineParser = LineParser(
-        text
-      );
+      var lineParser = LineParser(text);
+      String? section;
       while (true) {
         var line = lineParser.nextLine();
         if (line == null) {
           break;
         }
         var lineLowerCase = line.toLowerCase();
+        if (line.startsWith("[") && line.endsWith("]")) {
+          section = GlobalDepend.getSectionPrefix(line);
+          continue;
+        }
         if (lineLowerCase.contains("memory")) {
           var memoryListData = ListData();
           memoryListData.title = line;
@@ -113,8 +124,18 @@ class ProjectAnalyzer {
                 tagSet.add(tgaTrim);
               }
             }
+          } else if (section == "core" && keyName == "name") {
+            unitRef.name = line.substring(symbol + 1).trim();
           }
         }
+      }
+      if (unitRef.name != null) {
+        temporary.add(unitRef);
+        var unitData = ListData();
+        unitData.title = unitRef.name;
+        unitData.subTitle = relativePath;
+        unitData.path = path;
+        unitVisualAnalytics.result.add(unitData);
       }
       return false;
     }, recursive: true);
@@ -122,6 +143,9 @@ class ProjectAnalyzer {
     result.items.add(assetsVisualAnalytics);
     result.items.add(memoryVisualAnalytics);
     result.items.add(tagVisualAnalytics);
+    result.items.add(unitVisualAnalytics);
+    unitRefList.clear();
+    unitRefList.addAll(temporary);
     result.tagList = tagSet.toList();
     result.endTime = DateTime.now();
     _lastResult = result;

@@ -3899,7 +3899,7 @@
     "default_key": "life",
     "default_value": "",
     "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "int",
+    "interpreter": "floatORTime",
     "maxVersion": -1,
     "minVersion": 1,
     "section": "projectile"

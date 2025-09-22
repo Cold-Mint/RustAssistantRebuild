@@ -15,6 +15,7 @@ import 'package:rust_assistant/interpreters/color_interpreter.dart';
 import 'package:rust_assistant/interpreters/enum_interprete.dart';
 import 'package:rust_assistant/interpreters/file_data_interpreter.dart';
 import 'package:rust_assistant/interpreters/tag_interprete.dart';
+import 'package:rust_assistant/interpreters/unit_interpreter.dart';
 import 'package:rust_assistant/mod/ini_writer.dart';
 import 'package:rust_assistant/mod/ini_reader.dart';
 import 'package:rust_assistant/search_multiple_selection_dialog.dart';
@@ -387,6 +388,28 @@ class _IniEditorPageStatus extends State<IniEditorPage>
         modPath: widget.modPath,
         supportAuto: false,
         selectFileType: _argumentsToFileType(arguments),
+      );
+    } else if (interpreter == "unit") {
+      return UnitInterpreter(
+        lineNumber: lineNumber,
+        keyValue: keyValue,
+        codeData: codeData,
+        codeInfo: codeInfo,
+        onLineDataChange: onLineDataChange,
+        displayLineNumber: widget.displayLineNumber,
+        displayOperationOptions: widget.displayOperationOptions,
+        multiple: false,
+      );
+    } else if (interpreter == "unitList") {
+      return UnitInterpreter(
+        lineNumber: lineNumber,
+        keyValue: keyValue,
+        codeData: codeData,
+        codeInfo: codeInfo,
+        onLineDataChange: onLineDataChange,
+        displayLineNumber: widget.displayLineNumber,
+        displayOperationOptions: widget.displayOperationOptions,
+        multiple: true,
       );
     }
     return getDefaultView(lineNumber, keyValue, codeData, codeInfo);

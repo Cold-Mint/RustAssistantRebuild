@@ -811,4 +811,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get removeAllCodeWithInSection => '这将移除节内所有的代码。仍要删除吗？';
+
+  @override
+  String get citationUnit => '引用单位';
+
+  @override
+  String get unitSelector => '单位选择器';
+
+  @override
+  String get unit => '单位';
 }

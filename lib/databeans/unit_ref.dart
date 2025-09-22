@@ -1,12 +1,12 @@
-class BuiltInUnit {
+class UnitRef {
   String? description;
   String? displayName;
   String? name;
   String? path;
 
-  BuiltInUnit({this.description, this.displayName, this.name, this.path});
+  UnitRef({this.description, this.displayName, this.name, this.path});
 
-  BuiltInUnit.fromJson(Map<String, dynamic> json) {
+  UnitRef.fromJson(Map<String, dynamic> json) {
     description = json['description'];
     displayName = json['displayName'];
     name = json['name'];

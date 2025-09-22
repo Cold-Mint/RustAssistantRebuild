@@ -811,4 +811,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get removeAllCodeWithInSection => 'This will remove all the code within the section. Do you still want to delete it?';
+
+  @override
+  String get citationUnit => 'Citation unit';
+
+  @override
+  String get unitSelector => 'Unit selector';
+
+  @override
+  String get unit => 'Unit';
 }
