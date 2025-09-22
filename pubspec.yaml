@@ -49,8 +49,6 @@ dependencies:
   flutter_colorpicker: ^1.1.0
   dynamic_color: ^1.7.0
   pinyin: ^3.3.0
-  saf_stream: ^0.12.0
-  saf_util: ^0.11.0
   archive: ^4.0.7
   window_manager: ^0.5.1
   xml: ^6.6.1

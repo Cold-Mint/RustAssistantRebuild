@@ -269,5 +269,7 @@
   "removeAllCodeWithInSection": "这将移除节内所有的代码。仍要删除吗？",
   "citationUnit": "引用单位",
   "unitSelector": "单位选择器",
-  "unit": "单位"
+  "unit": "单位",
+  "readMagicNumberOfFiles": "读取文件魔数",
+  "readMagicNumberOfFilesTip": "通过读取文件前16字节的数据来推断文件类型，而不是根据文件格式来确定。（例如：将a.png命名为a，软件根据其前16字节的数据来推断文件类型，即使文件后缀不是png，也会被识别为图像）。"
 }

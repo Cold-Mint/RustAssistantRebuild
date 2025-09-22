@@ -28,6 +28,7 @@ class _SettingsStatus extends State<SettingsPage> {
   bool _toggleLineNumber = false;
   bool _autoSave = true;
   bool _deleteOriginalFile = true;
+  bool _readMagicNumberOfFiles = false;
   List<GameVersion>? _gameVersionList;
   late int _selectedGameVersion;
   late int _archivedFileLoadingLimit;
@@ -61,6 +62,11 @@ class _SettingsStatus extends State<SettingsPage> {
       _openWorkspaceAfterCreateMod = HiveHelper.get(
         HiveHelper.openWorkspaceAfterCreateMod,
         defaultValue: Constant.openWorkSpaceAsk,
+      );
+    }
+    if (HiveHelper.containsKey(HiveHelper.readMagicNumberOfFiles)) {
+      _readMagicNumberOfFiles = HiveHelper.get(
+        HiveHelper.readMagicNumberOfFiles,
       );
     }
     _gameVersionList = CodeDataBase.getGameVersion()
@@ -360,6 +366,20 @@ class _SettingsStatus extends State<SettingsPage> {
                 HiveHelper.deleteOriginalFileAfterDecompression,
                 value,
               );
+            },
+          ),
+          SwitchListTile(
+            title: Text(AppLocalizations.of(context)!.readMagicNumberOfFiles),
+            subtitle: Text(
+              AppLocalizations.of(context)!.readMagicNumberOfFilesTip,
+            ),
+            value: _readMagicNumberOfFiles,
+            onChanged: (value) {
+              setState(() {
+                _readMagicNumberOfFiles = value;
+                GlobalDepend.readMagicNumberOfFiles = value;
+              });
+              HiveHelper.put(HiveHelper.readMagicNumberOfFiles, value);
             },
           ),
           Divider(),

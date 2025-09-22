@@ -16,6 +16,9 @@ class FileTypeChecker {
 
   //从指定的文件路径读取文件头。
   static Future<Uint8List?> readFileHeader(String path) async {
+    if (!GlobalDepend.readMagicNumberOfFiles) {
+      return null;
+    }
     final FileSystemOperator fileSystemOperator =
         GlobalDepend.getFileSystemOperator();
     return await fileSystemOperator.readAsBytes(

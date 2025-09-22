@@ -1720,6 +1720,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unit'**
   String get unit;
+
+  /// No description provided for @readMagicNumberOfFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the magic number of files'**
+  String get readMagicNumberOfFiles;
+
+  /// No description provided for @readMagicNumberOfFilesTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Infer the file type by reading the first 16 bytes of the file\'s data, rather than determining it based on the file format. For example, if a.png is named a, the software infers the file type based on the first 16 bytes of data, even if the file suffix is not png.'**
+  String get readMagicNumberOfFilesTip;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -25,17 +25,10 @@ class GlobalDepend {
     growable: true,
   );
 
-  static FileSystemOperator? _fileSystemOperator;
+  static final FileSystemOperator _fileSystemOperator = LocalFileOperator();
 
-  //设置文件操作器
-  static void setFileSystemOperator(bool useSaf) {
-    if (Platform.isAndroid && useSaf) {
-      _fileSystemOperator = AndroidSAFFileOperator();
-    } else {
-      _fileSystemOperator = LocalFileOperator();
-    }
-  }
-
+  //是否允许读取文件魔数
+  static bool readMagicNumberOfFiles = false;
   static List<RecycleBinItem> getRecycleBinList() {
     return _recycleBinList;
   }
@@ -46,10 +39,10 @@ class GlobalDepend {
       return null;
     }
     var recycleBinJson = p.join(userDataFolder, Constant.recycleBinConfigFile);
-    if (!await _fileSystemOperator!.exist(recycleBinJson)) {
+    if (!await _fileSystemOperator.exist(recycleBinJson)) {
       return;
     }
-    var text = await _fileSystemOperator!.readAsString(recycleBinJson);
+    var text = await _fileSystemOperator.readAsString(recycleBinJson);
     if (text == null) {
       return;
     }
@@ -76,7 +69,7 @@ class GlobalDepend {
       return null;
     }
     var text = json.encode(_recycleBinList);
-    await _fileSystemOperator!.writeFile(
+    await _fileSystemOperator.writeFile(
       userDataFolder,
       Constant.recycleBinConfigFile,
       text,
@@ -85,7 +78,7 @@ class GlobalDepend {
 
   //获取文件操作器
   static FileSystemOperator getFileSystemOperator() {
-    return _fileSystemOperator!;
+    return _fileSystemOperator;
   }
 
   //检查路径是否不可用
@@ -93,7 +86,7 @@ class GlobalDepend {
     bool available = true;
     if (HiveHelper.containsKey(HiveHelper.modPath)) {
       var modPath = HiveHelper.get(HiveHelper.modPath);
-      var exist = await _fileSystemOperator!.exist(modPath);
+      var exist = await _fileSystemOperator.exist(modPath);
       if (!exist) {
         //弹出路径失效对话框
         available = false;
@@ -107,7 +100,7 @@ class GlobalDepend {
           available = false;
         }
         var steamPath = HiveHelper.get(HiveHelper.steamModPath);
-        var existSteam = await _fileSystemOperator!.exist(steamPath);
+        var existSteam = await _fileSystemOperator.exist(steamPath);
         if (available && !existSteam) {
           available = false;
         }
@@ -261,7 +254,7 @@ class GlobalDepend {
   }
 
   static Future<Mod?> convertToMod(String path) async {
-    var dir = await _fileSystemOperator!.isDir(path);
+    var dir = await _fileSystemOperator.isDir(path);
     if (dir) {
       Mod mod = Mod(path);
       await mod.load();
@@ -572,6 +565,7 @@ class HiveHelper {
 
   //是否在创建mod后打开工作区(0为否，1为是，2为询问)
   static String openWorkspaceAfterCreateMod = "openWorkspaceAfterCreateMod";
+  static String readMagicNumberOfFiles = "readMagicNumberOfFiles";
 
   //用户要为哪个版本的游戏制作Mod？（假设目标版本为2,那么用户就无法使用大于2版本的相关代码，反编译mod时会将大于2的代码标记为不可用。）
   static String targetGameVersion = "targetGameVersion";
@@ -602,9 +596,10 @@ class HiveHelper {
         Constant.defaultArchivedFileLoadingLimit,
       );
     }
+    if (_box.containsKey(readMagicNumberOfFiles)) {
+      GlobalDepend.readMagicNumberOfFiles = get(readMagicNumberOfFiles);
+    }
     await _box.flush();
-    //初始化文件操作器
-    GlobalDepend.setFileSystemOperator(false);
   }
 
   static put(dynamic key, dynamic value) async {

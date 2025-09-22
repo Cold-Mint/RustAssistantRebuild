@@ -1,5 +1,3 @@
-//项目分析器
-
 import 'package:rust_assistant/databeans/unit_ref.dart';
 import 'package:rust_assistant/file_type_checker.dart';
 import 'package:rust_assistant/global_depend.dart';
@@ -21,7 +19,6 @@ class ProjectAnalyzer {
 
   VisualAnalyticsResult? get lastResult => _lastResult;
 
-  //分析项目
   Future<void> analyze(
     AppLocalizations appLocalizations,
     Function? onStart,
@@ -38,8 +35,6 @@ class ProjectAnalyzer {
     var result = VisualAnalyticsResult();
     result.startTime = DateTime.now();
     onStart?.call();
-    //开始分析rootPath是一个文件夹目录，遍历下面的每一个文件
-    //文件可视化分析器项目
     List<UnitRef> temporary = List.empty(growable: true);
     var fileVisualAnalytics = VisualAnalyticsResultItem();
     var assetsVisualAnalytics = VisualAnalyticsResultItem();
@@ -115,7 +110,6 @@ class ProjectAnalyzer {
             tagListData.subTitle = relativePath;
             tagListData.path = path;
             tagVisualAnalytics.result.add(tagListData);
-            //解析value
             var value = line.substring(symbol + 1).trim();
             var valueList = value.split(',');
             for (var tag in valueList) {
