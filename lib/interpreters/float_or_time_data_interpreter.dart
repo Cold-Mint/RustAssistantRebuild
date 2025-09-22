@@ -100,9 +100,12 @@ class _FloatORTimeDataInterpreterStatus
                   widget.keyValue.getLineData(),
                 );
               },
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              keyboardType: TextInputType.numberWithOptions(
+                decimal: true,
+                signed: true,
+              ),
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,}$')),
+                FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*$')),
                 // 只允许输入小数
               ],
               controller: _textEditingController,

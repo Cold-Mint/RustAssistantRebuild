@@ -76,10 +76,12 @@ class _FloatDataInterpreterStatus extends State<FloatDataInterpreter> {
                   widget.keyValue.getLineData(),
                 );
               },
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              keyboardType: TextInputType.numberWithOptions(
+                decimal: true,
+                signed: true,
+              ),
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$')),
-                // 只允许输入小数
+                FilteringTextInputFormatter.allow(RegExp(r'^-?\d*\.?\d*$')),
               ],
               controller: _textEditingController,
               style: TextStyle(fontFamily: 'Mono'),

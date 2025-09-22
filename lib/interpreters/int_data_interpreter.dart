@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rust_assistant/signed_number_text_input_formatter.dart';
 import 'package:sprintf/sprintf.dart';
 
 import '../code_detail_dialog.dart';
@@ -51,7 +52,6 @@ class _IntDataInterpreterStatus extends State<IntDataInterpreter> {
   @override
   Widget build(BuildContext context) {
     var description = widget.codeInfo?.description;
-    // debugPrint("键" + widget.keyValue.key + "的build调用");
     return Padding(
       padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
       child: Row(
@@ -80,7 +80,7 @@ class _IntDataInterpreterStatus extends State<IntDataInterpreter> {
               },
               keyboardType: TextInputType.number,
               inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly, // 只允许输入数字
+                SignedNumberTextInputFormatter(),
               ],
               controller: _textEditingController,
               decoration: InputDecoration(
