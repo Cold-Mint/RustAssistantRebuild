@@ -22,9 +22,10 @@ class FileReference {
     if (data.isEmpty) {
       return null;
     }
-    if (data == Constant.none ||
-        data == Constant.auto ||
-        data == Constant.autoAnimated) {
+    var dataUpperCase = data.toUpperCase();
+    if (dataUpperCase == Constant.none ||
+        dataUpperCase == Constant.auto ||
+        dataUpperCase == Constant.autoAnimated) {
       return null;
     }
     final String absolutePath = GlobalDepend.switchToAbsolutePath(

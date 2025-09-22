@@ -158,6 +158,7 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
   @override
   Widget build(BuildContext context) {
     var description = widget.codeInfo?.description;
+    var valueUpperCase = widget.keyValue.value.toString().toUpperCase();
     return Padding(
       padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
       child: Row(
@@ -203,7 +204,7 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
                     Expanded(child: SizedBox()),
                     if (widget.supportAuto)
                       TextButton(
-                        onPressed: widget.keyValue.value == Constant.auto
+                        onPressed: valueUpperCase == Constant.auto
                             ? null
                             : () {
                                 showDialog<void>(
@@ -255,8 +256,7 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
                       ),
                     if (widget.supportAuto)
                       TextButton(
-                        onPressed:
-                            widget.keyValue.value == Constant.autoAnimated
+                        onPressed: valueUpperCase == Constant.autoAnimated
                             ? null
                             : () {
                                 showDialog<void>(
@@ -354,7 +354,7 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
                       child: Text(AppLocalizations.of(context)!.selectTheFile),
                     ),
                     TextButton(
-                      onPressed: widget.keyValue.value == Constant.none
+                      onPressed: valueUpperCase == Constant.none
                           ? null
                           : () {
                               showDialog<void>(
