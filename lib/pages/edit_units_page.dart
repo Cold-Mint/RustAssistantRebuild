@@ -209,6 +209,7 @@ class _EditUnitsPageState extends State<EditUnitsPage>
     if (!mounted) return;
     showModalBottomSheet(
       showDragHandle: true,
+      isScrollControlled: true,
       context: context,
       builder: (context) => Padding(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),

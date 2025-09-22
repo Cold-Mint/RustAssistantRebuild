@@ -85,10 +85,12 @@ class _FileDataInterpreterStatus extends State<FileDataInterpreter>
       splitTrim,
       extra,
     );
-    setState(() {
-      _fileReference = fileReference;
-      _load = false;
-    });
+    if (mounted) {
+      setState(() {
+        _fileReference = fileReference;
+        _load = false;
+      });
+    }
   }
 
   @override

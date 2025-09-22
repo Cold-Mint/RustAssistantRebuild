@@ -712,19 +712,23 @@ class _IniEditorPageStatus extends State<IniEditorPage>
           ),
         ),
         Expanded(
-          child: _mode == _modeVisual
-              ? _getVisualWidget(sections)
-              : TextField(
-                  onChanged: (s) {
-                    widget.onDataChange?.call(s);
-                    _iniReader = IniReader(s, containsNotes: true);
-                  },
-                  style: TextStyle(fontFamily: 'Mono'),
-                  expands: true,
-                  maxLines: null,
-                  controller: _textEditingController,
-                  decoration: InputDecoration(border: OutlineInputBorder()),
-                ),
+          child: IndexedStack(
+            index: _mode == _modeVisual ? 0 : 1,
+            children: [
+              _getVisualWidget(sections),
+              TextField(
+                onChanged: (s) {
+                  widget.onDataChange?.call(s);
+                  _iniReader = IniReader(s, containsNotes: true);
+                },
+                style: TextStyle(fontFamily: 'Mono'),
+                expands: true,
+                maxLines: null,
+                controller: _textEditingController,
+                decoration: InputDecoration(border: OutlineInputBorder()),
+              ),
+            ],
+          ),
         ),
       ],
     );
