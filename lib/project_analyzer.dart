@@ -89,11 +89,11 @@ class ProjectAnalyzer {
         if (line == null) {
           break;
         }
-        var lineLowerCase = line.toLowerCase();
         if (line.startsWith("[") && line.endsWith("]")) {
           section = GlobalDepend.getSectionPrefix(line);
           continue;
         }
+        var lineLowerCase = line.toLowerCase();
         if (lineLowerCase.contains("memory")) {
           var memoryListData = ListData();
           memoryListData.title = line;

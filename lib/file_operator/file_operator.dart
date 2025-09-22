@@ -75,22 +75,30 @@ class LocalFileOperator extends FileSystemOperator {
   Future<bool> mkdir(String uri, String name) async {
     try {
       var dir = Directory(p.join(uri, name));
+      if (await dir.exists()) {
+        return true; 
+      }
       await dir.create(recursive: true);
       return true;
-    } catch (e) {
+    } catch (e, st) {
+      print("mkdir failed: $e\n$st");
       return false;
     }
   }
 
   @override
-  Future<String?> readAsString(String uri) async {
+  Future<String?> readAsString(String uri, {Encoding encoding = utf8}) async {
     var file = File(uri);
-    if (!await file.exists()) {
-      return null;
-    }
     try {
-      return await file.readAsString();
-    } catch (e) {
+      return await file.readAsString(encoding: encoding);
+    } on FileSystemException catch (e, st) {
+      print("FileSystemException reading $uri: $e\n$st");
+      return null;
+    } on FormatException catch (e, st) {
+      print("FormatException decoding $uri: $e\n$st");
+      return null;
+    } catch (e, st) {
+      print("Unknown error reading $uri: $e\n$st");
       return null;
     }
   }
@@ -102,25 +110,21 @@ class LocalFileOperator extends FileSystemOperator {
 
   @override
   Future<bool> isDir(String uri) {
-    return Directory(uri).exists();
+    return FileSystemEntity.isDirectory(uri);
   }
 
   @override
-  Future list(
+  Future<void> list(
     String uri,
-    Future<bool> Function(String p1) callBack, {
+    Future<bool> Function(String path) callBack, {
     bool recursive = false,
   }) async {
     if (!await isDir(uri)) {
-      return null;
+      return;
     }
-    Directory directory = Directory(uri);
-    if (!await directory.exists()) {
-      return null;
-    }
-    var list = directory.listSync(recursive: recursive);
-    for (var value in list) {
-      if (await callBack.call(value.path)) {
+    var directory = Directory(uri);
+    await for (var entity in directory.list(recursive: recursive)) {
+      if (await callBack(entity.path)) {
         return;
       }
     }
