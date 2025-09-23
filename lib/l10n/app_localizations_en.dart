@@ -826,4 +826,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get readMagicNumberOfFilesTip => 'Infer the file type by reading the first 16 bytes of the file\'s data, rather than determining it based on the file format. For example, if a.png is named a, the software infers the file type based on the first 16 bytes of data, even if the file suffix is not png.';
+
+  @override
+  String get builtIn => 'builtIn';
 }

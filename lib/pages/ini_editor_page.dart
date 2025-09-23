@@ -7,6 +7,7 @@ import 'package:rust_assistant/databeans/code.dart';
 import 'package:rust_assistant/databeans/key_value.dart';
 import 'package:rust_assistant/databeans/resource_ref.dart';
 import 'package:rust_assistant/databeans/section_info.dart';
+import 'package:rust_assistant/databeans/unit_ref.dart';
 import 'package:rust_assistant/edit_sequence_dialog.dart';
 import 'package:rust_assistant/file_operator/file_operator.dart';
 import 'package:rust_assistant/file_type_checker.dart';
@@ -41,6 +42,7 @@ class IniEditorPage extends StatefulWidget {
   final Function(String) onRequestOpenFile;
   final Function onRequestChangeLeftWidget;
   final List<String> tagList;
+  final List<UnitRef> modUnit;
 
   const IniEditorPage({
     super.key,
@@ -48,6 +50,7 @@ class IniEditorPage extends StatefulWidget {
     this.fileData,
     this.onDataChange,
     required this.globalResource,
+    required this.modUnit,
     required this.displayLineNumber,
     required this.displayOperationOptions,
     this.onMaxLineNumberChange,
@@ -394,6 +397,7 @@ class _IniEditorPageStatus extends State<IniEditorPage>
         lineNumber: lineNumber,
         keyValue: keyValue,
         codeData: codeData,
+        modUnit: widget.modUnit,
         codeInfo: codeInfo,
         onLineDataChange: onLineDataChange,
         displayLineNumber: widget.displayLineNumber,
@@ -405,6 +409,7 @@ class _IniEditorPageStatus extends State<IniEditorPage>
         lineNumber: lineNumber,
         keyValue: keyValue,
         codeData: codeData,
+        modUnit: widget.modUnit,
         codeInfo: codeInfo,
         onLineDataChange: onLineDataChange,
         displayLineNumber: widget.displayLineNumber,

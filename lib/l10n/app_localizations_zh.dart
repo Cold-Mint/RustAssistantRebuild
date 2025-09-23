@@ -826,4 +826,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get readMagicNumberOfFilesTip => '通过读取文件前16字节的数据来推断文件类型，而不是根据文件格式来确定。（例如：将a.png命名为a，软件根据其前16字节的数据来推断文件类型，即使文件后缀不是png，也会被识别为图像）。';
+
+  @override
+  String get builtIn => '内置';
 }

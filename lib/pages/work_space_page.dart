@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as path;
 import 'package:rust_assistant/databeans/resource_ref.dart';
+import 'package:rust_assistant/databeans/unit_ref.dart';
 import 'package:rust_assistant/file_operator/file_operator.dart';
 import 'package:rust_assistant/file_type_checker.dart';
 import 'package:rust_assistant/pages/image_viewer.dart';
@@ -40,6 +41,7 @@ class WorkspacePage extends StatefulWidget {
   })
   onRequestShowCreateFileDialog;
   final String rootPath;
+  final List<UnitRef> modUnit;
 
   const WorkspacePage({
     super.key,
@@ -61,6 +63,7 @@ class WorkspacePage extends StatefulWidget {
     required this.onRequestOpenFile,
     required this.pathToFileName,
     required this.pathToFileType,
+    required this.modUnit,
     required this.tagList,
     required this.onRequestChangeLeftWidget,
     required this.closeTag,
@@ -211,6 +214,7 @@ class _WorkspaceStatus extends State<WorkspacePage>
               onRequestOpenFile: widget.onRequestOpenFile,
               modPath: widget.rootPath,
               tagList: widget.tagList,
+              modUnit: widget.modUnit,
             ),
           );
           continue;

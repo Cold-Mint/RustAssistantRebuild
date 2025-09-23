@@ -603,7 +603,7 @@ class _EditUnitsPageState extends State<EditUnitsPage>
           },
           closeTag: (String p1) {
             _closeTag(p1);
-          },
+          }, modUnit: _projectAnalyzer.unitRefList,
         );
       },
     );

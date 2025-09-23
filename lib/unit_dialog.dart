@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:rust_assistant/code_data_base.dart';
 import 'package:rust_assistant/databeans/unit_ref.dart';
+import 'package:rust_assistant/highlight_text.dart';
 import 'package:rust_assistant/l10n/app_localizations.dart';
 
 class UnitDialog extends StatefulWidget {
-  const UnitDialog({super.key});
+  final List<UnitRef> modUnit;
+  const UnitDialog({super.key, required this.modUnit});
 
   @override
   State<StatefulWidget> createState() {
@@ -14,11 +16,30 @@ class UnitDialog extends StatefulWidget {
 
 class _UnitDialogStatus extends State<UnitDialog> {
   final TextEditingController _searchController = TextEditingController();
-  final List<UnitRef> _builtInUnit = List.empty(growable: true);
+  final List<UnitRefData> _allUnit = List.empty(growable: true);
+  final List<UnitRefData> _filteredUnit = List.empty(growable: true);
   @override
   void initState() {
     super.initState();
-    _builtInUnit.addAll(CodeDataBase.builtInUnit);
+    var builtInUnit = CodeDataBase.builtInUnit;
+    //添加内置单位
+    for (UnitRef unitRef in builtInUnit) {
+      var data = UnitRefData.fromUnitRef(unitRef);
+      data.builtIn = true;
+      _allUnit.add(data);
+    }
+    //添加模组单位
+    for (UnitRef unitRef in widget.modUnit) {
+      var data = UnitRefData.fromUnitRef(unitRef);
+      data.builtIn = false;
+      _allUnit.add(data);
+    }
+    _allUnit.sort((a, b) {
+      final aName = a.name?.toLowerCase() ?? "";
+      final bName = b.name?.toLowerCase() ?? "";
+      return aName.compareTo(bName);
+    });
+    _filteredUnit.addAll(_allUnit);
   }
 
   @override
@@ -40,20 +61,82 @@ class _UnitDialogStatus extends State<UnitDialog> {
             const SizedBox(height: 24),
             TextField(
               controller: _searchController,
+              onChanged: (value) {
+                var lowerCaseValue = value.toLowerCase();
+                List<UnitRefData> newData = List.empty(growable: true);
+                for (UnitRefData unitRef in _allUnit) {
+                  var name = unitRef.name;
+                  if (name == null) {
+                    continue;
+                  }
+                  bool match = false;
+                  if (name.toLowerCase().contains(lowerCaseValue)) {
+                    match = true;
+                  }
+                  if (!match) {
+                    var displayName = unitRef.displayName;
+                    if (displayName == null) {
+                      continue;
+                    }
+                    if (displayName.toLowerCase().contains(lowerCaseValue)) {
+                      match = true;
+                    }
+                  }
+                  if (match) {
+                    newData.add(unitRef);
+                  }
+                }
+                setState(() {
+                  _filteredUnit.clear();
+                  _filteredUnit.addAll(newData);
+                });
+              },
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.search),
                 border: const OutlineInputBorder(),
+                hintText: AppLocalizations.of(
+                  context,
+                )!.searchByTitleAndDescription,
                 isDense: true,
               ),
             ),
             const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
-                itemCount: _builtInUnit.length,
+                itemCount: _filteredUnit.length,
                 itemBuilder: (context, index) {
+                  var unitData = _filteredUnit[index];
                   return ListTile(
-                    title: Text(_builtInUnit[index].name ?? ""),
-                    subtitle: Text(_builtInUnit[index].displayName ?? ""),
+                    title: unitData.builtIn
+                        ? Wrap(
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            spacing: 8,
+                            children: [
+                              Chip(
+                                label: Text(
+                                  AppLocalizations.of(context)!.builtIn,
+                                ),
+                              ),
+                              HighlightText(
+                                text:
+                                    unitData.name ??
+                                    AppLocalizations.of(context)!.none,
+                                searchKeyword: _searchController.text,
+                              ),
+                            ],
+                          )
+                        : HighlightText(
+                            text:
+                                unitData.name ??
+                                AppLocalizations.of(context)!.none,
+                            searchKeyword: _searchController.text,
+                          ),
+                    subtitle: unitData.displayName == null
+                        ? null
+                        : HighlightText(
+                            text: unitData.displayName!,
+                            searchKeyword: _searchController.text,
+                          ),
                   );
                 },
               ),
@@ -78,5 +161,19 @@ class _UnitDialogStatus extends State<UnitDialog> {
         ),
       ),
     );
+  }
+}
+
+class UnitRefData extends UnitRef {
+  bool builtIn = false;
+
+  static UnitRefData fromUnitRef(UnitRef unitRef) {
+    var result = UnitRefData();
+    result.builtIn = false;
+    result.description = unitRef.description;
+    result.displayName = unitRef.displayName;
+    result.name = unitRef.name;
+    result.path = unitRef.path;
+    return result;
   }
 }

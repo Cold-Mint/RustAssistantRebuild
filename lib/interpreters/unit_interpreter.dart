@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rust_assistant/databeans/unit_ref.dart';
 import 'package:rust_assistant/unit_dialog.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -9,7 +10,7 @@ import 'data_interpreter.dart';
 
 class UnitInterpreter extends DataInterpreter {
   final bool multiple;
-
+  final List<UnitRef> modUnit;
   const UnitInterpreter({
     super.key,
     required super.keyValue,
@@ -18,6 +19,7 @@ class UnitInterpreter extends DataInterpreter {
     super.codeInfo,
     required this.multiple,
     required super.lineNumber,
+    required this.modUnit,
     required super.displayLineNumber,
     required super.displayOperationOptions,
   });
@@ -91,7 +93,7 @@ class _UnitInterpreterStatus extends State<UnitInterpreter> {
                       isScrollControlled: true,
                       context: context,
                       builder: (BuildContext context) {
-                        return UnitDialog();
+                        return UnitDialog(modUnit: widget.modUnit);
                       },
                     );
                   },
