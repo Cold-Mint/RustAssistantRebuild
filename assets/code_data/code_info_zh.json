@@ -1999,7 +1999,7 @@
     "code": "^limitingAngle$",
     "translate": "限制角度",
     "section": "turret",
-    "description": "与<see code=\"idleDir\" section=\"attack\"/>配合。炮塔只能以+/-此角度进行攻击。"
+    "description": "与<see code=\"idleDir\" section=\"turret\"/>配合。炮塔只能以+/-此角度进行攻击。"
   },
   {
     "code": "^limitingMinRange$",

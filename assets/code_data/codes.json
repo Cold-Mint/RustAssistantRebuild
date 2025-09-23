@@ -3426,7 +3426,7 @@
     "default_key": "warmup",
     "default_value": "0",
     "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "float",
+    "interpreter": "floatORTime",
     "maxVersion": -1,
     "minVersion": 1,
     "section": "turret"
@@ -3470,7 +3470,7 @@
     "default_key": "onShoot_freezeBodyMovementFor",
     "default_value": "0",
     "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "float",
+    "interpreter": "floatORTime",
     "maxVersion": -1,
     "minVersion": 3,
     "section": "turret"

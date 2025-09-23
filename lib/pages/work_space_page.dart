@@ -200,8 +200,13 @@ class _WorkspaceStatus extends State<WorkspacePage>
                 if (!_unsavedFilePath.contains(f)) {
                   widget.addUnsaved?.call(f);
                 }
-                setState(() {
-                  _pathToFileData[f] = data;
+                // 延迟 setState 到下一帧
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  if (mounted) {
+                    setState(() {
+                      _pathToFileData[f] = data;
+                    });
+                  }
                 });
               },
               displayLineNumber: widget.displayLineNumber,
