@@ -48,6 +48,8 @@ class ProjectAnalyzer {
     unitVisualAnalytics.title = appLocalizations.unit;
     int index = 0;
     Set<String> tagSet = {};
+    var languageDisplayText =
+        "displayText_${HiveHelper.get(HiveHelper.language)}".toLowerCase();
     await fileSystemOperator.list(rootPath, (path) async {
       if (await fileSystemOperator.isDir(path)) {
         return false;
@@ -120,6 +122,12 @@ class ProjectAnalyzer {
             }
           } else if (section == "core" && keyName == "name") {
             unitRef.name = line.substring(symbol + 1).trim();
+          } else if (unitRef.displayName == null &&
+              section == "core" &&
+              keyName == "displaytext") {
+            unitRef.displayName = line.substring(symbol + 1).trim();
+          } else if (section == "core" && keyName == languageDisplayText) {
+            unitRef.displayName = line.substring(symbol + 1).trim();
           }
         }
       }

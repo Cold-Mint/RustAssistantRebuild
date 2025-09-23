@@ -93,7 +93,19 @@ class _UnitInterpreterStatus extends State<UnitInterpreter> {
                       isScrollControlled: true,
                       context: context,
                       builder: (BuildContext context) {
-                        return UnitDialog(modUnit: widget.modUnit);
+                        return UnitDialog(
+                          modUnit: widget.modUnit,
+                          multiple: widget.multiple,
+                          value: widget.keyValue.value.toString(),
+                          onSave: (String p1) {
+                            _textEditingController.text = p1;
+                            widget.keyValue.value = p1;
+                            widget.onLineDataChange?.call(
+                              widget,
+                              widget.keyValue.getLineData(),
+                            );
+                          },
+                        );
                       },
                     );
                   },

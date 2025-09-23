@@ -1,0 +1,356 @@
+[
+  {
+    "description": "",
+    "displayName": "空军工厂",
+    "name": "airFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "航空母舰",
+    "name": "airShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "水陆两用喷气式飞机",
+    "name": "amphibiousJet",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "防空炮塔",
+    "name": "antiAirTurret",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "防空炮塔T2",
+    "name": "antiAirTurretT2",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "反核发射塔",
+    "name": "AntiNukeLaucher",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "火炮",
+    "name": "artillery",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "攻击潜艇",
+    "name": "attackSubmarine",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "战舰",
+    "name": "battleShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "沙盒建造者",
+    "name": "editorOrBuilder",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "建造者",
+    "name": "builder",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "海上建造者",
+    "name": "builderShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "指挥中心",
+    "name": "commandCenter",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "中等水晶",
+    "name": "crystal_mid",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "水晶资源",
+    "name": "crystalResource",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "伤害边界",
+    "name": "damagingBorder",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "运输船",
+    "name": "dropship",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "实验炮舰",
+    "name": "experimentalGunship",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "实验炮舰陆地",
+    "name": "experimentalGunshipLanded",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "实验悬浮坦克",
+    "name": "experimentalHoverTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "实验性陆地工厂",
+    "name": "experimentalLandFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "实验坦克",
+    "name": "experimentalTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "资源提取器",
+    "name": "extractor",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "工厂",
+    "name": "fabricator",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "揭开迷雾",
+    "name": "fogRevealer",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "炮艇",
+    "name": "gunBoat",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "炮舰",
+    "name": "gunShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "重型悬浮坦克",
+    "name": "heavyHoverTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "重型坦克",
+    "name": "heavyTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "直升机",
+    "name": "helicopter",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "气垫船",
+    "name": "hovercraft",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "悬浮坦克",
+    "name": "hoverTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "瓢虫",
+    "name": "ladybug",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "陆地工厂",
+    "name": "landFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "激光防御",
+    "name": "laserDefence",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "激光坦克",
+    "name": "laserTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "猛犸坦克",
+    "name": "mammothTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "基础机甲",
+    "name": "mech_gun",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "飞行机甲着陆",
+    "name": "mechFlyingLanded",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "巨型坦克",
+    "name": "megaTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "导弹船",
+    "name": "missileShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "数据丢失",
+    "name": "missing",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "核弹发射井",
+    "name": "NukeLaucher",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "修复湾",
+    "name": "repairbay",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "海军工厂",
+    "name": "seaFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "蜘蛛机器人",
+    "name": "spiderBot",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "火势蔓延",
+    "name": "spreadingFire",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "补给站",
+    "name": "supplyDepot",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "坦克",
+    "name": "tank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "坦克杀手",
+    "name": "tankDestroyer",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "试验坦克",
+    "name": "test_tank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "树",
+    "name": "tree",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "炮塔",
+    "name": "turret",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "炮塔火炮",
+    "name": "turret_artillery",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "炮塔火焰喷射器",
+    "name": "turret_flamethrower",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "转塔T2",
+    "name": "turretT2",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "转塔T3",
+    "name": "turretT3",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "墙壁v",
+    "name": "wall_v",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "区域标记",
+    "name": "zoneMarker",
+    "path": ""
+  }
+]

@@ -6,7 +6,16 @@ import 'package:rust_assistant/l10n/app_localizations.dart';
 
 class UnitDialog extends StatefulWidget {
   final List<UnitRef> modUnit;
-  const UnitDialog({super.key, required this.modUnit});
+  final String value;
+  final bool multiple;
+  final Function(String) onSave;
+  const UnitDialog({
+    super.key,
+    required this.modUnit,
+    required this.value,
+    required this.multiple,
+    required this.onSave,
+  });
 
   @override
   State<StatefulWidget> createState() {
@@ -18,6 +27,7 @@ class _UnitDialogStatus extends State<UnitDialog> {
   final TextEditingController _searchController = TextEditingController();
   final List<UnitRefData> _allUnit = List.empty(growable: true);
   final List<UnitRefData> _filteredUnit = List.empty(growable: true);
+  final Set<String> _unitList = {};
   @override
   void initState() {
     super.initState();
@@ -40,6 +50,13 @@ class _UnitDialogStatus extends State<UnitDialog> {
       return aName.compareTo(bName);
     });
     _filteredUnit.addAll(_allUnit);
+    var unitList = widget.value.split(',');
+    for (String unitName in unitList) {
+      var unitNameTrim = unitName.trim();
+      if (unitNameTrim.isNotEmpty && !_unitList.contains(unitNameTrim)) {
+        _unitList.add(unitNameTrim);
+      }
+    }
   }
 
   @override
@@ -106,7 +123,58 @@ class _UnitDialogStatus extends State<UnitDialog> {
                 itemCount: _filteredUnit.length,
                 itemBuilder: (context, index) {
                   var unitData = _filteredUnit[index];
-                  return ListTile(
+                  if (widget.multiple) {
+                    return CheckboxListTile(
+                      title: unitData.builtIn
+                          ? Wrap(
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              spacing: 8,
+                              children: [
+                                Chip(
+                                  label: Text(
+                                    AppLocalizations.of(context)!.builtIn,
+                                  ),
+                                ),
+                                HighlightText(
+                                  text:
+                                      unitData.name ??
+                                      AppLocalizations.of(context)!.none,
+                                  searchKeyword: _searchController.text,
+                                ),
+                              ],
+                            )
+                          : HighlightText(
+                              text:
+                                  unitData.name ??
+                                  AppLocalizations.of(context)!.none,
+                              searchKeyword: _searchController.text,
+                            ),
+                      subtitle: unitData.displayName == null
+                          ? null
+                          : HighlightText(
+                              text: unitData.displayName!,
+                              searchKeyword: _searchController.text,
+                            ),
+                      value: unitData.name == null
+                          ? false
+                          : _unitList.contains(unitData.name),
+                      onChanged: (newValue) {
+                        if (newValue == null) {
+                          return;
+                        }
+                        setState(() {
+                          if (newValue) {
+                            _unitList.add(unitData.name!);
+                          } else {
+                            _unitList.remove(unitData.name!);
+                          }
+                        });
+                      },
+                    );
+                  }
+                  // 单选模式
+                  return RadioListTile<String>(
+                    controlAffinity: ListTileControlAffinity.trailing,
                     title: unitData.builtIn
                         ? Wrap(
                             crossAxisAlignment: WrapCrossAlignment.center,
@@ -137,6 +205,16 @@ class _UnitDialogStatus extends State<UnitDialog> {
                             text: unitData.displayName!,
                             searchKeyword: _searchController.text,
                           ),
+                    value: unitData.name ?? "",
+                    groupValue: _unitList.isEmpty ? null : _unitList.first,
+                    onChanged: (newValue) {
+                      if (newValue == null) return;
+                      setState(() {
+                        _unitList
+                          ..clear()
+                          ..add(newValue);
+                      });
+                    },
                   );
                 },
               ),
@@ -151,9 +229,17 @@ class _UnitDialogStatus extends State<UnitDialog> {
                 ),
                 TextButton(
                   onPressed: () {
+                    final StringBuffer stringBuffer = StringBuffer();
+                    for (String unitName in _unitList) {
+                      if (stringBuffer.length > 0) {
+                        stringBuffer.write(',');
+                      }
+                      stringBuffer.write(unitName);
+                    }
+                    widget.onSave.call(stringBuffer.toString());
                     Navigator.of(context).pop();
                   },
-                  child: Text(AppLocalizations.of(context)!.confirm),
+                  child: Text(AppLocalizations.of(context)!.save),
                 ),
               ],
             ),

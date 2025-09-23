@@ -1,0 +1,356 @@
+[
+  {
+    "description": "",
+    "displayName": "airFactory",
+    "name": "airFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "airShip",
+    "name": "airShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "amphibiousJet",
+    "name": "amphibiousJet",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "antiAirTurret",
+    "name": "antiAirTurret",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "antiAirTurretT2",
+    "name": "antiAirTurretT2",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "AntiNukeLaucher",
+    "name": "AntiNukeLaucher",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "artillery",
+    "name": "artillery",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "attackSubmarine",
+    "name": "attackSubmarine",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "battleShip",
+    "name": "battleShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "editorOrBuilder",
+    "name": "editorOrBuilder",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "builder",
+    "name": "builder",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "builderShip",
+    "name": "builderShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "commandCenter",
+    "name": "commandCenter",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "crystal_mid",
+    "name": "crystal_mid",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "crystalResource",
+    "name": "crystalResource",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "damagingBorder",
+    "name": "damagingBorder",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "dropship",
+    "name": "dropship",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "experimentalGunship",
+    "name": "experimentalGunship",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "experimentalGunshipLanded",
+    "name": "experimentalGunshipLanded",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "experimentalHoverTank",
+    "name": "experimentalHoverTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "experimentalLandFactory",
+    "name": "experimentalLandFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "experimentalTank",
+    "name": "experimentalTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "extractor",
+    "name": "extractor",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "fabricator",
+    "name": "fabricator",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "fogRevealer",
+    "name": "fogRevealer",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "gunBoat",
+    "name": "gunBoat",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "gunShip",
+    "name": "gunShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "heavyHoverTank",
+    "name": "heavyHoverTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "heavyTank",
+    "name": "heavyTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "helicopter",
+    "name": "helicopter",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "hovercraft",
+    "name": "hovercraft",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "hoverTank",
+    "name": "hoverTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "ladybug",
+    "name": "ladybug",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "landFactory",
+    "name": "landFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "laserDefence",
+    "name": "laserDefence",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "laserTank",
+    "name": "laserTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "mammothTank",
+    "name": "mammothTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "mech_gun",
+    "name": "mech_gun",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "mechFlyingLanded",
+    "name": "mechFlyingLanded",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "megaTank",
+    "name": "megaTank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "missileShip",
+    "name": "missileShip",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "missing",
+    "name": "missing",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "NukeLaucher",
+    "name": "NukeLaucher",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "repairbay",
+    "name": "repairbay",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "seaFactory",
+    "name": "seaFactory",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "spiderBot",
+    "name": "spiderBot",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "spreadingFire",
+    "name": "spreadingFire",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "supplyDepot",
+    "name": "supplyDepot",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "tank",
+    "name": "tank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "tankDestroyer",
+    "name": "tankDestroyer",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "test_tank",
+    "name": "test_tank",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "tree",
+    "name": "tree",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "turret",
+    "name": "turret",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "turret_artillery",
+    "name": "turret_artillery",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "turret_flamethrower",
+    "name": "turret_flamethrower",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "turretT2",
+    "name": "turretT2",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "turretT3",
+    "name": "turretT3",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "wall_v",
+    "name": "wall_v",
+    "path": ""
+  },
+  {
+    "description": "",
+    "displayName": "zoneMarker",
+    "name": "zoneMarker",
+    "path": ""
+  }
+]

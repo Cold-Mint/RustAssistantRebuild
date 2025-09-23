@@ -1908,7 +1908,7 @@
     "default_key": "canBuild_{x}_name",
     "default_value": "",
     "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "string",
+    "interpreter": "unitList",
     "maxVersion": -1,
     "minVersion": 1,
     "section": "core"
@@ -3987,7 +3987,7 @@
     "default_key": "spawnUnit",
     "default_value": "",
     "file_name": "^(?!mod-info\\.txt$).*",
-    "interpreter": "section=projectile",
+    "interpreter": "unitList",
     "maxVersion": -1,
     "minVersion": 2,
     "section": "projectile"

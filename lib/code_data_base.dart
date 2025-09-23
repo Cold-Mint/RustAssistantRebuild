@@ -380,12 +380,18 @@ class CodeDataBase {
   }
 
   static Future<void> loadUnits(String language) async {
+    final List<dynamic> dexUnits = json.decode(
+      await rootBundle.loadString('assets/game_res/dex_units_$language.json'),
+    );
     final List<dynamic> units = json.decode(
       await rootBundle.loadString(
         'assets/game_res/$_gameDataVersion/units_$language.json',
       ),
     );
     builtInUnit.clear();
+    for (var item in dexUnits) {
+      builtInUnit.add(UnitRef.fromJson(item));
+    }
     for (var item in units) {
       builtInUnit.add(UnitRef.fromJson(item));
     }

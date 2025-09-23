@@ -90,6 +90,8 @@ flutter:
     - assets/code_data/
     - assets/fonts/
     - assets/units_template/
+    - assets/game_res/dex_units_en.json
+    - assets/game_res/dex_units_zh.json
     #通过命令自动生成的（codeTableGenerator generateResList --path /home/coldmint/projects/rust_assistant_flutter/assets/game_res/ --basicPath /home/coldmint/projects/rust_assistant_flutter/）
     #codeTableGenerator 是一个命令行工具。
     - assets/game_res/
