@@ -32,9 +32,7 @@ jobs:
             liblzma-dev
 
       - name: Configure Flutter
-        run: |
-          flutter config --no-analytics
-          flutter config --enable-linux-desktop
+        run: flutter config --no-analytics
 
       - name: Fetch Dart dependencies
         run: flutter pub get
@@ -92,9 +90,7 @@ jobs:
           channel: stable
 
       - name: Configure Flutter
-        run: |
-          flutter config --no-analytics
-          flutter config --enable-web
+        run: flutter config --no-analytics
 
       - name: Fetch Dart dependencies
         run: flutter pub get
@@ -123,9 +119,7 @@ jobs:
           channel: stable
 
       - name: Configure Flutter
-        run: |
-          flutter config --no-analytics
-          flutter config --enable-macos-desktop
+        run: flutter config --no-analytics
 
       - name: Fetch Dart dependencies
         run: flutter pub get
@@ -154,9 +148,7 @@ jobs:
           channel: stable
 
       - name: Configure Flutter
-        run: |
-          flutter config --no-analytics
-          flutter config --enable-ios
+        run: flutter config --no-analytics
 
       - name: Fetch Dart dependencies
         run: flutter pub get
@@ -164,7 +156,7 @@ jobs:
       - name: Install CocoaPods dependencies
         run: |
           cd ios
-          pod install
+          pod install --repo-update
 
       - name: Build iOS (release, no codesign)
         run: flutter build ios --release --no-codesign
@@ -194,18 +186,13 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
 
-      - name: Configure Flutter target
-        shell: pwsh
-        run: |
-          flutter config --no-analytics
-          flutter config --enable-windows-desktop
+      - name: Configure Flutter
+        run: flutter config --no-analytics
 
       - name: Fetch Dart dependencies
-        shell: pwsh
         run: flutter pub get
 
       - name: Build Windows desktop (release)
-        shell: pwsh
         run: flutter build windows --release
 
       - name: Upload Windows artifact
