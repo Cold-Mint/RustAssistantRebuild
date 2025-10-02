@@ -171,14 +171,19 @@ jobs:
           cd ios
           pod install
 
-      - name: Build iOS IPA (release, no codesign)
-        run: flutter build ipa --release --no-codesign
+      - name: Build iOS (release, no codesign)
+        run: flutter build ios --release --no-codesign
+
+      - name: Create iOS App directory
+        run: |
+          mkdir -p build/ios/iphoneos-unsigned
+          cp -r build/ios/iphoneos/Runner.app build/ios/iphoneos-unsigned/
 
       - name: Upload iOS artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ios-ipa
-          path: build/ios/ipa
+          name: ios-app
+          path: build/ios/iphoneos-unsigned
           if-no-files-found: error
 
   windows:
@@ -272,7 +277,7 @@ jobs:
           find artifacts/android-release -name "*x86_64*.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-x86_64.apk" \;
           
           # Package iOS
-          cd artifacts/ios-ipa
+          cd artifacts/ios-app
           zip -r "../../rust_assistant-v${VERSION}-ios-unsigned.zip" *
           cd ../..
 
@@ -305,7 +310,7 @@ jobs:
             - **Android APK (ARM64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-arm64-v8a.apk` - 适用于现代 64 位 Android 设备
             - **Android APK (ARMv7)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-armeabi-v7a.apk` - 适用于老旧 32 位 Android 设备
             - **Android APK (x86_64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-x86_64.apk` - 适用于模拟器或 x86 设备
-            - **iOS**: `rust_assistant-v${{ steps.get_version.outputs.version }}-ios-unsigned.zip` - 未签名，需要重新签名后才能安装
+            - **iOS**: `rust_assistant-v${{ steps.get_version.outputs.version }}-ios-unsigned.zip` - 未签名的 Runner.app，需使用 Xcode 或签名工具处理后安装
             
             #### Web 平台
             - **Web**: `rust_assistant-v${{ steps.get_version.outputs.version }}-web.zip` - 解压后部署到 Web 服务器
@@ -313,7 +318,7 @@ jobs:
             ### ⚠️ 注意事项
             
             - **Android**: 使用 debug 签名，可直接安装测试，但无法上传到 Play Store
-            - **iOS**: 未签名，需要使用 Xcode 或其他工具重新签名
+            - **iOS**: 包含未签名的 Runner.app，需要使用 Xcode 重新签名或使用 `codesign` 工具签名后才能安装到设备
             - **macOS**: 未签名，首次运行时需要右键选择"打开"绕过安全检查
             - **Windows**: 未签名，SmartScreen 可能会显示警告
           files: |
