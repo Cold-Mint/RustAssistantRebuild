@@ -7,8 +7,8 @@ env:
   FLUTTER_VERSION: "3.35.5"
 
 jobs:
-  linux_android_web:
-    name: Linux • Android • Web
+  linux:
+    name: Linux Desktop
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -31,38 +31,16 @@ jobs:
             libgtk-3-dev \
             liblzma-dev
 
-      - name: Configure Flutter targets
+      - name: Configure Flutter
         run: |
           flutter config --no-analytics
           flutter config --enable-linux-desktop
-          flutter config --enable-web
-          flutter doctor
 
       - name: Fetch Dart dependencies
         run: flutter pub get
 
-      - name: Accept Android licenses
-        run: |
-          yes | "${ANDROID_SDK_ROOT:-$ANDROID_HOME}"/cmdline-tools/latest/bin/sdkmanager --licenses
-
-      - name: Build Web (release)
-        run: flutter build web --release
-
       - name: Build Linux desktop (release)
         run: flutter build linux --release
-
-      - name: Build Android App Bundle (release)
-        run: flutter build appbundle --release
-
-      - name: Build Android APKs (release)
-        run: flutter build apk --split-per-abi --release
-
-      - name: Upload Web artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: web-release
-          path: build/web
-          if-no-files-found: error
 
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v4
@@ -70,6 +48,31 @@ jobs:
           name: linux-release
           path: build/linux/x64/release/bundle
           if-no-files-found: error
+
+  android:
+    name: Android
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter ${{ env.FLUTTER_VERSION }}
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - name: Configure Flutter
+        run: flutter config --no-analytics
+
+      - name: Fetch Dart dependencies
+        run: flutter pub get
+
+      - name: Build Android App Bundle (release)
+        run: flutter build appbundle --release
+
+      - name: Build Android APKs (release)
+        run: flutter build apk --split-per-abi --release
 
       - name: Upload Android artifacts
         uses: actions/upload-artifact@v4
@@ -80,8 +83,39 @@ jobs:
             build/app/outputs/**/*.apk
           if-no-files-found: error
 
-  macos_ios:
-    name: macOS • iOS
+  web:
+    name: Web
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter ${{ env.FLUTTER_VERSION }}
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - name: Configure Flutter
+        run: |
+          flutter config --no-analytics
+          flutter config --enable-web
+
+      - name: Fetch Dart dependencies
+        run: flutter pub get
+
+      - name: Build Web (release)
+        run: flutter build web --release
+
+      - name: Upload Web artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-release
+          path: build/web
+          if-no-files-found: error
+
+  macos:
+    name: macOS Desktop
     runs-on: macos-latest
     steps:
       - name: Checkout repository
@@ -93,19 +127,10 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
 
-      - name: Prepare macOS toolchain
+      - name: Configure Flutter
         run: |
           flutter config --no-analytics
           flutter config --enable-macos-desktop
-          flutter config --enable-ios
-          sudo xcode-select --switch /Applications/Xcode.app
-          sudo xcodebuild -license accept
-
-      - name: Install CocoaPods
-        run: |
-          brew install cocoapods || true
-          cd ios
-          pod install
 
       - name: Fetch Dart dependencies
         run: flutter pub get
@@ -113,15 +138,41 @@ jobs:
       - name: Build macOS desktop (release)
         run: flutter build macos --release
 
-      - name: Build iOS IPA (release, no codesign)
-        run: flutter build ipa --release --no-codesign
-
       - name: Upload macOS artifact
         uses: actions/upload-artifact@v4
         with:
           name: macos-release
           path: build/macos/Build/Products/Release
           if-no-files-found: error
+
+  ios:
+    name: iOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter ${{ env.FLUTTER_VERSION }}
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - name: Configure Flutter
+        run: |
+          flutter config --no-analytics
+          flutter config --enable-ios
+
+      - name: Fetch Dart dependencies
+        run: flutter pub get
+
+      - name: Install CocoaPods dependencies
+        run: |
+          cd ios
+          pod install
+
+      - name: Build iOS IPA (release, no codesign)
+        run: flutter build ipa --release --no-codesign
 
       - name: Upload iOS artifact
         uses: actions/upload-artifact@v4
@@ -143,16 +194,6 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
 
-      - name: Ensure Windows build toolchain
-        shell: pwsh
-        run: |
-          if (-not (Get-Command ninja -ErrorAction SilentlyContinue)) {
-            choco install ninja -y --no-progress
-          }
-          if (-not (Get-Command cmake -ErrorAction SilentlyContinue)) {
-            choco install cmake -y --installargs 'ADD_CMAKE_TO_PATH=System' --no-progress
-          }
-
       - name: Configure Flutter target
         shell: pwsh
         run: |
@@ -173,3 +214,115 @@ jobs:
           name: windows-release
           path: build/windows/x64/runner/Release
           if-no-files-found: error
+
+  create_release:
+    name: Create Release Draft
+    runs-on: ubuntu-latest
+    needs: [linux, android, web, macos, ios, windows]
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get version from pubspec.yaml
+        id: get_version
+        run: |
+          VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //' | sed 's/+.*//')
+          BUILD_NUMBER=$(grep '^version:' pubspec.yaml | sed 's/.*+//')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+          echo "Version: $VERSION"
+          echo "Build Number: $BUILD_NUMBER"
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Package all builds
+        run: |
+          VERSION="${{ steps.get_version.outputs.version }}"
+          
+          # Package Linux
+          cd artifacts/linux-release
+          tar -czf "../../rust_assistant-v${VERSION}-linux-x64.tar.gz" *
+          cd ../..
+          
+          # Package macOS
+          cd artifacts/macos-release
+          zip -r "../../rust_assistant-v${VERSION}-macos.zip" *
+          cd ../..
+          
+          # Package Windows
+          cd artifacts/windows-release
+          zip -r "../../rust_assistant-v${VERSION}-windows-x64.zip" *
+          cd ../..
+          
+          # Package Web
+          cd artifacts/web-release
+          zip -r "../../rust_assistant-v${VERSION}-web.zip" *
+          cd ../..
+          
+          # Rename Android artifacts
+          mkdir -p android-packaged
+          find artifacts/android-release -name "*.aab" -exec cp {} "android-packaged/rust_assistant-v${VERSION}.aab" \;
+          find artifacts/android-release -name "*arm64-v8a*.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-arm64-v8a.apk" \;
+          find artifacts/android-release -name "*armeabi-v7a*.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-armeabi-v7a.apk" \;
+          find artifacts/android-release -name "*x86_64*.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-x86_64.apk" \;
+          
+          # Package iOS
+          cd artifacts/ios-ipa
+          zip -r "../../rust_assistant-v${VERSION}-ios-unsigned.zip" *
+          cd ../..
+
+      - name: Create Release Draft
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: Rust Assistant v${{ steps.get_version.outputs.version }}
+          draft: true
+          prerelease: false
+          body: |
+            ## Rust Assistant v${{ steps.get_version.outputs.version }}
+            
+            **构建信息**
+            - 版本号: `${{ steps.get_version.outputs.version }}`
+            - 内部版本号: `${{ steps.get_version.outputs.build_number }}`
+            - 构建编号: `${{ github.run_number }}`
+            - 提交哈希: `${{ github.sha }}`
+            - 构建时间: `${{ github.event.repository.updated_at }}`
+            
+            ### 📦 下载说明
+            
+            #### 桌面平台
+            - **Linux**: `rust_assistant-v${{ steps.get_version.outputs.version }}-linux-x64.tar.gz` - 解压后运行 `rust_assistant`
+            - **macOS**: `rust_assistant-v${{ steps.get_version.outputs.version }}-macos.zip` - 解压后运行 `rust_assistant.app`
+            - **Windows**: `rust_assistant-v${{ steps.get_version.outputs.version }}-windows-x64.zip` - 解压后运行 `rust_assistant.exe`
+            
+            #### 移动平台
+            - **Android AAB**: `rust_assistant-v${{ steps.get_version.outputs.version }}.aab` - 用于上传到 Google Play（需重新签名）
+            - **Android APK (ARM64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-arm64-v8a.apk` - 适用于现代 64 位 Android 设备
+            - **Android APK (ARMv7)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-armeabi-v7a.apk` - 适用于老旧 32 位 Android 设备
+            - **Android APK (x86_64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-x86_64.apk` - 适用于模拟器或 x86 设备
+            - **iOS**: `rust_assistant-v${{ steps.get_version.outputs.version }}-ios-unsigned.zip` - 未签名，需要重新签名后才能安装
+            
+            #### Web 平台
+            - **Web**: `rust_assistant-v${{ steps.get_version.outputs.version }}-web.zip` - 解压后部署到 Web 服务器
+            
+            ### ⚠️ 注意事项
+            
+            - **Android**: 使用 debug 签名，可直接安装测试，但无法上传到 Play Store
+            - **iOS**: 未签名，需要使用 Xcode 或其他工具重新签名
+            - **macOS**: 未签名，首次运行时需要右键选择"打开"绕过安全检查
+            - **Windows**: 未签名，SmartScreen 可能会显示警告
+          files: |
+            rust_assistant-v${{ steps.get_version.outputs.version }}-linux-x64.tar.gz
+            rust_assistant-v${{ steps.get_version.outputs.version }}-macos.zip
+            rust_assistant-v${{ steps.get_version.outputs.version }}-windows-x64.zip
+            rust_assistant-v${{ steps.get_version.outputs.version }}-web.zip
+            android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}.aab
+            android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}-arm64-v8a.apk
+            android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}-armeabi-v7a.apk
+            android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}-x86_64.apk
+            rust_assistant-v${{ steps.get_version.outputs.version }}-ios-unsigned.zip
