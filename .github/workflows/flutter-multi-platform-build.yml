@@ -137,7 +137,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: macos-release
-          path: build/macos/Build/Products/Release
+          path: build/macos/Build/Products/Release/*.app
           if-no-files-found: error
 
   ios:
