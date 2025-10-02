@@ -83,7 +83,6 @@ jobs:
   macos_ios:
     name: macOS • iOS
     runs-on: macos-latest
-    needs: linux_android_web
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -134,7 +133,6 @@ jobs:
   windows:
     name: Windows
     runs-on: windows-latest
-    needs: linux_android_web
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
