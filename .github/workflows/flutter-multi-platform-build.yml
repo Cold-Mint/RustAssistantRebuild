@@ -68,9 +68,6 @@ jobs:
       - name: Fetch Dart dependencies
         run: flutter pub get
 
-      - name: Build Android App Bundle (release)
-        run: flutter build appbundle --release
-
       - name: Build Android APKs (release)
         run: flutter build apk --split-per-abi --release
 
@@ -78,9 +75,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-release
-          path: |
-            build/app/outputs/**/*.aab
-            build/app/outputs/**/*.apk
+          path: build/app/outputs/flutter-apk/*.apk
           if-no-files-found: error
 
   web:
@@ -269,12 +264,11 @@ jobs:
           zip -r "../../rust_assistant-v${VERSION}-web.zip" *
           cd ../..
           
-          # Rename Android artifacts
+          # Rename Android APK artifacts
           mkdir -p android-packaged
-          find artifacts/android-release -name "*.aab" -exec cp {} "android-packaged/rust_assistant-v${VERSION}.aab" \;
-          find artifacts/android-release -name "*arm64-v8a*.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-arm64-v8a.apk" \;
-          find artifacts/android-release -name "*armeabi-v7a*.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-armeabi-v7a.apk" \;
-          find artifacts/android-release -name "*x86_64*.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-x86_64.apk" \;
+          find artifacts/android-release -name "*arm64-v8a-release.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-arm64-v8a.apk" \;
+          find artifacts/android-release -name "*armeabi-v7a-release.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-armeabi-v7a.apk" \;
+          find artifacts/android-release -name "*x86_64-release.apk" -exec cp {} "android-packaged/rust_assistant-v${VERSION}-x86_64.apk" \;
           
           # Package iOS
           cd artifacts/ios-app
@@ -306,10 +300,9 @@ jobs:
             - **Windows**: `rust_assistant-v${{ steps.get_version.outputs.version }}-windows-x64.zip` - 解压后运行 `rust_assistant.exe`
             
             #### 移动平台
-            - **Android AAB**: `rust_assistant-v${{ steps.get_version.outputs.version }}.aab` - 用于上传到 Google Play（需重新签名）
-            - **Android APK (ARM64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-arm64-v8a.apk` - 适用于现代 64 位 Android 设备
+            - **Android APK (ARM64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-arm64-v8a.apk` - 推荐，适用于现代 64 位 Android 设备（大部分设备）
             - **Android APK (ARMv7)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-armeabi-v7a.apk` - 适用于老旧 32 位 Android 设备
-            - **Android APK (x86_64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-x86_64.apk` - 适用于模拟器或 x86 设备
+            - **Android APK (x86_64)**: `rust_assistant-v${{ steps.get_version.outputs.version }}-x86_64.apk` - 适用于 Android 模拟器或 x86 架构设备
             - **iOS**: `rust_assistant-v${{ steps.get_version.outputs.version }}-ios-unsigned.zip` - 未签名的 Runner.app，需使用 Xcode 或签名工具处理后安装
             
             #### Web 平台
@@ -317,7 +310,7 @@ jobs:
             
             ### ⚠️ 注意事项
             
-            - **Android**: 使用 debug 签名，可直接安装测试，但无法上传到 Play Store
+            - **Android**: 使用 debug 签名，可直接下载安装到设备（需允许安装未知来源应用）
             - **iOS**: 包含未签名的 Runner.app，需要使用 Xcode 重新签名或使用 `codesign` 工具签名后才能安装到设备
             - **macOS**: 未签名，首次运行时需要右键选择"打开"绕过安全检查
             - **Windows**: 未签名，SmartScreen 可能会显示警告
@@ -326,7 +319,6 @@ jobs:
             rust_assistant-v${{ steps.get_version.outputs.version }}-macos.zip
             rust_assistant-v${{ steps.get_version.outputs.version }}-windows-x64.zip
             rust_assistant-v${{ steps.get_version.outputs.version }}-web.zip
-            android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}.aab
             android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}-arm64-v8a.apk
             android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}-armeabi-v7a.apk
             android-packaged/rust_assistant-v${{ steps.get_version.outputs.version }}-x86_64.apk
